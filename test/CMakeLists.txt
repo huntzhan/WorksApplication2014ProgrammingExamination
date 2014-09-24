@@ -1,4 +1,6 @@
 add_executable(test_input test_input.cc)
 add_executable(test_search test_search.cc)
+add_executable(test_tsp test_tsp.cc)
 add_gtest(test_input)
 add_gtest(test_search)
+add_gtest(test_tsp)
