@@ -14,11 +14,13 @@
 //
 // ============================================================================
 
+#include <istream>
 #include <iostream>
 #include <vector>
 #include <utility>
 
 
+using std::istream;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -50,7 +52,7 @@ const char kCloseBlockSymbol = '#';
 
 class InputHandler {
  public:
-  void ReadFromStdin();
+  void ReadFromInputStream(istream *in_ptr);
 
   vector<string> orienteering_map_;
   Coordinate start_;
@@ -82,14 +84,14 @@ void InputHandler::RecordCoordinate(const int &row_index,
 }
 
 // Load orienteering map from standard input.
-void InputHandler::ReadFromStdin() {
+void InputHandler::ReadFromInputStream(istream *in_ptr) {
   // setup orienteering_map_.
   int width = 0, height = 0;
-  cin >> width >> height;
+  *in_ptr >> width >> height;
 
   for (int counter = 0; counter != height; ++counter) {
     string line;
-    cin >> line;
+    *in_ptr >> line;
     orienteering_map_.push_back(line);
   }
 
@@ -103,18 +105,18 @@ void InputHandler::ReadFromStdin() {
 
 
 // Skeleton code for the examination.
-class Orienteering {
- public:
-  void main();
-};
-
-void Orienteering::main() {
-  InputHandler input_handler;
-  input_handler.ReadFromStdin();
-}
-
-int main(int argc, char* argv[]) {
-  Orienteering o;
-  o.main();
-  return 0;
-}
+// class Orienteering {
+//  public:
+//   void main();
+// };
+// 
+// void Orienteering::main() {
+//   InputHandler input_handler;
+//   input_handler.ReadFromInputStream(&cin);
+// }
+//
+// int main(int argc, char* argv[]) {
+//   Orienteering o;
+//   o.main();
+//   return 0;
+// }
