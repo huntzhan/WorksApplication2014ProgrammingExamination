@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Flood Fill Algorithms - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Flood_Fill_Algorithms", "wgTitle": "USACO/Flood Fill Algorithms", "wgCurRevisionId": 33309, "wgArticleId": 5629, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Flood_Fill_Algorithms action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Flood Fill Algorithms</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Flood_Fill_Algorithms.html#column-one">导航</a>, <a href="Flood_Fill_Algorithms.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>Flood Fill
+</p><p>种子染色法 
+</p><p>译 by Lucky Crazy &amp; Felicia Crazy
+</p><p>（Flood Fill 按原意应翻译成“水流式填充法”（如果我没译错），有些中文书籍上将它称作“种子染色法”，然而大部分的书籍（包括中文书籍）都直接引用其英文原名：Flood Fill。介于此，下文所有涉及到Flood Fill的都直接引用英文 ——译者）
+</p><p>样例： 相连的农场
+Farmer John的农场被一次意外事故破坏了，有一些农场与其他的农场之间有道路相连，而有些道路却已被破坏。这使得Farmer John 无法了解到从一个农场能否到达另一个农场。你的任务就是帮助Farmer John来了解哪些农场是连通的。  
+</p><p>给出：
+上题实际上就是要求寻找一张无向图的所有极大连通子图。 
+</p><p>给出一张未知连通性的图，如下图： 
+</p><p><img src="http://ace.delos.com/usaco/TEXT/flood1.gif" alt="flood1.gif" />
+</p><p>可知，该图的极大连通子图是：{1,4,8}， {2,5,6,7,9} 和  {3}。 
+</p><p>算法: Flood Fill
+Flood Fill 可以用深度优先搜索，广度优先搜索或广度优先扫描来实现。他的实现方式是寻找到一个未被标记的结点对它标记后扩展，将所有由它扩展出的结点标上与它相同的标号，然后再找另一个未被标号的 结点重复该过程。这样，标号相同的结点就属于同一个连通子图。 
+</p><p>深搜：取一个结点，对其标记，然后标记它所有的邻结点。对它的每一个邻结点这么一直递归下去完成搜索。
+</p><p>广搜：与深搜不同的是，广搜把结点加入队列中。
+</p><p>广度扫描（不常见）：每个结点有两个值，一个用来记录它属于哪个连通子图（c），一个用来标记是否已经访问（v）。算法对每一个未访问而在某个连通子图当中的结点扫描，将其标记访问，然后把它的邻结点的（c）值改为当前结点的（c）值。
+</p><p>深搜最容易写，但它需要一个栈。搜索显式图没问题，而对于隐式图，栈可能就存不下了。
+</p><p>广搜稍微好一点，不过也存在问题。搜索大的图它的队列有可能存不下。深搜和广搜时间复杂度均为O(N+M)。其中，N为结点数，M为边数。
+</p><p>广度扫描需要的额外空间很少，或者可以说根本不要额外空间，但是它很慢。时间复杂度是O(N^2+M)。
+</p><p>（实际应用中，我们一般写的是DFS，因为快。空间不是问题，DFS可改用非递归的栈操作完成。但为了尊重原文，我们还是译出了广度扫描的全过程。——译者）
+</p><p>广度扫描的伪代码
+代码中用了一个小技巧，因此无须额外空间。结点若未访问，将其归入连通子图（-2），就是代码里的component -2。这样无须额外空间来记录结点是否访问，请读者用心体会。
+</p>
+<ol><li> component(i) denotes the
+</li><li> component that node i is in
+</li></ol>
+<pre>
+ 1 function flood_fill(new_component) 
+
+ 2 do
+ 3   num_visited = 0
+ 4   for all nodes i
+ 5     if component(i) = -2
+ 6       num_visited = num_visited + 1
+ 7       component(i) = new_component
+ 8       for all neighbors j of node i
+ 9         if component(j) = nil
+ 10           component(j) = -2
+ 11 until num_visited = 0 
+
+ 12 function find_components 
+
+ 13  num_components = 0
+ 14  for all nodes i
+ 15    component(node i) = nil
+ 16  for all nodes i
+ 17    if component(node i) is nil
+ 18      num_components = 
+                 num_components + 1
+ 19      component(i) = -2
+ 20      flood_fill(component
+                        num_components)
+</pre>
+<p>算法的时间复杂度是 O(N 2)，每个结点访问一次，每条边经过两次。
+</p><p>实例
+考虑刚才的那张图： 
+</p><p><img src="http://ace.delos.com/usaco/TEXT/flood1.gif" alt="flood1.gif" />
+</p><p>开始时，所有的结点都没有访问。（下例中未访问被表示为 -2) 
+</p><p>首先从结点1开始，结点1未访问，那么先处理结点1，将它归入连通子图1。 
+</p><p>结点 连通子图 
+1 -2 
+</p><p>标记完成后，对它进行第一步的扩展，由结点4和结点8与结点1连通，故它们被扩展出来。 
+</p><p><br />
+结点 连通子图 
+1 1 
+4 -2 
+8 -2 
+</p><p>之后，先处理结点4，将它与结点1归入相同的连通子图。现在它没有可扩展的结点了（结点1已被扩展过）
+</p><p>　
+</p><p>结点 连通子图 
+1 1 
+4 1 
+8 -2
+</p><p><br />
+接着处理结点8。结果与结点4一样。 
+</p><p>结点 连通子图 
+1 1 
+4 1 
+8 1 
+</p><p>现在，所有与结点1连通的结点都已扩展，标号为1的连通子图产生了。那么我们将跳出扩展步骤，寻找下一个连通子图，标号为2。 
+</p><p>与上一步相同的顺序，找到结点2。 
+</p><p>结点 连通子图 
+1 1 
+2 -2 
+4 1 
+8 1 
+</p><p>扩展结点2，结点7与结点9出现。 
+</p><p>结点 连通子图 
+1 1 
+2 2 
+4 1 
+7 -2 
+8 1 
+9 -2 
+</p><p>下一步，扩展结点7，结点5出现。 
+</p><p>结点 连通子图 
+1 1 
+2 2 
+4 1 
+5 -2 
+7 2 
+8 1 
+9 -2 
+</p><p>然后是结点9。 
+</p><p>结点 连通子图 
+1 1 
+2 2 
+4 1 
+5 -2 
+7 2 
+8 1 
+9 2 
+</p><p>扩展结点5。结点6出现。 
+</p><p>结点 连通子图 
+1 1 
+2 2 
+4 1 
+5 2 
+6 -2 
+7 2 
+8 1 
+9 2 
+</p><p>很遗憾，结点6没有可供扩展的结点。至此连通子图2产生。 
+</p><p>　
+</p><p>结点 连通子图 
+1 1 
+2 2 
+4 1 
+5 2 
+6 2 
+7 2 
+8 1 
+9 2 
+</p><p>之后寻找连通子图3，至此，仅有结点3未被扩展。 
+</p><p>　
+</p><p>结点 连通子图 
+1 1 
+2 2 
+3 -2 
+4 1 
+5 2 
+6 2 
+7 2 
+8 1 
+9 2 
+</p><p>结点3没有可供扩展的结点，这样，结点3就构成了仅有一个结点的连通子图3。 
+</p><p>　
+</p><p>结点 连通子图 
+1 1 
+2 2 
+3 3 
+4 1 
+5 2 
+6 2 
+7 2 
+8 1 
+9 2 
+</p><p>结点3处理结束后，整个图的所有9个结点就都被归入相应的3个连通子图。Flood Fill 结束。 
+</p><p>问题提示
+这类问题一般很清晰，求解关于“连通”的问题会用到 Flood Fill。它也很经常用作某些算法的预处理。
+</p><p>扩展与延伸
+有向图的连通性比较复杂。 
+</p><p>同样的填充算法可以找出从一个结点能够到达的所有结点。每一层递归时，若一个结点未访问，就将其标记为已访问（表示他可以从源结点到达)，然后对它所有能到达且为访问的结点进行下一层递归。
+</p><p>若要求出可以到达某个结点的所有结点，你可以对后向弧做相同的操作。
+</p><p>例题
+控制公司 [有删节, IOI 93]
+已知一个带权有向图，权值在0-100之间。
+</p><p>如果满足下列条件，那么结点A“拥有”结点B：
+</p><p>A = B 
+</p><p>从A到B有一条权值大于50的有向弧。
+</p><p>存在一系列结点 C 1 到 C k 满足 A 拥有 C 1 到 C k, 每个节点都有一条弧到B，记作x 1 ，x 2 ...x k，并且 x 1 + x 2 + ... + x k &gt; 50。 
+</p><p>找出所有的（A，B）对，满足A拥有B。
+</p><p>分析：这题可以用上面提到的“给出一个源，在有向图中找出它能够到达的结点”算法的改进版解决。要计算A拥有的结点，要对每个结点计算其“控股百分比”。把它们全部设为0。现在，在递归的每一步中，将其标记为属于A并把它所有出弧的权加到“控股百分比”中。对于每个“控股百分比”超过50的结点，进行同样的操作（递归）。
+</p><p>　
+</p><p>街道赛跑 [IOI 95]
+已知一个有向图，一个起点和一个终点。
+</p><p>找出所有的p，使得从起点到终点的任何路径都必须经过p。
+</p><p>分析：最简单的算法是枚举p，然后把p删除，看看是否存在从起点到终点的通路。时间复杂度为O(N (M + N))。题目的数据范围是 M &lt;= 100, N &lt;= 50，不会超时。
+</p><p>牛路 [1999 USACO 国家锦标赛, 有删节]
+连通图的直径定义为图中任意两点间距离的最大值，两点间距离定义为最短路的长。
+</p><p>已知平面上一个点集，和这些点之间的连通关系，找出不在同一个连通子图中的两个点，使得连接这两个点后产生的新图有最小的直径。
+</p><p>分析：找出原图的所有连通子图，然后枚举不在同一个连通子图内的每个点对，将其连接，然后找出最小直径。
+</p><p>笨蛋建筑公司
+Farmer John 计划建造一个新谷仓。不幸的是，建筑公司把他的建造计划和其他人的建造计划混淆了。Farmer John 要求谷仓只有一个房间，但是建筑公司为他建好的是有许多房间的谷仓。已知一个谷仓平面图，告诉Farmer John 它一共有多少个房间。
+</p><p>分析：随便找一个格子，遍历所有与它连通的格子，得到一个房间。然后再找一个未访问的格子，做同样的工作，直到所有的格子均已访问。虽然题目给你的不是直接的图，但你也可以很容易地对其进行Flood Fill。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5629-0!*!*!*!*!*!* and timestamp 20131219164358 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;oldid=33309">http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;oldid=33309</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Flood_Fill_Algorithms.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Flood_Fill_Algorithms&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FFlood+Fill+Algorithms" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Flood_Fill_Algorithms" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Flood_Fill_Algorithms" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Flood_Fill_Algorithms&amp;oldid=33309" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过3,386次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月8日 (星期四) 10:08做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Bsmsnd&amp;action=edit&amp;redlink=1" class="new" title="用户:Bsmsnd（尚未撰写）">陈东</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Lgeecn&amp;action=edit&amp;redlink=1" class="new" title="用户:Lgeecn（尚未撰写）">Lgeecn</a>和NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.182.24.206" title="特殊:用户贡献/61.182.24.206">61.182.24.206</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/111.78.31.115" title="特殊:用户贡献/111.78.31.115">111.78.31.115</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.105 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

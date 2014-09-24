@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/contact - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/contact", "wgTitle": "USACO/contact", "wgCurRevisionId": 33359, "wgArticleId": 380, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_contact action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/contact</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="contact.html#column-one">导航</a>, <a href="contact.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="contact.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="contact.html#.E6.8F.90.E4.BE.9B.E4.B8.80.E7.A7.8D.E9.AB.98.E6.95.88.E7.9A.84.E6.96.B9.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">提供一种高效的方法</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="contact.html#.E8.A7.A3.E7.A0.81.EF.BC.88.E5.80.9F.E9.89.B4RK.E7.AE.97.E6.B3.95.EF.BC.89"><span class="tocnumber">3</span> <span class="toctext">解码（借鉴RK算法）</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="contact.html#TRIE"><span class="tocnumber">4</span> <span class="toctext">TRIE</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="contact.html#AC.E8.87.AA.E5.8A.A8.E6.9C.BA"><span class="tocnumber">5</span> <span class="toctext">AC自动机</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="contact.html#Trie_Plus"><span class="tocnumber">6</span> <span class="toctext">Trie Plus</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="contact.html#.E7.AE.80.E6.98.93.E4.BD.86.E9.9D.9E.E5.B8.B8.E9.AB.98.E6.95.88.E7.9A.84.E6.96.B9.E6.B3.95"><span class="tocnumber">7</span> <span class="toctext">简易但非常高效的方法</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="contact.html#.E6.90.9C.E7.B4.A2.E6.97.B6.E7.9A.84.E4.BC.98.E5.8C.96"><span class="tocnumber">8</span> <span class="toctext">搜索时的优化</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="contact.html#.E5.8A.A8.E6.80.81.E8.A7.84.E5.88.92"><span class="tocnumber">9</span> <span class="toctext">动态规划</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="contact.html#.E7.BB.9D.E5.AF.B9.E6.9C.B4.E7.B4.A0.E7.AE.97.E6.B3.95"><span class="tocnumber">10</span> <span class="toctext">绝对朴素算法</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="contact.html#C.2B.2B_STL_.E6.B3.95"><span class="tocnumber">11</span> <span class="toctext">C++ STL 法</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="contact.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">12</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="contact.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">13</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>1 &lt;= A &lt;= B &lt;= 12，由于信号长度不同需要区别（0与00不是同一信号），可以转化为三进制储存，也可以用二维数组   F[i,j]表示值为i位数为j的信号出现次数。最后看储存方法不同按频率由高到低，由短到长，由小到大输出。
+</p><p>也可直接转成二进制处理,只需要每种字符串加一个前导'1'。具体看<a href="http://www.nocow.cn/index.php/Code:Contact_pascal#.E4.BB.A3.E7.A0.812" title="Code:Contact pascal">代码</a>
+</p><p><br />
+[补充]--1小妹在这里补充一个比较“旁门左道”的方法，可以用一棵满二叉树储存，一维数组实现。每个节点值为0或1，左儿子是值为0的节点，右儿子是值为1的节点。从根节点（根节点本身无值）到该节点路径上经过的节点组成的串就是该节点表示的串。数组中下标1 shl a 到1 shl (b+1)-1的节点就是位数为从a到b的节点。具体实现见代码4。
+</p><p>[补充]--2最好边读入边处理，否则是存不下那么大的数据的！
+</p><p>[补充]--3应该可以用ansistring存下的样子啊……
+</p><p>[补充]--4最好别用ansistring存，本来时间空间就有些紧张……
+</p><p>[补充]--先统计长度为 B 的各种串的个数，然后推算 A~B-1 长度的串的个数。排序用选择排序就可以了。 (yuhc)
+</p><p>[补充]--5可以用约 197KB 的字符数组来存下来，空间好像没有压力。
+</p><p>[补充]--6可以用一个数字保存当前的n 比特为所转化的数字t。每次后移的时候，t&lt;&lt;=1,t+=str[i+1],str可以用bool数组
+记得要把t的前面的无关的位 用1110111这样的数 做多次与运算 屏蔽掉前面的位
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"> 其中t为准备后移的数字，t2用来做掩码，str<span class="br0">&#91;</span>j<span class="br0">&#93;</span>为下一位的值<span class="br0">&#40;</span><span class="nu0">0</span>或<span class="nu0">1</span><span class="br0">&#41;</span>，i为当前比较的串长度，<span class="nu0">32</span>是t的位数，len5临时变量
+记录已经清理几次了从<span class="nu0">32</span><span class="sy2">-</span>i位往前清理到第一位    
+                   t<span class="sy1">&lt;&lt;=</span><span class="nu0">1</span><span class="sy4">;</span>
+			<span class="kw4">int</span> t2<span class="sy1">=</span><span class="nu0">1</span>,len5<span class="sy1">=</span><span class="nu0">32</span><span class="sy2">-</span>i<span class="sy4">;</span>
+			t2<span class="sy1">&lt;&lt;=</span>i<span class="sy4">;</span>
+			<span class="kw1">while</span><span class="br0">&#40;</span>len5<span class="sy2">--</span><span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				t<span class="sy3">&amp;</span><span class="sy1">=</span><span class="br0">&#40;</span>t2<span class="sy3">^</span><span class="nu12">0xFFFFFFFF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+				t2<span class="sy1">&lt;&lt;=</span><span class="nu0">1</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			t<span class="sy2">+</span><span class="sy1">=</span>str<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span></pre></div></div>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=2" title="编辑段落：提供一种高效的方法">编辑</a>]</span> <span class="mw-headline" id=".E6.8F.90.E4.BE.9B.E4.B8.80.E7.A7.8D.E9.AB.98.E6.95.88.E7.9A.84.E6.96.B9.E6.B3.95">提供一种高效的方法</span></h2>
+<p>提供一种高效的方法。
+</p><p>首先把问题分成几部分，先生成数据。
+初始化 f[i,j]表示长度为i的第j元素，
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">f<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="st_h">'0'</span>; f<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="st_h">'1'</span>;
+i<span class="sy0">:=</span><span class="nu0">1</span>;
+<span class="kw1">while</span> ss<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">=</span><span class="st_h">'1'</span> <span class="kw1">do</span> <span class="kw1">begin</span> ss<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="st_h">'0'</span>; inc<span class="br0">&#40;</span>i<span class="br0">&#41;</span>; <span class="kw1">end</span>;
+ss<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="st_h">'1'</span>;
+inc<span class="br0">&#40;</span>shu<span class="br0">&#41;</span>;
+f<span class="br0">&#91;</span>a<span class="sy0">,</span>shu<span class="br0">&#93;</span><span class="sy0">:=</span>ss;</pre></div></div>
+<p>用上述方法可巧妙解决a的所有元素，接下来a+1到b的都可由1和a推导；
+然后是枚举数据的位置i，由i+a-1到i+b-1枚举可能的字符，计算其十进制的数值l，l+1即是其位置
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">l<span class="sy0">:=</span><span class="nu0">0</span>; k<span class="sy0">:=</span><span class="nu0">0</span>;
+<span class="kw1">for</span> j<span class="sy0">:=</span>i <span class="kw1">to</span> i<span class="sy0">+</span>a<span class="sy0">-</span><span class="nu0">2</span> <span class="kw1">do</span><span class="co1">//先算开头是i，长度为i+a-2的字串的数值</span>
+  <span class="kw1">begin</span>
+    inc<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+    inc<span class="br0">&#40;</span>l<span class="sy0">,</span><span class="br0">&#40;</span><span class="kw3">ord</span><span class="br0">&#40;</span>s<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">-</span><span class="kw3">ord</span><span class="br0">&#40;</span><span class="st_h">'0'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">*</span>mm<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+    <span class="kw1">end</span>;
+    <span class="kw1">for</span> j<span class="sy0">:=</span>a <span class="kw1">to</span> b <span class="kw1">do</span>
+      <span class="kw1">begin</span>
+        <span class="kw1">if</span> i<span class="sy0">+</span>j<span class="sy0">-</span><span class="nu0">1</span>&gt;cha <span class="kw1">then</span> <span class="kw1">break</span>;
+        l<span class="sy0">:=</span>l<span class="sy0">+</span><span class="br0">&#40;</span><span class="kw3">ord</span><span class="br0">&#40;</span>s<span class="br0">&#91;</span>i<span class="sy0">+</span>j<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">-</span><span class="kw3">ord</span><span class="br0">&#40;</span><span class="st_h">'0'</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">*</span>mm<span class="br0">&#91;</span>j<span class="br0">&#93;</span>;<span class="co1">//因为是在上一字符后加了一个字符，所以其数值可通过上一个l得到，mm[k]是const=（1，2，4……）；</span>
+        inc<span class="br0">&#40;</span>g<span class="br0">&#91;</span>j<span class="sy0">,</span>l<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;</pre></div></div>
+<p>最后三个条件快排，输出，搞定；最大一个点0.194s，不错，唯一缺点就是内存太大……
+程序中内存不正常的就是我的-_-
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=3" title="编辑段落：解码（借鉴RK算法）">编辑</a>]</span> <span class="mw-headline" id=".E8.A7.A3.E7.A0.81.EF.BC.88.E5.80.9F.E9.89.B4RK.E7.AE.97.E6.B3.95.EF.BC.89"> 解码（借鉴RK算法） </span></h2>
+<p>其实，观察这道题可以发现，所有字符串都是由01组成的，而且长度至多12，那么把每个状态进行解码至多也不超过2^12&lt;=10000，那不如开个统计数组（下标表示状态[1..10000])直接记录出现次数，把整个字符串进行扫描把字符串进行解码，然后添加出现状态的次数。扫描(b-a+1)次就可以做好统计（每种长度扫一次），最后把出现次数不为零的状态进行处理，就可以秒掉了。编程复杂度不高。
+</p><p>实际操作时应在二进制最高加一位上加一，以区别不同的匹配字符长数。扫描时，可以采取逐位推进的方法,每次
+</p><p><br />
+zc:=（bl shl 1+(1 or 0）） mod (1 shl weishu);
+</p><p>inc(shu[zc+1 shl weishu]);
+</p><p><br />
+来处理。
+时间复杂度不高O（200000）*O（12），由于充分利用问题的特点，比Trie的还要快很多(与楼下引以为豪的Trie速度比较下）。
+</p><p>jzoi
+——————————————————————
+同学，O（200000）*O（12）是错误的表达方式，渐进时间复杂度是和问题规模有关的，它反映时间的增长速度，但是你这样写。。。
+所谓的解码，和hash映射有什么区别吗？
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=4" title="编辑段落：TRIE">编辑</a>]</span> <span class="mw-headline" id="TRIE">TRIE</span></h2>
+<p>这道题可以用TRIE解决。。详见代码（lxyxynt）
+</p><p>trie的确牛X……最后一组数据只用了0.227秒……我给个C版本的吧……  -by wecing
+</p><p>///////弱弱说一句。。二叉Trie树，最坏一组，0.043s    --By Lo
+</p><p>....Test 6: TEST OK [0.022 secs, 2100 KB]最坏一组,哈希表+链表排序  -by Toshio
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=5" title="编辑段落：AC自动机">编辑</a>]</span> <span class="mw-headline" id="AC.E8.87.AA.E5.8A.A8.E6.9C.BA">AC自动机</span></h2>
+<p>建立一棵深度为B的满二叉trie树，然后对于所有深度大于等于A的节点标记一个单词。对文本进行匹配，排序输出。
+</p><p>参见pascal代码by SRC
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=6" title="编辑段落：Trie Plus">编辑</a>]</span> <span class="mw-headline" id="Trie_Plus">Trie Plus</span></h2>
+<p>用trie做
+由于主串中只有 0 1 两种字符，故可以直接将二叉树的左右子直接当成‘0’，‘1’速度上会快很多。表示最后一组数据只用了0.108秒   
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 3088 KB]
+  Test 2: TEST OK [0.000 secs, 3088 KB]
+  Test 3: TEST OK [0.000 secs, 3088 KB]
+  Test 4: TEST OK [0.000 secs, 3088 KB]
+  Test 5: TEST OK [0.054 secs, 3088 KB]
+  Test 6: TEST OK [0.027 secs, 3088 KB]
+  Test 7: TEST OK [0.108 secs, 3088 KB]
+</pre>
+<p>详情请参见yw100101代码 pascal
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=7" title="编辑段落：简易但非常高效的方法">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.80.E6.98.93.E4.BD.86.E9.9D.9E.E5.B8.B8.E9.AB.98.E6.95.88.E7.9A.84.E6.96.B9.E6.B3.95">简易但非常高效的方法</span></h2>
+<p>--消逝者
+</p><p>将二进制转换为十进制，因为只有12位，空间没问题，所以直接建立一个统计数组 int frequency[长度][转化为十进制的数字]
+之后就简单了：
+</p>
+<pre>对于每一个长度L：
+ 枚举起始位置，将以这个起始位置的L位二进制转换为10进制并更新统计数组
+</pre>
+<p>建个类：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">class</span> unit
+<span class="br0">&#123;</span>
+ <span class="kw2">public</span><span class="sy4">:</span>
+	<span class="kw4">int</span> frequency,l,num<span class="sy4">;</span>\\频率，长度，和转换的十进制数
+<span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
+<p>新建个队列单位为unit
+</p>
+<pre>对于每一个长度L：
+ 对于每一个数字N：
+  如果总数不为0，新建unit加入队列
+</pre>
+<p>对于此队列按题目输出要求快排，最后输出即可。
+最大时间0.065 secs.
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=8" title="编辑段落：搜索时的优化">编辑</a>]</span> <span class="mw-headline" id=".E6.90.9C.E7.B4.A2.E6.97.B6.E7.9A.84.E4.BC.98.E5.8C.96">搜索时的优化</span></h2>
+<p>尽管不能区分0和00，只要在前面统一加上个1就行了，最后再去掉。
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=9" title="编辑段落：动态规划">编辑</a>]</span> <span class="mw-headline" id=".E5.8A.A8.E6.80.81.E8.A7.84.E5.88.92"> 动态规划 </span></h2>
+<p>本题可以用动态规划做，速度也很快，最长也就0.042秒
+注意到该题比特序列只由0,1,组成，故可以用二进制数表示，再就是长度为n的前缀序列seq(n)出现的次数
+f( seq(n) ) = f(seq(n)+'0') +  f(seq(n)+'1')( + 1)  //最后那项+1是当seq(n)为整个字符串结尾的后缀子串时才加一，否则不加
+递推式解释:例如 
+对于序列 01010010010001000111101100001010011001111000010010011110010000000
+</p><p>序列010出现的次数 = 序列0100出现的次数 + 序列0101出现的次数       然而 
+序列000出现的次数 = 序列0000出现的次数 + 序列0001出现的次数 + 1
+计算000的次数时，末尾加1是因为000整个序列的后缀子串，而010不是整个序列的后缀子串
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=10" title="编辑段落：绝对朴素算法">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.9D.E5.AF.B9.E6.9C.B4.E7.B4.A0.E7.AE.97.E6.B3.95"> 绝对朴素算法 </span></h2>
+<p>直接爆搜，而且不用为序列前加一个1，因为虽然0和00变成二进制都是0，但是可以开数组记录每个串的长度，那么0串长度为1，00串长度为2，就可以区分了，最后一个点0.940秒，应该是涉险过关……
+代码见c++，那个最后一个点0.940秒的就是的
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=11" title="编辑段落：C++ STL 法">编辑</a>]</span> <span class="mw-headline" id="C.2B.2B_STL_.E6.B3.95"> C++ STL 法 </span></h2>
+<p>用map&lt;string,int&gt; 保存所有串及其出现过的次数。
+之后将其取出并排序即可。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=12" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/contact/C++.html" title="Code:USACO/contact/C++">C++</a><br />
+<a href="../Code:USACO/contact/Pascal.html" title="Code:USACO/contact/Pascal">Pascal</a><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit&amp;section=13" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 86/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:380-0!*!0!!zh-cn!*!* and timestamp 20131219164544 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;oldid=33359">http://www.nocow.cn/index.php?title=USACO/contact&amp;oldid=33359</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="contact.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/contact&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fcontact" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/contact" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/contact" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;oldid=33359" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过19,430次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Keavil&amp;action=edit&amp;redlink=1" class="new" title="用户:Keavil（尚未撰写）">Keavil</a>于2013年8月10日 (星期六) 09:19做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Flysky126&amp;action=edit&amp;redlink=1" class="new" title="用户:Flysky126（尚未撰写）">Flysky126</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/112.65.223.32" title="特殊:用户贡献/112.65.223.32">112.65.223.32</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.153.193.242" title="特殊:用户贡献/61.153.193.242">61.153.193.242</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/118.124.72.176" title="特殊:用户贡献/118.124.72.176">118.124.72.176</a>和<a href="http://www.nocow.cn/index.php?title=USACO/contact&amp;action=credits" title="USACO/contact">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.237 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

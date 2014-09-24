@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/cheese - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/cheese", "wgTitle": "USACO/cheese", "wgCurRevisionId": 31754, "wgArticleId": 3858, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_cheese action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/cheese</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="cheese.html#column-one">导航</a>, <a href="cheese.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="cheese.html#.E5.8E.9F.E9.A2.98"><span class="tocnumber">1</span> <span class="toctext">原题</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="cheese.html#.E7.BF.BB.E8.AF.91"><span class="tocnumber">2</span> <span class="toctext">翻译</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="cheese.html#.E7.A8.8B.E5.BA.8F.E5.90.8D"><span class="tocnumber">3</span> <span class="toctext">程序名</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="cheese.html#.E8.BE.93.E5.85.A5.E6.A0.BC.E5.BC.8F"><span class="tocnumber">4</span> <span class="toctext">输入格式</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="cheese.html#.E8.BE.93.E5.87.BA.E6.A0.BC.E5.BC.8F"><span class="tocnumber">5</span> <span class="toctext">输出格式</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="cheese.html#.E6.A0.B7.E4.BE.8B.E8.BE.93.E5.85.A5.28file_cheese.in.29"><span class="tocnumber">6</span> <span class="toctext">样例输入(file cheese.in)</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="cheese.html#.E8.BE.93.E5.87.BA.E6.A0.BC.E5.BC.8F.28file_cheese.out.29"><span class="tocnumber">7</span> <span class="toctext">输出格式(file cheese.out)</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=1" title="编辑段落：原题">编辑</a>]</span> <span class="mw-headline" id=".E5.8E.9F.E9.A2.98"> 原题 </span></h2>
+<p>Problem 8: Cheese Towers [Tom Conerly, 2010]
+</p><p>Farmer John wants to save some blocks of his cows' delicious Wisconsin
+cheese varieties in his cellar for the coming winter. He has room
+for one tower of cheese in his cellar, and that tower's height can
+be at most T (1 &lt;= T &lt;= 1,000). The cows have provided him with a
+virtually unlimited number of blocks of each kind of N (1 &lt;= N &lt;=
+100) different types of cheese (conveniently numbered 1..N). He'd
+like to store (subject to the constraints of height) the most
+valuable set of blocks he possibly can. The cows will sell the rest
+to support the orphan calves association.
+</p><p>Each block of the i-th type of cheese has some value V_i (1 &lt;= V_i
+&lt;= 1,000,000) and some height H_i (5 &lt;= H_i &lt;= T), which is always
+a multiple of 5.
+</p><p>Cheese compresses. A block of cheese that has height greater than
+or equal to K (1 &lt;= K &lt;= T) is considered "large" and will crush
+any and all of the cheese blocks (even other large ones) located
+below it in the tower. A crushed block of cheese doesn't lose any
+value, but its height reduces to just 4/5 of its old height. Because
+the height of a block of cheese is always a multiple of 5, the
+height of a crushed block of cheese will always be an integer. A
+block of cheese is either crushed or not crushed; having multiple
+large blocks above it does not crush it more. Only tall blocks of
+cheese crush other blocks; aggregate height of a tower does not
+affect whether a block is crushed or not.
+</p><p>What is the total value of the best cheese tower FJ can construct?
+</p><p>Consider, for example, a cheese tower whose maximum height can be
+53 to be build from three types of cheese blocks. Large blocks are
+those that are greater than or equal to 25. Below is a chart of the
+values and heights of the various cheese blocks he stacks:
+</p>
+<pre>          Type    Value      Height
+            1      100         25
+            2       20          5
+            3       40         10
+</pre>
+<p>FJ constructs the following tower:
+</p>
+<pre>           Type Height Value
+     top -&gt; [1]   25    100
+            [2]    4     20   &lt;- crushed by [1] above
+            [3]    8     40   &lt;- crushed by [1] above
+            [3]    8     40   &lt;- crushed by [1] above
+  bottom -&gt; [3]    8     40   &lt;- crushed by [1] above
+</pre>
+<p>The topmost cheese block is so large that the blocks below it are
+crushed. The total height is:
+</p>
+<pre>      25 + 4 + 8 + 8 + 8 = 53
+</pre>
+<p>The total height does not exceed 53 and thus is 'legal'. The total
+value is:
+</p>
+<pre>      100 + 20 + 40 + 40 + 40 = 240.
+</pre>
+<p>This is the best tower for this particular set of cheese blocks.
+</p><p>PROBLEM NAME: cheese
+</p><p>INPUT FORMAT:
+</p>
+<ul><li> Line 1: Three space-separated integers: N, T, and K
+</li></ul>
+<ul><li> Lines 2..N+1: Line i+1 contains two space separated integers: V_i and H_i
+</li></ul>
+<p>SAMPLE INPUT (file cheese.in):
+</p>
+<pre>3 53 25
+100 25
+20 5
+40 10
+</pre>
+<p>OUTPUT FORMAT:
+</p><p>Line 1: The value of the best tower FJ can build
+</p><p>SAMPLE OUTPUT (file cheese.out):
+</p>
+<pre>240
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=2" title="编辑段落：翻译">编辑</a>]</span> <span class="mw-headline" id=".E7.BF.BB.E8.AF.91"> 翻译 </span></h2>
+<p>【还是希望大家多多纠正！ヽ(*´∀｀)ノ】
+</p><p>约翰想为了明年冬天而在地窖里保存一些不同种类的超级美味威斯康辛州牛奶酪。他的地窖里有专门给起司塔而留的空间，所以起司塔最高不能超过T(1 &lt;= T &lt;= 1,000)。他的牛可以提供给他N种牛奶酪(1 &lt;= N &lt;= 100)无限块。他想要尽可能在约束条件下保存价值高的牛奶酪
+</p><p>每一块第i种奶酪都有自己的价值V_i(1 &lt;= V_i &lt;= 1,000,000)和自己的高度H_i(5 &lt;= H_i &lt;= T)，并且高度总是5的倍数。
+</p><p>当然起司之间会互相挤压，如果一块起司有着大于等于K(1 &lt;= K &lt;= T)的高度的话，那我们就称之为大~起司，并且这一块起司会压榨任何塔中在它下面的起司。被压榨的起司并不会丧失它自己的价值，但是它的高度会降到原来高度的4/5。
+</p><p>因为每块起司的高度永远都是5的倍数，所以每个被压榨的起司的高度永远都会是整数。又因为每一块起司都只有2种状态：被挤压或者没有被挤压，所以如果有多块大~起司在上面的话，它是不会二次被挤压的。并且只有比这一块高的起司才能压这一块起司，并且塔高是不会影响里面的挤压情况的。
+</p><p>那么约翰最大能够建造价值为多少的起司塔呢？
+</p><p>让我们来举个栗子ヽ(´▽｀)/，这里有一个由三种起司构成的最大限制高度为53的起司塔。大~起司为那些高度大于等于25（K）的起司。
+</p><p><br />
+下面是这些牛奶酪的高度和价值
+</p>
+<pre>      种类    价值        高度
+        1      100         25
+        2       20          5
+        3       40         10
+</pre>
+<p>于是约翰建造了这样的一个塔：
+</p>
+<pre>           种类   高度  价值
+    顶部 -&gt; [1]   25    100
+            [2]    4     20   &lt;- 被上面的1压榨
+            [3]    8     40   &lt;- 被上面的1压榨
+            [3]    8     40   &lt;- 被上面的1压榨
+    底部 -&gt; [3]    8     40   &lt;- 被上面的1压榨
+</pre>
+<p>最顶端的起司是那么的大~以至于下面的都被压榨了
+</p><p>所以最高的高度是：
+</p><p>25 + 4 + 8 + 8 + 8 = 53
+</p><p>总的高度并没有超过53，因此它是合法的。
+</p><p>它的总价值是
+</p><p>100 + 20 + 40 + 40 + 40 = 240.
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=3" title="编辑段落：程序名">编辑</a>]</span> <span class="mw-headline" id=".E7.A8.8B.E5.BA.8F.E5.90.8D"> 程序名 </span></h2>
+<p>cheese
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=4" title="编辑段落：输入格式">编辑</a>]</span> <span class="mw-headline" id=".E8.BE.93.E5.85.A5.E6.A0.BC.E5.BC.8F"> 输入格式 </span></h2>
+<ul><li> 第一排：三个由空格隔开的整数：N、T、K。
+</li><li> 第二排到第N+1排：第i+1行有两个空格隔开的整数：V_i和H_i。
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=5" title="编辑段落：输出格式">编辑</a>]</span> <span class="mw-headline" id=".E8.BE.93.E5.87.BA.E6.A0.BC.E5.BC.8F"> 输出格式 </span></h2>
+<ul><li> 一排，输出约翰能建造的最大价值的起司塔
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=6" title="编辑段落：样例输入(file cheese.in)">编辑</a>]</span> <span class="mw-headline" id=".E6.A0.B7.E4.BE.8B.E8.BE.93.E5.85.A5.28file_cheese.in.29"> 样例输入(file cheese.in) </span></h2>
+<pre>3 53 25
+100 25
+20 5
+40 10
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit&amp;section=7" title="编辑段落：输出格式(file cheese.out)">编辑</a>]</span> <span class="mw-headline" id=".E8.BE.93.E5.87.BA.E6.A0.BC.E5.BC.8F.28file_cheese.out.29"> 输出格式(file cheese.out) </span></h2>
+<pre>240
+</pre>
+<!-- 
+NewPP limit report
+Preprocessor node count: 27/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3858-0!*!*!!zh-cn!*!* and timestamp 20131219164702 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;oldid=31754">http://www.nocow.cn/index.php?title=USACO/cheese&amp;oldid=31754</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="cheese.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/cheese&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fcheese" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/cheese" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/cheese" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/cheese&amp;oldid=31754" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过1,036次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Toncachen&amp;action=edit&amp;redlink=1" class="new" title="用户:Toncachen（尚未撰写）">Toncachen</a>于2012年10月11日 (星期四) 16:47做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Yjp_cpp" title="用户:Yjp cpp">Yjp cpp</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.079 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

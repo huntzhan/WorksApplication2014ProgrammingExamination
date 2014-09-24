@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/game1 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/game1", "wgTitle": "USACO/game1", "wgCurRevisionId": 30502, "wgArticleId": 431, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_game1 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/game1</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="game1.html#column-one">导航</a>, <a href="game1.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="game1.html#.E5.88.86.E6.9E.901"><span class="tocnumber">1</span> <span class="toctext">分析1</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="game1.html#.E5.88.86.E6.9E.902"><span class="tocnumber">2</span> <span class="toctext">分析2</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="game1.html#.E5.88.86.E6.9E.903"><span class="tocnumber">3</span> <span class="toctext">分析3</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="game1.html#.E5.88.86.E6.9E.904"><span class="tocnumber">4</span> <span class="toctext">分析4</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="game1.html#.E5.88.86.E6.9E.905"><span class="tocnumber">5</span> <span class="toctext">分析5</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="game1.html#.E5.88.86.E6.9E.906"><span class="tocnumber">6</span> <span class="toctext">分析6</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="game1.html#.E5.88.86.E6.9E.907"><span class="tocnumber">7</span> <span class="toctext">分析7</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="game1.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">8</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="game1.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">9</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=1" title="编辑段落：分析1">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.901">分析1</span></h2>
+<p>博弈问题，可以用动态规划解决
+</p><p>设sum[i][j]表示从i到j的所有数字和，dp[i][j]表示从i到j这部分的先取者能获得的最大数字和
+</p><p>dp[i][j]=sum[i][j]-min(dp[i][j-1],dp[i+1][j]);
+</p><p>以i~j的区域的长度作为阶段即可。
+</p><p>详细见C++代码(ybojan2)
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=2" title="编辑段落：分析2">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.902">分析2</span></h2>
+<p>博弈问题，可以使用动态规划求解。<br />
+状态定义：用F[i,j]表示第一个玩家先取时（貌似应该是某个玩家先取时能获得的最高分），在第i到第j的子序列中能拿到的最高分；用S[i][j]表示第i到第j的子序列中所有数字的和；用num[i]表示第1到第n的序列中第i个数。<br />
+</p><p>边界条件：F[i][i]=num[i]<br />
+</p><p>状态转移方程：<br />
+F[i][j]=max{num[i]+S[i+1][j]-F[i+1][j],num[j]+S[i][j-1]-F[i][j-1]}<br />
+</p><p>结果<br />
+p1=F[1][n];<br />
+p2=S[1][n]-F[1][n];<br />
+</p><p>解析：<br />
+num[i]+S[i+1][j]-F[i+1][j]表示的是，p1拿第i到第j最左边的数，然后轮到p2在第i+1到第j的序列中先取，会剩下S[i+1][j]-F[i+1][j]，这些归p1。
+</p><p>路人甲：话说num[i]+S[i+1][j]不就等于S[i][j]么，这跟分析1木有任何区别啊。。。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=3" title="编辑段落：分析3">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.903">分析3</span></h2>
+<p>令 
+</p>
+<pre>  F(start,stop) 表示当前游戏者面对编号从start到stop的数字时可以得到的最大收益
+  Sum(i,j)      表示编号i到j的数字和
+</pre>
+<p>可知 
+</p>
+<pre>   F(start,stop)=Max( Sum(start+1,stop)-F(start+1,stop)+num[start] ,Sum(start,stop-1)-F(start,stop-1)+num[stop] );
+</pre>
+<p>边界条件
+</p>
+<pre>   F(start,start)=num[start];
+</pre>
+<p>F(1,N) Sum(1,N)-F(1,N) 即为所求解
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=4" title="编辑段落：分析4">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.904">分析4</span></h2>
+<p>当你在i到j中取了i之后,那么你就只能在i + 1到j中作为后手取值,故你所能取得的值为i + 1到j的和减去作为先手所取得的最大值;
+</p><p>初始化
+</p>
+<pre> f[i][i] = sum[i][i] = a[i];
+</pre>
+<p>状态转移方程:
+</p>
+<pre> f[i][j] = max(a[i] + sum[i + 1][j] - f[i + 1][j], a[j] + sum[i][j - 1] - f[i][j - 1]);
+</pre>
+<p>f[i][j] 表示在从第i个数到第j个数里先手能取得的最大值;<br />
+a[i] 表示第i个数的值;<br />
+sum[i][j] 表示在从第i个数到第j个数的和;<br />
+--<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Nettle99" title="用户:Nettle99">Nettle99</a> 19:21 2009年2月1日 (CST)
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=5" title="编辑段落：分析5">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.905">分析5</span></h2>
+<p>完全是自己想出来的.没看题解、不知道是不是和前面其他人的一样..如有雷同、纯属巧合吧
+</p><p>首先我用的是DP.
+</p><p>用fast[i,s].v表示在[i,s]的区间里先手取数所能获得的最大值
+</p><p>而slow[i,s].v表示在[i,s]的区间里后手取数所能得到的最大值
+</p><p>用fast[i,s].m记录在[i,s]的区间里先手取数所取的那个数的下标
+</p><p>而slow[i,s].m记录在[i,s]的区间里后手取数所取的那个数的下标
+</p><p>于是有了下面的状态转移方程（有点小长）
+</p><p>if num[i]+slow[i+1,s].v&gt;num[s]+slow[i,s-1] then
+</p>
+<pre> begin
+   fast[i,s].m:=i;
+   fast[i,s].v:=num[i]+slow[i+s,s].v;  
+ end 
+</pre>
+<p>else
+</p>
+<pre> begin
+   fast[i,s].m:=s;
+   fast[i,s].v:=num[s]+slow[i,s-1].v;
+ end;
+</pre>
+<p>if fast[i,s].m=i then
+</p>
+<pre> slow[i,s].v:=fast[i+1,s].v
+</pre>
+<p>else
+</p>
+<pre> slow[i,s].v:=fast[i,s-1].v;
+</pre>
+<p>应该很易懂吧、实现后速度也很快.全部0.000秒AC
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=6" title="编辑段落：分析6">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.906">分析6</span></h2>
+<p>同样DP，d[i][j].c表示从i到j能取到的最大值，d[i][j].p、d[i][j].q表示从i到j用最优取法取数以后剩下数据的上下限<br />
+转移:<br />
+</p><p>c1 = d[i][i].c+d[ d[i+1][j].p ][ d[i+1][j].q ].c    从前面取，对手从i+1，j中取，取完剩下d[i+1][j].p到d[i+1][j].q<br />
+c2 = d[j][j].c+d[ d[i][j-1].p ][ d[i][j-1],q ].c    从后面取，对手从i，j-1中取，取完剩下d[i][j-1].p到d[i][j-1].q<br />
+if (c1&gt;c2){ d[i][j].c=c1; d[i][j].p = i+1; d[i][j].q = j;}<br />
+else      { d[i][j].c=c2, d[i][j].p = i; d[i][j].q = j-1;}<br />
+</p><p>初始化：<br />
+</p><p>d[i][i].c为初始数据的第i个数，d[i][i].p=d[i][i].q=0<br />
+d[0][0].c = 0<br />
+</p><p>输出结果d[1][N].c d[ d[1][N].p ][ d[1][N].q ]<br />
+</p>
+<hr />
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=7" title="编辑段落：分析7">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.907">分析7</span></h2>
+<p>我的方法:同样也是动态规划，但是转移方程不一样，可以省去计算序列和的total数组
+f[i][j]表示在序列i~j中，序列长度为偶数时取数的人所能得到的最大分数，也就是说当最初总序列长为偶数时，f表示的就是第一个玩家
+在i~j中所能获得的最高分，若最初总序列长为奇数时，f表示的就是第二个玩家在i~j中所能获得的最高分。则转移方程为
+if((j-i+1)%2)
+</p>
+<pre>   f[i][j] = min(f[i+1][j],f[i][j-1]);  //长度为奇数时，对方肯定要按照对手取分最少的方式取，以让自己拿高分 
+</pre>
+<p>else
+</p>
+<pre>   f[i][j] = max(f[i+1][j]+board[i], f[i][j-1]+[board[j]);  //长度为偶数时，偶数玩家按照自己拿最高分的方式取
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=8" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/game1/C++.html" title="Code:USACO/game1/C++">C++</a><br />
+<a href="../Code:USACO/game1/C.html" title="Code:USACO/game1/C">c</a><br />
+<a href="../Code:USACO/game1/Pascal.html" title="Code:USACO/game1/Pascal">pascal</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit&amp;section=9" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+<a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+<a rel="nofollow" class="external autonumber" href="http://www.cmykrgb123.com/wordpress/?p=126">[3]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 53/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:431-0!*!0!!zh-cn!*!* and timestamp 20131219164559 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;oldid=30502">http://www.nocow.cn/index.php?title=USACO/game1&amp;oldid=30502</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="game1.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/game1&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fgame1" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/game1" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/game1" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;oldid=30502" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过13,194次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Pswgoo&amp;action=edit&amp;redlink=1" class="new" title="用户:Pswgoo（尚未撰写）">Pswgoo</a>于2012年3月14日 (星期三) 09:40做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Hozi8273" title="用户:Hozi8273">Li Haoyu</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/114.222.224.109" title="特殊:用户贡献/114.222.224.109">114.222.224.109</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/123.138.79.4" title="特殊:用户贡献/123.138.79.4">123.138.79.4</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/114.119.4.6" title="特殊:用户贡献/114.119.4.6">114.119.4.6</a>和<a href="http://www.nocow.cn/index.php?title=USACO/game1&amp;action=credits" title="USACO/game1">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.157 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

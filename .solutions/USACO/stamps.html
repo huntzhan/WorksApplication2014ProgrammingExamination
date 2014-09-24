@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/stamps - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/stamps", "wgTitle": "USACO/stamps", "wgCurRevisionId": 31302, "wgArticleId": 383, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_stamps action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/stamps</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="stamps.html#column-one">导航</a>, <a href="stamps.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="stamps.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="stamps.html#.E4.B8.80.E4.B8.AA.E7.BB.8F.E8.BF.87.E6.9E.84.E6.80.9D.E7.9A.84.E4.BC.98.E5.8C.96"><span class="tocnumber">2</span> <span class="toctext">一个经过构思的优化</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="stamps.html#.E7.BB.99.E6.83.B3.E4.B8.8D.E5.87.BA.E6.9D.A5.E7.9A.84.E8.8F.9C.E9.B8.9F.EF.BC.9A.E4.B8.80.E4.B8.AA.E7.BB.8F.E5.85.B8.E3.80.81.E9.AB.98.E6.95.88.E7.9A.84.E4.BC.98.E5.8C.96.E6.80.9D.E8.B7.AF"><span class="tocnumber">3</span> <span class="toctext">给想不出来的菜鸟：一个经典、高效的优化思路</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="stamps.html#BFS"><span class="tocnumber">4</span> <span class="toctext">BFS</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="stamps.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">5</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="stamps.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">6</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p><b>目测较好的做法</b>
+</p>
+<hr />
+<p>（by volz.kz.g）
+</p><p>因为我们要找连续的一段数，
+我们用F[I]记录构造出I大小面额所需要的邮票数量
+因此可以从0开始，把0可以通过加一枚邮票扩展出来的全部扩展出来，然后去找1，把可以用1加一枚邮票扩展出来的面额找出来
+详见C++代码volz.kz.g版本
+</p>
+<hr />
+<p>官方题解(by Alex Schwendner)
+</p><p>一个简单的dp题目.我们开设数组minstamps.minstamps[i]表示凑成i分邮资所需要的最少邮票数.对于每一种邮票,我们试图在每一分我们已经贴出的邮资上再贴一张这种邮票.在我们找到贴出任何钱数所需要的最少邮票数,我们就寻找不能用所给的邮票数所能贴出的最少邮资.输出比它小1的数.
+</p><p>参考代码(见c部分)
+</p>
+<hr />
+<p>动态规划的题目，用F[i]表示得到i面值所需要的最少邮票个数，Value[j](j=1..Stamps)表示每个邮票的面值，可得以下转移方程：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">F<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>Min <span class="br0">&#40;</span> F<span class="br0">&#91;</span>i<span class="sy2">-</span>Value<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span> <span class="br0">&#41;</span> <span class="br0">&#40;</span>i<span class="sy2">-</span>Value<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">&gt;=</span><span class="nu0">0</span> j<span class="sy1">=</span><span class="nu0">1</span>..<span class="me1">Stamps</span><span class="br0">&#41;</span>
+初始状态：F<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>F<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span>INFINITE<span class="sy4">;</span></pre></div></div>
+<p>如果计算中间某个F[i]大于了最大可以使用的邮票数量，则退出循环，输出i-1即为解
+</p><p>小优化：
+初始化时先计算出最大面值的邮票，令其面值为MaxValue，然后在初始化F时可令：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">F<span class="br0">&#91;</span>k<span class="sy2">*</span>MaxValue<span class="br0">&#93;</span><span class="sy1">=</span>k<span class="sy4">;</span></pre></div></div>
+<p>这表示要得到k*MaxValue面值的邮票最少需要k张邮票，这是显然的。于是在计算时我们可以免去(1/MaxValue)*100%的运算量。
+P.S. 很悲剧地，如果用官方算法，并且使用pascal，会有一个超时5%的点 PS:Pascal可以过，只是比较险，2.7s c++就好了，1.2s
+所以pascal必须想着法子的优化
+</p>
+<hr />
+<p>这个只要再背包的时候注意放入物品的顺序重复时不重复计算如（1，3）和（3，1）都可以得到4.注意不重复
+所有数据都能在0.2s以下过掉。见代码1.
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=2" title="编辑段落：一个经过构思的优化">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E4.B8.AA.E7.BB.8F.E8.BF.87.E6.9E.84.E6.80.9D.E7.9A.84.E4.BC.98.E5.8C.96"> 一个经过构思的优化 </span></h2>
+<p>这个虽然是简单的DP题，只要是个优化都能过。但是经过考虑，本人认为排序后，能对 Test 11 这个点的效率进行很大的提升：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+  <span class="kw1">if</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span>&gt;a<span class="br0">&#91;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="kw1">then</span>
+    <span class="kw1">for</span> j<span class="sy0">:=</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw1">to</span> a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">*</span>k <span class="kw1">do</span> <span class="kw1">if</span> rec<span class="br0">&#91;</span>j<span class="br0">&#93;</span>&gt;rec<span class="br0">&#91;</span>j<span class="sy0">-</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> 
+      rec<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span>rec<span class="br0">&#91;</span>j<span class="sy0">-</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span>;</pre></div></div>
+<p>排序后，就可以把DP的递推这样写，在大多数情况下是可以的。
+</p><p>详见Pacal的“不错的优化”。
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=3" title="编辑段落：给想不出来的菜鸟：一个经典、高效的优化思路">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.99.E6.83.B3.E4.B8.8D.E5.87.BA.E6.9D.A5.E7.9A.84.E8.8F.9C.E9.B8.9F.EF.BC.9A.E4.B8.80.E4.B8.AA.E7.BB.8F.E5.85.B8.E3.80.81.E9.AB.98.E6.95.88.E7.9A.84.E4.BC.98.E5.8C.96.E6.80.9D.E8.B7.AF"> 给想不出来的菜鸟：一个经典、高效的优化思路 </span></h2>
+<p>这题看着是一个比较典型的完全背包，然后我想出了以下状态转移方程：
+</p>
+<pre>（用f[]记录该面额能否组成（布尔型数组）,num[]记录组成该面额最少需要的邮票数，value[]记录每张邮票的价值,j表示面额，i表示第几张邮票）
+f[j] = ( f[j-value[i]] ) or ( f[j] )  {num[j-value[i]]&lt;k}
+同时，如果f[j]=true 那么
+if num[j-value[i]]+1&lt;num[j] then num[j]=num[j-value[i]]+1
+初始化时f[0]=true;num[]全部初始化为maxint
+</pre>
+<p>老实说，这一种状态转移方程思想比较像<b>The Longest Prefix（Section 2.3，第一题）</b>。
+</p><p><b>还记得那题吗？想想看我们当时怎么优化的？如果前面连续有单个最长元素的长度的字符失配那就跳出、输出结果。这一题也是同理——只不过是失配了继续考虑下一样物品而已。</b>
+</p><p><b>只不过有一个严肃警告：</b>如果想这样做，你必须把邮票的面额从小到大排序！（这个不难理解吧）
+</p><p>而且，如果用这种办法实现得好的话，效率还是出奇的好的：你可以比标准答案跑得快一些（Pascal），只不过内存是压线、压RP过的（幸好解不超过5*10^6，再大一些就玩完了，还需要考虑内存的优化）
+</p>
+<pre>Executing...
+   Test 1: TEST OK [0.000 secs, 14924 KB]
+   Test 2: TEST OK [0.000 secs, 14924 KB]
+   Test 3: TEST OK [0.027 secs, 14924 KB]
+   Test 4: TEST OK [0.000 secs, 14924 KB]
+   Test 5: TEST OK [0.000 secs, 14924 KB]
+   Test 6: TEST OK [0.000 secs, 14924 KB]
+   Test 7: TEST OK [0.000 secs, 14924 KB]
+   Test 8: TEST OK [0.000 secs, 14924 KB]
+   Test 9: TEST OK [0.000 secs, 14924 KB]
+   <b>Test 10: TEST OK [0.054 secs, 14924 KB]</b>
+   <b>Test 11: TEST OK [0.783 secs, 14924 KB]</b>
+   <b>Test 12: TEST OK [0.054 secs, 14924 KB]</b>
+   Test 13: TEST OK [0.000 secs, 14924 KB]
+
+All tests OK.
+</pre>
+<p><br />
+实现方法：
+</p>
+<pre>如果f[j-value[i]]=false 
+{
+  计数器++
+  如果 计数器=value[i] {计数器清零、停止对i号邮票的判断}
+  继续内层循环
+}
+</pre>
+<p>代码参见Pascal，fcxxzux1
+</p><p>当然，内存还可以省下去，去掉布尔型数组，如果num[]中需要邮票为初始化的值（maxint）那就认为没有方案可以达到这个值——然后就转化为前面的那些方程了。（实测：内存瘦掉4MB，11号点时间再缩短0.1s左右）
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=4" title="编辑段落：BFS">编辑</a>]</span> <span class="mw-headline" id="BFS">BFS</span></h2>
+<p>这道题用BFS会很快 而且很容易实现  只是对于储存新拓展的节点时有点小要求  
+BFS拓展节点操作时只涉及到两层节点  所以在节点队列前头有很多已经完成拓展的节点
+那么在拓展新节点时可以把前面的节点覆盖掉  这样优化队列数组开100000肯定够   详见代码
+有人用BFS 最大一个点用不到1秒时间....
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=5" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/stamps/C++.html" title="Code:USACO/stamps/C++">C++</a><br />
+<a href="../Code:USACO/stamps/C.html" title="Code:USACO/stamps/C">c</a><br />
+<a href="../Code:USACO/stamps/Pascal.html" title="Code:USACO/stamps/Pascal">pascal</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit&amp;section=6" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 49/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:383-0!*!0!!zh-cn!*!* and timestamp 20131219164545 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;oldid=31302">http://www.nocow.cn/index.php?title=USACO/stamps&amp;oldid=31302</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="stamps.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="http://www.nocow.cn/index.php/%E8%AE%A8%E8%AE%BA:USACO/stamps" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fstamps" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/stamps" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/stamps" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;oldid=31302" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过13,213次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Ouyangyewei&amp;action=edit&amp;redlink=1" class="new" title="用户:Ouyangyewei（尚未撰写）">Ouyangyewei</a>于2012年8月24日 (星期五) 15:34做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Zux&amp;action=edit&amp;redlink=1" class="new" title="用户:Zux（尚未撰写）">Zux</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.190.202.66" title="特殊:用户贡献/60.190.202.66">60.190.202.66</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/113.25.42.116" title="特殊:用户贡献/113.25.42.116">113.25.42.116</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.77.114.11" title="特殊:用户贡献/218.77.114.11">218.77.114.11</a>和<a href="http://www.nocow.cn/index.php?title=USACO/stamps&amp;action=credits" title="USACO/stamps">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.175 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

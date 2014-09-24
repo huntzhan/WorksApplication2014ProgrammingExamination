@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Data Structures - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Data_Structures", "wgTitle": "USACO/Data Structures", "wgCurRevisionId": 32276, "wgArticleId": 3997, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for io
+ * CSS class: source-io, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.io.source-io .de1, .io.source-io .de2 {}
+.io.source-io  {font-family:monospace;}
+.io.source-io .imp {font-weight: bold; color: red;}
+.io.source-io li, .io.source-io .li1 {font-weight: normal; vertical-align:top;}
+.io.source-io .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.io.source-io .li2 {font-weight: bold; vertical-align:top;}
+.io.source-io .kw1 {color: #b1b100;}
+.io.source-io .kw2 {color: #000000; font-weight: bold;}
+.io.source-io .kw3 {color: #000066;}
+.io.source-io .co1 {color: #808080; font-style: italic;}
+.io.source-io .co2 {color: #808080; font-style: italic;}
+.io.source-io .coMULTI {color: #808080; font-style: italic;}
+.io.source-io .es0 {color: #000099; font-weight: bold;}
+.io.source-io .br0 {color: #66cc66;}
+.io.source-io .sy0 {color: #66cc66;}
+.io.source-io .st0 {color: #ff0000;}
+.io.source-io .nu0 {color: #cc66cc;}
+.io.source-io .me1 {color: #006600;}
+.io.source-io .me2 {color: #006600;}
+.io.source-io .ln-xtra, .io.source-io li.ln-xtra, .io.source-io div.ln-xtra {background-color: #ffc;}
+.io.source-io span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Data_Structures action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Data Structures</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Data_Structures.html#column-one">导航</a>, <a href="Data_Structures.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Data_Structures.html#.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"><span class="tocnumber">1</span> <span class="toctext">数据结构</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Data_Structures.html#.E9.A2.84.E5.A4.87.E7.9F.A5.E8.AF.86"><span class="tocnumber">1.1</span> <span class="toctext">预备知识</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Data_Structures.html#.E5.A6.82.E4.BD.95.E9.80.89.E6.8B.A9.E6.9C.80.E5.AE.8C.E7.BE.8E.E7.9A.84.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"><span class="tocnumber">1.2</span> <span class="toctext">如何选择最完美的数据结构</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="Data_Structures.html#.E5.8F.AF.E5.90.A6.E5.B7.A5.E4.BD.9C.EF.BC.9F"><span class="tocnumber">1.2.1</span> <span class="toctext">可否工作？</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="Data_Structures.html#.E5.8F.AF.E5.90.A6.E7.BC.96.E7.A0.81.EF.BC.9F"><span class="tocnumber">1.2.2</span> <span class="toctext">可否编码？</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="Data_Structures.html#.E6.8C.89.E6.97.B6.E5.AE.8C.E6.88.90.EF.BC.9F"><span class="tocnumber">1.2.3</span> <span class="toctext">按时完成？</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="Data_Structures.html#.E5.8F.AF.E5.90.A6.E8.B0.83.E8.AF.95.EF.BC.9F"><span class="tocnumber">1.2.4</span> <span class="toctext">可否调试？</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="Data_Structures.html#.E6.98.AF.E5.90.A6.E5.BF.AB.E9.80.9F.EF.BC.9F"><span class="tocnumber">1.2.5</span> <span class="toctext">是否快速？</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="Data_Structures.html#.E7.BB.93.E8.AE.BA"><span class="tocnumber">1.2.6</span> <span class="toctext">结论</span></a>
+<ul>
+<li class="toclevel-4 tocsection-10"><a href="Data_Structures.html#.E9.81.BF.E5.85.8D.E5.8A.A8.E6.80.81.E5.86.85.E5.AD.98"><span class="tocnumber">1.2.6.1</span> <span class="toctext">避免动态内存</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="Data_Structures.html#.E9.81.BF.E5.85.8D.E7.8C.8E.E5.A5.87.E6.83.B3.E6.B3.95"><span class="tocnumber">1.2.6.2</span> <span class="toctext">避免猎奇想法</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="Data_Structures.html#.E5.9F.BA.E6.9C.AC.E7.BB.93.E6.9E.84"><span class="tocnumber">1.3</span> <span class="toctext">基本结构</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="Data_Structures.html#.E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91"><span class="tocnumber">1.3.1</span> <span class="toctext">二叉查找树</span></a>
+<ul>
+<li class="toclevel-4 tocsection-14"><a href="Data_Structures.html#.E4.B8.BA.E4.BD.95.E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91.E5.8F.AF.E7.94.A8.EF.BC.9F"><span class="tocnumber">1.3.1.1</span> <span class="toctext">为何二叉查找树可用？</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="Data_Structures.html#.E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91.E7.9A.84.E5.BB.B6.E4.BC.B8.E7.BB.93.E6.9E.84"><span class="tocnumber">1.3.1.2</span> <span class="toctext">二叉查找树的延伸结构</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-16"><a href="Data_Structures.html#.E6.95.A3.E5.88.97.E8.A1.A8.EF.BC.88.E5.93.88.E5.B8.8C.E8.A1.A8.E3.80.81HASH.E8.A1.A8.EF.BC.89"><span class="tocnumber">1.3.2</span> <span class="toctext">散列表（哈希表、HASH表）</span></a>
+<ul>
+<li class="toclevel-4 tocsection-17"><a href="Data_Structures.html#.E4.B8.BA.E4.BD.95.E6.95.A3.E5.88.97.E8.A1.A8.E5.8F.AF.E7.94.A8.EF.BC.9F"><span class="tocnumber">1.3.2.1</span> <span class="toctext">为何散列表可用？</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="Data_Structures.html#.E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0"><span class="tocnumber">1.3.2.2</span> <span class="toctext">散列函数</span></a></li>
+<li class="toclevel-4 tocsection-19"><a href="Data_Structures.html#.E6.95.A3.E5.88.97.E5.8F.98.E9.87.8F"><span class="tocnumber">1.3.2.3</span> <span class="toctext">散列变量</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-20"><a href="Data_Structures.html#.E4.B8.80.E7.A7.8D.E7.89.B9.E6.AE.8A.E7.9A.84.E6.A0.91.E2.80.94.E2.80.94.E2.80.9CTrie.E2.80.9D"><span class="tocnumber">1.3.3</span> <span class="toctext">一种特殊的树——“Trie”</span></a>
+<ul>
+<li class="toclevel-4 tocsection-21"><a href="Data_Structures.html#Trie.E4.BC.98.E5.8C.96"><span class="tocnumber">1.3.3.1</span> <span class="toctext">Trie优化</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-22"><a href="Data_Structures.html#.E5.A0.86"><span class="tocnumber">1.3.4</span> <span class="toctext">堆</span></a>
+<ul>
+<li class="toclevel-4 tocsection-23"><a href="Data_Structures.html#.E5.A0.86.E7.9A.84.E8.A1.A8.E7.A4.BA.E6.B3.95"><span class="tocnumber">1.3.4.1</span> <span class="toctext">堆的表示法</span></a></li>
+<li class="toclevel-4 tocsection-24"><a href="Data_Structures.html#.E5.A0.86.E4.B8.AD.E7.BB.93.E7.82.B9.E7.9A.84.E6.8F.92.E5.85.A5.E5.92.8C.E7.A7.BB.E5.8A.A8.E6.93.8D.E4.BD.9C"><span class="tocnumber">1.3.4.2</span> <span class="toctext">堆中结点的插入和移动操作</span></a></li>
+<li class="toclevel-4 tocsection-25"><a href="Data_Structures.html#.E5.A6.82.E6.9E.9C.E6.88.91.E9.9C.80.E8.A6.81.E4.BF.AE.E6.94.B9.E4.B8.80.E4.B8.AA.E5.8F.98.E9.87.8F.E7.9A.84.E5.80.BC.E5.91.A2.EF.BC.9F"><span class="tocnumber">1.3.4.3</span> <span class="toctext">如果我需要修改一个变量的值呢？</span></a></li>
+<li class="toclevel-4 tocsection-26"><a href="Data_Structures.html#.E5.A0.86.E7.9A.84.E9.80.82.E7.94.A8.E8.8C.83.E5.9B.B4"><span class="tocnumber">1.3.4.4</span> <span class="toctext">堆的适用范围</span></a></li>
+<li class="toclevel-4 tocsection-27"><a href="Data_Structures.html#Heap_Variations"><span class="tocnumber">1.3.4.5</span> <span class="toctext">Heap Variations</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=1" title="编辑段落：数据结构">编辑</a>]</span> <span class="mw-headline" id=".E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"> 数据结构 </span></h1>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=2" title="编辑段落：预备知识">编辑</a>]</span> <span class="mw-headline" id=".E9.A2.84.E5.A4.87.E7.9F.A5.E8.AF.86"> 预备知识 </span></h2>
+<ul><li> 图论
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=3" title="编辑段落：如何选择最完美的数据结构">编辑</a>]</span> <span class="mw-headline" id=".E5.A6.82.E4.BD.95.E9.80.89.E6.8B.A9.E6.9C.80.E5.AE.8C.E7.BE.8E.E7.9A.84.E6.95.B0.E6.8D.AE.E7.BB.93.E6.9E.84"> 如何选择最完美的数据结构 </span></h2>
+<p>从一些数据结构中选择一个合适的数据结构来表示一个题目中的数据。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=4" title="编辑段落：可否工作？">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.AF.E5.90.A6.E5.B7.A5.E4.BD.9C.EF.BC.9F"> 可否工作？ </span></h3>
+<p>如果数据结构不能正常工作，这是完全没有用的。对于一个问题，什么样的算法决定什么样的数据结构，你要确保数据结构可以处理算法。否则，要么在数据结构中继续添加一些必要的数据，要么你需要找到另外的数据结构来构建这个算法。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=5" title="编辑段落：可否编码？">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.AF.E5.90.A6.E7.BC.96.E7.A0.81.EF.BC.9F"> 可否编码？ </span></h3>
+<p>如果您不知道或不记得如何编写一个给定的数据结构，选择其他的数据结构。确保你有一个清醒的认识，知道每一个操作对数据结构的影响。
+在此，另一个要考虑的是内存。这个数据结构能在适当大小的内存空间里运行吗？如果不能就简化它，或选择一个新的数据结构。否则，从一开始就注定了它不能正常工作。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=6" title="编辑段落：按时完成？">编辑</a>]</span> <span class="mw-headline" id=".E6.8C.89.E6.97.B6.E5.AE.8C.E6.88.90.EF.BC.9F"> 按时完成？ </span></h3>
+<p>由于比赛是限定时间的，5小时内解决3至5道题。如果你在第一题上为了数据结构就花了一个半小时，那么你基本上已经悲剧了。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=7" title="编辑段落：可否调试？">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.AF.E5.90.A6.E8.B0.83.E8.AF.95.EF.BC.9F"> 可否调试？ </span></h3>
+<p>在选择数据结构的时候很容易忘掉调试这部分。请记住一点，一个程序除非它能正常工作，否则它就是无用的。不要忘记，在整个比赛的时间中，调试占的比例是很大的，因此必须把调试时间考虑到写程序的时间中。
+一个数据结构是否容易调试取决于下面两个属性。
+</p>
+<ul><li><b>静态的数据结构更易于检查</b> 通常来说，规模更小、更紧凑的表达形式更容易检查。此外，静态分配的数组比链表甚至于动态数组更容易检查。
+</li><li><b>静态的数据结构更容易被显示</b> 对于更复杂的数据结构，最简单的检验方法是写一个小例子来输出数据。可惜，由于时间的限制，你可能想限制自己的文本输出。这意味着，像树和图的结构将难以检查。
+</li></ul>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=8" title="编辑段落：是否快速？">编辑</a>]</span> <span class="mw-headline" id=".E6.98.AF.E5.90.A6.E5.BF.AB.E9.80.9F.EF.BC.9F"> 是否快速？ </span></h3>
+<p>很奇怪，速度是在选择数据结构的时候是最后一个要考虑的。一个慢的程序很容易发现是什么导致了慢，但是一个快速的错的程序却不容易发现什么导致了错，除非运气很好。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=9" title="编辑段落：结论">编辑</a>]</span> <span class="mw-headline" id=".E7.BB.93.E8.AE.BA"> 结论 </span></h3>
+<p>总的说来，遵循KISS原则: “使其简单，傻瓜化。”(Keep It Simple, Stupid.) 有时候一定的复杂度是有必要的，但请确保它值得。请牢记：在开始的时候花时间去确保你选择了一个合适的数据结构，比之后不得不用另一个数据结构去替代它，要划算得多。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=10" title="编辑段落：避免动态内存">编辑</a>]</span> <span class="mw-headline" id=".E9.81.BF.E5.85.8D.E5.8A.A8.E6.80.81.E5.86.85.E5.AD.98"> 避免动态内存 </span></h4>
+<p>通常情况下，你应当避免使用动态内存，因为：
+<b>使用动态内存会很容易犯错误！！</b>
+重写已分配的内存，忘记释放内存，忘记分配内存，只是使用动态内存时引入的一点错误。此外，这些错误的出错代码很难告诉我们发生错误的位置，因为它可能发生在一个（可能更晚）内存操作时。
+<b>检查数据结构的含义太难了！！</b>
+集成开发环境不能很好地操作动态内存，尤其对于C语言更是一塌糊涂。
+尝试考虑使用并行数组来实现动态内存，比如使用链表时用另一个数组来存储next值序列。有时你可以动态分配这些，但是因为它只需要完成一次，所以用数组来实现插入或删除操作会比分配释放内存更简单。
+尽管如此，有时动态内存也是一种好的办法，特别是对于未知数据范围的大型数据结构。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=11" title="编辑段落：避免猎奇想法">编辑</a>]</span> <span class="mw-headline" id=".E9.81.BF.E5.85.8D.E7.8C.8E.E5.A5.87.E6.83.B3.E6.B3.95"> 避免猎奇想法 </span></h4>
+<p>不要掉进“猎奇”的陷阱。你可能刚发现了最有趣的结构，但是要记住：
+</p>
+<ul><li> 好点子，不工作，没有用。
+</li><li> 酷想法，编不出，也没用。
+</li></ul>
+<p>你的数据结构是有效的，比你如何改进你的数据结构更加重要。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=12" title="编辑段落：基本结构">编辑</a>]</span> <span class="mw-headline" id=".E5.9F.BA.E6.9C.AC.E7.BB.93.E6.9E.84"> 基本结构 </span></h2>
+<p>有五种基本数据结构：数组、链表、栈、队列和双向队列。你可能在之前已经见过这些东西；如果没有，可以问你老师。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=13" title="编辑段落：二叉查找树">编辑</a>]</span> <span class="mw-headline" id=".E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91"> 二叉查找树 </span></h3>
+<p>二叉查找树使您能够迅速搜索对象的集合（实型或整数）以确定给定的数值是否在集合中。
+基本上，二叉查找树是一个加权，有根的二叉规则树。这样的描述意味着树中的每个节点可能有一个'右‘子节点和一个`左'子节点（但双方或一方可能会丢失）。此外，每个节点都有与之相关联的对象，权值是对象在该节点的数值。
+二叉查找树有这样的属性：每个节点的左子树上的值小于该节点的值，每个节点的右子树的值大于或等于它。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Usaco2.2.gif" class="image" title="60px‎"><img alt="60px‎" src="http://www.nocow.cn/images/8/8e/Usaco2.2.gif" width="373" height="264" /></a>
+<br />
+每个节点通常由四个域构成，一个指针域指向左子节点，一个指针域指向右子节点，一个域存储权值，一个域存储对象。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=14" title="编辑段落：为何二叉查找树可用？">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.BA.E4.BD.95.E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91.E5.8F.AF.E7.94.A8.EF.BC.9F"> 为何二叉查找树可用？ </span></h4>
+<p>给出一个具有 N 个对象的集合，二叉查找树查找一个对象只需 <span class="texhtml" dir="ltr"><i>O</i>(lg<i>n</i>)</span> 的时间，如果它不是一棵效率较低的树（如，一棵所有节点都没有左节点的树完成查找需要 <span class="texhtml" dir="ltr"><i>O</i>(<i>n</i>)</span> 的时间）。此外，不同于存储在数组中，插入和删除对象也只需 <span class="texhtml" dir="ltr"><i>O</i>(lg<i>n</i>)</span> 的时间。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=15" title="编辑段落：二叉查找树的延伸结构">编辑</a>]</span> <span class="mw-headline" id=".E4.BA.8C.E5.8F.89.E6.9F.A5.E6.89.BE.E6.A0.91.E7.9A.84.E5.BB.B6.E4.BC.B8.E7.BB.93.E6.9E.84"> 二叉查找树的延伸结构 </span></h4>
+<p>有时在节点上加入一个指针域指向节点的父节点也是很有用的。
+这里有几种变化，以确保二叉查找树不会低效率：splay tree 、红黑树、Treap、B 树、AVL 树 。这些数据结构的实现有一定难度，而且随机构造的二叉查找树通常效率已经很高了，所以一般没必要实现这些算法了。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=16" title="编辑段落：散列表（哈希表、HASH表）">编辑</a>]</span> <span class="mw-headline" id=".E6.95.A3.E5.88.97.E8.A1.A8.EF.BC.88.E5.93.88.E5.B8.8C.E8.A1.A8.E3.80.81HASH.E8.A1.A8.EF.BC.89"> 散列表（哈希表、HASH表） </span></h3>
+<p>散列表通过一种可以快速查找的方式存储数据。假设有一个集合和一种数据结构，要求快速回答：“这个对象是否在数据结构中？”（如，这个单词是否在字典中？）散列表可以用少于二叉查找所用的时间完成这个功能。
+可以这样想：找到一个函数把集合的所有元素映射到一个整数从 1 到 x （x 大于集合里的元素个数）。定义一个从 1 到 x 的数组，把每个元素存储在元素经函数映射后的位置。之后确定一个元素是否在所给出的集合里，只要把它代入函数，看所映射的位置是否为空。如果不确信元素在上面，那么就去看一下是否和你存储的相一致。
+举个例子，假设函数定义3个字符的单词上，有 (首字母 + (中字母 * 3) + (尾字母 * 7)) mod 11 (定义 A=1, B=2, ... , Z=26)，单词有 'CAT' , 'CAR' , 和 'COB' 。以ASCII为标准，则 'CAT' 在函数上的映射是3，'CAR' 在函数上的映射是0，'COB' 在函数上的映射是7，故散列表如下：
+
+0: CAR
+1
+2
+3: CAT
+4
+5
+6
+7: COB
+8
+9
+10
+
+现在来看 'BAT' 在散列表中的情况，把 'BAT' 代入散列函数得到2，散列表在2的位置是空的，所以它不在集合里。另一方面，把 'ACT' 代入散列函数得到7，所以程序必须检验条目 'COB' 和 'ACT' 是否相同。
+考虑如下函数：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#define NHASH 8999           /* 保证它是素数 */</span>
+&#160;
+hashnum<span class="br0">&#40;</span>p<span class="br0">&#41;</span>
+<span class="kw4">char</span> <span class="sy0">*</span>p<span class="sy0">;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">int</span> sum <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span> <span class="sy0">;</span> <span class="sy0">*</span>p<span class="sy0">;</span> p<span class="sy0">++</span><span class="br0">&#41;</span>
+	sum <span class="sy0">=</span> <span class="br0">&#40;</span>sum <span class="sy0">&lt;&lt;</span> <span class="nu0">3</span><span class="br0">&#41;</span> <span class="sy0">+</span> <span class="sy0">*</span>p<span class="sy0">;</span>
+    <span class="kw1">return</span> sum <span class="sy0">%</span> NHASH<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>对每个输入，函数返回 0..NHASH-1 的某个数。它的输出是均匀随机的。这个简单的函数要求 NHASH 是素数。把上面的函数与下面的主程序合在一起：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include </span>
+&#160;
+main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    FILE <span class="sy0">*</span>in<span class="sy0">;</span>
+    <span class="kw4">char</span> line<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy0">,</span> <span class="sy0">*</span>p<span class="sy0">;</span> 
+    in <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;/usr/share/dict/words&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="kw3">fgets</span> <span class="br0">&#40;</span>line<span class="sy0">,</span> <span class="nu0">100</span><span class="sy0">,</span> in<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>p <span class="sy0">=</span> line<span class="sy0">;</span> <span class="sy0">*</span>p<span class="sy0">;</span> p<span class="sy0">++</span><span class="br0">&#41;</span>
+	    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">*</span>p <span class="sy0">==</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="sy0">*</span>p <span class="sy0">=</span> <span class="st0">'<span class="es5">\0</span>'</span><span class="sy0">;</span> <span class="kw2">break</span><span class="sy0">;</span> <span class="br0">&#125;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%6d&#160;%s<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> hashnum<span class="br0">&#40;</span>line<span class="br0">&#41;</span><span class="sy0">,</span> line<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw3">exit</span> <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>就会产生类似这样的英文单词表（当然这得在Linux下运行）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="io source-io"><pre class="de1">  <span class="nu0">4645</span> aback
+  <span class="nu0">4678</span> abaft
+  <span class="nu0">6495</span> abandon
+  <span class="nu0">2634</span> abandoned
+  <span class="nu0">4810</span> abandoning
+   <span class="nu0">142</span> abandonment
+  <span class="nu0">7080</span> abandons
+  <span class="nu0">4767</span> abase
+  <span class="nu0">2240</span> abased
+  <span class="nu0">7076</span> abasement
+  <span class="nu0">4026</span> abasements
+  <span class="nu0">2255</span> abases
+  <span class="nu0">4770</span> abash
+   <span class="nu0">222</span> abashed
+   <span class="nu0">237</span> abashes
+  <span class="nu0">2215</span> abashing
+   <span class="nu0">361</span> abasing
+  <span class="nu0">4775</span> abate
+  <span class="nu0">2304</span> abated
+  <span class="nu0">3848</span> abatement
+   ... ...</pre></div></div>
+<p>你可以看到函数产生的数字全部是均匀随机的，并且起码在这个例子中没有重复。
+当然，如果你有 NHASH+1 个单词，鸽笼定理证明了至少会有两个单词返回值相同，这就叫“冲突”。实际上，散列表使用链表技术解决了这种冲突，即相同值的单词列在同一区域。
+看看散列表究竟该怎么用吧。首先，建立散列表的链表结构，就像这样：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">struct</span> hash_f <span class="br0">&#123;</span>
+    <span class="kw4">struct</span> hash_f <span class="sy0">*</span>h_next<span class="sy0">;</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>h_string<span class="sy0">;</span>
+    <span class="kw4">int</span>   h_value<span class="sy0">;</span>   <span class="coMULTI">/* 一些和字符串相关的值*/</span>
+               <span class="coMULTI">/* 完全自由选择如何使用或它已经存在*/</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+<span class="kw4">struct</span> hash_f <span class="sy0">*</span>hashtable<span class="br0">&#91;</span>NHASH<span class="br0">&#93;</span><span class="sy0">;</span>      <span class="coMULTI">/* 每个链表的头指针 */</span>
+                        <span class="coMULTI">/* 全局变量自动置空 */</span></pre></div></div>
+<p>产生如此散列表，比如用两个元素为父亲：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="io source-io"><pre class="de1">       hashtable        <span class="sy0">*</span>hash_f           <span class="sy0">*</span>hash_f
+     +------------+
+   <span class="nu0">0</span> <span class="sy0">|</span>            <span class="sy0">|</span>  +-----------+    +-----------+
+     +------------+  <span class="sy0">|</span>          <span class="sy0">*|</span>-+  <span class="sy0">|</span>          <span class="nu0">0</span><span class="sy0">|</span> 
+   <span class="nu0">1</span> <span class="sy0">|</span>            <span class="sy0">|</span>  +-----------+ <span class="sy0">|</span>  +-----------+
+     +------------+  <span class="sy0">|</span> 'string1' <span class="sy0">|</span> <span class="sy0">|</span>  <span class="sy0">|</span> 'abc def' <span class="sy0">|</span>
+   <span class="nu0">2</span> <span class="sy0">|</span>          <span class="sy0">*</span> <span class="sy0">|</span>-<span class="sy0">&gt;</span>+-----------+ +-<span class="sy0">&gt;</span>+-----------+
+     +------------+  <span class="sy0">|</span> val=<span class="nu0">1234</span>  <span class="sy0">|</span>    <span class="sy0">|</span> val=<span class="nu0">43225</span> <span class="sy0">|</span>
+   <span class="nu0">3</span> <span class="sy0">|</span>            <span class="sy0">|</span>  +-----------+    +-----------+
+     +------------+ 
+	...
+<span class="nu0">8998</span> <span class="sy0">|</span>            <span class="sy0">|</span>
+     +------------+</pre></div></div>
+<p>下面是插入操作：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">struct</span> hash_f <span class="sy0">*</span>
+hashinsert<span class="br0">&#40;</span>p<span class="sy0">,</span> val<span class="br0">&#41;</span> 
+<span class="kw4">char</span> <span class="sy0">*</span>p<span class="sy0">;</span>
+<span class="kw4">int</span> val<span class="sy0">;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> n <span class="sy0">=</span> hashnum<span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span>				<span class="coMULTI">/* 表的位置 */</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>h <span class="sy0">=</span> <span class="kw3">malloc</span><span class="br0">&#40;</span> <span class="kw4">sizeof</span> <span class="br0">&#40;</span><span class="kw4">struct</span> hash_f<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span> <span class="coMULTI">/* 新建散列元素 */</span>
+&#160;
+<span class="coMULTI">/* 链接到表头： */</span>
+    h<span class="sy0">-&gt;</span>h_next <span class="sy0">=</span> hashtable<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy0">;</span>
+    hashtable<span class="br0">&#91;</span>n<span class="br0">&#93;</span> <span class="sy0">=</span> h<span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/* 可选值： */</span>
+    h<span class="sy0">-&gt;</span>h_val <span class="sy0">=</span> val<span class="sy0">;</span>
+&#160;
+<span class="coMULTI">/* 然后在链中找到适合元素放置的地方: */</span>
+    h<span class="sy0">-&gt;</span>h_string <span class="sy0">=</span> <span class="kw3">malloc</span><span class="br0">&#40;</span> <span class="kw3">strlen</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span> <span class="sy0">+</span> <span class="nu0">1</span> <span class="br0">&#41;</span><span class="sy0">;</span>  
+    <span class="kw3">strcpy</span> <span class="br0">&#40;</span>h<span class="sy0">-&gt;</span>h_string<span class="sy0">,</span> p<span class="br0">&#41;</span><span class="sy0">;</span>		     
+&#160;
+    <span class="kw1">return</span> h<span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>下面是查找操作（若找到则返回其指针）：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">struct</span> hash_f <span class="sy0">*</span>
+hashlookup<span class="br0">&#40;</span>p<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw4">struct</span> hash_f <span class="sy0">*</span>h<span class="sy0">;</span>
+&#160;
+    <span class="kw4">int</span> n <span class="sy0">=</span> hashnum<span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">;</span>				<span class="coMULTI">/* 初始位置 */</span>
+&#160;
+    <span class="kw1">for</span> <span class="br0">&#40;</span>h <span class="sy0">=</span> hashtable<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy0">;</span> h<span class="sy0">;</span> h<span class="sy0">=</span>h<span class="sy0">-&gt;</span>h_next<span class="br0">&#41;</span>	<span class="coMULTI">/* 遍历链表 */</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy0">==</span> <span class="kw3">strcmp</span> <span class="br0">&#40;</span>p<span class="sy0">,</span> h<span class="sy0">-&gt;</span>h_string<span class="br0">&#41;</span><span class="br0">&#41;</span>	<span class="coMULTI">/* 匹配？完成！ */</span>
+	    <span class="kw1">return</span> h<span class="sy0">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>					<span class="coMULTI">/* 未找到 */</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>现在你可以快速地插入和查找了，平均需要(链表大小/2)次字符串比较。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=17" title="编辑段落：为何散列表可用？">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.BA.E4.BD.95.E6.95.A3.E5.88.97.E8.A1.A8.E5.8F.AF.E7.94.A8.EF.BC.9F"> 为何散列表可用？ </span></h4>
+<p>散列表只占用一点点内存，而程序查找元素几乎只要常数时间。通常程序要评估函数的价值，并且可能需要在表中比较一次或若干次【这句话翻得不好】。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=18" title="编辑段落：散列函数">编辑</a>]</span> <span class="mw-headline" id=".E6.95.A3.E5.88.97.E5.87.BD.E6.95.B0"> 散列函数 </span></h4>
+<p>经常忘记的是，更精确点说，避免冲突的方法是找一个好的散列函数。举个例子，以单词前三个字母作为散列值显然很悲催。在此散列函数下，前缀 "CON" 会产生一个巨大的序列。你选择的函数要尽可能使不同的元素分配到不同的位置:
+</p>
+<ul><li> 把巨大值用表的大小求模（选一个素数会干得特别好）。
+</li><li> 素数是你的朋友。用它们相乘。
+</li><li> 试着用小的 changes 映射到完全不同的地方。
+</li><li> 不要想用两个小 changes 就能撤销映射到表外的函数（如一个变换）。
+</li><li> 有一个研究的全域，要求创造一个“完美散列函数”以至于没有冲突，但是，完全产生均匀随机显然是要大量工作的；希望以后会有吧，起码现在木有啊。
+</li></ul>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=19" title="编辑段落：散列变量">编辑</a>]</span> <span class="mw-headline" id=".E6.95.A3.E5.88.97.E5.8F.98.E9.87.8F"> 散列变量 </span></h4>
+<p>只用数值处理信息经常十分有用。比如当在一个大集合中搜寻一个小子集，用散列表处理已访问域，你可能想把它的搜索的价值定位在哈希表中.
+甚至一个小散列表通过彻底减少搜寻空间都能改进运行时间。比如用首字母标识字典，你只需要找首字母就可以了。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=20" title="编辑段落：一种特殊的树——“Trie”">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E7.A7.8D.E7.89.B9.E6.AE.8A.E7.9A.84.E6.A0.91.E2.80.94.E2.80.94.E2.80.9CTrie.E2.80.9D"> 一种特殊的树——“Trie” </span></h3>
+<p>这一节的图示：<img src="http://ace.delos.com/usaco/TEXT/ds1.gif" alt="ds1.gif" />
+</p><p><br />
+</p><p><br />
+简单来说，Trie就是指有根树。它有不受限制的出度(即一个节点可能有任意多个子节点). 一个节点的子节点存储在一个链表之中, 所以一个节点有两个指针, 下一个兄弟和第一个子节点（这样实际上就把一个普通的树转化为了一棵普通的二叉树）.
+Tries存储一个序列集合. 每条从根节点指向叶子节点的路径都对应集合中的一个元素. 比如, 对于图中的trie, 指定了的集合是"CAR", "CAT", 和 "COB"假定没有其它节点存在.要测定一个序列是否在集合之中, 可以从根开始, 在它的子节点中寻找序列的起始元素. 如果没有匹配的, 这个序列就不在集合中. 否则, 再在这个节点的子节点中寻找后面的元素, 以此类推.
+trie有几个不错的特点。如果一个字符串在列表中，检索的时间复杂度将不超过字符串的长度乘以一个节点的的最大子节点数。此外，比起其他的来说，这个数据结构往往可以使用较少的内存，因为前缀只出现一次（在我们的例子中，虽然'CAR'和'CAT'同时存在，但是只有一个'CA'的节点出现）。在一般情况下，对于已知前缀，查找字符序列（语句，多位数的号码，等等）的问题，trie是很好用的。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=21" title="编辑段落：Trie优化">编辑</a>]</span> <span class="mw-headline" id="Trie.E4.BC.98.E5.8C.96"> Trie优化 </span></h4>
+<p>一些常见的轻微改动有：
+</p><p>对于节点增加标记信息。如果列表里可能包含一个是其他单词前缀的词，你必须添加一个标志在每个节点上说'一个字到此为止'。如上例中，如果'CA'也作为单词出现在你的列表中，它会被标记。
+在链表中保持子节点有序。这增加了时间来建立树，但减少了查询时间。
+建立字符串节点；如果你有很多单词前缀一致但后缀独立，有时为其建立“特殊节点”更好。例如，存储“CARTING”，“COBBLER”，“CATCHING”这三个词，用“RTING”、“BBLER”、“TCHING”这三个节点显然可以节约内存。注意这同时增加了复杂性。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=22" title="编辑段落：堆">编辑</a>]</span> <span class="mw-headline" id=".E5.A0.86"> 堆 </span></h3>
+<p>堆（有时称为优先级队列）是一个完全二叉树，每个节点的值小于其两个孩子的值: 
+{{./pasted_image002.png}}
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=23" title="编辑段落：堆的表示法">编辑</a>]</span> <span class="mw-headline" id=".E5.A0.86.E7.9A.84.E8.A1.A8.E7.A4.BA.E6.B3.95"> 堆的表示法 </span></h4>
+<p>如果树(tree) 是一层一层地从左到右地填入的（也就是说除了树最底层以外其他层都是完整的，最底层的元素是按从左到右填入的），那么这个堆（heap）能存储为一个数组，这个数组中元素的排列顺序是从根到底层，每层从左到右。
+这个例子中的堆可以表示为
+</p><p><i>3 5 9 6 12 13 10 8 11</i>
+</p><p>在这个表示方法中，位于x的节点（node）的子节点（children）位于2x和2x＋1 ，(假设变址为1)，x的父节点（parent）是向下取整（truncate）x/2
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=24" title="编辑段落：堆中结点的插入和移动操作">编辑</a>]</span> <span class="mw-headline" id=".E5.A0.86.E4.B8.AD.E7.BB.93.E7.82.B9.E7.9A.84.E6.8F.92.E5.85.A5.E5.92.8C.E7.A7.BB.E5.8A.A8.E6.93.8D.E4.BD.9C"> 堆中结点的插入和移动操作 </span></h4>
+<p>将结点置于数组末端，接着交换结点与父节点的位置，直到找到一个合适的父节点。例如，插入数字4的过程中，堆数组（小根堆）变化如下: 
+</p><p>
+</p>
+<pre>3  5  9  6 12 13 10  8 11  4
+3  5  9  6  4 13 10  8 11 12
+3  4  9  6  5 13 10  8 11 12
+</pre>
+<p>
+</p><p>删除一个结点相对来说也很简单。用数列末尾的结点取代要删除的，再进行调整：当结点的孩子比它小时，与较小的孩子交换。例如，删除数字3的过程： 
+</p><p>
+</p>
+<pre>11  5  9  6 12 13 10  8
+5  11  9  6 12 13 10  8
+5   6  9 11 12 13 10  8
+5   6  9  8 12 13 10 11
+</pre>
+<p>
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=25" title="编辑段落：如果我需要修改一个变量的值呢？">编辑</a>]</span> <span class="mw-headline" id=".E5.A6.82.E6.9E.9C.E6.88.91.E9.9C.80.E8.A6.81.E4.BF.AE.E6.94.B9.E4.B8.80.E4.B8.AA.E5.8F.98.E9.87.8F.E7.9A.84.E5.80.BC.E5.91.A2.EF.BC.9F"> 如果我需要修改一个变量的值呢？ </span></h4>
+<p>要把一个变量加大，则改变它的值，然后如果需要的话不断和它的父变量交换位置。T
+要把一个变量的值减小，则改变它的值，然后如果需要的话和它的子变量中较小的交换位置。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=26" title="编辑段落：堆的适用范围">编辑</a>]</span> <span class="mw-headline" id=".E5.A0.86.E7.9A.84.E9.80.82.E7.94.A8.E8.8C.83.E5.9B.B4"> 堆的适用范围 </span></h4>
+<p>对于动态的一组数询问最小值时，用堆处理十分便利。它结构紧凑，便于调整。Dijkstra算法的堆优化就是一个很好的例子。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit&amp;section=27" title="编辑段落：Heap Variations">编辑</a>]</span> <span class="mw-headline" id="Heap_Variations"> Heap Variations </span></h4>
+<p>In this representation, just the weight was kept. Usually you want more data than that, so you can either keep that data and move it (if it's small) or keep pointers to the data.
+Since when you want to fiddle with values, the first thing you have to do is find the location of the value you wish to alter, it's often helpful to keep that data around. (e.g., node x is represented in location 16 of the heap).
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 199/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3997-0!1!*!!zh-cn!2!* and timestamp 20131219164519 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;oldid=32276">http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;oldid=32276</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Data_Structures.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Data_Structures&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FData+Structures" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Data_Structures" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Data_Structures" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;oldid=32276" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过8,904次。</li>
+		<li id="credits">本页面由<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Bsmsnd&amp;action=edit&amp;redlink=1" class="new" title="用户:Bsmsnd（尚未撰写）">陈东</a>于2013年2月18日 (星期一) 01:57做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Cotton" title="用户:Cotton">Cotton</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/111.161.14.169" title="特殊:用户贡献/111.161.14.169">111.161.14.169</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.209.24.231" title="特殊:用户贡献/222.209.24.231">222.209.24.231</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/58.216.238.234" title="特殊:用户贡献/58.216.238.234">58.216.238.234</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Data_Structures&amp;action=credits" title="Translate:USACO/Data Structures">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.522 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

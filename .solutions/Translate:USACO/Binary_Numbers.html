@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Binary Numbers - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Binary_Numbers", "wgTitle": "USACO/Binary Numbers", "wgCurRevisionId": 33723, "wgArticleId": 4008, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Binary_Numbers action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Binary Numbers</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Binary_Numbers.html#column-one">导航</a>, <a href="Binary_Numbers.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=edit&amp;section=1" title="编辑段落：二进制算法">编辑</a>]</span> <span class="mw-headline" id=".E4.BA.8C.E8.BF.9B.E5.88.B6.E7.AE.97.E6.B3.95"> 二进制算法 </span></h2>
+<p>---二进制数转换(基础)---
+</p><p>电脑以1和0为基础操作的，这些被称为'二进制位'(bit)。 1字节（Byte）内含有8位，例如：00110101。一个整型数据（int）在我的计算机上是4个字节，32位：10011010 11010101 10100010 10101011。其他数据类型的字节大小可能不同。
+</p><p>如你所见，32个1和0记录下来或阅读起来有点麻烦。 因此，按照惯例人们把数字分成几组，每组3或4位：
+</p>
+<pre>  1001.1010.1101.0101.1010.0010.1010.1011
+  10.011.010.110.101.011.010.001.010.101.011 &lt; - (注意，从右往左开始计数3)
+</pre>
+<p>这些分组，映射到数字，要么每4位表示一个16进制数（这里指个位数)或每3位表示一个8进制数。 很明显，需要一些新的十六进制数字（十进制的数字只有0 .. 9，我们还需要6个数字）。现在，字母'A'..'F'被用来表示这些新的数字：10 .. 15。 下面的这一张表，显而易见地表现了它们的转化方式：
+</p>
+<pre>   替换：十六进制：
+  000 - &gt; 0  100 - &gt; 4  0000 - &gt; 0  0100 - &gt; 4  1000 - &gt; 8  1100 - &gt; C
+  001 - &gt; 1  101 - &gt; 5  0001 - &gt; 1  0101 - &gt; 5  1001 - &gt; 9  1101 - &gt; D
+  010 - &gt; 2  110 - &gt; 6  0010 - &gt; 2  0110 - &gt; 6  1010 - &gt; A  1110 - &gt; E
+  011 - &gt; 3  111 - &gt; 7  0011 - &gt; 3  0111 - &gt; 7  1011 - &gt; B  1111 - &gt; F
+</pre>
+<p>所以现在我们很快地用C语言或其他语言表示以上陈述那些十六进制和八进制整数：
+</p><p>	 1001.1010.1101.0101.1010.0010.1010.1011
+</p>
+<pre>    - &gt;  9     A    D    5    A    2    A    B- &gt; 0x9AD5A2AB
+</pre>
+<p>				 （0x为在十六进制数前面的标志）
+</p><p>	 10.011.010.110.101.011.010.001.010.101.011 
+</p>
+<pre>         2 3 2 6 5 3 2 1 2 5 3 - &gt; 023265321253
+</pre>
+<p>				 （这是前一个数字'0'）
+八进制的优点是可以比较容易、快速地写下来，但十六进制字节的更容易分离（这是因为数字是成对的）。
+</p><p><br />
+---位运算(进阶)---
+</p><p>有时为了效率将数字储存为位数字，而不是存储为整型。 比如在数组中记录选择（每个元素只可以是一个'是'或'不'的状态），用数组对选项进行标记（相同的状态，即'真'，每个位是'是'就是'假'），或者记录一些小的连续整数（例如对位元素0 .. 3）。 当然，有时问题其实包含'位串'。
+</p><p>在C/C++和其语言中，如果你知道它的八进制或十六进制表示形式，指定一个二进制数是很容易的：
+	i= 0x9AD5A2AB;或	i= 023265321253;
+更常见的是我们会用一个整数的权来记录状态。 比如下面这个例子：
+</p><p>	i= 0x10000 + 0x100;
+直到同一位上都是1之前它都是符合要求的：
+	i= 0x100 + 0x100;
+在这种情况下会发生进位，然后就得到了 0x200 而不是我们所希望得到的 0x100。（在此接着前辈的工作翻译下去，修改了前面一些翻译的和原文对比不准确的地方）而C/C++等语言中的'|'，即“按位或”操作，却能达到我们所希望的要求。“按位或”操作的规则如下：
+</p><p>	 0 | 0 - &gt; 0
+</p>
+<pre>        0 | 1 - &gt; 1
+        1 | 0 - &gt; 1
+        1 | 1 - &gt; 1
+</pre>
+<p>在C语言里'|'的操作称为'按位或'，以免与它的表兄'||'，即所谓的'逻辑或'或'or',混淆。 '||'运算符会计算其左侧的数，如果假（在C语言中为0），再判断其右侧的数。 如果任意一个不为零，那么'||'的结果为真（为1）。
+这是将'|'和'+'操作区分开来的最终规则。有时候这样的操作符运算以如下真值表的形式给出：
+</p>
+<pre>         | | 0  1
+       ---+------
+        0 | 0  1
+        1 | 1  1
+</pre>
+<p><br />
+显而易见，'按位或'的操作方式可以用来设置记录状态的整数。当任何一方或双方都是'1'时，输出结果为'1'。
+</p><p>最简单的查询方法是'逻辑与'（也称为'andif'）算子，记为'&amp;'。真值表如下：
+</p>
+<pre>          &amp; | 0 1
+        ---+------
+         0 | 0 0
+         1 | 0 1
+</pre>
+<p>只有当输入的两个值均为'1'时，输出值才为'1'。 因此，如果你想知道一个整数的0x100位是否为'1'，语句很简单：
+</p><p>	if (a &amp; 0x100) { printf("yes, 0x100 is on\n"); }
+</p><p>C/C++以及其他语言还包含其他的操作符，比如“异或”，用'^'表示，真值表如下：
+</p>
+<pre>          ^ | 0 1
+        ---+------
+         0 | 0 1
+         1 | 1 0
+</pre>
+<p>“异或”有时表示成'xor'，为了打字时比较轻松。 当且仅当输入的两个值之一是'1'时，输出结果才为1。这个操作符能够很方便的来控制“开关”，即将数字的某一位由'1'变成'0'，或反之亦然。 例如以下这句代码：
+</p><p>	 a = a ^ 0x100;   /* same as a ^= 0x100; */
+</p><p>在0x100位处将从0 - &gt; 1或从1 - &gt; 0，根据其当前的值。
+</p><p>将某个数置零等同于两个基本操作符的运算（译者按：事实上下面是在讲异或的置零功能，即一个数和它本身进行异或操作得到结果是0，例如xor ax,ax是将ax寄存器置零）。 我们新介绍一个一元运算符，它将一个数的每一位翻转，以创造一个数的“按位补”或者简称“补码”。这个运算符称为“按位取反”或者简称为“取反”，记为波浪符'~'。 下面是一个简单的例子：
+</p><p>	char a, b;	/* eight bits, not 32 */
+</p>
+<pre>       a = 0x4A;	/* 0100.1010 */
+       b = ~a;		/* flip every bit: 1011.0101 */
+       printf("b is 0x%X\n", b);
+</pre>
+<p>最终得出了这样的结果：
+</p><p>	 b == 0xB5
+</p><p>所以，如果一个数我们只有一位是1（例如，0x100），那么~0x100将所有其他的'0'位置'1'而将该位置'0'，得到：0xFFFFFEFF（注意'E'处于右起第三位，和原数的'1'位相同）。
+</p><p>以下两个操作符将一个数完全置零：
+</p><p>	a = a &amp; (~0x100);	/* swtch off the 0x100 bit */
+</p>
+<pre>       /* same as a &amp;= ~0x100;
+</pre>
+<p>因为取反后，原本所有为'0'的都变成了'1'，而所有为'1'的都变成了'0'，所以每一位都保证有0的存在再进行按位与操作后，所有的位数都变成了'0'。
+</p><p>总结
+</p><p>总之，这些操作符能够设置，清除，转换和查找整数中的任意一位二进制位：
+</p>
+<pre>        a |= 0x20;		/* turn on bit 0x20 */
+       a &amp;= ~0x20;		/* turn off bit 0x20 */
+       a ^= 0x20;		/* toggle bit 0x20 */
+       if (a &amp; 0x20) {
+                               /* then the 0x20 bit is on */
+       }
+</pre>
+<p>（鉴于本人水平有限，如果有译得不准确的地方，欢迎大牛们予以斧正！）
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 2/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:4008-0!*!*!*!*!*!* and timestamp 20131219164352 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;oldid=33723">http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;oldid=33723</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Binary_Numbers.html">翻译</a></li>
+				<li id="ca-talk"><a href="http://www.nocow.cn/index.php/Translate_Talk:USACO/Binary_Numbers" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FBinary+Numbers" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Binary_Numbers" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Binary_Numbers" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;oldid=33723" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过8,936次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年10月31日 (星期四) 00:19做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Silveryelf&amp;action=edit&amp;redlink=1" class="new" title="用户:Silveryelf（尚未撰写）">SilVeRyElF</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.184.119.134" title="特殊:用户贡献/119.184.119.134">119.184.119.134</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.214.176.40" title="特殊:用户贡献/221.214.176.40">221.214.176.40</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.87.221.47" title="特殊:用户贡献/218.87.221.47">218.87.221.47</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Binary_Numbers&amp;action=credits" title="Translate:USACO/Binary Numbers">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.105 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

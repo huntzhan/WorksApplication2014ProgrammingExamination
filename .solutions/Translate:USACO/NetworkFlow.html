@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/NetworkFlow - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/NetworkFlow", "wgTitle": "USACO/NetworkFlow", "wgCurRevisionId": 33432, "wgArticleId": 2695, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_NetworkFlow action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/NetworkFlow</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="NetworkFlow.html#column-one">导航</a>, <a href="NetworkFlow.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p align="center"> <strong>Network Flow </strong> </p>
+<p align="center"><strong>网络流</strong></p>
+<p align="center"><strong> 译 By Thunder  </strong></p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="NetworkFlow.html#.E9.97.AE.E9.A2.98.E9.A2.84.E5.A4.87"><span class="tocnumber">1</span> <span class="toctext">问题预备</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="NetworkFlow.html#.E9.97.AE.E9.A2.98"><span class="tocnumber">2</span> <span class="toctext">问题</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="NetworkFlow.html#.E7.AE.97.E6.B3.95"><span class="tocnumber">2.1</span> <span class="toctext">算法</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="NetworkFlow.html#.E5.AE.9E.E4.BE.8B"><span class="tocnumber">2.2</span> <span class="toctext">实例</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="NetworkFlow.html#.E6.89.A9.E5.B1.95"><span class="tocnumber">2.3</span> <span class="toctext">扩展</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="NetworkFlow.html#.E5.8F.AF.E9.80.89.E9.97.AE.E9.A2.98"><span class="tocnumber">3</span> <span class="toctext">可选问题</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="NetworkFlow.html#.E6.9C.80.E5.A4.A7.E5.8C.B9.E9.85.8D"><span class="tocnumber">3.1</span> <span class="toctext">最大匹配</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="NetworkFlow.html#.E6.9C.80.E5.B0.8F.E5.89.B2"><span class="tocnumber">3.2</span> <span class="toctext">最小割</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="NetworkFlow.html#.E4.BE.8B.E9.A2.98"><span class="tocnumber">3.3</span> <span class="toctext">例题</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="NetworkFlow.html#.E7.97.85.E6.AF.92.E6.B5.81"><span class="tocnumber">3.3.1</span> <span class="toctext">病毒流</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="NetworkFlow.html#.E4.BC.90.E6.9C.A8.E5.B7.A5.E4.BA.BA.E7.9A.84.E8.AE.A1.E5.88.92"><span class="tocnumber">3.3.2</span> <span class="toctext">伐木工人的计划</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="NetworkFlow.html#.E7.89.9B.E7.9A.84.E7.94.B5.E8.AF.9D.E8.81.94.E7.B3.BB.EF.BC.88USACO_.E9.94.A6.E6.A0.87.E8.B5.9B_1996.EF.BC.89"><span class="tocnumber">3.3.3</span> <span class="toctext">牛的电话联系（USACO 锦标赛 1996）</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="NetworkFlow.html#.E7.A7.91.E5.AD.A6.E5.B1.95.E8.A7.88.E5.AE.A1.E5.AE.9A"><span class="tocnumber">3.3.4</span> <span class="toctext">科学展览审定</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="NetworkFlow.html#.E7.9F.B3.E6.B2.B9.E7.AE.A1.E9.81.93.E8.AE.BE.E8.AE.A1"><span class="tocnumber">3.3.5</span> <span class="toctext">石油管道设计</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=1" title="编辑段落：问题预备">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E9.A2.84.E5.A4.87">问题预备</span></h2>
+<p><b>最短路</b>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=2" title="编辑段落：问题">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98"> 问题 </span></h2>
+<p>给出一个有向连通带权图，包含源点和汇点。
+</p><p>每一条弧的权表示那条弧的容量。一个图的流通过分配整数量给每条边来达到
+</p>
+<ul><li>通过每条弧的流不大于这条弧的容量
+</li></ul>
+<ul><li>除了源点和汇点的每个点，流入量等于流出量
+</li></ul>
+<p>使源点的流出总量减去流入总量（或汇点的流入总量减去流出总量)最大
+</p><p><i>例</i>
+</p><p>给出水管的设计和每条水管的容量。水管里的水必须从上往下流，所以每条水管里，水只能向一个方向流。
+</p><p>计算能从头（自来水厂）流到尾（您的农场）的水量。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=3" title="编辑段落：算法">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95"> 算法 </span></h3>
+<p>算法（贪心）通过迭代增加从源到汇的流来建立网络流。
+</p><p>从每条弧的权等于初始的权开始（弧的权符合那条弧里还未使用的容量）。
+</p><p>给出当前的图，找到从源到汇的一条路径，这条路径上的弧都是非0权。计算这条路径的最大流，叫它路径容量。//增广路径 +  路径容量   = 瓶颈容量
+</p><p>对于每一条路径上的弧，给弧的权减去路径容量。另外，给路径中的反向弧（在相同两点之间的弧，不过方向相反）加上等于和路径容量相等的权（只要反向弧存在，就增加它的权）。//调整增广路径
+</p><p>继续调整路径直到没有增广路径存在。
+</p><p>这能保证停止，因为您加上每次至少一单位流（权总是整数），并且流严格单调递增。增加反向弧的权相当于减少路径上的流量。
+</p><p>如果您对算法的细节分析感兴趣，请向Sedgewick请教（注：Robert Sedgewick 普林斯顿大学的计算机科学教授）.
+</p><p>这是算法的伪代码
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="nu0">1</span>   IF <span class="br0">&#40;</span>源点 <span class="sy0">=</span> 汇点<span class="br0">&#41;</span>
+<span class="nu0">2</span>       总流 <span class="sy0">=</span> 无限大
+<span class="nu0">3</span>       结束
+&#160;
+<span class="nu0">4</span>   总流 <span class="sy0">=</span> <span class="nu0">0</span>
+&#160;
+<span class="nu0">5</span>   WHILE <span class="br0">&#40;</span>TRUE<span class="br0">&#41;</span>
+<span class="nu0">6</span> <span class="co2"># 找到从源到汇的最大的容量的路径</span>
+<span class="nu0">7</span> <span class="co2"># 用修改过的Dijkstra算法 (在Chapter 4 的ditches就要用Bellman-Ford了)</span>
+<span class="nu0">8</span>     FOR 所有的顶点 i
+<span class="nu0">9</span>       前驱<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">=</span> nil
+<span class="nu0">10</span>      flow<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">=</span> <span class="nu0">0</span>
+<span class="nu0">11</span>      visited<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">=</span> FALSE
+<span class="nu0">12</span>    flow<span class="br0">&#40;</span>源点<span class="br0">&#41;</span> <span class="sy0">=</span> 无限大
+&#160;
+<span class="nu0">13</span>    WHILE <span class="br0">&#40;</span>TRUE<span class="br0">&#41;</span>
+<span class="nu0">14</span>      最大流 <span class="sy0">=</span> <span class="nu0">0</span>
+<span class="nu0">15</span>      最大流节点 <span class="sy0">=</span> nil
+<span class="nu0">16</span>      <span class="co2">#   找到最大容量的未访问节点</span>
+<span class="nu0">17</span>      FOR 每个顶点i
+<span class="nu0">18</span>        IF <span class="br0">&#40;</span><span class="br0">&#40;</span>flow<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy0">&gt;</span>最大流<span class="br0">&#41;</span> AND <span class="br0">&#40;</span>NOT visited<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="nu0">19</span>            最大流 <span class="sy0">=</span> flow<span class="br0">&#40;</span>i<span class="br0">&#41;</span>
+<span class="nu0">20</span>            最大流节点 <span class="sy0">=</span> i
+<span class="nu0">21</span>      IF <span class="br0">&#40;</span>最大流节点 <span class="sy0">=</span> Nil<span class="br0">&#41;</span>
+<span class="nu0">22</span>          退出内层While循环
+<span class="nu0">23</span>      IF <span class="br0">&#40;</span>最大流节点 <span class="sy0">=</span> 汇点<span class="br0">&#41;</span>
+<span class="nu0">24</span>          退出内层While循环
+<span class="nu0">24</span>      visited<span class="br0">&#40;</span>最大流节点<span class="br0">&#41;</span> <span class="sy0">=</span> TRUE
+<span class="nu0">25</span>        <span class="co2">#   调整相邻节点</span>
+<span class="nu0">26</span>      FOR 最大流节点的所有相邻节点 i
+<span class="nu0">27</span>        IF <span class="br0">&#40;</span>flow<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy0">&lt;</span>min<span class="br0">&#40;</span>最大流<span class="sy0">,</span> 最大流节点到i的容量<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="nu0">28</span>            前驱<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">=</span> 最大流节点
+<span class="nu0">29</span>            flow<span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="sy0">=</span> min<span class="br0">&#40;</span>最大流<span class="sy0">,</span> 最大流节点到i的容量<span class="br0">&#41;</span><span class="br0">&#41;</span>
+<span class="nu0">30</span>    IF <span class="br0">&#40;</span>最大流节点 <span class="sy0">=</span> Nil<span class="br0">&#41;</span>    <span class="co2">#   没有路径</span>
+<span class="nu0">31</span>      退出外层While循环
+&#160;
+<span class="nu0">32</span>    路径容量 <span class="sy0">=</span> flow<span class="br0">&#40;</span>汇点<span class="br0">&#41;</span>
+<span class="nu0">33</span>    总流 <span class="sy0">=</span> 总流 <span class="sy0">+</span> 路径容量
+&#160;
+<span class="co2"># 把那个流加到网络里 适当调整容量</span>
+<span class="nu0">35</span>    当前节点 <span class="sy0">=</span> 汇点
+<span class="co2">#   对于增广路径上每条弧, 前驱(当前节点), 当前节点</span>
+<span class="nu0">36</span>    WHILE <span class="br0">&#40;</span>当前节点不为源点<span class="br0">&#41;</span>
+<span class="nu0">38</span>      下一个节点 <span class="sy0">=</span> 前驱<span class="br0">&#40;</span>当前节点<span class="br0">&#41;</span>
+<span class="nu0">39</span>      下一个节点到当前节点的容量减去路径容量
+<span class="nu0">40</span>      当前节点到下一个节点的容量加上路径容量
+<span class="nu0">41</span>      当前节点 <span class="sy0">=</span> 下个节点</pre></div></div>
+<p>这个方法的运行时间为O(FM)，F是最大流 M是弧的数目.   运行时间通常更短, 因为算法每次总是尽可能大的提升流。
+</p><p>为了确定每条弧上的流，比较开始的容量和最后的容量。如果最后的容量变少了，区别就在于通过这条弧的流。
+</p><p>当有回路的时候，这个算法可能产生死循环。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=4" title="编辑段落：实例">编辑</a>]</span> <span class="mw-headline" id=".E5.AE.9E.E4.BE.8B"> 实例 </span></h3>
+<p>考虑下面那个网络，源点为5，汇点为2<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow1.gif" class="image"><img alt="Flow1.gif" src="http://www.nocow.cn/images/b/b0/Flow1.gif" width="315" height="162" /></a><br />
+最大增广路径为(5,1,3,6,2)<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2a.gif" class="image"><img alt="Flow2a.gif" src="http://www.nocow.cn/images/4/48/Flow2a.gif" width="314" height="161" /></a><br />
+瓶颈弧是1-&gt;3，容量为5。因此，把路径上所有的弧减去5，把反向弧上加上5（如果需要，添加弧）。这就是得到的图：<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2b.gif" class="image"><img alt="Flow2b.gif" src="http://www.nocow.cn/images/3/3b/Flow2b.gif" width="312" height="162" /></a><br />
+在新的图里，最大增广路径为(5,4,6,2)<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2c.gif" class="image"><img alt="Flow2c.gif" src="http://www.nocow.cn/images/5/51/Flow2c.gif" width="314" height="162" /></a><br />
+瓶颈容量为3，再来一次。<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2d.gif" class="image"><img alt="Flow2d.gif" src="http://www.nocow.cn/images/a/a4/Flow2d.gif" width="314" height="164" /></a><br />
+现在网络的最大容量路径为(5,4,6,3,2)<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2e.gif" class="image"><img alt="Flow2e.gif" src="http://www.nocow.cn/images/6/6c/Flow2e.gif" width="314" height="164" /></a><br />
+瓶颈为1，再来一次<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2f.gif" class="image"><img alt="Flow2f.gif" src="http://www.nocow.cn/images/6/6a/Flow2f.gif" width="314" height="161" /></a><br />
+结果图从源到汇就没有增广路径了。唯一可以到达的源点的就是它自己和1号节点<br />
+<a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Flow2g.gif" class="image"><img alt="Flow2g.gif" src="http://www.nocow.cn/images/0/09/Flow2g.gif" width="314" height="161" /></a><br />
+算法加了三次流，第一次是5，第二次是3，最后一次是1。因此，最大流是9。<br />
+<br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=5" title="编辑段落：扩展">编辑</a>]</span> <span class="mw-headline" id=".E6.89.A9.E5.B1.95"> 扩展 </span></h3>
+<p>网络流问题是很广泛的，通常和图结合在一起。
+</p><p>扩展到无向图，只需要简单的把无向边扩展为两条相反方向的弧就可以了。
+</p><p>如果您想要限制任意一个节点的通过量，把一个节点拆成两个，一个流入节点，一个流出节点，把流入的弧连到流入节点里，流出弧连到流出节点里，在流入节点和流出节点之间加上一条弧，容量为限制。
+</p><p>如果您有多源点汇点，建立一个虚拟的源点和虚拟的汇点，虚拟的源点射出弧到每个源点，汇点射出弧到虚拟汇点。容量无限。
+</p><p>如果您有实数型的权，这个问题不再保证能出解，尽管答案能逐渐逼近。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=6" title="编辑段落：可选问题">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.AF.E9.80.89.E9.97.AE.E9.A2.98"> 可选问题 </span></h2>
+<p>网络流能用来解决其他的一些不明显的问题。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=7" title="编辑段落：最大匹配">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.80.E5.A4.A7.E5.8C.B9.E9.85.8D"> 最大匹配 </span></h3>
+<p>给出两个对象集合（叫他们A和B），你想要把A和B中的元素尽可能多的匹配起来，约束条件是只可以两两配对。这就是最大匹配问题。
+</p><p>把这个问题用网络流的形式表现出来，建立一个源点，射出容量为1的弧给A的元素，建立一个汇点，从B中的元素射出容量为1的弧到此汇点。另外，如果A中某个元素可  以和B中某个元素匹配，从A的这个元素向B的那个元素射出一条容量为1的弧。用网络流算法确定哪些A元素到B元素的弧被用到。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=8" title="编辑段落：最小割">编辑</a>]</span> <span class="mw-headline" id=".E6.9C.80.E5.B0.8F.E5.89.B2"> 最小割 </span></h3>
+<p>给出一个带权无向图，最小割就是一个权和最小的，能够把两个给出点分开的边的集合。
+</p><p>最小的权和就是两个节点之间的流。
+</p><p>要确定路径，按照权递增的顺序尝试删除每条边，看它是否减少了网络流(如果减少了，减少量应为边的容量)。第一个这样的边就是最小割的元素，去掉这条边继续在图上操作。
+</p><p>用相同的技巧，把节点用容量限制，这能够扩展到求节点的割。有向图也是一样。然而，它不能够解决所谓的“最佳匹配”问题，每一对都有一个“佳值”，而且您想要得到最高“佳值”和的匹配。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=9" title="编辑段落：例题">编辑</a>]</span> <span class="mw-headline" id=".E4.BE.8B.E9.A2.98"> 例题 </span></h3>
+<p>如果问题讨论取流或者其他从一个地方到另一个地方东西的移动的最优值，就可以几乎确定是最大流。如果它讨论的是将两个物料项目以最小代价分隔开的问题，就可能是最小割。如果它讨论的任何一类东西的最大配对，就可能是最大匹配。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=10" title="编辑段落：病毒流">编辑</a>]</span> <span class="mw-headline" id=".E7.97.85.E6.AF.92.E6.B5.81"> 病毒流 </span></h4>
+<p>您有一个通过网线连接的计算机网络。数据可能从任何一个方向流经网线。不幸的是，一台网络里的机器染上病毒，您需要从中心服务器隔离这台机器来防止病毒传染。给出关闭一对机器连接的代价，计算控制病毒传染到服务器的最小的代价。
+</p><p>这就是最小割问题~
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=11" title="编辑段落：伐木工人的计划">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.90.E6.9C.A8.E5.B7.A5.E4.BA.BA.E7.9A.84.E8.AE.A1.E5.88.92">伐木工人的计划</span></h4>
+<p>不同种类的树需要雇佣拥有不同的技巧的伐木工人来正确的砍树。不管哪种树或伐木工人，砍一棵树需要30分钟。给出伐木工人的信息，和哪种树需要哪位才能正确的砍倒，以及树的信息，计算在半小时内砍倒的最多的树的数目。
+对于每一个伐木工人，都有一种对应的他（她）能砍倒的树。所以，这个问题能用最大匹配算法来解决。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=12" title="编辑段落：牛的电话联系（USACO 锦标赛 1996）">编辑</a>]</span> <span class="mw-headline" id=".E7.89.9B.E7.9A.84.E7.94.B5.E8.AF.9D.E8.81.94.E7.B3.BB.EF.BC.88USACO_.E9.94.A6.E6.A0.87.E8.B5.9B_1996.EF.BC.89">牛的电话联系（USACO 锦标赛 1996）</span></h4>
+<p>给出特定区域里的一组电脑，和电脑之间连着的网线，要想阻止给定两台电脑的联系   最少需要关掉多少网络中的电脑。假定两台给出的电脑没有关掉。
+</p><p>这相当于最少节点割的问题。两台给出的电脑标上源点和汇点。电缆是双向的。把每个点拆成流入点和流出点，这样我们就能够用1限制任何一台电脑。现在，网络里的最大流就相当于节点最小割了。
+</p><p>为了具体确定割，反复删除节点，直到您找到一个能降低网络流量的节点。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=13" title="编辑段落：科学展览审定">编辑</a>]</span> <span class="mw-headline" id=".E7.A7.91.E5.AD.A6.E5.B1.95.E8.A7.88.E5.AE.A1.E5.AE.9A">科学展览审定</span></h4>
+<p>一个科学展览由N个学科，和M个裁判。每个裁判愿意审定某些学科，每个学科需要一些裁判。每个裁判只能够审定在给出的科学展览中的一个学科。您在这些条件下总共能分配给多少裁判任务？
+</p><p>这是一个很类似最大匹配的问题，除了每个学科需要可能多于一个裁判。解决这个问题的最简单的方法是把从科目到汇点的弧的容量赋予需要裁判数的值。
+</p>
+<h4><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit&amp;section=14" title="编辑段落：石油管道设计">编辑</a>]</span> <span class="mw-headline" id=".E7.9F.B3.E6.B2.B9.E7.AE.A1.E9.81.93.E8.AE.BE.E8.AE.A1">石油管道设计</span></h4>
+<p>给出阿拉斯加管道线的设计（每条管道的容量，和管道如何连接），以及每个交点的位置，您想提高朱诺和费尔班柯斯之间最大流量，但您的钱只够添加一条容量为X的管道。此外，管道只能10英里长。这条管道添加在哪两个交点能最大程度的提高流量？
+</p><p>要解决这个问题，对于距离10英里以内的每一对交点，添加一条管道，再计算从朱诺到费尔班柯斯的流量增加值。每一个子问题都是最大流。
+</p><p><br />
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 85/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:2695-0!*!*!!zh-cn!2!* and timestamp 20131219164610 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;oldid=33432">http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;oldid=33432</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="NetworkFlow.html">翻译</a></li>
+				<li id="ca-talk"><a href="http://www.nocow.cn/index.php/Translate_Talk:USACO/NetworkFlow" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FNetworkFlow" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/NetworkFlow" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/NetworkFlow" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;oldid=33432" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,033次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月15日 (星期四) 14:09做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Cosechy" title="用户:Cosechy">yh</a>、NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Dxmtb" title="用户:Dxmtb">Dxmtb</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.141.0.211" title="特殊:用户贡献/61.141.0.211">61.141.0.211</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/173.160.74.249" title="特殊:用户贡献/173.160.74.249">173.160.74.249</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/NetworkFlow&amp;action=credits" title="Translate:USACO/NetworkFlow">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.291 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/rect1 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/rect1", "wgTitle": "USACO/rect1", "wgCurRevisionId": 33571, "wgArticleId": 377, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_rect1 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/rect1</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="rect1.html#column-one">导航</a>, <a href="rect1.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="rect1.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="rect1.html#.E6.96.B9.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">方法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="rect1.html#.E6.BC.82.E6.B5.AE.E6.B3.95"><span class="tocnumber">2.1</span> <span class="toctext">漂浮法</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="rect1.html#.E6.8C.89.E8.A1.8C.E7.81.8C.E6.B0.B4.E6.B3.95"><span class="tocnumber">2.2</span> <span class="toctext">按行灌水法</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="rect1.html#.E7.81.8C.E6.B0.B4.E6.B3.95"><span class="tocnumber">2.3</span> <span class="toctext">灌水法</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="rect1.html#.E7.A6.BB.E6.95.A3.E5.8C.96"><span class="tocnumber">2.4</span> <span class="toctext">离散化</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="rect1.html#.E7.A6.BB.E6.95.A3.E5.8C.96.2B.E5.80.92.E5.BA.8F.E6.9F.93.E8.89.B2"><span class="tocnumber">2.5</span> <span class="toctext">离散化+倒序染色</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="rect1.html#.E7.9F.A9.E5.BD.A2.E5.88.87.E5.89.B2"><span class="tocnumber">2.6</span> <span class="toctext">矩形切割</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="rect1.html#.E7.BA.BF.E6.AE.B5.E6.A0.91"><span class="tocnumber">2.7</span> <span class="toctext">线段树</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="rect1.html#.E5.9B.9B.E5.88.86.E6.A0.91"><span class="tocnumber">2.8</span> <span class="toctext">四分树</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="rect1.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">3</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="rect1.html#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5"><span class="tocnumber">4</span> <span class="toctext">外部链接</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>最简单的方法是灌水法了，虽然很可能行不通的，但大多数朋友还是会去试一试的，因为这是第一直觉，也是最容易实现的。
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=2" title="编辑段落：方法">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95"> 方法 </span></h2>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=3" title="编辑段落：漂浮法">编辑</a>]</span> <span class="mw-headline" id=".E6.BC.82.E6.B5.AE.E6.B3.95">漂浮法</span></h3>
+<p>以逆序来进行放置，即n to 1。逆序的好处在于放置一个矩形后，俯视看到的就是最终俯视该矩形应该看到的。因为挡着它的矩形在之前已经放置好了，所以可直接统计，为递归创造了条件。每放一个矩形，可以想象成将其扔入一密度很大的海水底部，海分成了n层,然后矩形开始向上浮。在上浮过程中若碰撞到其他的矩形则断裂成几个小矩形，继续上浮，直到浮出水面。于是想到用个递归来模拟上浮过程。
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> cover<span class="br0">&#40;</span>l<span class="sy0">,</span>r<span class="sy0">,</span>s<span class="sy0">,</span>d<span class="sy0">,</span>k<span class="sy0">,</span>col<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+  <span class="kw1">begin</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span>k&lt;<span class="sy0">=</span>n<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>r&lt;<span class="sy0">=</span>x1<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">or</span> <span class="br0">&#40;</span>l&gt;<span class="sy0">=</span>x2<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">or</span> <span class="br0">&#40;</span>d&lt;<span class="sy0">=</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">or</span> <span class="br0">&#40;</span>s&gt;<span class="sy0">=</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">do</span>
+      inc<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+    <span class="kw1">if</span> k&gt;n <span class="kw1">then</span> <span class="kw1">begin</span> ans<span class="br0">&#91;</span>col<span class="br0">&#93;</span><span class="sy0">:=</span>ans<span class="br0">&#91;</span>col<span class="br0">&#93;</span><span class="sy0">+</span><span class="br0">&#40;</span>r<span class="sy0">-</span>l<span class="br0">&#41;</span><span class="sy0">*</span><span class="br0">&#40;</span>d<span class="sy0">-</span>s<span class="br0">&#41;</span>; exit; <span class="kw1">end</span>;
+    <span class="kw1">if</span> l&lt;<span class="sy0">=</span>x1<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw1">begin</span> cover<span class="br0">&#40;</span>l<span class="sy0">,</span>x1<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">,</span>s<span class="sy0">,</span>d<span class="sy0">,</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>col<span class="br0">&#41;</span>; l<span class="sy0">:=</span>x1<span class="br0">&#91;</span>k<span class="br0">&#93;</span>; <span class="kw1">end</span>;
+    <span class="kw1">if</span> r&gt;<span class="sy0">=</span>x2<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw1">begin</span> cover<span class="br0">&#40;</span>x2<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">,</span>r<span class="sy0">,</span>s<span class="sy0">,</span>d<span class="sy0">,</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>col<span class="br0">&#41;</span>; r<span class="sy0">:=</span>x2<span class="br0">&#91;</span>k<span class="br0">&#93;</span>; <span class="kw1">end</span>;
+    <span class="kw1">if</span> s&lt;<span class="sy0">=</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw1">begin</span> cover<span class="br0">&#40;</span>l<span class="sy0">,</span>r<span class="sy0">,</span>s<span class="sy0">,</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">,</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>col<span class="br0">&#41;</span>; s<span class="sy0">:=</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span>; <span class="kw1">end</span>;
+    <span class="kw1">if</span> d&gt;<span class="sy0">=</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw1">begin</span> cover<span class="br0">&#40;</span>l<span class="sy0">,</span>r<span class="sy0">,</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">,</span>d<span class="sy0">,</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>col<span class="br0">&#41;</span>; d<span class="sy0">:=</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span>; <span class="kw1">end</span>;
+  <span class="kw1">end</span>;</pre></div></div>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=4" title="编辑段落：按行灌水法">编辑</a>]</span> <span class="mw-headline" id=".E6.8C.89.E8.A1.8C.E7.81.8C.E6.B0.B4.E6.B3.95"> 按行灌水法 </span></h3>
+<p>离散化先。然后，按行灌水（开矩阵灌水不行，空间限制通不过）。关键在于程序要有所优化，完全用指针操作数组，不要用下标引用。参见blackco3的C++代码。
+</p>
+<hr />分割线-----------------------------------------------------
+<p><br />
+这题主需要读入，和之前的矩形比较，分类讨论将之前的矩形分割即可，详见源程序 c++ yzc60991
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=5" title="编辑段落：灌水法">编辑</a>]</span> <span class="mw-headline" id=".E7.81.8C.E6.B0.B4.E6.B3.95"> 灌水法 </span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">&#160;
+    fillchar <span class="br0">&#40;</span>map<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>map<span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    <span class="kw1">for</span> l<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> →放置每一个矩形
+      <span class="kw1">for</span> i<span class="sy0">:=</span>x1<span class="br0">&#91;</span>l<span class="br0">&#93;</span> <span class="kw1">to</span> x2<span class="br0">&#91;</span>l<span class="br0">&#93;</span><span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> 
+        <span class="kw1">for</span> j<span class="sy0">:=</span>y1<span class="br0">&#91;</span>l<span class="br0">&#93;</span> <span class="kw1">to</span> y2<span class="br0">&#91;</span>l<span class="br0">&#93;</span> <span class="kw1">do</span>
+          map<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span><span class="sy0">:=</span>color<span class="br0">&#91;</span>l<span class="br0">&#93;</span>;</pre></div></div>
+<p>最后对map整体扫描一遍便可得到各种颜色的面积。
+很可惜的是空间运行是远远不够的，只能换个角度了……
+基于对各个格子的考虑。也可以容易的写出下面的代码：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">&#160;
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> a <span class="kw1">do</span> 
+      <span class="kw1">for</span> j<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> b <span class="kw1">do</span>
+        <span class="kw1">for</span> l<span class="sy0">:=</span>n <span class="kw1">downto</span> <span class="nu0">0</span> <span class="kw1">do</span>  →<span class="coMULTI">{第0个矩形为矩形（a,b）,color[0]=1}</span>
+          <span class="kw1">if</span> <span class="br0">&#40;</span>x1<span class="br0">&#91;</span>l<span class="br0">&#93;</span>&lt;i<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>x2<span class="br0">&#91;</span>l<span class="br0">&#93;</span>&gt;<span class="sy0">=</span>i<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>y1<span class="br0">&#91;</span>l<span class="br0">&#93;</span>&lt;j<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>y2<span class="br0">&#91;</span>l<span class="br0">&#93;</span>&gt;<span class="sy0">=</span>j<span class="br0">&#41;</span>
+            <span class="kw1">then</span> <span class="kw1">begin</span>
+                   inc<span class="br0">&#40;</span>col<span class="br0">&#91;</span>color<span class="br0">&#91;</span>l<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+                   <span class="kw1">break</span>;
+                 <span class="kw1">end</span>.</pre></div></div>
+<p>两个算法只是角度不一样，复杂度都是O（nab）。但后一个空间比前一个小的多，且速度快的多（多了个break）。这个算法可以过10个数据，一共11个数据（usaco老是出一些bt的数据）//  个人觉得，usaco的数据已经够弱了......---路人丁.//其实usaco的数据一点都不bt,这题要我出，至少也得有一半卡时间的吧。。。路过。。rp++;//
+O(nab)的复杂度，对付n=1000，a=b=10000的数据显然是行不通的。第十一个数据就是这样的一个数据。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=6" title="编辑段落：离散化">编辑</a>]</span> <span class="mw-headline" id=".E7.A6.BB.E6.95.A3.E5.8C.96">离散化</span></h3>
+<p>上面的算法到底是慢在那里呢？基于上述算法，我们对每一个1*1的方格都处理了一次。很显然这是不必要的。更多的方格可以连在一起处理。
+所以也就很自然的想到了离散化：两个数组分别记录放置矩形的横坐标和纵坐标。
+</p>
+<div class="center"><div class="floatnone"><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:%E7%A6%BB%E6%95%A3%E5%8C%96.jpg" class="image"><img alt="离散化.jpg" src="http://www.nocow.cn/images/7/7f/%E7%A6%BB%E6%95%A3%E5%8C%96.jpg" width="421" height="295" /></a></div></div>
+<p>很容易发现这些离散化后的小矩形中的各个方格的颜色是相同的。在每一个离散矩形里选出一1*1的方格作为代表，计算它的颜色。这样就可以在一次中处理一个离散矩形里的颜色属性。
+离散化显然是比原来的算法更进一步，离散后复杂度降到O（4n^3）。对付n=1000的数据还是弱了点（还是只能过10数据）。
+</p><p>仔细想一想。离散化后还是做了很多的不必要的工作。
+</p>
+<div class="center"><div class="floatnone"><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:%E7%A6%BB%E6%95%A3%E5%8C%96%E5%90%8E%E6%B7%B1%E6%90%9C%E5%90%88%E5%B9%B6.jpg" class="image"><img alt="离散化后深搜合并.jpg" src="http://www.nocow.cn/images/8/86/%E7%A6%BB%E6%95%A3%E5%8C%96%E5%90%8E%E6%B7%B1%E6%90%9C%E5%90%88%E5%B9%B6.jpg" width="416" height="285" /></a></div></div>
+<p>如图，用前面的算法，要确定5*5=25个矩形的颜色。而实际上只有3重颜色，4个区域（实线围成），按照区域算，也只要确定4个区域的颜色属性，而不是25个。算法之所以慢的原因也就找到了：做了大量的不必要的工作。现在我们要做的是合并这些相同属性的格子，做最精简的工作。
+怎么有效的去合并这些相同属性的子问题，是现在面临的首要问题。在原来算法的基础上，很容易想到的是用‘种子填充法’。我们以深搜时搜到某个区域的第一个格子为代表，记录该区域的面积。
+本题不仅在时间上很苛刻，在空间上的障碍也是制约算法实现的难点，所以想出的算法必须考虑算法的有效性。
+在dfs前预处理用一boolean数组记录相邻格子之间的连通情况（虚线为连通，实线为不连通）。基于空间上的开销太大，还是要采用离散思想，并对每个矩形进行压缩。离散后的空间开销只有8^6的boolean数组，压缩矩形后处理边的连用情况也快的多了。
+</p><p>当然也不一定要像上面的算法那样‘把能合并的都合并了’，其实只要不去做太多无谓的工作，一样可以得到很不错的效果。基于此思想的‘矩形切割’和‘线段树’就是很不错的算法。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=7" title="编辑段落：离散化+倒序染色">编辑</a>]</span> <span class="mw-headline" id=".E7.A6.BB.E6.95.A3.E5.8C.96.2B.E5.80.92.E5.BA.8F.E6.9F.93.E8.89.B2">离散化+倒序染色</span></h3>
+<p>现在我们从另一个角度思考“如何减少不必要的工作”。采用离散化+暴力染色法，最坏的情况是O(n^3)的（即最后一个数据），TLE。我们TLE的原因除了把矩形分割的过细，还对同一个格子重复染色多次，如何能做到对一个格子只染色一次呢？倒序染色+封闭染过色的格子！具体可以对平面的每一行开一个链表，存储这一行中的格子，染色后将这个格子删去（当然，你得用一定的手段使得最后我们还能查到这个格子染的颜色，推荐数组模拟链表）。
+P.S&#160;: 最后一个数据大概在1.2S左右,前面都是秒出.其实可以不用记录格子的颜色,在每次染色的过程中就可以顺便统计一下。不过这个方法会超时，实现的时候需要倒序，对于已经染过色的需要从队列里删除。
+</p>
+<pre>补充：链表真是缩时利器丫......原本最后一点在USACO上通过时间&gt;2s，使用链表优化之后，0.3s通过
+                                                                                   --某受上文启发的OIER
+</pre>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=8" title="编辑段落：矩形切割">编辑</a>]</span> <span class="mw-headline" id=".E7.9F.A9.E5.BD.A2.E5.88.87.E5.89.B2"> 矩形切割 </span></h3>
+<p>此思想把矩形（a,b）看成是最先加入的矩形，颜色为1。然后每次依次加入矩形，将与其重叠的矩形分割后加入队列之后（去掉重叠的部分）。最后扫描一次队列即可得出各个颜色的面积。
+具体分割方法如下：
+</p>
+<div class="center"><div class="floatnone"><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:%E7%9F%A9%E5%BD%A2%E5%88%87%E5%89%B2.jpg" class="image"><img alt="矩形切割.jpg" src="http://www.nocow.cn/images/b/bf/%E7%9F%A9%E5%BD%A2%E5%88%87%E5%89%B2.jpg" width="501" height="297" /></a></div></div>
+<p>黄色区域是黄色矩形和白色矩形的重叠部分:
+</p>
+<pre>       wx1=max(x1,px1);
+       wx2=min(x2,px2);
+       wy1=max(y1,py1);
+       wy2=min(y2,py2);
+</pre>
+<p>以上就是重叠部分的坐标。
+而原来的白色矩形被除去黄色区域以外，被分割成了四个小矩形。
+上图只是一般情况，更多的被分割出的矩形面积为0。
+</p>
+<hr />我是华丽的分割线-----------
+<p>Maigo牛的矩阵切割上浮法，非常的强悍
+每次将当前的这一层与上1层或n层比较
+先从x轴判断 是否相离 然后判断y轴 如果相离就进行下一层的比较 如果有重叠部分则进行切割
+切割这一部分可以参考2004年薛矛的NOI国家队集训论文，里面有详细的图解
+代码请参考C++中的budaish1的代码 具体会标明
+注：该代码严重高仿Maigo牛的代码 在此声明一下
+</p><p>By Shadow
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=9" title="编辑段落：线段树">编辑</a>]</span> <span class="mw-headline" id=".E7.BA.BF.E6.AE.B5.E6.A0.91"> 线段树 </span></h3>
+<p>上面所提到的算法都是动态处理的，还可以写出基于线段树的静态处理的方法。
+如果采用二维线段树（每次最多有4个下降分支），复杂度为O(4nlogn)。由于空间的限制，必须进行压缩，这一点还不够，还要使用动态线段树处理才能突破空间这个头痛的问题。实现起来太繁琐。
+</p><p>为了解决空间这个难题，我们不得不牺牲时间换空间，我们只对x轴进行离散化，对每一列用一维线段树处理。
+</p>
+<div class="center"><div class="floatnone"><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:%E4%BA%8C%E7%BB%B4%E7%BA%BF%E6%AE%B5%E6%A0%91.jpg" class="image"><img alt="二维线段树.jpg" src="http://www.nocow.cn/images/b/b0/%E4%BA%8C%E7%BB%B4%E7%BA%BF%E6%AE%B5%E6%A0%91.jpg" width="299" height="243" /></a></div></div>
+<p>插入一线段：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">&#160;
+  <span class="kw1">procedure</span> insert<span class="br0">&#40;</span>u<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span>&gt;<span class="nu0">0</span> <span class="kw1">then</span> exit;
+      <span class="kw1">if</span> <span class="br0">&#40;</span>treel<span class="br0">&#91;</span>u<span class="br0">&#93;</span>&gt;<span class="sy0">=</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>treer<span class="br0">&#91;</span>u<span class="br0">&#93;</span>&lt;<span class="sy0">=</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span>
+        <span class="kw1">then</span> <span class="kw1">begin</span> treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">:=</span>col<span class="br0">&#91;</span>k<span class="br0">&#93;</span>; exit; <span class="kw1">end</span>;
+      treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">:=-</span><span class="nu0">1</span>;
+      <span class="kw1">if</span> <span class="br0">&#40;</span>y1<span class="br0">&#91;</span>k<span class="br0">&#93;</span>&lt;treer<span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span> insert<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="br0">&#41;</span>;
+      <span class="kw1">if</span> <span class="br0">&#40;</span>y2<span class="br0">&#91;</span>k<span class="br0">&#93;</span>&gt;treel<span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span> insert<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    <span class="kw1">end</span>;</pre></div></div>
+<p>统计各种颜色覆盖面积：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">  <span class="kw1">procedure</span> total<span class="br0">&#40;</span>u<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span> exit;
+      <span class="kw1">if</span> treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span>&lt;&gt;<span class="sy0">-</span><span class="nu0">1</span>
+        <span class="kw1">then</span> inc<span class="br0">&#40;</span>ff<span class="br0">&#91;</span>treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">,</span><span class="br0">&#40;</span>treer<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">-</span>treel<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">*</span><span class="br0">&#40;</span>pt<span class="br0">&#91;</span>w<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">-</span>pt<span class="br0">&#91;</span>w<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+        <span class="kw1">else</span> <span class="kw1">begin</span> total<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="br0">&#41;</span>; total<span class="br0">&#40;</span><span class="nu0">2</span><span class="sy0">*</span>u<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>; <span class="kw1">end</span>;
+      treec<span class="br0">&#91;</span>u<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+    <span class="kw1">end</span>;</pre></div></div>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=10" title="编辑段落：四分树">编辑</a>]</span> <span class="mw-headline" id=".E5.9B.9B.E5.88.86.E6.A0.91"> 四分树 </span></h3>
+<p>直接离散化+四分树（见C++ Code），不过最后一个点死也过不了，MLE，T_T，直接打表过了<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.240.154.116" title="特殊:用户贡献/222.240.154.116">222.240.154.116</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=11" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/rect1/C.html" title="Code:USACO/rect1/C">c</a><br />
+<a href="../Code:USACO/rect1/Pascal.html" title="Code:USACO/rect1/Pascal">pascal</a><br />
+<a href="../Code:USACO/rect1/C++.html" title="Code:USACO/rect1/C++">c++</a><br />
+<a href="../Code:USACO/rect1/Java.html" title="Code:USACO/rect1/Java">java</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit&amp;section=12" title="编辑段落：外部链接">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5">外部链接</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="http://train.usaco.org/">USACO Training</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 95/1000000
+Post-expand include size: 500/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:377-0!*!0!!zh-cn!2!* and timestamp 20131219164543 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;oldid=33571">http://www.nocow.cn/index.php?title=USACO/rect1&amp;oldid=33571</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="rect1.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/rect1&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Frect1" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/rect1" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/rect1" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;oldid=33571" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过32,875次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月31日 (星期六) 17:44做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Rapheal&amp;action=edit&amp;redlink=1" class="new" title="用户:Rapheal（尚未撰写）">Rapheal</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Wsc500&amp;action=edit&amp;redlink=1" class="new" title="用户:Wsc500（尚未撰写）">Wsc500</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.240.154.116" title="特殊:用户贡献/222.240.154.116">222.240.154.116</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/123.157.213.93" title="特殊:用户贡献/123.157.213.93">123.157.213.93</a>和<a href="http://www.nocow.cn/index.php?title=USACO/rect1&amp;action=credits" title="USACO/rect1">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.299 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

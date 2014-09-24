@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/cryptcow - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/cryptcow", "wgTitle": "USACO/cryptcow", "wgCurRevisionId": 30874, "wgArticleId": 1159, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 4"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_cryptcow action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/cryptcow</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="cryptcow.html#column-one">导航</a>, <a href="cryptcow.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_4.html#Chapter_4.1" title="USACO Chapter 4" class="mw-redirect">Chapter 4 .1</a>中的OI题目<b>Cryptcowgraphy</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/cryptcow.html" title="Translate:USACO/cryptcow">翻译</a>，<a href="../Code:USACO/cryptcow/C.html" title="Code:USACO/cryptcow/C">C语言代码</a>，<a href="../Code:USACO/cryptcow/C++.html" title="Code:USACO/cryptcow/C++">C++语言代码</a>，<a href="../Code:USACO/cryptcow/Pascal.html" title="Code:USACO/cryptcow/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="cryptcow.html#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="cryptcow.html#.E4.BC.98.E5.8C.96.E6.8A.80.E5.B7.A7"><span class="tocnumber">2</span> <span class="toctext">优化技巧</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="cryptcow.html#.E4.BE.A5.E5.B9.B8.E8.80.8C.E7.A7.91.E5.AD.A6.E7.9A.84.E8.BF.87.E6.B3.95"><span class="tocnumber">3</span> <span class="toctext">侥幸而科学的过法</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="cryptcow.html#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">4</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<p>很考验人的一道搜索题。感觉比fence rails还要难……我的代码写了170多行。
+基本的思路很简单：按从小到大的顺序依次找出C,O,W，然后交换中间的两个串并将这三个字符删掉。如此往复直到没有成对的C,O,W，判断一下最后生成的字符串是否是题目所给的串。
+但是单纯的按上述算法只能通过20%的数据。我们需要进一步优化。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit&amp;section=2" title="编辑段落：优化技巧">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.98.E5.8C.96.E6.8A.80.E5.B7.A7">优化技巧</span></h2>
+<ol><li>由于添加的COW是一起的，因此给出的字符串的字符个数应该等于47（目标字符串的长度）+3*k。如果不满足就可直接判断无解。
+</li><li>除了COW三个字符外，其他的字符的个数应该和目标串相一致。如果不一致也可直接判断无解。
+</li><li>搜索中间肯定会出现很多相同的情况，因此需要开一个hash来记录搜索到过哪些字符串，每搜索到一个字符串，就判重。如果重复直接剪枝。这里的字符串的hash函数可以采用ELFhash，但由于ELFhash的数值太大，所以用函数值对一个大质数（我用的是99991）取余，这样可以避免hash开得太大，同时又可以减少冲突。
+</li><li>对搜索到的字符串，设不包含COW的最长前缀为n前缀（同样也可以定义n后缀），那么如果n前缀不等于目标串的长度相同的前缀，那么当前字符串一定无解，剪枝。N后缀也可采取相同的判断方法。
+</li><li>一个有解的字符串中，COW三个字母最早出现的应该是C，最后出现的应该是W，如果不满足则剪枝。
+</li><li>当前字符串中任意两个相邻的COW字母中间所夹的字符串一定在目标串中出现过。如果不符合可立即剪枝。
+</li><li>需要优化搜索顺序。经过试验我们可以发现，O的位置对于整个COW至关重要。可以说，O的位置决定了整个串是否会有解。因此，我们在搜索时，应该先枚举O的位置，然后再枚举C和W的位置。其中W要倒序枚举。这样比依次枚举COW至少要快20~30倍。
+</li><li>在判断当前串的子串是否包含在目标串中的时候，可以先做一个预处理：记录每一个字母曾经出现过的位置，然后可以直接枚举子串的第一个字母的位置。这样比用pos要快2倍左右。
+</li></ol>
+<p>经过上述优化，程序对于极端数据也可以在1s以内出解。
+</p><p>其实只用3、4、6、7就可以进1s。
+</p><p>事实证明优化6相当重要！
+</p>
+<ul><li>
+</li><li>
+</li><li>-------------------------------------------------------------------------
+</li></ul>
+<p>by starwar 
+</p><p>仅靠上面的优化似乎还不够？
+</p><p>看了本题用hash来写的代码，发现好多用了hash的代码都是没有处理冲突的，
+</p><p>因此貌似上面解法真正快的原因是hash数组的规模较小？
+</p><p>因为hash数组规模较小，又不处理冲突，所以很多不同字符串在搜索的时候被跳过了。
+</p><p>我自己用ELFHash时，用99991取余，确实最差的数据也能在0.5s左右过掉， 
+</p><p>但改为1000003后，连第九个数据都很难过~直接TLE~
+</p>
+<ul><li>-------------------------------------------------------------------------
+</li></ul>
+<p>BY BSBandme
+官网最新给出的超级剪枝！！！！！！！！！ms用了这就不用那个万恶的elfhash了....
+</p><p>而且这根本不叫剪枝了，<b>不用搜索，直接就算出来了</b>...
+/*
+</p>
+<pre>* How to solve this problem
+* First you must notice the following, crucial fact. 
+* Call the encrypted message Hmm, and the original message Moo.
+* Call a maximal subsequence (possibly empty) of non-COW letters in Hmm
+* a "segment."
+* If encryption was applied N times, then
+* there are 3N+1 segments.
+* Suppose that the triples of C's, O's, and W's to which encryption was
+* applied are (C_1, O_1, W_1) ... (C_N, O_N, W_N).
+* Knowing only these triples -- without knowing
+* the order in which the triples were applied -- one can
+* determine what the original message must have been;
+* the order that the segments originally appeared must have
+* been as follows:
+*  - the first segment in Moo is the first segment in Hmm
+*  - if the kth segment in Moo is the segment of Hmm that ends at C_i, then
+*    the (k+1)th segment in Moo is the segment in Hmm that starts with O_i,
+*  - if the kth segment in Moo is the segment of Hmm that ends at O_i, then
+*    the (k+1)th segment in Moo is the segment in Hmm that starts with W_i,
+*  - if the kth segment in Moo is the segment of Hmm that ends at W_i, then
+*    the (k+1)th segment in Moo is the segment in Hmm that starts with C_i,
+* This is the crucial fact.
+*/
+</pre>
+<p>大意大概是：C，O，W将新字符串分割为3k+1段。这3k+1段首先应能在原字符串里找到。然后
+</p><p><b>若原字符串第i段在新字符串中由C结尾，则原字符串第i + 1段必在新字符串里由O开头。</b>
+</p><p><b>若原字符串第i段在新字符串中由O结尾，则原字符串第i + 1段必在新字符串里由W开头。</b>
+</p><p><b>若原字符串第i段在新字符串中由W结尾，则原字符串第i + 1段必在新字符串里由C开头。</b>
+</p><p>大家稍微试一下就明白为什么了...而且最关键的是:
+<b>根据原字符串第i段和第i + 1段可以相应的找出对应的C, 0, W，不用搜索了!!!!!!!!！！！！！！</b>
+</p><p>例如
+</p><p>CBegin the EscCution at the BreOape execWak of OWDawn
+</p><p>原字符串分为
+</p><p>1：Begin the Esc 2：ape exec 3：ution at the Bre 4：ak of  5：Dawn, 另外6，7两段为空段。
+</p><p>新字符串简化为
+</p><p>C 1 C 3 o 2 W 4 o  W 5（由于‘O'难分辨此处改为小写）
+</p><p>1由C结尾则2必由0开头，2由W结尾则3必由C开头.........
+</p><p>经检验没有问题。
+</p><p>然后1结尾的C必和2开头的0是同一次操作的C，O，W。而2结尾的W必和3开头的C是同一次操作。而三开头
+的C又是1结尾的C。所以可以判断1结尾的C，2开头的0(3结尾的0），2结尾的W为一次操作....
+</p><p>由此可以找出所有操作对应的C,0,W。ms各个操作之间顺序对结果没有影响...
+</p><p>至此，所有对应的C，0，W均找出。
+</p><p>要注意的是会有空段和重复段。所谓重复段就是有两段或以上是相同的，这就要多算几次....
+</p><p>ps: 上文中 #define ms 貌似;
+....
+</p><p>另外想尝试的童鞋注意了，给出的标程有465lines....
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit&amp;section=3" title="编辑段落：侥幸而科学的过法">编辑</a>]</span> <span class="mw-headline" id=".E4.BE.A5.E5.B9.B8.E8.80.8C.E7.A7.91.E5.AD.A6.E7.9A.84.E8.BF.87.E6.B3.95"> 侥幸而科学的过法</span></h2>
+<p>哈希开小能过完全可以理解，因为最后几组的大数据都是无解的，你哈希开得越小（而且没判重），只要能侥幸的过了前几个小数据，后面的大数据，你不小心把几个可能是解的情况剪掉了，不仅仅加快了运算速度，又不会影响结果（反正没解）。实际上对于无解的情况，你在怎么掉换搜索顺序都是没有用的（整棵树都必须搜索的，决定性搜索顺序只对估价函数的效率有影响），而有些人通过这种方法过，只不过是充分利用了哈希冲突（把可能解剪了，这种致命的错误在却这里恰到好处)。所以说这里有一些侥幸。
+</p><p>但是，它让那么多人过了，也有它的科学性。而对于哈希冲突，我们可以发觉，往往在搜索树很大的情况下（特别是无解），它会越发密集，把它搜完却会耗费很多功夫，那不如牺牲解的一点正确性来换取时间（否则，我们也不指望在规定的时间算出解了），即把它设计成状态密集时，就自动剪掉一些可能解。而且，可以理解的是，这种方式在无解的情况下效果越发明显（可行解迟迟未出），而恰恰在这种情况下，我们更应该舍弃无谓的解。所以，这种方法也有它的科学性。
+</p><p>jzoi
+</p><p>如果要确保正确性，需要加上冲突判断。但此时貌似还要加上标程的第四点优化才不致超时。 
+</p><p>“Fourth, undoing the encryption can be done more quickly by basically storing the sequence as a linked list. For each letter location, store the index into the original message the corresponds to the next letter in the current message (and also maintain the index of the first letter). Thus, undoing an encryption corresponds to taking the link from the letter before the C and pointing it to the letter after the O, taking the link from the letter before the W and pointing it to the letter after the C, and taking the pointing from the letter before the O and pointing it to the letter after the W.” 
+</p><p>这样效率就很高~
+</p>
+<ul><li>
+</li><li>
+</li><li>-------------------------------------------------------------------------
+</li></ul>
+<p>by talenth1
+/
+</p>
+<ul><li>我做的很郁闷。
+</li><li>我的程序不知怎么，有时候剪枝以后还慢些，剪枝应该以什么方式实现代价小？？？
+</li><li>还有，实在剪了枝也过不了的可以把搜索数量限制在几万。
+</li><li>另外，发现adventop的c++代码有点不对。他没处理hash的冲突，不剪枝反而错。
+</li><li>
+</li></ul>
+<p>//-------------------------------------------------------------------------
+</p><p>这个题确实很讨厌，裸着的算法是不可能出解的，第6个点我等了20多秒都没跑完。我没用hash，主要利用上面老兄提到的第六个剪枝，写Trie判是否存在，成功让9.10都在4秒内出解，然后卡一下时900000就好。
+</p>
+<ul><li>-------------------------------------------------------------------------
+</li></ul>
+<p>我是正着搜索的，没有倒推，在对c o w的枚举中分别应用优化6，不满足直接break这层循环，因为此次不满足优化6那么再往下的一定不满足优化6，这样会节约大量时间,即
+</p>
+<pre> for i:=1 to l do
+     if s[i]='C' then
+       s1:=copy(s,1,i-1);
+       if cut2(s1)&lt;&gt;-1 then
+       break;
+       for j:=i to l do
+         if s[j]='O' then
+           s1:=copy(s,i,j-i-1);
+           if cut2(s1)&lt;&gt;-1 then
+           break;
+           for k:=j+1 to l do
+             if s[k]='W' then
+               begin
+                 if cut2(s1)&lt;&gt;-1 then break;
+               end;
+</pre>
+<ul><li>----------------------------------------------------------------------------------------
+</li></ul>
+<p>得分技巧：对于读入的字符串，判断任意C与O或O与W之间字符串（且不含两边及中间的C,W,O才符合)是否在目标字符串中出现过，如没有直接输出无解，不然计算有多少个‘COW’，输出结果，可以过1-8,10,9个点，只有唯一一个点过不去，应该是其给出字符串构成不符合以上关系（即COW成对出现，或其长度不满足47+k*3）。<br />
+附：这题搜索能把人搜死，对于时间就是金钱的oier来说，不要在一题上花费过多的时间，那样不值得。
+</p>
+<ul><li>----------------------------------------------------------------------------------------
+</li></ul>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit&amp;section=4" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<ul><li><a href="../Code:USACO/cryptcow/Pascal.html" title="Code:USACO/cryptcow/Pascal">Pascal程序代码</a>
+</li><li><a href="../Code:USACO/cryptcow/C++.html" title="Code:USACO/cryptcow/C++">C++程序代码</a>
+</li><li><a href="../Code:USACO/cryptcow/C.html" title="Code:USACO/cryptcow/C">C程序代码</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 66/1000000
+Post-expand include size: 896/2097152 bytes
+Template argument size: 69/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1159-0!*!0!!zh-cn!*!* and timestamp 20131219164610 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;oldid=30874">http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;oldid=30874</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:USACO_Chapter_4" title="分类:USACO Chapter 4">USACO Chapter 4</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="cryptcow.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/cryptcow&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fcryptcow" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/cryptcow" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/cryptcow" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;oldid=30874" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过13,545次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Cotton" title="用户:Cotton">Cotton</a>于2012年5月13日 (星期日) 20:03做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Liuhaipeng&amp;action=edit&amp;redlink=1" class="new" title="用户:Liuhaipeng（尚未撰写）">刘海鹏</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:BSBandme&amp;action=edit&amp;redlink=1" class="new" title="用户:BSBandme（尚未撰写）">BSBandme</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/219.157.195.232" title="特殊:用户贡献/219.157.195.232">219.157.195.232</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.141.0.211" title="特殊:用户贡献/61.141.0.211">61.141.0.211</a>和<a href="http://www.nocow.cn/index.php?title=USACO/cryptcow&amp;action=credits" title="USACO/cryptcow">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.157 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

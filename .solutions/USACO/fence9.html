@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/fence9 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/fence9", "wgTitle": "USACO/fence9", "wgCurRevisionId": 33763, "wgArticleId": 441, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_fence9 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/fence9</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="fence9.html#column-one">导航</a>, <a href="fence9.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="fence9.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="fence9.html#.E6.96.B9.E6.B3.95.E4.B8.80.EF.BC.9A.E7.9A.AE.E5.85.8B.E5.AE.9A.E7.90.86"><span class="tocnumber">1.1</span> <span class="toctext">方法一：皮克定理</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="fence9.html#.E6.96.B9.E6.B3.95.E4.BA.8C.EF.BC.9A.E5.B1.80.E9.83.A8.E6.9E.9A.E4.B8.BE"><span class="tocnumber">1.2</span> <span class="toctext">方法二：局部枚举</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="fence9.html#.E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9A.E8.A7.A3.E6.9E.90.E5.87.A0.E4.BD.95"><span class="tocnumber">1.3</span> <span class="toctext">方法三：解析几何</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="fence9.html#.E6.96.B9.E6.B3.95.E5.9B.9B.EF.BC.9A.E4.BA.8C.E5.88.86.E5.90.91.E9.87.8F.E6.B3.95"><span class="tocnumber">1.4</span> <span class="toctext">方法四：二分向量法</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="fence9.html#.E6.96.B9.E6.B3.95.E4.BA.94.EF.BC.9A.E5.90.91.E9.87.8F.E6.B3.95"><span class="tocnumber">1.5</span> <span class="toctext">方法五：向量法</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="fence9.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">2</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="fence9.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">3</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=2" title="编辑段落：方法一：皮克定理">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.B8.80.EF.BC.9A.E7.9A.AE.E5.85.8B.E5.AE.9A.E7.90.86">方法一：皮克定理</span></h3>
+<p>可以算是一道数学题吧。如果知道<a href="http://www.nocow.cn/index.php/%E7%9A%AE%E5%85%8B%E5%AE%9A%E7%90%86" title="皮克定理">皮克定理</a>就行了。皮克定理说明了其面积S和内部格点数目a、边上格点数目b的关系：S = a + b/2 - 1。
+</p><p>根据三角形面积公式求出S。如果知道了b，那么三角形内部格点数目a也就求出来了。
+</p><p>可以证明，一条直线((0,0),(n,m))上的格点数等于n与m的最大公约数+1。
+</p><p>即b=gcd(n,m)+1. gcd(n,m)为n与m的最大公约数。
+</p><p>代入皮克公式，即可求出a的值.
+</p><p>--<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:CmYkRgB123" title="用户:CmYkRgB123">CmYkRgB123</a> 18:21 2008年4月19日 (CST)
+</p><p>公式：如果m为0，输出0，否则输出((p*m)/2)+1-(((gcd(n,m)+1)+(gcd(abs(n-p),m)+1)+p-2)/2)（gcd（a,b）为a，b的最大公约数）
+</p>
+<hr />
+<p><br />
+我想写一下我自己推的式子。。 我花了两个小时才推出来的。。 为了简单好理解，我分步解释一下哈。。（n,m,p是题中的意思，没变）。
+首先说一下基本函数：change，就是将a/b约分成最简形式，保存分母b的值（这个挺好写的，就不写出来了）；
+可以先分类(其实基本思想是一样的）
+1.n=0 
+</p>
+<pre>｛【(p+1)*(m+1)-(p div change(m,p))+1）】 div 2｝-【m+（p-1）】；（括号都一样，你懂的）  
+</pre>
+<p>(p+1)*(m+1)是方格总数，（p div change(m,p))+1是电线过的点数(这个是最重要也是比较不好理解的，最后面给证明） +1的意思是算上过x轴的那个。 前面是将这块看成矩形的，div 2就是分开了。 就是：矩形的一半而且不算电线过的点。 m和p-1都是去掉电线那，画下图就好理解了。
+2.n&lt;&gt;0（相信第一个看懂了后面就好说了，直接写式子了）
+</p>
+<pre>（1） p&gt;n;
+     （（(n+1)*(m+1)-（(n div change(m,n))+1）） div 2）+（（(p-n+1)*(m+1)-(（(p-n) div change(m,p-n))+1）） div 2）-（m+（p+1）-2）；
+ （2） p=n 分步了要。。①a1:=(n+1)*(m+1);  ②a2:=(n div change(m,n))+1; ③inc(sum,(a1-a2) div 2);
+   ④a3:=m;  ⑤a4:=p-1;  ⑥dec(sum,a3+a4);
+ （3） P&lt;n  ①a1:=(n+1)*(m+1);②a2:=(n div change(m,n))+1;③inc(sum,(a1-a2) div 2);④a3:=(n-p+1)*(m+1);⑤ a4:=((n-p) div change ⑥(m,n-p))+1;⑦dec(sum,(a3-a4) div 2);⑧a5:=(n-p) div change(m,n-p);⑨ a6:=p-1;⑩dec(sum,a5+a6);
+</pre>
+<p>嗯。式子都写完了。 证明一下 坐标（0,0) (x1,y1) 这两个点经过的整数点的个数是 x1 div change(x1,y1)+1(最后那个1是(0,0)）；
+因为（0，0） (x1,y1)是整数点，所以根据三角形相似，这个线上坐标x2就一定&lt;=x1,而且连接(0,0)斜率是y1/x1，所以change只是把斜率化简了！ 假设斜率是k。 那么y2=kx2=(y1/x1)*x2.那么y1*x2/x1就要是整数。假设y1/x1化简之后是a/b，那么就是a*x2/b要是整数，因为a化简了，所以x2一定要是b的倍数（1，2，3——n，0最后算） n最大是多少呢，当然是x1 div (a/b)了！ -by 某蒟蒻
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=3" title="编辑段落：方法二：局部枚举">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.BA.8C.EF.BC.9A.E5.B1.80.E9.83.A8.E6.9E.9A.E4.B8.BE">方法二：局部枚举</span></h3>
+<p>结果等于(线段(0, 0)--(N, M)与线段(N, M)--(P, 0) )与X轴之间的格点数，我们分别计算两条线段与X轴之间的格点数，然后根据N与P的大小关系进行加减计算即可!
+</p><p>在计算线段与X轴之间的格点数时，我们枚举每一个X轴上的坐标,得到对应于该X坐标下的所有格点数。 具体代码请看C++程序。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=4" title="编辑段落：方法三：解析几何">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9A.E8.A7.A3.E6.9E.90.E5.87.A0.E4.BD.95">方法三：解析几何</span></h3>
+<p>这应该是最笨的方法、用数学课上学的直线方程做. (0,0)-(n,m)的方程为y=m/n*x 、(n,m)-(p,0)的方程为y=m(i-p)/(n-p).
+</p><p>枚举x轴上0-m和0-p的整数点求对应y值相加减即可.本来想一次AC.程序也不到20行.. 但是却花了三四十分钟修正、原因是有很多特殊情况没有考虑.下面讲一下要考虑的特殊情况：
+</p><p>1.两条直线上的点不能算进来
+</p><p>2.p&lt;n时注意(n,m)那个点不要重复减两次
+</p><p>3.n=0时判(0,0)-(n,m)线上的整数点小心被零除
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=5" title="编辑段落：方法四：二分向量法">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E5.9B.9B.EF.BC.9A.E4.BA.8C.E5.88.86.E5.90.91.E9.87.8F.E6.B3.95">方法四：二分向量法</span></h3>
+<p>此方法不需要什么高端的鲜为人知的数学方法，也不需要修正可恶的解析几何
+只用到向量叉积和二分查找就可以AC！O(n*log2N)
+枚举x坐标，然后二分y坐标即可刚开始的区间是（0，M)，每次对比（x,y)和(n,m)的叉积（即求的相对方位），如果（x,y)在（n,m)的上方，那么向下二分，否则向上二分，最后的结果是y值最接近向量(n,m)的点，求出这个点就可以知道从这个点到0有几个点
+</p>
+<pre> /\
+/  \
+</pre>
+<p>/____\这样的图形可以剖分成
+</p>
+<pre> /|      /|
+/ |     / |
+</pre>
+<p>/S1|  + /S2|(翻转)
+如果p&gt;=n (S1+S2)
+而如果p&lt;n
+则是补成直角三角形后再减去多出的部分（S1-S2）
+---Michstar 
+czb.hk/yxg 
+michstar.diandian.com
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=6" title="编辑段落：方法五：向量法">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.95.E4.BA.94.EF.BC.9A.E5.90.91.E9.87.8F.E6.B3.95">方法五：向量法</span></h3>
+<p>从1到m枚举纵坐标i，设合法的点为(x,i)。那么合法的条件是：
+一、从源点(0,0)到(x,i)向量(x-0,i-0)与(n-0,m-0)的叉积应该大于0
+二、点(n,m)到点(x,i)组成的向量(n-x,m-i)与点(n,m)到点(p,0)组成的向量(n-p,m-0)的叉积应该大于0
+根据以上两点，对于一个纵坐标i,它的合法的横坐标的 L=(i*n)/m + 1;
+R = (n*m-(m-p)*(m-i))/m;
+注意：第二个条件化简得 (n*m-(m-p)*(m-i))/m &gt; x 如果 (n*m-(m-p)*(m-i))&#160;% m==0 ，也就是说R刚刚在边界上，那么结果应该是R-1
+By Mushroom
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=7" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/fence9/C++.html" title="Code:USACO/fence9/C++">C++</a><br />
+<a href="../Code:USACO/fence9/C.html" title="Code:USACO/fence9/C">C</a><br />
+<a href="../Code:USACO/fence9/Pascal.html" title="Code:USACO/fence9/Pascal">pascal</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit&amp;section=8" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[1]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 30/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:441-0!*!0!!zh-cn!*!* and timestamp 20131219164603 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;oldid=33763">http://www.nocow.cn/index.php?title=USACO/fence9&amp;oldid=33763</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="fence9.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/fence9&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Ffence9" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/fence9" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/fence9" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;oldid=33763" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过10,963次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Cssystem&amp;action=edit&amp;redlink=1" class="new" title="用户:Cssystem（尚未撰写）">Cssystem</a>于2013年11月15日 (星期五) 22:10做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Zst_0111" title="用户:Zst 0111">Satoshi Zhou</a>、NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Zlk879006461" title="用户:Zlk879006461">Zlk879006461</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.18.71.171" title="特殊:用户贡献/121.18.71.171">121.18.71.171</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.28.19.229" title="特殊:用户贡献/218.28.19.229">218.28.19.229</a>和<a href="http://www.nocow.cn/index.php?title=USACO/fence9&amp;action=credits" title="USACO/fence9">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.228 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

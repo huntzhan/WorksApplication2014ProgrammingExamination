@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/fence6 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/fence6", "wgTitle": "USACO/fence6", "wgCurRevisionId": 30569, "wgArticleId": 1082, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 4"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_fence6 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/fence6</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="fence6.html#column-one">导航</a>, <a href="fence6.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_4.html#Chapter_4.1" title="USACO Chapter 4" class="mw-redirect">Chapter 4 .1</a>中的OI题目<b>Fence Loops</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/fence6.html" title="Translate:USACO/fence6">翻译</a>，<a href="../Code:USACO/fence6/C.html" title="Code:USACO/fence6/C">C语言代码</a>，<a href="../Code:USACO/fence6/C++.html" title="Code:USACO/fence6/C++">C++语言代码</a>，<a href="../Code:USACO/fence6/Pascal.html" title="Code:USACO/fence6/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="fence6.html#.E5.81.9A.E6.B3.95.E4.B8.80"><span class="tocnumber">1</span> <span class="toctext">做法一</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="fence6.html#.E5.81.9A.E6.B3.95.E4.BA.8C"><span class="tocnumber">2</span> <span class="toctext">做法二</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="fence6.html#.E5.81.9A.E6.B3.95.E4.B8.89"><span class="tocnumber">3</span> <span class="toctext">做法三</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="fence6.html#.E5.81.9A.E6.B3.95.E5.9B.9B"><span class="tocnumber">4</span> <span class="toctext">做法四</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="fence6.html#.E5.81.9A.E6.B3.95.E4.BA.94"><span class="tocnumber">5</span> <span class="toctext">做法五</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="fence6.html#.E5.81.9A.E6.B3.95.E5.85.AD"><span class="tocnumber">6</span> <span class="toctext">做法六</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="fence6.html#.E5.81.9A.E6.B3.95.E4.B8.83"><span class="tocnumber">7</span> <span class="toctext">做法七</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="fence6.html#.E5.81.9A.E6.B3.95.E5.85.AB"><span class="tocnumber">8</span> <span class="toctext">做法八</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="fence6.html#Problem.3F"><span class="tocnumber">9</span> <span class="toctext">Problem?</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="fence6.html#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">10</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=1" title="编辑段落：做法一">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E4.B8.80">做法一</span></h2>
+<p>求无向图中的最小环。
+算法很简单，就是做m遍dijkstra——每次找到一条边，拿掉，求这条边两个顶点之间的最短路，那么如果这两点间存在最短路，则这条路径与原来的边就构成了一个环。这样所有环中最小的一个就是答案。
+问题是题目给出的是边连通的信息而非点连通。也就是说我们得到的信息无法按照常规的方法（邻接矩阵，邻接表）来构图。这里就需要一个转化。由于我想不到什么好的算法，所以就用了一个复杂度为O(n^2)的转化。首先将每条边的两个顶点都看作单独的点（也就是说假设所有边都不连通，为了方便，可以分别设第i条边的两个顶点编号为i*2-1和i*2），然后对于两条连通的边，将连通这两条边的点并在一起。具体做法就是将其中一个点的连通情况全部赋给另一个点，并修改图中其他与该点连通的点信息使得合并成立。这里我借助了并查集，使得每次查找的时间都近似为常数，所以总的时间复杂度就是O(n^2)。其中n是合并后总的点的个数
+经过上述转化以后，再用m遍dijkstra，总的算法时间复杂度就是O(mn^2)。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=2" title="编辑段落：做法二">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E4.BA.8C">做法二</span></h2>
+<p>这道题给的数据是边之间的关系,首先想到的是构图,然后套经典的最短路做.但是这道题的数据输入会使按点构图很麻烦,其实这道题搜索即可,而且加剪枝后很快.由v条边开始搜索在它b方向的边,重复这个过程,直到回到v而且是由a方向回到的,为了判断环可以加个判重,一个剪枝:对于路径长度大于已知最小环的可剪.
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=3" title="编辑段落：做法三">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E4.B8.89">做法三</span></h2>
+<p>一种比较诡异的方法。就是把边变成“点”。在把“边”的长度设定为边两端的“点”（既原来的边）的长度的和。
+</p><p>用由floyd算法改进的求<a href="http://www.nocow.cn/index.php/%E6%9C%80%E5%B0%8F%E7%8E%AF" title="最小环">最小环</a>的算法求最小环。注意的是枚举“点”时，注意“点”连接的两“点”要是分别连接到该“点”代表的边的两个端点。
+</p><p>这个复杂度为O(n^3)。超级快…...
+</p><p>证明略……有兴趣的自己想一下
+</p><p>参考程序:<a href="../Code:USACO/fence6/Pascal.html" title="Code:USACO/fence6/Pascal">Pascal程序代码</a>
+</p><p><br />
+</p>
+<pre>--- 这个做法和我的相似。我补充一下。把篱笆看成是图的顶点，在建图的时候将每一条边的权值赋为它与相邻篱笆的长度和（也就是说每个顶点引出n1s+n2s条边）。
+--- 用floyed求最小环的方法求出长度，除以2就是结果。 
+--- yuhc
+</pre>
+<p><br />
+话说这是个很纠结的办法……我也是一开始就想的这种方法……但是发现了它很难处理的一个情况—————就是几个篱笆交于一点。
+解决办法就是：在求最小环的时候，拿邻接表（边表也可）存储下两端的篱笆，然后分别枚举两端的篱笆，就可以解决这个问题了！
+另外本人力挺这种做法！
+</p><p>————SKYWALKER
+与此方法类似，构图时I建立2*I和2*I-1两个点，然后将相连的点幷查集，最后套用经典的最小环求法
+</p>
+<hr />CD
+<p>最初那种直接把点看成边的方法不正确！ 如样例中如果把相连的边变成点后都连上一条边，那么就会把一前不是环的路径变成环，造成错误答案：
+如： 样例2,3,8三边不成环，但是当作点连接后就是环了，结果为10，错误！
+</p>
+<hr />
+<p>其实是可以的 出现LS的情况其实是没有体现题目中数据的方向性 我们把与他左端相连的开个邻接表 右端相连的开个邻接表
+这么着就可以避免了
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=4" title="编辑段落：做法四">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E5.9B.9B">做法四</span></h2>
+<p>仍然是求最小环，先将边邻接矩阵转为点邻接矩阵，再dfs求出所有环。
+可以证明时间复杂度为O(n^3)，所以能快速AC
+还是DFS好 代码也简单
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=5" title="编辑段落：做法五">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E4.BA.94">做法五</span></h2>
+<p>啥剪枝都不用,直接按边暴力DFS- -唯一需要小心的是找下一条边的时候要注意在另一侧.
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=6" title="编辑段落：做法六">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E5.85.AD">做法六</span></h2>
+<p>二分答案，也是秒杀ac
+哪位能解释一下二分的具体做法？我想不到诶…
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=7" title="编辑段落：做法七">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E4.B8.83">做法七</span></h2>
+<p>做法三做些改变之后的方法，更加易懂
+给交点编号，就使其可以像正常图一样求最小环
+用的floyd求最小环
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=8" title="编辑段落：做法八">编辑</a>]</span> <span class="mw-headline" id=".E5.81.9A.E6.B3.95.E5.85.AB"> 做法八 </span></h2>
+<p>不用把栅栏当作整体来看，题目没有那么复杂。如果你把栅栏的两端当作两个点，而栅栏当作连接它们的边或路径的话，你会发现，这其实就是一个最短路的问题。但并不是裸的，操作的时候要注意下面几点：
+</p><p>1、题目里要求的是最短的环，转化之后就是求彼此距离最短的在同一栅栏两端的点
+</p><p>2、两段栅栏相接处在题目中是同一个点，但在程序中你可以把它当作分开的点，之间的距离为0，方便做最段路
+</p><p>3、直接用FLOYD做是不行的。对此我已经有了失败的经验。正确的做法是一对一对顶点求，然后不断更新最小值，每次求之前应该把栅栏上的值赋为无穷大，然后把求出来的最短路值加上栅栏上的值、就是这对顶点间的最小环
+</p><p>PS：这样做的复杂度很可观、当中的最短路用SPFA做的话可以在0.00秒AC全部数据
+</p><p>OVER
+</p>
+<pre>                                      ——H`
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=9" title="编辑段落：Problem?">编辑</a>]</span> <span class="mw-headline" id="Problem.3F">Problem?</span></h2>
+<p>Is there anyone who's ever said the fence is straight?
+If not, simple minial-circle might return edges that enclosed more than one pasture.
+<b>like this</b>:
+</p>
+<pre>  -  fence1
+ / \ fence2,3
+ --- fence4
+/    \ fence4
+------fence5
+\____/fence 6,7,8
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit&amp;section=10" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<ul><li><a href="../Code:USACO/fence6/Pascal.html" title="Code:USACO/fence6/Pascal">Pascal程序代码</a>
+</li><li><a href="../Code:USACO/fence6/C++.html" title="Code:USACO/fence6/C++">C++程序代码</a>
+</li><li><a href="../Code:USACO/fence6/C.html" title="Code:USACO/fence6/C">C程序代码</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 90/1000000
+Post-expand include size: 877/2097152 bytes
+Template argument size: 66/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1082-0!*!0!!zh-cn!*!* and timestamp 20131219164609 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;oldid=30569">http://www.nocow.cn/index.php?title=USACO/fence6&amp;oldid=30569</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:USACO_Chapter_4" title="分类:USACO Chapter 4">USACO Chapter 4</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="fence6.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/fence6&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Ffence6" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/fence6" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/fence6" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;oldid=30569" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过14,907次。</li>
+		<li id="credits">本页面由<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Wzj_1232&amp;action=edit&amp;redlink=1" class="new" title="用户:Wzj 1232（尚未撰写）">wzj</a>于2012年3月20日 (星期二) 20:09做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Hozi8273" title="用户:Hozi8273">Li Haoyu</a>、NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Onetwogoo" title="用户:Onetwogoo">Onetwogoo</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/110.228.125.197" title="特殊:用户贡献/110.228.125.197">110.228.125.197</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/110.189.224.162" title="特殊:用户贡献/110.189.224.162">110.189.224.162</a>和<a href="http://www.nocow.cn/index.php?title=USACO/fence6&amp;action=credits" title="USACO/fence6">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.171 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

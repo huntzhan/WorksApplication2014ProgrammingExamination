@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Computational Geometry - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Computational_Geometry", "wgTitle": "USACO/Computational Geometry", "wgCurRevisionId": 33287, "wgArticleId": 3187, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Computational_Geometry action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Computational Geometry</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Computational_Geometry.html#column-one">导航</a>, <a href="Computational_Geometry.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p align="center"> <strong>Computational Geometry </strong> </p>
+<p align="center"><strong>计算几何</strong></p>
+<p align="center"><strong> 译 By SuperBrother  </strong></p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Computational_Geometry.html#.E7.9F.A5.E8.AF.86.E5.87.86.E5.A4.87"><span class="tocnumber">1</span> <span class="toctext">知识准备</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Computational_Geometry.html#.E6.93.8D.E4.BD.9C"><span class="tocnumber">2</span> <span class="toctext">操作</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Computational_Geometry.html#.E5.8F.89.E7.A7.AF"><span class="tocnumber">2.1</span> <span class="toctext">叉积</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Computational_Geometry.html#.E7.82.B9.E7.A7.AF"><span class="tocnumber">2.2</span> <span class="toctext">点积</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Computational_Geometry.html#.E5.8F.8D.E6.AD.A3.E5.88.87"><span class="tocnumber">2.3</span> <span class="toctext">反正切</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="Computational_Geometry.html#.E5.85.A8.E9.9D.A2.E8.80.83.E8.99.91.E9.97.AE.E9.A2.98"><span class="tocnumber">3</span> <span class="toctext">全面考虑问题</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Computational_Geometry.html#.E8.AE.A1.E7.AE.97.E5.87.A0.E4.BD.95.E7.AE.97.E6.B3.95"><span class="tocnumber">4</span> <span class="toctext">计算几何算法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="Computational_Geometry.html#.E4.B8.89.E8.A7.92.E5.BD.A2.E9.9D.A2.E7.A7.AF"><span class="tocnumber">4.1</span> <span class="toctext">三角形面积</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Computational_Geometry.html#.E4.B8.A4.E6.9D.A1.E7.BA.BF.E6.AE.B5.E5.B9.B3.E8.A1.8C.E5.90.97.EF.BC.9F"><span class="tocnumber">4.2</span> <span class="toctext">两条线段平行吗？</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Computational_Geometry.html#.E5.A4.9A.E8.BE.B9.E5.BD.A2.E9.9D.A2.E7.A7.AF"><span class="tocnumber">4.3</span> <span class="toctext">多边形面积</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="Computational_Geometry.html#.E7.82.B9.E5.88.B0.E7.9B.B4.E7.BA.BF.E7.9A.84.E8.B7.9D.E7.A6.BB"><span class="tocnumber">4.4</span> <span class="toctext">点到直线的距离</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Computational_Geometry.html#.E7.82.B9.E5.9C.A8.E7.9B.B4.E7.BA.BF.E4.B8.8A"><span class="tocnumber">4.5</span> <span class="toctext">点在直线上</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Computational_Geometry.html#.E7.82.B9.E9.83.BD.E5.9C.A8.E7.9B.B4.E7.BA.BF.E7.9A.84.E5.90.8C.E4.BE.A7"><span class="tocnumber">4.6</span> <span class="toctext">点都在直线的同侧</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Computational_Geometry.html#.E7.82.B9.E5.9C.A8.E7.BA.BF.E6.AE.B5.E4.B8.8A"><span class="tocnumber">4.7</span> <span class="toctext">点在线段上</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="Computational_Geometry.html#.E7.82.B9.E5.9C.A8.E4.B8.89.E8.A7.92.E5.BD.A2.E5.86.85"><span class="tocnumber">4.8</span> <span class="toctext">点在三角形内</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="Computational_Geometry.html#.E7.82.B9.E5.9C.A8.E5.87.B8.E5.A4.9A.E8.BE.B9.E5.BD.A2.E5.86.85"><span class="tocnumber">4.9</span> <span class="toctext">点在凸多边形内</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Computational_Geometry.html#.E5.9B.9B.E7.82.B9.EF.BC.88.E6.88.96.E6.9B.B4.E5.A4.9A.EF.BC.89.E5.85.B1.E9.9D.A2"><span class="tocnumber">4.10</span> <span class="toctext">四点（或更多）共面</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="Computational_Geometry.html#.E4.B8.A4.E6.9D.A1.E7.9B.B4.E7.BA.BF.E7.9B.B8.E4.BA.A4"><span class="tocnumber">4.11</span> <span class="toctext">两条直线相交</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="Computational_Geometry.html#.E4.B8.A4.E6.9D.A1.E7.BA.BF.E6.AE.B5.E7.9B.B8.E4.BA.A4"><span class="tocnumber">4.12</span> <span class="toctext">两条线段相交</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="Computational_Geometry.html#.E4.B8.A4.E7.9B.B4.E7.BA.BF.E7.9A.84.E4.BA.A4.E7.82.B9"><span class="tocnumber">4.13</span> <span class="toctext">两直线的交点</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="Computational_Geometry.html#.E5.88.A4.E6.96.AD.E5.B9.B3.E9.9D.A2.E5.86.85.E5.A4.9A.E8.BE.B9.E5.BD.A2.E7.9A.84.E5.87.B9.E5.87.B8.E6.80.A7"><span class="tocnumber">4.14</span> <span class="toctext">判断平面内多边形的凹凸性</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="Computational_Geometry.html#.E7.82.B9.E5.9C.A8.E5.87.B9.E5.A4.9A.E8.BE.B9.E5.BD.A2.E5.86.85"><span class="tocnumber">4.15</span> <span class="toctext">点在凹多边形内</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="Computational_Geometry.html#.E5.87.A0.E4.BD.95.E6.96.B9.E6.B3.95"><span class="tocnumber">5</span> <span class="toctext">几何方法</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="Computational_Geometry.html#.E8.92.99.E7.89.B9.E5.8D.A1.E6.B4.9B.E6.96.B9.E6.B3.95.28Monte_Carlo.29"><span class="tocnumber">5.1</span> <span class="toctext">蒙特卡洛方法(Monte Carlo)</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="Computational_Geometry.html#.E5.88.86.E5.89.B2.E6.8A.80.E6.9C.AF"><span class="tocnumber">5.2</span> <span class="toctext">分割技术</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="Computational_Geometry.html#.E8.BD.AC.E5.8C.96.E4.B8.BA.E5.9B.BE"><span class="tocnumber">5.3</span> <span class="toctext">转化为图</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="Computational_Geometry.html#.E4.BE.8B.E5.AD.90"><span class="tocnumber">6</span> <span class="toctext">例子</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="Computational_Geometry.html#Point_Moving"><span class="tocnumber">6.1</span> <span class="toctext">Point Moving</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="Computational_Geometry.html#Bicycle_Routing"><span class="tocnumber">6.2</span> <span class="toctext">Bicycle Routing</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="Computational_Geometry.html#Maximizing_Line_Intersections"><span class="tocnumber">6.3</span> <span class="toctext">Maximizing Line Intersections</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="Computational_Geometry.html#Polygon_Classification"><span class="tocnumber">6.4</span> <span class="toctext">Polygon Classification</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=1" title="编辑段落：知识准备">编辑</a>]</span> <span class="mw-headline" id=".E7.9F.A5.E8.AF.86.E5.87.86.E5.A4.87">知识准备</span></h1>
+<ul><li>图论
+</li><li>最短路
+</li></ul>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=2" title="编辑段落：操作">编辑</a>]</span> <span class="mw-headline" id=".E6.93.8D.E4.BD.9C">操作</span></h1>
+<p>这个模块讨论几个计算某些几何问题的算法，这些算法大多基于下列两个操作：叉积和反正切。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=3" title="编辑段落：叉积">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.89.E7.A7.AF">叉积</span></h2>
+<p>u和v的叉积被表示成u x v。两个<b>三维的向量</b>u,v的叉积是下列行列式（<b>i,j,k为x,y,z轴上单位向量</b>）:
+</p>
+<pre>| <b>i</b>  <b>j</b>  <b>k</b>  |
+| Ux Uy Uz |
+| Vx Vy Vz |
+</pre>
+<p>即:
+</p>
+<pre>(Uy*Vz-Vy*Uz)<b>i</b> + (Uz*Vx-Ux*Vz)<b>j</b> + (Ux*Vy-Uy*Vx)<b>k</b>
+</pre>
+<p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom6.gif" class="image"><img alt="Geom6.gif" src="http://www.nocow.cn/images/e/e6/Geom6.gif" width="141" height="114" /></a>
+</p><p>z分量为0时，上面式子就化为2维的两向量叉积了。结果只有z分量。
+</p><p>即：
+</p>
+<pre>| Ux Uy |
+| Vx Vy |
+Ux*Vy-Uy*Vx
+</pre>
+<p>（注意！二维的叉积较为猥琐。。其实叉积最早就是定义在三维空间内的，当z=0时的特殊情形才是二维向量积。“二维向量”表达式求出的是一个超出平面的向量。。这个向量的方向我们不关心，但<b>有时又要利用它</b>。。。（例如求多边形面积）故上式不甚严格）
+</p><p>叉积有3个特点：
+</p>
+<ul><li>两个向量的叉积是一个与这两个向量同时垂直的向量。
+</li><li>叉积的大小等于下面3个量的乘积:
+<ul><li>u的大小
+</li><li>v的大小
+</li><li>u,v夹角的正弦。
+</li></ul>
+</li></ul>
+<p>当然与u,v同时垂直的向量有两个方向，叉积的方向取决于u在v的右边还是在v的左边。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom7.gif" class="image"><img alt="Geom7.gif" src="http://www.nocow.cn/images/d/d1/Geom7.gif" width="335" height="114" /></a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=4" title="编辑段落：点积">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E7.A7.AF">点积</span></h2>
+<p>点积的值由以下三个值确定：
+</p>
+<ul><li>u的大小
+</li><li>v的大小
+</li><li>u,v夹角的余弦。
+</li></ul>
+<p>在u,v非零的前提下，点积如果为负，则u,v形成的角大于90度；如果为零，那么u,v垂直；如果为正，那么u,v形成的角小于90度。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=5" title="编辑段落：反正切">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.8D.E6.AD.A3.E5.88.87">反正切</span></h2>
+<p>反正切函数对于一个给定的正切值，返回一个在-pi/2到pi/2之间的角（即-90度至+90度）。C中另外有一个函数atan2，给出y分量和x分量（注意顺序！），计算向量与x正半轴的夹角，在-pi到pi之间。它的优点就是不需担心被0除，也不需为了处理x为负的情况而写代码修改角。atan2函数几乎比普通的atan函数更简单，因为只需调用一次。
+</p>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=6" title="编辑段落：全面考虑问题">编辑</a>]</span> <span class="mw-headline" id=".E5.85.A8.E9.9D.A2.E8.80.83.E8.99.91.E9.97.AE.E9.A2.98">全面考虑问题</span></h1>
+<p>这些几何问题大多都产生<b>很多</b>特殊情况。注意这些特殊情况并且要<b>保证自己的程序能处理所有的情况</b>。
+</p><p>浮点运算也会带来新问题。浮点运算很难精确，因为注意：计算机只能计算有限的精度。特别地，要通过判断两个值的差是否在一个很小的范围内来判断是否相等。
+</p>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=7" title="编辑段落：计算几何算法">编辑</a>]</span> <span class="mw-headline" id=".E8.AE.A1.E7.AE.97.E5.87.A0.E4.BD.95.E7.AE.97.E6.B3.95">计算几何算法</span></h1>
+<p>这里是一些能帮助你计算几何问题的东西。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=8" title="编辑段落：三角形面积">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.89.E8.A7.92.E5.BD.A2.E9.9D.A2.E7.A7.AF">三角形面积</span></h2>
+<p>为了计算由点(A,B,C)构成的三角形的面积，先选取一个顶点（例如A），再向剩余两个顶点作向量（令u=b-a, v=c-a）。三角形(A,B,C)的面积即为u,v叉积长度的一半。
+</p><p>设两边长为a,b，夹角为A,面积S即
+S=1/2*a*b*sinA
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom1.gif" class="image"><img alt="Geom1.gif" src="http://www.nocow.cn/images/a/a5/Geom1.gif" width="187" height="145" /></a>
+</p><p>另一个求三角形面积的变通方法就是用海伦公式。如果三角形三边长为a,b,c，令s=(a+b+c)/2，那么三角形面积就是:
+</p>
+<pre>   sqrt(s*(s-a)*(s-b)*(s-c))
+</pre>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=9" title="编辑段落：两条线段平行吗？">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.A4.E6.9D.A1.E7.BA.BF.E6.AE.B5.E5.B9.B3.E8.A1.8C.E5.90.97.EF.BC.9F">两条线段平行吗？</span></h2>
+<p>为了判断两条线段是否平行，分别沿两条线段建立向量，判断叉积是否（几乎为）零。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=10" title="编辑段落：多边形面积">编辑</a>]</span> <span class="mw-headline" id=".E5.A4.9A.E8.BE.B9.E5.BD.A2.E9.9D.A2.E7.A7.AF">多边形面积</span></h2>
+<p>由点(x1,y1)...(xn,yn)组成的多边形的面积等于下列行列式的值：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"> <span class="nu0">1</span>   | x1 x2 ... <span class="me1">xn</span> |
+<span class="sy0">---</span>  |              |
+ <span class="nu0">2</span>   | y1 y2 ... <span class="me1">yn</span> |</pre></div></div>
+<p>也等于下面的式子的值:
+</p><p>1/2*abs(x1y2  + x2y3 + ... + xny1 - y1x2 - y2x3 - ... - ynx1)
+</p><p>就是选取原点作标准 连接原点和个顶点 并且两两个地计算叉积并加起来
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=11" title="编辑段落：点到直线的距离">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.88.B0.E7.9B.B4.E7.BA.BF.E7.9A.84.E8.B7.9D.E7.A6.BB">点到直线的距离</span></h2>
+<p>点P到直线AB的距离也可以由叉积给出，准确的说,d(P,AB) = |(P - A) x (B - A)| / | B - A| 。
+</p><p>点P到由点A,B和C确定的平面的距离，令n = (B - A) x (C - A)，那么d(P,ABC) = (P-A) · n / |n|。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=12" title="编辑段落：点在直线上">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.9C.A8.E7.9B.B4.E7.BA.BF.E4.B8.8A">点在直线上</span></h2>
+<p>如果点到直线的距离是0，那么点在直线上。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=13" title="编辑段落：点都在直线的同侧">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E9.83.BD.E5.9C.A8.E7.9B.B4.E7.BA.BF.E7.9A.84.E5.90.8C.E4.BE.A7">点都在直线的同侧</span></h2>
+<p>只讲两个点的情况。如果要确定点C和D是否在直线AB同侧，计算(B - A) x (C - A)和(B - A) x (D - A)的z分量。如果同号（或如果积为正），那么点C,D在直线AB同侧。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=14" title="编辑段落：点在线段上">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.9C.A8.E7.BA.BF.E6.AE.B5.E4.B8.8A">点在线段上</span></h2>
+<p>为了求出点C是否在线段AB上，先判断点C是否在直线AB上，再判断线段AB的长度是否等于线段AC长度与线段BC长度之和。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=15" title="编辑段落：点在三角形内">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.9C.A8.E4.B8.89.E8.A7.92.E5.BD.A2.E5.86.85">点在三角形内</span></h2>
+<p>要确定点A是否在三角形内，首先选择一个三角形内部的点B(重心就很不错)。接下来，判断点A,B是否都在三边所在的三条直线的同侧。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom3.gif" class="image"><img alt="Geom3.gif" src="http://www.nocow.cn/images/1/1a/Geom3.gif" width="247" height="267" /></a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=16" title="编辑段落：点在凸多边形内">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.9C.A8.E5.87.B8.E5.A4.9A.E8.BE.B9.E5.BD.A2.E5.86.85">点在凸多边形内</span></h2>
+<p>方法同上
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom4.gif" class="image"><img alt="Geom4.gif" src="http://www.nocow.cn/images/a/a2/Geom4.gif" width="247" height="227" /></a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=17" title="编辑段落：四点（或更多）共面">编辑</a>]</span> <span class="mw-headline" id=".E5.9B.9B.E7.82.B9.EF.BC.88.E6.88.96.E6.9B.B4.E5.A4.9A.EF.BC.89.E5.85.B1.E9.9D.A2">四点（或更多）共面</span></h2>
+<p>如果要确定一组点是否共面，任选3个点。如果对于任意点D，有((B - A) x (C - A)) · (D - A) = ~0，那么这些点共面。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=18" title="编辑段落：两条直线相交">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.A4.E6.9D.A1.E7.9B.B4.E7.BA.BF.E7.9B.B8.E4.BA.A4">两条直线相交</span></h2>
+<p>平面内两条直线相交当且仅当直线不平行。
+</p><p>空间内，两直线AB,CD相交则AB,CD不平行，且点A,B,C,D共面。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=19" title="编辑段落：两条线段相交">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.A4.E6.9D.A1.E7.BA.BF.E6.AE.B5.E7.9B.B8.E4.BA.A4">两条线段相交</span></h2>
+<p>平面内，两条线段相交当且仅当A,B在直线CD异侧且C,D在直线AB异侧。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom5.gif" class="image"><img alt="Geom5.gif" src="http://www.nocow.cn/images/0/05/Geom5.gif" width="436" height="126" /></a>
+</p><p>注意两个判断都是必须的，例如第三种情况第一个判断为true，但第二个判断说明线段AB,CD不相交。在空间中，计算下面方程组，其中i,j未知：
+</p><p>Ax + (Bx - Ax) i = Cx + (Dx - Cx) j
+</p><p>Ay + (By - Ay) i = Cy + (Dy - Cy) j
+</p><p>Az + (Bz - Az) i = Cz + (Dz - Cz) j 
+</p><p>如果方程组有解(i,j)满足0&lt;=i&lt;=1，0&lt;=j&lt;=1，那么两线段相交于点(Ax + (Bx - Ax)i, Ay + (By - Ay)i, Az + (Bz - Az) i)
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=20" title="编辑段落：两直线的交点">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.A4.E7.9B.B4.E7.BA.BF.E7.9A.84.E4.BA.A4.E7.82.B9">两直线的交点</span></h2>
+<p>在平面内的两条直线AB,CD，求交点最直接的方法就是解下列的二元一次方程组：
+</p><p>Ax + (Bx - Ax)i = Cx + (Dx - Cx) j
+</p><p>Ay + (By - Ay)i = Cy + (Dy - Cy) j 
+</p><p>交点是:
+</p><p>(Ax + (Bx - Ax) i, Ay + (By - Ay) i) 
+</p><p>空间内，解同样的方程组来判断交点，交点是：
+</p><p>(Ax + (Bx - Ax)i, Ay + (By - Ay)i, Az + (Bz - Az)i)
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=21" title="编辑段落：判断平面内多边形的凹凸性">编辑</a>]</span> <span class="mw-headline" id=".E5.88.A4.E6.96.AD.E5.B9.B3.E9.9D.A2.E5.86.85.E5.A4.9A.E8.BE.B9.E5.BD.A2.E7.9A.84.E5.87.B9.E5.87.B8.E6.80.A7">判断平面内多边形的凹凸性</span></h2>
+<p>要判断平面内一多边形是否为凸，沿着顺时针方向扫一遍。对于每三个点(A,B,C)，计算叉积(B - A) x (C - A)。如果叉积的z分量均为负，多边形则为凸多边形。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=22" title="编辑段落：点在凹多边形内">编辑</a>]</span> <span class="mw-headline" id=".E7.82.B9.E5.9C.A8.E5.87.B9.E5.A4.9A.E8.BE.B9.E5.BD.A2.E5.86.85">点在凹多边形内</span></h2>
+<p>要确定点是否在凹多边形内，任选一点作射线，计算相交次数。如果与多边形相交于一点或一边，则换一个方向，否则，点在多边形内当且仅当射线与点相交次数为奇数。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom8.gif" class="image"><img alt="Geom8.gif" src="http://www.nocow.cn/images/c/c3/Geom8.gif" width="600" height="199" /></a>
+</p><p>这个方法也可以扩展到三维（或更高），但此时应相交于面（再判断），不是在点上或边上。
+</p>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=23" title="编辑段落：几何方法">编辑</a>]</span> <span class="mw-headline" id=".E5.87.A0.E4.BD.95.E6.96.B9.E6.B3.95">几何方法</span></h1>
+<p>这些几何方法介绍了一些技巧，可以用来优化时间和求得更精确的解。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=24" title="编辑段落：蒙特卡洛方法(Monte Carlo)">编辑</a>]</span> <span class="mw-headline" id=".E8.92.99.E7.89.B9.E5.8D.A1.E6.B4.9B.E6.96.B9.E6.B3.95.28Monte_Carlo.29">蒙特卡洛方法(Monte Carlo)</span></h2>
+<p>第一个方法是建立在随机化之上的。它不去直接计算某件事的概率，而是以一个随机事件来模拟，求得事件发生的频率。如果次数足够，频率和概率的差别会很小。
+</p><p>这对于确定某些东西来说是很有用的，例如计算某个图形的面积。它不去直接计算面积，而是建立一个已知大小的区域，每次向该区域扔一个“飞镖”，并计算击中区域内图形的频率。如果计算足够精确，就可以得到实际面积的一个足够好的近似值。
+</p><p>这个方法要得到一个足够小的相对误差（误差于实际值之商），需要大量成功发生的事件。如果发生的概率很小，结果就不好了。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=25" title="编辑段落：分割技术">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E5.89.B2.E6.8A.80.E6.9C.AF">分割技术</span></h2>
+<p>分割技术可用来优化时间。这需要把平面分割成小块（通常是分成小格，但有时也会用角度或其它方法），并将元素放入合适的区域中。当检查图案的某部分时，只有有该图案的格子会被检查到。所以，时间可以大大地优化，比如，要确定到定点的距离小于某个值的元素（此时图案是个圆），或求是否相交（此时图案为直线）。
+</p><p><a href="http://www.nocow.cn/index.php/%E6%96%87%E4%BB%B6:Geom9.gif" class="image"><img alt="Geom9.gif" src="http://www.nocow.cn/images/9/9c/Geom9.gif" width="293" height="241" /></a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=26" title="编辑段落：转化为图">编辑</a>]</span> <span class="mw-headline" id=".E8.BD.AC.E5.8C.96.E4.B8.BA.E5.9B.BE">转化为图</span></h2>
+<p>有时看起来像几何问题的问题实际上却是一个图的问题。因为输入是平面内的点，并不代表问题是几何问题。
+</p>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=27" title="编辑段落：例子">编辑</a>]</span> <span class="mw-headline" id=".E4.BE.8B.E5.AD.90">例子</span></h1>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=28" title="编辑段落：Point Moving">编辑</a>]</span> <span class="mw-headline" id="Point_Moving">Point Moving</span></h2>
+<p>给定一组线段和点A,B，能否在不穿过线段的情况下从A移动到B？
+</p><p>线段将平面分割成不同部分,检查A,B是否在一个部分。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=29" title="编辑段落：Bicycle Routing">编辑</a>]</span> <span class="mw-headline" id="Bicycle_Routing">Bicycle Routing</span></h2>
+<p>给出有起点和终点的一组建筑物，找出从建筑物A到B不穿过任何建筑物的最短路线。
+</p><p>题解：图论问题。以建筑物的起点和<i>重</i>终点为点，两点之间在不径直穿过任何建筑物时连一条边，边权为两点之间的距离。这样就把原问题转化成了最短路问题。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=30" title="编辑段落：Maximizing Line Intersections">编辑</a>]</span> <span class="mw-headline" id="Maximizing_Line_Intersections">Maximizing Line Intersections</span></h2>
+<p>给出平面内一组点，找到能被一条直线能相交到的最多线段。
+</p><p>题解：很显然，直线必须经过两个交点。这样，枚举每对交点，计算此时直线的交点数。可用分割法优化。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit&amp;section=31" title="编辑段落：Polygon Classification">编辑</a>]</span> <span class="mw-headline" id="Polygon_Classification">Polygon Classification</span></h2>
+<p>给出一组直线所确定的多边形，判断多边形是否是简单的（任意两条不相邻的线段不会相交）和凸的.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 135/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3187-0!*!*!!zh-cn!2!* and timestamp 20131219164600 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;oldid=33287">http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;oldid=33287</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Computational_Geometry.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Computational_Geometry&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FComputational+Geometry" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Computational_Geometry" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Computational_Geometry" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;oldid=33287" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过11,695次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月6日 (星期二) 17:15做出最后修改。 在NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/222.168.145.2" title="特殊:用户贡献/222.168.145.2">222.168.145.2</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/61.186.173.225" title="特殊:用户贡献/61.186.173.225">61.186.173.225</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/180.109.226.175" title="特殊:用户贡献/180.109.226.175">180.109.226.175</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.214.221.136" title="特殊:用户贡献/221.214.221.136">221.214.221.136</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Computational_Geometry&amp;action=credits" title="Translate:USACO/Computational Geometry">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.321 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

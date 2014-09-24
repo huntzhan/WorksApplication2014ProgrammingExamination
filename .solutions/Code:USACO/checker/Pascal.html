@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:USACO/checker/Pascal - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:USACO/checker/Pascal", "wgTitle": "USACO/checker/Pascal", "wgCurRevisionId": 31151, "wgArticleId": 196, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_USACO_checker_Pascal action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:USACO/checker/Pascal</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Pascal.html#column-one">导航</a>, <a href="Pascal.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">深搜<span class="sy0">+</span>对称优化
+<span class="coMULTI">{
+ ID:fei60361
+ PROG:checker
+ LANG:PASCAL
+}</span>
+<span class="kw1">var</span>
+ zong<span class="sy0">,</span>dui1<span class="sy0">,</span>dui2<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="nu0">26</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+ i<span class="sy0">,</span>j<span class="sy0">,</span>n<span class="sy0">,</span>max<span class="sy0">:</span><span class="kw4">longint</span>;
+ a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>max<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>max<span class="sy0">=</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>n<span class="sy0">=</span><span class="nu0">6</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+    <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+    <span class="kw3">writeln</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span> <span class="kw1">else</span>
+  <span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> dfs<span class="br0">&#40;</span>y<span class="sy0">,</span>ll<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">,</span>j<span class="sy0">,</span>k<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  k<span class="sy0">:=</span>y;
+  <span class="kw1">if</span> y&gt;<span class="sy0">=</span>n <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      inc<span class="br0">&#40;</span>max<span class="br0">&#41;</span>;
+      <span class="kw1">if</span> max&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+      print;
+    <span class="kw1">end</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> ll <span class="kw1">do</span>
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span>zong<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>dui1<span class="br0">&#91;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">+</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+          <span class="kw1">if</span> <span class="br0">&#40;</span>dui2<span class="br0">&#91;</span>n<span class="sy0">-</span><span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>i<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+      <span class="kw1">begin</span>
+        zong<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>; dui1<span class="br0">&#91;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">+</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>; dui2<span class="br0">&#91;</span>n<span class="sy0">-</span><span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>i<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        a<span class="br0">&#91;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+        <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>y<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span> dfs<span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+          <span class="kw1">else</span> dfs<span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>n<span class="br0">&#41;</span>;
+        a<span class="br0">&#91;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+        zong<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>; dui1<span class="br0">&#91;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">+</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;dui2<span class="br0">&#91;</span>n<span class="sy0">-</span><span class="br0">&#40;</span>y<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>i<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      <span class="kw1">end</span>;
+   <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+<span class="coMULTI">{ ASSIGN(input,'checker.in'); reset(input);
+ assign(output,'checker.out'); rewrite(output);}</span>
+ <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+ fillchar<span class="br0">&#40;</span>zong<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>zong<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+ fillchar<span class="br0">&#40;</span>dui1<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>zong<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+ fillchar<span class="br0">&#40;</span>dui2<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>zong<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+   dfs<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span>;
+ <span class="kw3">writeln</span><span class="br0">&#40;</span>max<span class="sy0">*</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+ close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+ close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">位运算<span class="sy0">:</span>
+USER<span class="sy0">:</span> yu man <span class="br0">&#91;</span>yuman161<span class="br0">&#93;</span>
+TASK<span class="sy0">:</span> checker
+LANG<span class="sy0">:</span> PASCAL
+Compiling...
+<span class="me1">Compile</span><span class="sy0">:</span> OK
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.011</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.022</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.054</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.281</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+All tests OK.
+<span class="me1">Your</span> <span class="kw1">program</span> <span class="br0">&#40;</span><span class="st_h">'checker'</span><span class="br0">&#41;</span> produced all correct answers!  This is your
+submission #<span class="nu0">24</span> <span class="kw1">for</span> this problem.  <span class="me1">Congratulations</span>!
+<span class="coMULTI">{ID: yuman161
+PROG: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">var</span> upperlim<span class="sy0">:</span><span class="kw4">longint</span>;
+    n<span class="sy0">,</span>k<span class="sy0">,</span>t<span class="sy0">,</span>i<span class="sy0">:</span><span class="kw4">integer</span>;
+    sum<span class="sy0">:</span><span class="kw4">longint</span>;
+     a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">integer</span>;
+<span class="kw1">function</span> pa<span class="sy0">:</span><span class="kw4">boolean</span>;
+<span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> k<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw1">or</span><span class="br0">&#40;</span>i<span class="sy0">=</span>k<span class="br0">&#41;</span><span class="kw1">or</span>
+    <span class="br0">&#40;</span><span class="kw3">abs</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">-</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="kw3">abs</span><span class="br0">&#40;</span>i<span class="sy0">-</span>k<span class="br0">&#41;</span><span class="br0">&#41;</span>  <span class="kw1">then</span>
+     <span class="kw1">begin</span>
+       pa<span class="sy0">:=</span><span class="kw2">false</span>;
+       exit;
+     <span class="kw1">end</span>;
+  pa<span class="sy0">:=</span><span class="kw2">true</span>;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> test<span class="br0">&#40;</span>row<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+pos<span class="sy0">,</span>p<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> row&lt;&gt;upperlim <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+     pos<span class="sy0">:=</span>upperlim <span class="kw3">and</span> <span class="kw1">not</span> <span class="br0">&#40;</span>row <span class="kw1">or</span> ld <span class="kw1">or</span> rd<span class="br0">&#41;</span>;
+     <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+     <span class="kw1">begin</span>
+        p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+        pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+       test<span class="br0">&#40;</span>row<span class="sy0">+</span>p<span class="sy0">,</span><span class="br0">&#40;</span>ld<span class="sy0">+</span>p<span class="br0">&#41;</span><span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>rd<span class="sy0">+</span>p<span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span>;
+     <span class="kw1">end</span>;
+  <span class="kw1">end</span>
+ <span class="kw1">else</span> inc<span class="br0">&#40;</span>sum<span class="br0">&#41;</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+   assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+   assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+   reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+   rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+   <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+   a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+   k<span class="sy0">:=</span><span class="nu0">1</span>;
+   t<span class="sy0">:=</span><span class="nu0">0</span>;
+   <span class="kw1">while</span> k&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+     <span class="kw1">begin</span>
+      inc<span class="br0">&#40;</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      <span class="kw1">while</span> <span class="br0">&#40;</span><span class="kw1">not</span> pa<span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>&lt;<span class="sy0">=</span>n<span class="br0">&#41;</span><span class="kw1">do</span>
+        inc<span class="br0">&#40;</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+      <span class="kw1">if</span> a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">=</span>n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span>
+        <span class="kw1">begin</span> 
+          dec<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+          continue;
+        <span class="kw1">end</span>;
+      <span class="kw1">if</span> k<span class="sy0">=</span>n <span class="kw1">then</span>
+        <span class="kw1">begin</span>
+         <span class="kw1">if</span> t&lt;<span class="nu0">3</span> <span class="kw1">then</span>
+           <span class="kw1">begin</span>
+             <span class="kw1">for</span> i<span class="sy0">:=</span>1to n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+             <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+             <span class="kw3">writeln</span>;
+           <span class="kw1">end</span>
+      <span class="kw1">else</span> <span class="kw1">break</span>;
+     inc<span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+     <span class="kw1">end</span>
+  <span class="kw1">else</span> <span class="kw1">begin</span>
+        inc<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+        a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+       <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+ upperlim<span class="sy0">:=</span><span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> n<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span>;
+ test<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+ <span class="kw3">writeln</span><span class="br0">&#40;</span>sum<span class="br0">&#41;</span>;
+ close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+ close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<p>DFS+位运算
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{TASK: checker
+LANG: PASCAL
+&#160;
+Compiling...
+Compile: OK
+&#160;
+Executing...
+   Test 1: TEST OK [0.011 secs, 208 KB]
+   Test 2: TEST OK [0.000 secs, 208 KB]
+   Test 3: TEST OK [0.000 secs, 208 KB]
+   Test 4: TEST OK [0.000 secs, 208 KB]
+   Test 5: TEST OK [0.000 secs, 208 KB]
+   Test 6: TEST OK [0.011 secs, 208 KB]
+   Test 7: TEST OK [0.065 secs, 208 KB]
+   Test 8: TEST OK [0.302 secs, 208 KB]
+&#160;
+All tests OK.
+YOUR PROGRAM ('checker') WORKED FIRST TIME!  That's fantastic
+-- and a rare thing.  Please accept these special automated
+congratulations.}</span>
+&#160;
+<span class="kw1">var</span>
+  row<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">,</span>n<span class="sy0">,</span>ansn<span class="sy0">:</span><span class="kw4">longint</span>;
+  l<span class="sy0">,</span>r<span class="sy0">,</span>lcross<span class="sy0">,</span>rcross<span class="sy0">:</span><span class="kw4">array</span> <span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">26</span>..<span class="nu0">26</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+  ans<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+  flag<span class="sy0">:</span><span class="kw4">boolean</span>;
+<span class="kw1">procedure</span> dfs0<span class="br0">&#40;</span>x<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  y<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> x&gt;n <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      inc<span class="br0">&#40;</span>ansn<span class="br0">&#41;</span>;
+      <span class="kw1">if</span> ansn&gt;<span class="nu0">3</span> <span class="kw1">then</span> flag<span class="sy0">:=</span><span class="kw2">true</span>
+      <span class="kw1">else</span>
+        <span class="kw1">begin</span>
+          <span class="kw1">for</span> y<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+            <span class="kw3">write</span><span class="br0">&#40;</span>ans<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+          <span class="kw3">writeln</span><span class="br0">&#40;</span>ans<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+      exit;
+    <span class="kw1">end</span>;
+  <span class="kw1">for</span> y<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+    <span class="kw1">if</span> r<span class="br0">&#91;</span>y<span class="br0">&#93;</span> <span class="kw3">and</span> lcross<span class="br0">&#91;</span>x<span class="sy0">+</span>y<span class="br0">&#93;</span> <span class="kw3">and</span> rcross<span class="br0">&#91;</span>x<span class="sy0">-</span>y<span class="br0">&#93;</span> <span class="kw1">then</span>
+      <span class="kw1">begin</span>
+        r<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;lcross<span class="br0">&#91;</span>x<span class="sy0">+</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;rcross<span class="br0">&#91;</span>x<span class="sy0">-</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        ans<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span>y;dfs0<span class="br0">&#40;</span>x<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;<span class="kw1">if</span> flag <span class="kw1">then</span> exit;
+        r<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;lcross<span class="br0">&#91;</span>x<span class="sy0">+</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;rcross<span class="br0">&#91;</span>x<span class="sy0">-</span>y<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> dfs<span class="br0">&#40;</span>row<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  pos<span class="sy0">,</span>p<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> row&lt;&gt;n <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      pos<span class="sy0">:=</span>n <span class="kw3">and</span> <span class="kw1">not</span> <span class="br0">&#40;</span>row <span class="kw1">or</span> ld <span class="kw1">or</span> rd<span class="br0">&#41;</span>;
+      <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+        <span class="kw1">begin</span>
+          p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+          pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+          dfs<span class="br0">&#40;</span>row<span class="sy0">+</span>p<span class="sy0">,</span><span class="br0">&#40;</span>ld<span class="sy0">+</span>p<span class="br0">&#41;</span> <span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>rd<span class="sy0">+</span>p<span class="br0">&#41;</span> <span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>
+  <span class="kw1">else</span>
+    inc<span class="br0">&#40;</span>ansn<span class="br0">&#41;</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;fillchar<span class="br0">&#40;</span>l<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>l<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;fillchar<span class="br0">&#40;</span>r<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>r<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  fillchar<span class="br0">&#40;</span>lcross<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>lcross<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;fillchar<span class="br0">&#40;</span>rcross<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>rcross<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  ansn<span class="sy0">:=</span><span class="nu0">0</span>;flag<span class="sy0">:=</span><span class="kw2">false</span>;dfs0<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  fillchar<span class="br0">&#40;</span>lcross<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>lcross<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;fillchar<span class="br0">&#40;</span>rcross<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>rcross<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  ansn<span class="sy0">:=</span><span class="nu0">0</span>;n<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> n<span class="sy0">-</span><span class="nu0">1</span>;dfs<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;<span class="kw3">writeln</span><span class="br0">&#40;</span>ansn<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Pascal.html#dfs.2B.E4.BD.8D.2Brp"><span class="tocnumber">1</span> <span class="toctext">dfs+位+rp</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Pascal.html#DFS.2B.E4.BC.98.E5.8C.96"><span class="tocnumber">2</span> <span class="toctext">DFS+优化</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Pascal.html#.E8.B6.85.E7.83.82.E7.9A.84DFS.2B.E6.8C.87.E9.92.88.2C0.9Xs.E5.8B.89.E5.BC.BA.E8.83.BD.E8.BF.87"><span class="tocnumber">3</span> <span class="toctext">超烂的DFS+指针,0.9Xs勉强能过</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Pascal.html#DFS.2B.E7.AE.80.E5.8D.95.E5.89.AA.E6.9E.9D"><span class="tocnumber">4</span> <span class="toctext">DFS+简单剪枝</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Pascal.html#DFS.2B.E4.BD.8D.E8.BF.90.E7.AE.97"><span class="tocnumber">5</span> <span class="toctext">DFS+位运算</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit&amp;section=1" title="编辑段落：dfs+位+rp">编辑</a>]</span> <span class="mw-headline" id="dfs.2B.E4.BD.8D.2Brp">dfs+位+rp</span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">   ....
+   <span class="me1">Test</span> <span class="nu0">5</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.011</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.054</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.192</span> secs<span class="sy0">,</span> <span class="nu0">208</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+<span class="sy0">==========================================</span>
+<span class="coMULTI">{
+ID: et.arch2
+PROB: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">var</span>
+	b<span class="sy0">,</span>x<span class="sy0">,</span>y<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">30</span>..<span class="nu0">30</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">boolean</span>;
+        a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">15</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+	n<span class="sy0">,</span>l<span class="sy0">,</span>c1<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">longint</span>;
+&#160;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span>
+        i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+        <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+                <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+        <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+        <span class="kw1">if</span> c1<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+        <span class="kw1">begin</span>
+                <span class="kw3">writeln</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span>;
+                close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+                halt;
+        <span class="kw1">end</span>;
+&#160;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> dfs<span class="br0">&#40;</span>m<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+        j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+<span class="kw1">if</span> m<span class="sy0">=</span>n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> <span class="kw1">begin</span> inc<span class="br0">&#40;</span>c1<span class="br0">&#41;</span>; print; exit; <span class="kw1">end</span>;
+        <span class="kw1">for</span> j<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+        <span class="kw1">begin</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>x<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>y<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="kw2">true</span><span class="br0">&#41;</span><span class="kw1">then</span>
+                                        <span class="kw1">begin</span>
+                                        b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+                                        x<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+                                        y<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+                                        a<span class="br0">&#91;</span>m<span class="br0">&#93;</span><span class="sy0">:=</span>j;
+&#160;
+                                        dfs<span class="br0">&#40;</span>m<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+&#160;
+                                        b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+                                        x<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+                                        y<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+                                        <span class="kw1">end</span>;
+        <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+&#160;
+&#160;
+<span class="kw1">procedure</span> t<span class="br0">&#40;</span>s<span class="sy0">,</span>l<span class="sy0">,</span>r<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+        p<span class="sy0">,</span>pos<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+        <span class="kw1">if</span> s<span class="sy0">=</span>n <span class="kw1">then</span> <span class="kw1">begin</span>
+                        inc<span class="br0">&#40;</span>c<span class="br0">&#41;</span>;
+                        exit;
+                      <span class="kw1">end</span>;
+        p<span class="sy0">:=</span>n <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span>s <span class="kw1">or</span> l <span class="kw1">or</span> r<span class="br0">&#41;</span>;
+        <span class="kw1">while</span>   p&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+        <span class="kw1">begin</span>
+                pos<span class="sy0">:=</span>p <span class="kw3">and</span> <span class="sy0">-</span>p;
+                t<span class="br0">&#40;</span>s <span class="kw1">or</span> pos<span class="sy0">,</span><span class="br0">&#40;</span>l <span class="kw1">or</span> pos<span class="br0">&#41;</span> <span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>r <span class="kw1">or</span> pos<span class="br0">&#41;</span> <span class="kw1">shr</span> <span class="nu0">1</span><span class="br0">&#41;</span>;
+                p<span class="sy0">:=</span>p<span class="sy0">-</span>pos;
+        <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">begin</span>
+	fillchar<span class="br0">&#40;</span>b<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>b<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+        fillchar<span class="br0">&#40;</span>x<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>x<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+        fillchar<span class="br0">&#40;</span>y<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+&#160;
+	assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+	assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+&#160;
+        <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+        close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+&#160;
+        l<span class="sy0">:=</span>n;
+        n<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> n<span class="sy0">-</span><span class="nu0">1</span>;
+        t<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+        n<span class="sy0">:=</span>l;
+        dfs<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit&amp;section=2" title="编辑段落：DFS+优化">编辑</a>]</span> <span class="mw-headline" id="DFS.2B.E4.BC.98.E5.8C.96">DFS+优化</span></h2>
+<p>DFS+对称性优化+模拟链表,0.4s
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+USER: Long Guo [jscompa1]
+TASK: checker
+LANG: PASCAL
+&#160;
+Compiling...
+Compile: OK
+&#160;
+Executing...
+   Test 1: TEST OK [0.000 secs, 208 KB]
+   Test 2: TEST OK [0.000 secs, 208 KB]
+   Test 3: TEST OK [0.000 secs, 208 KB]
+   Test 4: TEST OK [0.011 secs, 208 KB]
+   Test 5: TEST OK [0.000 secs, 208 KB]
+   Test 6: TEST OK [0.022 secs, 208 KB]
+   Test 7: TEST OK [0.086 secs, 208 KB]
+   Test 8: TEST OK [0.454 secs, 208 KB]
+&#160;
+All tests OK.
+YOUR PROGRAM ('checker') WORKED FIRST TIME!  That's fantastic
+-- and a rare thing.  Please accept these special automated
+congratulations.
+&#160;
+&#160;
+}</span>
+<span class="kw1">program</span> fsd;
+<span class="kw1">var</span>
+  a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+  bz<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+  dl<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">2</span>..<span class="nu0">30</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+  dr<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">14</span>..<span class="nu0">14</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+  next<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+  n<span class="sy0">,</span>tot<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>tot<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>tot<span class="sy0">=</span><span class="nu0">2</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>n<span class="sy0">=</span><span class="nu0">6</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+    <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+    <span class="kw3">writeln</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span> <span class="kw1">else</span>
+  <span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> dfs<span class="br0">&#40;</span>d<span class="sy0">,</span>t<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">,</span>k<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> d&gt;n <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+       inc<span class="br0">&#40;</span>tot<span class="br0">&#41;</span>;
+       <span class="kw1">if</span> tot&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span> print;
+  <span class="kw1">end</span> <span class="kw1">else</span>
+  <span class="kw1">begin</span>
+      k<span class="sy0">:=</span><span class="nu0">0</span>;
+      i<span class="sy0">:=</span>next<span class="br0">&#91;</span>k<span class="br0">&#93;</span>;
+      <span class="kw1">while</span> <span class="br0">&#40;</span>i&gt;<span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>i&lt;<span class="sy0">=</span>t<span class="br0">&#41;</span> <span class="kw1">do</span>
+      <span class="kw1">begin</span>
+      <span class="kw1">if</span> bz<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> dl<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> dr<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span> <span class="kw1">then</span>
+      <span class="kw1">begin</span>
+        next<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+        a<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+        dl<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        dr<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        bz<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>d<span class="sy0">=</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">div</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="kw1">then</span> dfs<span class="br0">&#40;</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">div</span> <span class="nu0">2</span><span class="br0">&#41;</span>
+        <span class="kw1">else</span> dfs<span class="br0">&#40;</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>n<span class="br0">&#41;</span>;
+        a<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+        dl<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        dr<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        bz<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        next<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      <span class="kw1">end</span>;
+      k<span class="sy0">:=</span>next<span class="br0">&#91;</span>k<span class="br0">&#93;</span>;
+      i<span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+    <span class="kw1">end</span>;
+  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  <span class="kw1">for</span> tot<span class="sy0">:=</span><span class="nu0">0</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> next<span class="br0">&#91;</span>tot<span class="br0">&#93;</span><span class="sy0">:=</span>tot<span class="sy0">+</span><span class="nu0">1</span>;
+  tot<span class="sy0">:=</span><span class="nu0">0</span>;
+  fillchar<span class="br0">&#40;</span>bz<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>bz<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  fillchar<span class="br0">&#40;</span>dl<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>dl<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  fillchar<span class="br0">&#40;</span>dr<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>dr<span class="br0">&#41;</span><span class="sy0">,</span><span class="kw2">true</span><span class="br0">&#41;</span>;
+  dfs<span class="br0">&#40;</span><span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">div</span> <span class="nu0">2</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>tot<span class="sy0">*</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+ID: starfor1
+PROG: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">var</span>
+  n<span class="sy0">,</span>p<span class="sy0">,</span>i<span class="sy0">,</span>j<span class="sy0">,</span>x<span class="sy0">:</span><span class="kw4">byte</span>;
+  count<span class="sy0">:</span>dword;
+  d1<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">2</span>..<span class="nu0">26</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">boolean</span>;
+  d2<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">12</span>..<span class="nu0">12</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">boolean</span>;
+  path<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">byte</span>;
+  next<span class="sy0">,</span>prev<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">0</span>..<span class="nu0">14</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">byte</span>;
+  stop<span class="sy0">:</span><span class="kw4">boolean</span>;
+<span class="co1">//</span>
+<span class="kw1">procedure</span> iDFS <span class="br0">&#40;</span>d<span class="sy0">:</span><span class="kw4">byte</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">byte</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> d&gt;n <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">if</span> p&lt;<span class="nu0">3</span> <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      inc<span class="br0">&#40;</span>p<span class="br0">&#41;</span>;
+      <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+        <span class="kw3">write</span><span class="br0">&#40;</span>path<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+      <span class="kw3">writeln</span><span class="br0">&#40;</span>path<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+    <span class="kw1">end</span>
+    <span class="kw1">else</span>
+      stop<span class="sy0">:=</span><span class="kw2">true</span>;
+    exit;
+  <span class="kw1">end</span>;
+  i<span class="sy0">:=</span>next<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>;
+  <span class="kw1">while</span> i&lt;<span class="sy0">=</span>n <span class="kw1">do</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">if</span> <span class="kw1">not</span> d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> <span class="kw1">not</span> d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span> <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      path<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      iDFS<span class="br0">&#40;</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      path<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+      <span class="kw1">if</span> stop <span class="kw1">then</span>
+        exit;
+    <span class="kw1">end</span>;
+    i<span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="co1">//</span>
+<span class="kw1">procedure</span> DFS <span class="br0">&#40;</span>d<span class="sy0">:</span><span class="kw4">byte</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">byte</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> d&gt;n <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    inc<span class="br0">&#40;</span>count<span class="br0">&#41;</span>;
+    exit;
+  <span class="kw1">end</span>;
+  <span class="kw1">if</span> path<span class="br0">&#91;</span>d<span class="br0">&#93;</span>&lt;&gt;<span class="nu0">0</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    DFS<span class="br0">&#40;</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    exit;
+  <span class="kw1">end</span>;
+  i<span class="sy0">:=</span>next<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>;
+  <span class="kw1">while</span> i&lt;<span class="sy0">=</span>n <span class="kw1">do</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">if</span> <span class="kw1">not</span> d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> <span class="kw1">not</span> d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span> <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      path<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      DFS<span class="br0">&#40;</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      d1<span class="br0">&#91;</span>d<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      d2<span class="br0">&#91;</span>d<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+    <span class="kw1">end</span>;
+    i<span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+  <span class="kw1">end</span>;
+  path<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+<span class="kw1">end</span>;
+<span class="co1">//</span>
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+  reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  p<span class="sy0">:=</span><span class="nu0">0</span>;
+  stop<span class="sy0">:=</span><span class="kw2">false</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">0</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+    next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>i<span class="sy0">+</span><span class="nu0">1</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">do</span>
+    prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>i<span class="sy0">-</span><span class="nu0">1</span>;
+  iDFS<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  count<span class="sy0">:=</span><span class="nu0">0</span>;
+  <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+    x<span class="sy0">:=</span>n <span class="kw1">div</span> <span class="nu0">2</span><span class="sy0">+</span><span class="nu0">1</span>;
+    next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>x<span class="br0">&#93;</span>;
+    prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>prev<span class="br0">&#91;</span>x<span class="br0">&#93;</span>;
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span>
+    <span class="kw1">begin</span>
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      path<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      d1<span class="br0">&#91;</span>x<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      d2<span class="br0">&#91;</span>x<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      <span class="kw1">for</span> j<span class="sy0">:=</span>i<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span>
+      <span class="kw1">begin</span>
+        path<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span>x;
+        d1<span class="br0">&#91;</span>j<span class="sy0">+</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        d2<span class="br0">&#91;</span>j<span class="sy0">-</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        DFS<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+        d1<span class="br0">&#91;</span>j<span class="sy0">+</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        d2<span class="br0">&#91;</span>j<span class="sy0">-</span>x<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        path<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+      <span class="kw1">end</span>;
+      d1<span class="br0">&#91;</span>x<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      d2<span class="br0">&#91;</span>x<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+    <span class="kw1">end</span>;
+    count<span class="sy0">:=</span>count<span class="sy0">*</span><span class="nu0">8</span>;
+    path<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span>x;
+    d1<span class="br0">&#91;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+    d2<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+    DFS<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>x;
+    prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>x;
+  <span class="kw1">end</span>
+  <span class="kw1">else</span>
+  <span class="kw1">begin</span>
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span>
+    <span class="kw1">begin</span>
+      path<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+      d1<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      d2<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      DFS<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+      next<span class="br0">&#91;</span>prev<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      prev<span class="br0">&#91;</span>next<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      d1<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+      d2<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+    <span class="kw1">end</span>;
+    count<span class="sy0">:=</span>count<span class="sy0">*</span><span class="nu0">2</span>;
+  <span class="kw1">end</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>count<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit&amp;section=3" title="编辑段落：超烂的DFS+指针,0.9Xs勉强能过">编辑</a>]</span> <span class="mw-headline" id=".E8.B6.85.E7.83.82.E7.9A.84DFS.2B.E6.8C.87.E9.92.88.2C0.9Xs.E5.8B.89.E5.BC.BA.E8.83.BD.E8.BF.87">超烂的DFS+指针,0.9Xs勉强能过</span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+ID: maker2
+PROB: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">program</span> checker;
+  <span class="kw1">var</span> t<span class="sy0">,</span>n<span class="sy0">,</span>i<span class="sy0">:</span><span class="kw4">longint</span>;
+      b<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">26</span>..<span class="nu0">26</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+      d<span class="sy0">,</span>l<span class="sy0">,</span>r<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">26</span>..<span class="nu0">26</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+  <span class="kw1">procedure</span> search<span class="br0">&#40;</span>now<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+    <span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">longint</span>;
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> now<span class="sy0">=</span>n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span>
+        <span class="kw1">begin</span>
+          inc<span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+          <span class="kw1">if</span> t&lt;<span class="nu0">4</span> <span class="kw1">then</span>
+            <span class="kw1">begin</span>
+              <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+              <span class="kw3">writeln</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+            <span class="kw1">end</span>;
+          exit;
+        <span class="kw1">end</span>;
+      i<span class="sy0">:=</span><span class="nu0">0</span>;
+      <span class="kw1">repeat</span>
+        i<span class="sy0">:=</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+        <span class="kw1">if</span> i<span class="sy0">=</span>n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> exit;
+        <span class="kw1">if</span> b<span class="br0">&#91;</span>now<span class="sy0">+</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> c<span class="br0">&#91;</span>now<span class="sy0">-</span>i<span class="br0">&#93;</span> <span class="kw1">then</span>
+          <span class="kw1">begin</span>
+            r<span class="br0">&#91;</span>l<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;l<span class="br0">&#91;</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>l<span class="br0">&#91;</span>i<span class="br0">&#93;</span>;
+            b<span class="br0">&#91;</span>now<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;c<span class="br0">&#91;</span>now<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+            d<span class="br0">&#91;</span>now<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+            search<span class="br0">&#40;</span>now<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+            r<span class="br0">&#91;</span>l<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;l<span class="br0">&#91;</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+            b<span class="br0">&#91;</span>now<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;c<span class="br0">&#91;</span>now<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+          <span class="kw1">end</span>;
+      <span class="kw1">until</span> <span class="nu0">1</span><span class="sy0">=</span><span class="nu0">2</span>;
+    <span class="kw1">end</span>;
+  <span class="kw1">begin</span>
+    assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+    assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+    <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+    <span class="kw1">for</span> i<span class="sy0">:=-</span><span class="nu0">26</span> <span class="kw1">to</span> <span class="nu0">26</span> <span class="kw1">do</span>
+      <span class="kw1">begin</span>
+        b<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        c<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      <span class="kw1">end</span>;
+    <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">0</span> <span class="kw1">to</span> n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">do</span>
+      <span class="kw1">begin</span>
+        l<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>i<span class="sy0">-</span><span class="nu0">1</span>;
+        r<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>i<span class="sy0">+</span><span class="nu0">1</span>;
+      <span class="kw1">end</span>;
+    search<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    <span class="kw3">writeln</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+    close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw1">end</span>.</pre></div></div>
+<p>&gt;本代码使用了Dancing Links的思想,即链表的删除操作后不清楚链表元素指针的值,恢复时可直接恢复.详见论文Dancing Links(Knuth) --<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Sqybi" title="用户:Sqybi">sqybi</a> 11:09 2008年8月17日 (CST)
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit&amp;section=4" title="编辑段落：DFS+简单剪枝">编辑</a>]</span> <span class="mw-headline" id="DFS.2B.E7.AE.80.E5.8D.95.E5.89.AA.E6.9E.9D">DFS+简单剪枝</span></h2>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="co1">//若对以上大牛程序理解困难，可只考虑以下简单剪枝</span>
+<span class="co1">//无论奇偶，由对称性，搜索量都可减半（参见解析）</span>
+<span class="co1">//对于奇数情况，由上下对称可知：'''由Row 1的中间子展开的搜索树可得到的解数=包含Row N中间子的解数'''（显然二者没有交集）</span>
+<span class="co1">//本code对N=13的情况 运行时间为0.7Xs 勉强可过</span>
+&#160;
+<span class="coMULTI">{
+ID: Bugs_No1
+PROG: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">Var</span>
+  n<span class="sy0">,</span>i<span class="sy0">,</span>j<span class="sy0">,</span>total<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">longint</span>;
+  pos<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">2</span><span class="sy0">,</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">longint</span>;
+  row<span class="sy0">,</span>diag1<span class="sy0">,</span>diag2<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">12</span>..<span class="nu0">26</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">boolean</span>;
+<span class="kw1">Procedure</span> put<span class="br0">&#40;</span>r<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+  <span class="kw1">Var</span>
+    i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+  <span class="kw1">Begin</span>
+    <span class="kw1">If</span> r&gt;n <span class="kw1">then</span>
+      <span class="kw1">Begin</span>
+        inc<span class="br0">&#40;</span>total<span class="br0">&#41;</span>;
+        <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> pos<span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">,</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>i<span class="br0">&#93;</span>;
+        <span class="kw1">If</span> total&lt;<span class="nu0">4</span> <span class="kw1">then</span>
+          <span class="kw1">Begin</span>
+            <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>  <span class="kw3">write</span><span class="br0">&#40;</span>pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;  <span class="kw3">writeln</span><span class="br0">&#40;</span>pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>
+          <span class="kw1">End</span>;
+        <span class="kw1">If</span> <span class="kw3">odd</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>n<span class="br0">&#93;</span><span class="sy0">=</span>n <span class="kw1">div</span> <span class="nu0">2</span><span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">then</span> inc<span class="br0">&#40;</span>c<span class="br0">&#41;</span> <span class="co1">//记录包含Row N中间子的解数</span>
+      <span class="kw1">End</span>;
+    <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+      <span class="kw1">If</span> <span class="br0">&#40;</span>row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>diag1<span class="br0">&#91;</span>i<span class="sy0">+</span>r<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>diag2<span class="br0">&#91;</span>i<span class="sy0">-</span>r<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+        <span class="kw1">Begin</span>
+          row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;  diag1<span class="br0">&#91;</span>i<span class="sy0">+</span>r<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;  diag2<span class="br0">&#91;</span>i<span class="sy0">-</span>r<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+          pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span>r<span class="br0">&#93;</span><span class="sy0">:=</span>i;  put<span class="br0">&#40;</span>r<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+          row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag1<span class="br0">&#91;</span>i<span class="sy0">+</span>r<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag2<span class="br0">&#91;</span>i<span class="sy0">-</span>r<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+        <span class="kw1">End</span>
+    <span class="kw1">End</span>;
+<span class="kw1">Begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;  reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;  rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw1">For</span> n<span class="sy0">:=-</span><span class="nu0">12</span> <span class="kw1">to</span> <span class="nu0">26</span> <span class="kw1">do</span>
+    <span class="kw1">Begin</span>
+      row<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag1<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag2<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>
+    <span class="kw1">End</span>;
+  <span class="kw3">read</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span>
+    <span class="kw1">If</span> <span class="br0">&#40;</span>row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>diag1<span class="br0">&#91;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>diag2<span class="br0">&#91;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+      <span class="kw1">Begin</span>
+        row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;  diag1<span class="br0">&#91;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;  diag2<span class="br0">&#91;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">false</span>;
+        pos<span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;  put<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+        row<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag1<span class="br0">&#91;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;  diag2<span class="br0">&#91;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="kw2">true</span>;
+      <span class="kw1">End</span>;
+  <span class="kw1">If</span> n<span class="sy0">=</span><span class="nu0">6</span> <span class="kw1">then</span>
+    <span class="kw1">Begin</span>
+      <span class="kw1">For</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>  <span class="kw3">write</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>pos<span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">,</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;  <span class="kw3">writeln</span><span class="br0">&#40;</span>n<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">-</span>pos<span class="br0">&#91;</span><span class="nu0">2</span><span class="sy0">,</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>
+    <span class="kw1">End</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span><span class="br0">&#40;</span>total<span class="sy0">+</span>c<span class="br0">&#41;</span><span class="sy0">*</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;  close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>
+<span class="kw1">End</span>.</pre></div></div>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit&amp;section=5" title="编辑段落：DFS+位运算">编辑</a>]</span> <span class="mw-headline" id="DFS.2B.E4.BD.8D.E8.BF.90.E7.AE.97">DFS+位运算</span></h2>
+<ul><li>该程序利用了DFS+位运算
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">var</span>  <span class="co1">// 0.292s</span>
+  wbsn<span class="sy0">,</span>t<span class="sy0">,</span>up<span class="sy0">:</span><span class="kw4">longint</span>; 
+  n<span class="sy0">:</span><span class="kw4">integer</span>;
+  r<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">integer</span>;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span> 
+  i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> 
+    <span class="kw3">write</span><span class="br0">&#40;</span>r<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>r<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>;       
+<span class="kw1">procedure</span> pp<span class="br0">&#40;</span>a<span class="sy0">,</span>b<span class="sy0">,</span>c<span class="sy0">,</span>d<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>  
+  pos<span class="sy0">,</span>p<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> a&lt;up <span class="kw1">then</span> 
+    <span class="kw1">begin</span>
+      pos<span class="sy0">:=</span>up <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span>a <span class="kw1">or</span> b <span class="kw1">or</span> c<span class="br0">&#41;</span>;
+      <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span> 
+        <span class="kw1">begin</span>
+          p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+          pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+          <span class="kw1">if</span> t&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+            r<span class="br0">&#91;</span>d<span class="br0">&#93;</span><span class="sy0">:=</span>round<span class="br0">&#40;</span><span class="kw3">ln</span><span class="br0">&#40;</span>p<span class="br0">&#41;</span><span class="sy0">/</span><span class="kw3">ln</span><span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">+</span><span class="nu0">1</span>;
+          pp<span class="br0">&#40;</span>a<span class="sy0">+</span>p<span class="sy0">,</span><span class="br0">&#40;</span>b<span class="sy0">+</span>p<span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>c<span class="sy0">+</span>p<span class="br0">&#41;</span><span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span>d<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span> 
+  <span class="kw1">else</span> 
+    <span class="kw1">begin</span> 
+      inc<span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+      <span class="kw1">if</span> t&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+        print;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+  reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+  rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  t<span class="sy0">:=</span><span class="nu0">0</span>;
+  up<span class="sy0">:=</span><span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> n<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span>;
+  pp<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+	<span class="kw3">writeln</span><span class="br0">&#40;</span>t<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+ID:yellow22
+PROG:checker
+LANG:PASCAL
+}</span>
+<span class="kw1">prograM</span> checker2;
+<span class="kw1">var</span>
+  fff<span class="sy0">:</span>text;
+  n<span class="sy0">:</span><span class="kw4">byte</span>;
+  sum<span class="sy0">,</span>aim<span class="sy0">,</span>a<span class="sy0">,</span>b<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">longint</span>;
+  ans<span class="sy0">:</span><span class="kw4">array</span> <span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">byte</span>;
+<span class="kw1">procedure</span> compute<span class="br0">&#40;</span>row<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+  <span class="kw1">var</span>
+    pos<span class="sy0">,</span>p<span class="sy0">:</span><span class="kw4">longint</span>;
+  <span class="kw1">begin</span>
+    <span class="kw1">if</span> row<span class="sy0">=</span>aim
+      <span class="kw1">then</span> inc<span class="br0">&#40;</span>sum<span class="br0">&#41;</span>
+      <span class="kw1">else</span>
+        <span class="kw1">begin</span>
+          pos<span class="sy0">:=</span>aim <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span>row <span class="kw1">or</span> ld <span class="kw1">or</span> rd<span class="br0">&#41;</span>;
+          <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+            <span class="kw1">begin</span>
+              p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+              pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+              compute<span class="br0">&#40;</span>row<span class="sy0">+</span>p<span class="sy0">,</span><span class="br0">&#40;</span>ld<span class="sy0">+</span>p<span class="br0">&#41;</span>&lt;&lt;<span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>rd<span class="sy0">+</span>p<span class="br0">&#41;</span>&gt;&gt;<span class="nu0">1</span><span class="br0">&#41;</span>
+            <span class="kw1">end</span>
+        <span class="kw1">end</span>
+  <span class="kw1">end</span>;
+<span class="kw1">procedure</span> print;
+  <span class="kw1">var</span>
+    r<span class="sy0">:</span><span class="kw4">byte</span>;
+  <span class="kw1">begin</span>
+    inc<span class="br0">&#40;</span>sum<span class="br0">&#41;</span>;
+    <span class="kw1">if</span> sum&lt;<span class="sy0">=</span><span class="nu0">3</span>
+      <span class="kw1">then</span>
+        <span class="kw1">begin</span>
+          <span class="kw1">for</span> r<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>fff<span class="sy0">,</span>ans<span class="br0">&#91;</span>r<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+          <span class="kw3">writeln</span><span class="br0">&#40;</span>fff<span class="sy0">,</span>ans<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>
+        <span class="kw1">end</span>
+      <span class="kw1">else</span>
+        <span class="kw1">begin</span>
+          sum<span class="sy0">:=</span><span class="nu0">0</span>; aim<span class="sy0">:=</span><span class="nu0">1</span>&lt;&lt;n <span class="sy0">-</span><span class="nu0">1</span>;
+          compute<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+          <span class="kw3">writeln</span><span class="br0">&#40;</span>fff<span class="sy0">,</span>sum<span class="br0">&#41;</span>;
+          close<span class="br0">&#40;</span>fff<span class="br0">&#41;</span>;
+          halt<span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+        <span class="kw1">end</span>
+  <span class="kw1">end</span>;
+<span class="kw1">procedure</span> work<span class="br0">&#40;</span>dep<span class="sy0">:</span><span class="kw4">byte</span><span class="br0">&#41;</span>;
+  <span class="kw1">var</span>
+    r<span class="sy0">:</span><span class="kw4">byte</span>;
+  <span class="kw1">begin</span>
+    <span class="kw1">for</span> r<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>a <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;r<span class="br0">&#41;</span><span class="br0">&#41;</span>&lt;&gt;<span class="nu0">0</span><span class="br0">&#41;</span>
+         <span class="kw3">and</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>b <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">+</span>dep<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>&lt;&gt;<span class="nu0">0</span><span class="br0">&#41;</span>
+         <span class="kw3">and</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>c <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">-</span>dep<span class="sy0">+</span><span class="nu0">12</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>&lt;&gt;<span class="nu0">0</span><span class="br0">&#41;</span>
+        <span class="kw1">then</span>
+          <span class="kw1">begin</span>
+            a<span class="sy0">:=</span>a <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;r<span class="br0">&#41;</span>;
+            b<span class="sy0">:=</span>b <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">+</span>dep<span class="br0">&#41;</span><span class="br0">&#41;</span>;
+            c<span class="sy0">:=</span>c <span class="kw3">and</span> <span class="kw1">not</span><span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">-</span>dep<span class="sy0">+</span><span class="nu0">12</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+            ans<span class="br0">&#91;</span>dep<span class="br0">&#93;</span><span class="sy0">:=</span>r;
+            <span class="kw1">if</span> dep<span class="sy0">=</span>n <span class="kw1">then</span> print
+                     <span class="kw1">else</span> work<span class="br0">&#40;</span>dep<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+            a<span class="sy0">:=</span>a <span class="kw1">or</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;r<span class="br0">&#41;</span>;
+            b<span class="sy0">:=</span>b <span class="kw1">or</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">+</span>dep<span class="br0">&#41;</span><span class="br0">&#41;</span>;
+            c<span class="sy0">:=</span>c <span class="kw1">or</span> <span class="br0">&#40;</span><span class="nu0">1</span>&lt;&lt;<span class="br0">&#40;</span>r<span class="sy0">-</span>dep<span class="sy0">+</span><span class="nu0">12</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+          <span class="kw1">end</span>
+  <span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>fff<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+  reset<span class="br0">&#40;</span>fff<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>fff<span class="sy0">,</span>n<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>fff<span class="br0">&#41;</span>;
+&#160;
+  assign<span class="br0">&#40;</span>fff<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+  rewrite<span class="br0">&#40;</span>fff<span class="br0">&#41;</span>;
+&#160;
+  fillchar<span class="br0">&#40;</span>ans<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>ans<span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+  a<span class="sy0">:=-</span><span class="nu0">1</span>; b<span class="sy0">:=-</span><span class="nu0">1</span>; c<span class="sy0">:=-</span><span class="nu0">1</span>; sum<span class="sy0">:=</span><span class="nu0">0</span>;
+  work<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+<span class="kw1">end</span>.</pre></div></div>
+<ul><li>该程序用了DFS+位运算+对称性优化
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+ID:lsylsy21
+PROG:checker
+LANG:PASCAL
+}</span>
+<span class="kw1">var</span>
+  i<span class="sy0">,</span>num<span class="sy0">,</span>n<span class="sy0">,</span>v1<span class="sy0">,</span>v2<span class="sy0">,</span>v3<span class="sy0">:</span><span class="kw4">longint</span>;
+  s<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">longint</span>; 
+<span class="kw1">procedure</span> dfs1<span class="br0">&#40;</span>now<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">,</span>j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  now<span class="sy0">:=</span>now<span class="sy0">+</span><span class="nu0">1</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> 
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>v1 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v2 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v3 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw1">then</span> 
+        <span class="kw1">begin</span>
+          s<span class="br0">&#91;</span>now<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+          <span class="kw1">if</span> now<span class="sy0">=</span>n <span class="kw1">then</span> 
+            <span class="kw1">begin</span>
+              num<span class="sy0">:=</span>num<span class="sy0">+</span><span class="nu0">1</span>;
+              <span class="kw1">for</span> j<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+                <span class="kw3">write</span><span class="br0">&#40;</span>s<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+              <span class="kw3">writeln</span><span class="br0">&#40;</span>s<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+              <span class="kw1">break</span>;
+            <span class="kw1">end</span>;
+          v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+          v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span>;
+          v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span>;
+          dfs1<span class="br0">&#40;</span>now<span class="br0">&#41;</span>;
+          <span class="kw1">if</span> num&gt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span> exit;
+          v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+          v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span>;
+          v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> dfs<span class="br0">&#40;</span>now<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  now<span class="sy0">:=</span>now<span class="sy0">+</span><span class="nu0">1</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> 
+    <span class="kw1">begin</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>v1 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v2 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v3 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw1">then</span> 
+        <span class="kw1">begin</span>
+          <span class="kw1">if</span> now<span class="sy0">=</span>n <span class="kw1">then</span> 
+            <span class="kw1">begin</span>
+              num<span class="sy0">:=</span>num<span class="sy0">+</span><span class="nu0">1</span>;
+              <span class="kw1">break</span>;
+            <span class="kw1">end</span>;
+          v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+          v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span>;
+          v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span>;
+          dfs<span class="br0">&#40;</span>now<span class="br0">&#41;</span>;
+          v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+          v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span>now<span class="sy0">+</span>n<span class="br0">&#41;</span>;
+          v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span>now<span class="br0">&#41;</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  num<span class="sy0">:=</span><span class="nu0">0</span>;
+  fillchar<span class="br0">&#40;</span>s<span class="sy0">,</span>sizeof<span class="br0">&#40;</span>s<span class="br0">&#41;</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> 
+    <span class="kw1">begin</span>
+      s<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span>i;
+      v1<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> i;
+      v2<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">+</span>n<span class="br0">&#41;</span>;
+      v3<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+      dfs1<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+      <span class="kw1">if</span> num&gt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span> <span class="kw1">break</span>;
+    <span class="kw1">end</span>;
+  num<span class="sy0">:=</span><span class="nu0">0</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span> 
+    <span class="kw1">begin</span>
+      v1<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> i;
+      v2<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">+</span>n<span class="br0">&#41;</span>;
+      v3<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+      dfs<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+    <span class="kw1">end</span>;
+  <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span> <span class="kw1">then</span> 
+    <span class="kw1">begin</span>
+      i<span class="sy0">:=</span>n <span class="kw1">div</span> <span class="nu0">2</span><span class="sy0">+</span><span class="nu0">1</span>;
+      v1<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> i;
+      v2<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">+</span>n<span class="br0">&#41;</span>;
+      v3<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+<span class="co1">//  dfs(1);</span>
+      <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">do</span>
+        <span class="kw1">begin</span>
+          <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>v1 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v2 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">2</span><span class="sy0">+</span>n<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>v3 <span class="kw3">and</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw1">then</span> 
+            <span class="kw1">begin</span>
+              v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+              v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">2</span><span class="sy0">+</span>n<span class="br0">&#41;</span>;
+              v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+              dfs<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+              v1<span class="sy0">:=</span>v1 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> i;
+              v2<span class="sy0">:=</span>v2 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">2</span><span class="sy0">+</span>n<span class="br0">&#41;</span>;
+              v3<span class="sy0">:=</span>v3 <span class="kw1">xor</span> <span class="nu0">1</span> <span class="kw1">shl</span> <span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">2</span><span class="br0">&#41;</span>;
+            <span class="kw1">end</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+  num<span class="sy0">:=</span>num <span class="kw1">shl</span> <span class="nu0">1</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>num<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<p>+++位运算+++
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+id:ke.okkk1
+PROG:checker
+LANG:PASCAL
+}</span>
+<span class="kw1">var</span>
+   n<span class="sy0">,</span>aim<span class="sy0">,</span>m<span class="sy0">:</span>cardinal;
+   a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">longint</span>;
+&#160;
+   <span class="kw1">procedure</span> test<span class="br0">&#40;</span>rw<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">,</span>i<span class="sy0">:</span>cardinal<span class="br0">&#41;</span>;
+   <span class="kw1">var</span>
+      p<span class="sy0">,</span>pos<span class="sy0">,</span>l<span class="sy0">,</span>k<span class="sy0">:</span>cardinal;
+   <span class="kw1">begin</span>
+      <span class="kw1">if</span> rw&lt;&gt;aim <span class="kw1">then</span>
+         <span class="kw1">begin</span>
+            pos<span class="sy0">:=</span>aim <span class="kw3">and</span> <span class="kw1">not</span> <span class="br0">&#40;</span>rw <span class="kw1">or</span> ld <span class="kw1">or</span> rd<span class="br0">&#41;</span>;
+            <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+               <span class="kw1">begin</span>
+                  p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+                  pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+                  <span class="kw1">if</span> m&lt;<span class="nu0">3</span> <span class="kw1">then</span>
+                     <span class="kw1">begin</span>
+                        l<span class="sy0">:=</span><span class="nu0">1</span>;
+                        k<span class="sy0">:=</span>p;
+                        <span class="kw1">while</span> k&lt;&gt;<span class="nu0">1</span> <span class="kw1">do</span>
+                           <span class="kw1">begin</span>
+                              inc<span class="br0">&#40;</span>l<span class="br0">&#41;</span>;
+                              k<span class="sy0">:=</span>k <span class="kw1">shr</span> <span class="nu0">1</span>;
+                           <span class="kw1">end</span>;
+                        a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>l;
+                     <span class="kw1">end</span>;
+                  test<span class="br0">&#40;</span>rw <span class="kw1">or</span> p<span class="sy0">,</span><span class="br0">&#40;</span>ld <span class="kw1">or</span> p<span class="br0">&#41;</span><span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>rd <span class="kw1">or</span> p<span class="br0">&#41;</span><span class="kw1">shr</span> <span class="nu0">1</span><span class="sy0">,</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+               <span class="kw1">end</span>;
+         <span class="kw1">end</span>
+      <span class="kw1">else</span>
+         <span class="kw1">begin</span>
+            inc<span class="br0">&#40;</span>m<span class="br0">&#41;</span>;
+            <span class="kw1">if</span> m&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+               <span class="kw1">begin</span>
+                  <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+                  <span class="kw1">for</span> k<span class="sy0">:=</span><span class="nu0">2</span> <span class="kw1">to</span> n <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span><span class="st_h">' '</span><span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+                  <span class="kw3">writeln</span>;
+               <span class="kw1">end</span>;
+         <span class="kw1">end</span>;
+   <span class="kw1">end</span>;
+&#160;
+<span class="kw1">begin</span>
+   assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+   reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+   <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+   close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+   assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+   rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+   aim<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">shl</span> n <span class="sy0">-</span><span class="nu0">1</span>;
+   test<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+   <span class="kw3">writeln</span><span class="br0">&#40;</span>m<span class="br0">&#41;</span>;
+   close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+ID:xdwudi01
+PROB:checker
+LANG:PASCAL
+}</span>
+<span class="kw1">program</span> checker;
+<span class="kw1">var</span>
+   n<span class="sy0">,</span>aim<span class="sy0">,</span>ans<span class="sy0">:</span><span class="kw4">longint</span>;
+   a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">longint</span>;
+<span class="kw1">procedure</span> try1<span class="br0">&#40;</span>row<span class="sy0">,</span>ld<span class="sy0">,</span>rd<span class="sy0">,</span>i<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  p<span class="sy0">,</span>pos<span class="sy0">,</span>l<span class="sy0">,</span>k<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> row&lt;&gt;aim <span class="kw1">then</span>
+    <span class="kw1">begin</span>
+      pos<span class="sy0">:=</span>aim <span class="kw3">and</span> <span class="kw1">not</span> <span class="br0">&#40;</span>row <span class="kw1">or</span> ld <span class="kw1">or</span> rd<span class="br0">&#41;</span>;
+      <span class="kw1">while</span> pos&lt;&gt;<span class="nu0">0</span> <span class="kw1">do</span>
+        <span class="kw1">begin</span>
+          p<span class="sy0">:=</span>pos <span class="kw3">and</span> <span class="sy0">-</span>pos;
+          pos<span class="sy0">:=</span>pos<span class="sy0">-</span>p;
+          <span class="kw1">if</span> ans&lt;<span class="nu0">3</span> <span class="kw1">then</span>
+            <span class="kw1">begin</span>
+              l<span class="sy0">:=</span><span class="nu0">1</span>;
+              k<span class="sy0">:=</span>p;
+              <span class="kw1">while</span> k&lt;&gt;<span class="nu0">1</span> <span class="kw1">do</span>
+                <span class="kw1">begin</span>
+                  k<span class="sy0">:=</span>k <span class="kw1">shr</span> <span class="nu0">1</span>;
+                  inc<span class="br0">&#40;</span>l<span class="br0">&#41;</span>;
+                <span class="kw1">end</span>;
+              a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>l;
+            <span class="kw1">end</span>;
+          try1<span class="br0">&#40;</span>row <span class="kw1">or</span> p<span class="sy0">,</span><span class="br0">&#40;</span>ld <span class="kw1">or</span> p<span class="br0">&#41;</span> <span class="kw1">shl</span> <span class="nu0">1</span><span class="sy0">,</span><span class="br0">&#40;</span>rd <span class="kw1">or</span> p<span class="br0">&#41;</span> <span class="kw1">shr</span> <span class="nu0">1</span><span class="sy0">,</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+        <span class="kw1">end</span>
+    <span class="kw1">end</span>
+  <span class="kw1">else</span>
+    <span class="kw1">begin</span>
+      inc<span class="br0">&#40;</span>ans<span class="br0">&#41;</span>;
+      <span class="kw1">if</span> ans&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span>
+        <span class="kw1">begin</span>
+          <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+          <span class="kw1">for</span> k<span class="sy0">:=</span><span class="nu0">2</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+            <span class="kw3">write</span><span class="br0">&#40;</span><span class="st_h">' '</span><span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+          <span class="kw3">writeln</span>;
+        <span class="kw1">end</span>;
+    <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+   assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+   assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+   reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>; rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+   <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+   aim<span class="sy0">:=</span><span class="br0">&#40;</span><span class="nu0">1</span> <span class="kw1">shl</span> n<span class="br0">&#41;</span><span class="sy0">-</span><span class="nu0">1</span>;
+   try1<span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+   <span class="kw3">writeln</span><span class="br0">&#40;</span>ans<span class="br0">&#41;</span>;
+   close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="coMULTI">{
+   Test 1: TEST OK [0.000 secs, 276 KB]
+   Test 2: TEST OK [0.000 secs, 276 KB]
+   Test 3: TEST OK [0.000 secs, 276 KB]
+   Test 4: TEST OK [0.000 secs, 276 KB]
+   Test 5: TEST OK [0.000 secs, 276 KB]
+   Test 6: TEST OK [0.054 secs, 276 KB]
+   Test 7: TEST OK [0.189 secs, 276 KB]
+   Test 8: TEST OK [0.999 secs, 276 KB]
+&#160;
+手动挽尊……纯裸搜+狂暴优化，第二次交RP爆发0.999sec
+体现了好的编程习惯也是很重要的
+提示：
+1、很多时候不要用boolean，用byte代替，特别是使用频繁的时候，因为boolean是2字节的，byte是1字节的时间更短（这项我在我的电脑上优化了0.2秒）
+2、每个BEGIN～END代码段的最后一句不要加分号，否则会多一句空语句（这项优化0.02秒）
+3、把AND中更可能为假的条件，OR中更可能为真的条件放在前面，这样可以节约很多时间（这项在本题中用不上）
+4、PASCAL申明全局变量的时候已经为你赋了初值0，所以一般全局变量就不需要再fillchar了，会浪费很多时间。
+}</span>
+<span class="coMULTI">{
+	ID: y9507031
+	PROG: checker
+	LANG: PASCAL
+}</span>
+&#160;
+<span class="kw1">Program</span> checker;
+&#160;
+<span class="kw1">Const</span>
+	filein <span class="sy0">=</span> <span class="st_h">'checker.in'</span>;
+	fileout<span class="sy0">=</span><span class="st_h">'checker.out'</span>;
+&#160;
+<span class="kw1">Var</span>
+	hang<span class="sy0">,</span>zuoxie<span class="sy0">,</span>youxie<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">30</span>..<span class="nu0">30</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">byte</span>;
+	ans_buf<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">shortint</span>;
+	n<span class="sy0">:</span><span class="kw4">shortint</span>;
+	c<span class="sy0">:</span><span class="kw4">shortint</span> <span class="sy0">=</span> <span class="nu0">0</span>;
+&#160;
+<span class="kw1">Function</span> place<span class="br0">&#40;</span>x<span class="sy0">:</span><span class="kw4">shortint</span><span class="br0">&#41;</span><span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">Var</span>
+	i<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">Begin</span>
+	<span class="kw1">if</span> x<span class="sy0">=</span>n<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> 
+		<span class="kw1">begin</span>
+			<span class="kw1">if</span> c&lt;<span class="nu0">3</span> <span class="kw1">then</span>
+				<span class="kw1">begin</span>
+					<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+						<span class="kw1">if</span><span class="br0">&#40;</span>i<span class="sy0">=</span>n<span class="br0">&#41;</span><span class="kw1">then</span> <span class="kw3">writeln</span><span class="br0">&#40;</span>ans_buf<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">else</span> <span class="kw3">write</span><span class="br0">&#40;</span>ans_buf<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+					inc<span class="br0">&#40;</span>c<span class="br0">&#41;</span>
+				<span class="kw1">end</span>;
+			exit<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>
+		<span class="kw1">end</span>;
+	place<span class="sy0">:=</span><span class="nu0">0</span>;
+	<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+		<span class="kw1">if</span><span class="br0">&#40;</span>hang<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>zuoxie<span class="br0">&#91;</span>x<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>youxie<span class="br0">&#91;</span>x<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw1">then</span>
+			<span class="kw1">begin</span>
+				hang<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+				zuoxie<span class="br0">&#91;</span>x<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+				youxie<span class="br0">&#91;</span>x<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+				<span class="kw1">if</span><span class="br0">&#40;</span>c&lt;<span class="nu0">3</span><span class="br0">&#41;</span><span class="kw1">then</span> ans_buf<span class="br0">&#91;</span>x<span class="br0">&#93;</span><span class="sy0">:=</span>i;
+				place<span class="sy0">:=</span>place<span class="sy0">+</span>place<span class="br0">&#40;</span>x<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+				hang<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+				zuoxie<span class="br0">&#91;</span>x<span class="sy0">-</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+				youxie<span class="br0">&#91;</span>x<span class="sy0">+</span>i<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>
+			<span class="kw1">end</span>
+<span class="kw1">End</span>;
+&#160;
+<span class="kw1">Begin</span>
+	assign<span class="br0">&#40;</span>input<span class="sy0">,</span>filein<span class="br0">&#41;</span>; reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+	<span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+	close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+	assign<span class="br0">&#40;</span>output<span class="sy0">,</span>fileout<span class="br0">&#41;</span>; rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+	<span class="kw3">writeln</span><span class="br0">&#40;</span>place<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+	close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>
+<span class="kw1">End</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="co1">//根据楼上的建议用了BYTE……于是裸搜全过……</span>
+&#160;
+Compiling...
+<span class="me1">Compile</span><span class="sy0">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.011</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.054</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.173</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.983</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+<span class="me1">Your</span> <span class="kw1">program</span> <span class="br0">&#40;</span><span class="st_h">'checker'</span><span class="br0">&#41;</span> produced all correct answers!  This is your
+submission #<span class="nu0">9</span> <span class="kw1">for</span> this problem.  <span class="me1">Congratulations</span>!
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+<span class="kw1">program</span> checker<span class="br0">&#40;</span>input<span class="sy0">,</span>output<span class="br0">&#41;</span>;
+<span class="kw1">const</span> n<span class="sy0">=</span><span class="nu0">13</span>;
+<span class="kw1">var</span> a<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">n</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">integer</span>;
+    b<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">n</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">byte</span>;
+    c<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">2</span>..<span class="nu0">2</span><span class="sy0">*</span>n<span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">byte</span>;
+    d<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="sy0">-</span>n..<span class="me1">n</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="kw1">of</span> <span class="kw4">byte</span>;
+    ans<span class="sy0">,</span>m<span class="sy0">:</span><span class="kw4">longint</span>;
+&#160;
+<span class="kw1">procedure</span> print;
+<span class="kw1">var</span> i<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+  inc<span class="br0">&#40;</span>ans<span class="br0">&#41;</span>;
+  <span class="kw1">if</span> ans&gt;<span class="nu0">3</span> <span class="kw1">then</span> exit;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> m<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+  <span class="kw3">write</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>a<span class="br0">&#91;</span>m<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span> find<span class="br0">&#40;</span>i<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span> j<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> i<span class="sy0">=</span>m<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> print
+  <span class="kw1">else</span>
+  <span class="kw1">for</span> j<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> m <span class="kw1">do</span>
+  <span class="kw1">if</span>  <span class="br0">&#40;</span>b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>c<span class="br0">&#91;</span>i<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span>d<span class="br0">&#91;</span>i<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">then</span>
+  <span class="kw1">begin</span>
+  a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">:=</span>j;
+  b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+  c<span class="br0">&#91;</span>i<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+  d<span class="br0">&#91;</span>i<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+  find<span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  b<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+  c<span class="br0">&#91;</span>i<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+  d<span class="br0">&#91;</span>i<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+  reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>m<span class="br0">&#41;</span>;
+  find<span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>ans<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">Compiling...
+<span class="me1">Compile</span><span class="sy0">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.000</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.011</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.032</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.108</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.626</span> secs<span class="sy0">,</span> <span class="nu0">276</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+深搜<span class="sy0">+</span>对称优化
+<span class="coMULTI">{
+ID: ultra_m1
+PROG: checker
+LANG: PASCAL
+}</span>
+<span class="kw1">program</span> checker;
+  <span class="kw1">var</span> x<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="nu0">13</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">integer</span>;
+        a<span class="sy0">,</span>b<span class="sy0">,</span>c<span class="sy0">:</span><span class="kw4">array</span><span class="br0">&#91;</span><span class="sy0">-</span><span class="nu0">12</span>..<span class="nu0">26</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">byte</span>;
+		i<span class="sy0">,</span>k<span class="sy0">,</span>n<span class="sy0">,</span>l<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">procedure</span> print;
+  <span class="kw1">var</span> y<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> y<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span> <span class="kw3">write</span><span class="br0">&#40;</span>x<span class="br0">&#91;</span>y<span class="br0">&#93;</span><span class="sy0">,</span><span class="st_h">' '</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>x<span class="br0">&#91;</span>n<span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="kw1">end</span>;
+<span class="kw1">procedure</span> <span class="kw1">try</span><span class="br0">&#40;</span>m<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+	<span class="kw1">var</span> j<span class="sy0">:</span><span class="kw4">longint</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> j<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span> 
+	  <span class="kw1">if</span> <span class="br0">&#40;</span>a<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>b<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>c<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">=</span><span class="nu0">0</span><span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw1">begin</span>
+		  x<span class="br0">&#91;</span>m<span class="br0">&#93;</span><span class="sy0">:=</span>j;
+	      a<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+	      b<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+	      c<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+	      <span class="kw1">if</span> m&lt;n <span class="kw1">then</span> <span class="kw1">try</span><span class="br0">&#40;</span>m<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">else</span> <span class="kw1">begin</span>
+			  inc<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+		      <span class="kw1">if</span> k&lt;<span class="sy0">=</span><span class="nu0">3</span> <span class="kw1">then</span> print;
+			  <span class="kw1">if</span> n&gt;<span class="nu0">6</span> <span class="kw1">then</span> <span class="kw1">begin</span>
+				  <span class="kw1">if</span> x<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>&gt;n <span class="kw1">div</span> <span class="nu0">2</span> <span class="kw1">then</span> <span class="kw1">begin</span>
+					  <span class="kw1">if</span> n <span class="kw1">mod</span> <span class="nu0">2</span><span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span> <span class="kw1">begin</span> dec<span class="br0">&#40;</span>k<span class="br0">&#41;</span>; k<span class="sy0">:=</span>k<span class="sy0">*</span><span class="nu0">2</span>; <span class="kw3">writeln</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>; halt; <span class="kw1">end</span>;
+					  <span class="kw1">if</span> n <span class="kw1">mod</span> <span class="nu0">2</span><span class="sy0">=</span><span class="nu0">1</span> <span class="kw1">then</span> <span class="kw1">begin</span>
+						  <span class="kw1">if</span> x<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">=</span>n <span class="kw1">div</span> <span class="nu0">2</span><span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">then</span> <span class="kw1">if</span> k<span class="sy0">-</span><span class="nu0">1</span>&lt;l <span class="kw1">then</span> l<span class="sy0">:=</span>k<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">else</span> <span class="kw1">else</span> <span class="kw1">begin</span>  k<span class="sy0">:=</span>k<span class="sy0">+</span>l<span class="sy0">-</span><span class="nu0">1</span>; <span class="kw3">writeln</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>; halt; <span class="kw1">end</span>;
+					  <span class="kw1">end</span>;
+				  <span class="kw1">end</span>;
+			  <span class="kw1">end</span>;
+		  <span class="kw1">end</span>;
+	      a<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+	      b<span class="br0">&#91;</span>m<span class="sy0">+</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>;
+	      c<span class="br0">&#91;</span>m<span class="sy0">-</span>j<span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">0</span>
+	  <span class="kw1">end</span>;
+<span class="kw1">end</span>;
+<span class="kw1">begin</span>
+  assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'checker.in'</span><span class="br0">&#41;</span>;
+  assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'checker.out'</span><span class="br0">&#41;</span>;
+  reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+  <span class="kw3">readln</span><span class="br0">&#40;</span>n<span class="br0">&#41;</span>;
+  l<span class="sy0">:=</span>maxlongint;
+  <span class="kw1">try</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span>;
+  <span class="kw3">writeln</span><span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+  close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 114/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:196-0!*!0!!zh-cn!*!* and timestamp 20131219164943 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;oldid=31151">http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;oldid=31151</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="Pascal.html">代码</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Code_Talk:USACO/checker/Pascal&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Code%3AUSACO%2Fchecker%2FPascal" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:USACO/checker/Pascal" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:USACO/checker/Pascal" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;oldid=31151" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过11,585次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Ultra-magnus&amp;action=edit&amp;redlink=1" class="new" title="用户:Ultra-magnus（尚未撰写）">Ultra-magnus</a>于2012年8月1日 (星期三) 23:15做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Xuanya02" title="用户:Xuanya02">炸毛璇</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:%E9%AB%98%E6%89%8B%E5%A6%82%E6%B3%89" title="用户:高手如泉">高手如泉</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Jack950703&amp;action=edit&amp;redlink=1" class="new" title="用户:Jack950703（尚未撰写）">Jack950703</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.17.46.140" title="特殊:用户贡献/121.17.46.140">121.17.46.140</a>和<a href="http://www.nocow.cn/index.php?title=Code:USACO/checker/Pascal&amp;action=credits" title="Code:USACO/checker/Pascal">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.590 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

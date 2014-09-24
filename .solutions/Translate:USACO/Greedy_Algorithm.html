@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Greedy Algorithm - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Greedy_Algorithm", "wgTitle": "USACO/Greedy Algorithm", "wgCurRevisionId": 29412, "wgArticleId": 4905, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Greedy_Algorithm action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Greedy Algorithm</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Greedy_Algorithm.html#column-one">导航</a>, <a href="Greedy_Algorithm.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>贪心算法：
+</p><p>part1:
+『样例问题：Barn Repair[1999 USACO Spring Open]
+	有一长列的牛棚，其中一些需要木板作为屋顶。你可以利用N(N&lt;=50)块木板，任何一块木板都可以覆盖任意长度的牛棚。覆盖所有的必须被覆盖的牛棚并且使覆盖的牛棚数最少。
+</p><p>主要思想：
+	贪心算法的最基本思想便是利用小规模的解来得到大规模的解。不像其他的方法。然而，贪心算法只能依赖于所求出的最好的答案。因此，对于样例问题来说，要得到N=5时的答案，必须先求出当N=4时的最好的答案。然后通过这些解去得到N=5时的解。没有一个N=4的解是曾被考虑过的。
+</p><p>问题：
+	贪心算法有两个基本的问题。（1、如何去构造贪心策略。2、证明贪心算法的正确性。）
+</p><p>如何去构造贪心策略
+	如何让一个大规模的解从小规模的解里得出？一般来说，这是一个问题的关键。对于样例问题来说，最明显的方法是在四块板到五块板的过程中，挑选一块板，然后去除这一块木板中间的一段，这样就相当于使一块木板变成了两块。你应该选择去除所有木板中有最大的一段覆盖了不需要覆盖木板的牛棚的木板。
+	为了去除一段已覆盖的牛棚，要选择一块覆盖了那些牛棚的木板，然后将它分成两块：一块覆盖了在分隔段前的牛棚，一块覆盖了在分隔段后的牛棚。
+</p><p>贪心算法的正确性
+	事实上，真正的挑战在于贪心所得到的解并不一定正确。即使它们看上去得出了样例答案，随机答案，以及任何你能够想到的情况。但如果有一种情况不正确，那么在评测中至少会出现一个（如果不多）错误。
+	对于样例问题，来看一下上述描述的贪心算法是否正确，考虑如下：
+	假设答案不包含算法运行时所除去的最大的裂缝（即前文的分隔块），但是去除了比较小的裂缝。通过在最后结合两块木板在两种不同情况下所得到的答案。两种种情况使用的木板一样多，但其中一种却覆盖了更少的牛棚。覆盖更少牛棚的方案更优，所以假设错误，我们应该一直选择去除更大的裂缝。
+	如果答案不包含这个特殊的裂缝，而包含了另一个和这个裂缝一样大，做了相同变化，使答案也同样。那么这个新的选择也是正确的，我们可以任选一个。
+	因此，存在一个最佳答案包含了最大裂缝。所以，在每一步中，总存在一个最佳答案是一个最佳选择，从而可知，最终的答案一定是最佳的。
+</p><p>结论
+	如果贪心算法存在，使用它，他们容易编写，容易调试，运行快速，而且使用更少的内存，在比赛环境中较好地编写一个正确算法。唯一缺少的元素便是正确性。如果贪心算法能够得到正确答案，那么就用它，但不要认为贪心算法适用于所有题目。』
+</p><p>类似问题： 
+</p><p>三值排序问题 [IOI 1996] 
+</p><p>有一个由N个数值均为1、2或3的数构成的序列（N&lt;= 1000），其值无序，现要求你用最少的交换次数将序列按升序顺序排列。 
+</p><p>算法：排序后的序列分为三个部分：排序后应存储1的部分，排序后应存储2的部分和排序后应存储3的部分，贪心排序法应交换尽量多的交换后位置正确的（2，1）、（3，1）和（3，2）数对。当这些数对交换完毕后，再交换进行两次交换后位置正确的（1，2，3）三个数。 
+</p><p>分析：很明显，每一次交换都可以改变两个数的位置，若经过一次交换以后，两个数的位置都由错误变为了正确，那么它必定最优。同时我们还可发现，经过两次交换后，我们可以随意改变3个数的位置。那么如果存在三个数恰好为1，2和3，且位置都是错误的，那么进行两次交换使它们位置正确也必定最优。有由于该题具有最优子结构性质，我们的贪心算法成立。 
+</p><p>货币系统 -- 一个反例 [已删节] 
+</p><p>奶牛王国刚刚独立，王国中的奶牛们要求设立一个货币系统，使得这个货币系统最好。现在告诉你一个货币系统所包含的货币面额种类（假设全为硬币）以及所需要找的钱的大小，请给出用该货币系统找出该钱数，并且要求硬币数尽量少。 
+</p><p>算法：每次都选择面额不超过剩余钱数但却最大的一枚硬币。例如：有货币系统为{1，2，5，10}，要求找出16，那么第一次找出10，第二次找出5，第三次找出1，恰好为最优解。 
+</p><p>错误分析: 其实可以发现，这种算法并不是每一次都能构成最优解。反例如：货币系统{1，5，8，10}，同样找16，贪心的结果是10，5，1三枚，但用两枚8的硬币才是最优解。因为这样，贪心的性质不成立，如此解题也是错的。 
+</p><p>拓扑排序 
+</p><p>给你一些物品的集合，然后给你一些这些物品的摆放顺序的约束，如"物品A应摆放在物品B前"，请给出一个这些物品的摆放方案，使得所有约束都可以得到满足。 
+</p><p>算法：对于给定的物品创建一个有向图，A到B的弧表示"物品A应摆放在物品B前”。以任意顺序对每个物品进行遍历。每当你找到一个物品，他的入度为0，那么贪心地将它放到当前序列的末尾，删除它所有的出弧，然后对它的出弧指向的所有结点进行递归，用同样的算法。如果这个算法遍历了所有的物品，但却没有把所有的物品排序，那就意味着没有满足条件的解。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 1/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:4905-0!*!*!*!*!*!* and timestamp 20131219164459 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;oldid=29412">http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;oldid=29412</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Greedy_Algorithm.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Greedy_Algorithm&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FGreedy+Algorithm" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Greedy_Algorithm" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Greedy_Algorithm" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Greedy_Algorithm&amp;oldid=29412" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过5,609次。</li>
+		<li id="credits">本页面由<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:BluEsnAp&amp;action=edit&amp;redlink=1" class="new" title="用户:BluEsnAp（尚未撰写）">volz.kz.g</a>于2012年1月22日 (星期日) 21:15做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:PhoneBot" title="用户:PhoneBot">PhoneBot</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Aikilis" title="用户:Aikilis">Aikilis</a>和NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/111.78.17.94" title="特殊:用户贡献/111.78.17.94">111.78.17.94</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.7.147.171" title="特殊:用户贡献/221.7.147.171">221.7.147.171</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.118 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

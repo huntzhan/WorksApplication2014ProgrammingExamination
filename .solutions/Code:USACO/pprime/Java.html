@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:USACO/pprime/Java - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:USACO/pprime/Java", "wgTitle": "USACO/pprime/Java", "wgCurRevisionId": 28694, "wgArticleId": 5634, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for java
+ * CSS class: source-java, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.java.source-java .de1, .java.source-java .de2 {}
+.java.source-java  {font-family:monospace;}
+.java.source-java .imp {font-weight: bold; color: red;}
+.java.source-java li, .java.source-java .li1 {font-weight: normal; vertical-align:top;}
+.java.source-java .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.java.source-java .li2 {font-weight: bold; vertical-align:top;}
+.java.source-java .kw1 {color: #000000; font-weight: bold;}
+.java.source-java .kw2 {color: #000066; font-weight: bold;}
+.java.source-java .kw3 {color: #003399;}
+.java.source-java .kw4 {color: #000066; font-weight: bold;}
+.java.source-java .co1 {color: #666666; font-style: italic;}
+.java.source-java .co2 {color: #006699;}
+.java.source-java .co3 {color: #008000; font-style: italic; font-weight: bold;}
+.java.source-java .coMULTI {color: #666666; font-style: italic;}
+.java.source-java .es0 {color: #000099; font-weight: bold;}
+.java.source-java .br0 {color: #009900;}
+.java.source-java .sy0 {color: #339933;}
+.java.source-java .st0 {color: #0000ff;}
+.java.source-java .nu0 {color: #cc66cc;}
+.java.source-java .me1 {color: #006633;}
+.java.source-java .me2 {color: #006633;}
+.java.source-java .ln-xtra, .java.source-java li.ln-xtra, .java.source-java div.ln-xtra {background-color: #ffc;}
+.java.source-java span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_USACO_pprime_Java action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:USACO/pprime/Java</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Java.html#column-one">导航</a>, <a href="Java.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"> <div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="java source-java"><pre class="de1"> <span class="coMULTI">/*
+ID: lazydom1
+LANG: JAVA
+TASK: pprime
+*/</span>
+<span class="kw1">import</span> <span class="co2">java.util.*</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">java.io.*</span><span class="sy0">;</span>
+<span class="kw1">public</span> <span class="kw1">class</span> pprime <span class="br0">&#123;</span>
+&#160;
+&#160;
+&#160;
+	<span class="kw4">int</span><span class="br0">&#91;</span><span class="br0">&#93;</span> prime <span class="sy0">=</span> <span class="br0">&#123;</span><span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">5</span>,<span class="nu0">7</span>,<span class="nu0">11</span>,<span class="nu0">101</span>,<span class="nu0">131</span>,<span class="nu0">151</span>,<span class="nu0">181</span>,<span class="nu0">191</span>,<span class="nu0">313</span>,<span class="nu0">353</span>,<span class="nu0">373</span>,<span class="nu0">383</span>,<span class="nu0">727</span>,<span class="nu0">757</span>,<span class="nu0">787</span>,<span class="nu0">797</span>,<span class="nu0">919</span>,<span class="nu0">929</span>,<span class="nu0">10301</span>,<span class="nu0">10501</span>,<span class="nu0">10601</span>,<span class="nu0">11311</span>,<span class="nu0">11411</span>,<span class="nu0">12421</span>,<span class="nu0">12721</span>,<span class="nu0">12821</span>,<span class="nu0">13331</span>,<span class="nu0">13831</span>,<span class="nu0">13931</span>,<span class="nu0">14341</span>,<span class="nu0">14741</span>,<span class="nu0">15451</span>,<span class="nu0">15551</span>,<span class="nu0">16061</span>,<span class="nu0">16361</span>,<span class="nu0">16561</span>,<span class="nu0">16661</span>,<span class="nu0">17471</span>,<span class="nu0">17971</span>,<span class="nu0">18181</span>,<span class="nu0">18481</span>,<span class="nu0">19391</span>,<span class="nu0">19891</span>,<span class="nu0">19991</span>,<span class="nu0">30103</span>,<span class="nu0">30203</span>,<span class="nu0">30403</span>,<span class="nu0">30703</span>,<span class="nu0">30803</span>,<span class="nu0">31013</span>,<span class="nu0">31513</span>,<span class="nu0">32323</span>,<span class="nu0">32423</span>,<span class="nu0">33533</span>,<span class="nu0">34543</span>,<span class="nu0">34843</span>,<span class="nu0">35053</span>,<span class="nu0">35153</span>,<span class="nu0">35353</span>,<span class="nu0">35753</span>,<span class="nu0">36263</span>,<span class="nu0">36563</span>,<span class="nu0">37273</span>,<span class="nu0">37573</span>,<span class="nu0">38083</span>,<span class="nu0">38183</span>,<span class="nu0">38783</span>,<span class="nu0">39293</span>,<span class="nu0">70207</span>,<span class="nu0">70507</span>,<span class="nu0">70607</span>,<span class="nu0">71317</span>,<span class="nu0">71917</span>,<span class="nu0">72227</span>,<span class="nu0">72727</span>,<span class="nu0">73037</span>,<span class="nu0">73237</span>,<span class="nu0">73637</span>,<span class="nu0">74047</span>,<span class="nu0">74747</span>,<span class="nu0">75557</span>,<span class="nu0">76367</span>,<span class="nu0">76667</span>,<span class="nu0">77377</span>,<span class="nu0">77477</span>,<span class="nu0">77977</span>,<span class="nu0">78487</span>,<span class="nu0">78787</span>,<span class="nu0">78887</span>,<span class="nu0">79397</span>,<span class="nu0">79697</span>,<span class="nu0">79997</span>,<span class="nu0">90709</span>,<span class="nu0">91019</span>,<span class="nu0">93139</span>,<span class="nu0">93239</span>,<span class="nu0">93739</span>,<span class="nu0">94049</span>,<span class="nu0">94349</span>,<span class="nu0">94649</span>,<span class="nu0">94849</span>,<span class="nu0">94949</span>,<span class="nu0">95959</span>,<span class="nu0">96269</span>,<span class="nu0">96469</span>,<span class="nu0">96769</span>,<span class="nu0">97379</span>,<span class="nu0">97579</span>,<span class="nu0">97879</span>,<span class="nu0">98389</span>,<span class="nu0">98689</span>,<span class="nu0">1003001</span>,<span class="nu0">1008001</span>,<span class="nu0">1022201</span>,<span class="nu0">1028201</span>,<span class="nu0">1035301</span>,<span class="nu0">1043401</span>,<span class="nu0">1055501</span>,<span class="nu0">1062601</span>,<span class="nu0">1065601</span>,<span class="nu0">1074701</span>,<span class="nu0">1082801</span>,<span class="nu0">1085801</span>,<span class="nu0">1092901</span>,<span class="nu0">1093901</span>,<span class="nu0">1114111</span>,<span class="nu0">1117111</span>,<span class="nu0">1120211</span>,<span class="nu0">1123211</span>,<span class="nu0">1126211</span>,<span class="nu0">1129211</span>,<span class="nu0">1134311</span>,<span class="nu0">1145411</span>,<span class="nu0">1150511</span>,<span class="nu0">1153511</span>,<span class="nu0">1160611</span>,<span class="nu0">1163611</span>,<span class="nu0">1175711</span>,<span class="nu0">1177711</span>,<span class="nu0">1178711</span>,<span class="nu0">1180811</span>,<span class="nu0">1183811</span>,<span class="nu0">1186811</span>,<span class="nu0">1190911</span>,<span class="nu0">1193911</span>,<span class="nu0">1196911</span>,<span class="nu0">1201021</span>,<span class="nu0">1208021</span>,<span class="nu0">1212121</span>,<span class="nu0">1215121</span>,<span class="nu0">1218121</span>,<span class="nu0">1221221</span>,<span class="nu0">1235321</span>,<span class="nu0">1242421</span>,<span class="nu0">1243421</span>,<span class="nu0">1245421</span>,<span class="nu0">1250521</span>,<span class="nu0">1253521</span>,<span class="nu0">1257521</span>,<span class="nu0">1262621</span>,<span class="nu0">1268621</span>,<span class="nu0">1273721</span>,<span class="nu0">1276721</span>,<span class="nu0">1278721</span>,<span class="nu0">1280821</span>,<span class="nu0">1281821</span>,<span class="nu0">1286821</span>,<span class="nu0">1287821</span>,<span class="nu0">1300031</span>,<span class="nu0">1303031</span>,<span class="nu0">1311131</span>,<span class="nu0">1317131</span>,<span class="nu0">1327231</span>,<span class="nu0">1328231</span>,<span class="nu0">1333331</span>,<span class="nu0">1335331</span>,<span class="nu0">1338331</span>,<span class="nu0">1343431</span>,<span class="nu0">1360631</span>,<span class="nu0">1362631</span>,<span class="nu0">1363631</span>,<span class="nu0">1371731</span>,<span class="nu0">1374731</span>,<span class="nu0">1390931</span>,<span class="nu0">1407041</span>,<span class="nu0">1409041</span>,<span class="nu0">1411141</span>,<span class="nu0">1412141</span>,<span class="nu0">1422241</span>,<span class="nu0">1437341</span>,<span class="nu0">1444441</span>,<span class="nu0">1447441</span>,<span class="nu0">1452541</span>,<span class="nu0">1456541</span>,<span class="nu0">1461641</span>,<span class="nu0">1463641</span>,<span class="nu0">1464641</span>,<span class="nu0">1469641</span>,<span class="nu0">1486841</span>,<span class="nu0">1489841</span>,<span class="nu0">1490941</span>,<span class="nu0">1496941</span>,<span class="nu0">1508051</span>,<span class="nu0">1513151</span>,<span class="nu0">1520251</span>,<span class="nu0">1532351</span>,<span class="nu0">1535351</span>,<span class="nu0">1542451</span>,<span class="nu0">1548451</span>,<span class="nu0">1550551</span>,<span class="nu0">1551551</span>,<span class="nu0">1556551</span>,<span class="nu0">1557551</span>,<span class="nu0">1565651</span>,<span class="nu0">1572751</span>,<span class="nu0">1579751</span>,<span class="nu0">1580851</span>,<span class="nu0">1583851</span>,<span class="nu0">1589851</span>,<span class="nu0">1594951</span>,<span class="nu0">1597951</span>,<span class="nu0">1598951</span>,<span class="nu0">1600061</span>,<span class="nu0">1609061</span>,<span class="nu0">1611161</span>,<span class="nu0">1616161</span>,<span class="nu0">1628261</span>,<span class="nu0">1630361</span>,<span class="nu0">1633361</span>,<span class="nu0">1640461</span>,<span class="nu0">1643461</span>,<span class="nu0">1646461</span>,<span class="nu0">1654561</span>,<span class="nu0">1657561</span>,<span class="nu0">1658561</span>,<span class="nu0">1660661</span>,<span class="nu0">1670761</span>,<span class="nu0">1684861</span>,<span class="nu0">1685861</span>,<span class="nu0">1688861</span>,<span class="nu0">1695961</span>,<span class="nu0">1703071</span>,<span class="nu0">1707071</span>,<span class="nu0">1712171</span>,<span class="nu0">1714171</span>,<span class="nu0">1730371</span>,<span class="nu0">1734371</span>,<span class="nu0">1737371</span>,<span class="nu0">1748471</span>,<span class="nu0">1755571</span>,<span class="nu0">1761671</span>,<span class="nu0">1764671</span>,<span class="nu0">1777771</span>,<span class="nu0">1793971</span>,<span class="nu0">1802081</span>,<span class="nu0">1805081</span>,<span class="nu0">1820281</span>,<span class="nu0">1823281</span>,<span class="nu0">1824281</span>,<span class="nu0">1826281</span>,<span class="nu0">1829281</span>,<span class="nu0">1831381</span>,<span class="nu0">1832381</span>,<span class="nu0">1842481</span>,<span class="nu0">1851581</span>,<span class="nu0">1853581</span>,<span class="nu0">1856581</span>,<span class="nu0">1865681</span>,<span class="nu0">1876781</span>,<span class="nu0">1878781</span>,<span class="nu0">1879781</span>,<span class="nu0">1880881</span>,<span class="nu0">1881881</span>,<span class="nu0">1883881</span>,<span class="nu0">1884881</span>,<span class="nu0">1895981</span>,<span class="nu0">1903091</span>,<span class="nu0">1908091</span>,<span class="nu0">1909091</span>,<span class="nu0">1917191</span>,<span class="nu0">1924291</span>,<span class="nu0">1930391</span>,<span class="nu0">1936391</span>,<span class="nu0">1941491</span>,<span class="nu0">1951591</span>,<span class="nu0">1952591</span>,<span class="nu0">1957591</span>,<span class="nu0">1958591</span>,<span class="nu0">1963691</span>,<span class="nu0">1968691</span>,<span class="nu0">1969691</span>,<span class="nu0">1970791</span>,<span class="nu0">1976791</span>,<span class="nu0">1981891</span>,<span class="nu0">1982891</span>,<span class="nu0">1984891</span>,<span class="nu0">1987891</span>,<span class="nu0">1988891</span>,<span class="nu0">1993991</span>,<span class="nu0">1995991</span>,<span class="nu0">1998991</span>,<span class="nu0">3001003</span>,<span class="nu0">3002003</span>,<span class="nu0">3007003</span>,<span class="nu0">3016103</span>,<span class="nu0">3026203</span>,<span class="nu0">3064603</span>,<span class="nu0">3065603</span>,<span class="nu0">3072703</span>,<span class="nu0">3073703</span>,<span class="nu0">3075703</span>,<span class="nu0">3083803</span>,<span class="nu0">3089803</span>,<span class="nu0">3091903</span>,<span class="nu0">3095903</span>,<span class="nu0">3103013</span>,<span class="nu0">3106013</span>,<span class="nu0">3127213</span>,<span class="nu0">3135313</span>,<span class="nu0">3140413</span>,<span class="nu0">3155513</span>,<span class="nu0">3158513</span>,<span class="nu0">3160613</span>,<span class="nu0">3166613</span>,<span class="nu0">3181813</span>,<span class="nu0">3187813</span>,<span class="nu0">3193913</span>,<span class="nu0">3196913</span>,<span class="nu0">3198913</span>,<span class="nu0">3211123</span>,<span class="nu0">3212123</span>,<span class="nu0">3218123</span>,<span class="nu0">3222223</span>,<span class="nu0">3223223</span>,<span class="nu0">3228223</span>,<span class="nu0">3233323</span>,<span class="nu0">3236323</span>,<span class="nu0">3241423</span>,<span class="nu0">3245423</span>,<span class="nu0">3252523</span>,<span class="nu0">3256523</span>,<span class="nu0">3258523</span>,<span class="nu0">3260623</span>,<span class="nu0">3267623</span>,<span class="nu0">3272723</span>,<span class="nu0">3283823</span>,<span class="nu0">3285823</span>,<span class="nu0">3286823</span>,<span class="nu0">3288823</span>,<span class="nu0">3291923</span>,<span class="nu0">3293923</span>,<span class="nu0">3304033</span>,<span class="nu0">3305033</span>,<span class="nu0">3307033</span>,<span class="nu0">3310133</span>,<span class="nu0">3315133</span>,<span class="nu0">3319133</span>,<span class="nu0">3321233</span>,<span class="nu0">3329233</span>,<span class="nu0">3331333</span>,<span class="nu0">3337333</span>,<span class="nu0">3343433</span>,<span class="nu0">3353533</span>,<span class="nu0">3362633</span>,<span class="nu0">3364633</span>,<span class="nu0">3365633</span>,<span class="nu0">3368633</span>,<span class="nu0">3380833</span>,<span class="nu0">3391933</span>,<span class="nu0">3392933</span>,<span class="nu0">3400043</span>,<span class="nu0">3411143</span>,<span class="nu0">3417143</span>,<span class="nu0">3424243</span>,<span class="nu0">3425243</span>,<span class="nu0">3427243</span>,<span class="nu0">3439343</span>,<span class="nu0">3441443</span>,<span class="nu0">3443443</span>,<span class="nu0">3444443</span>,<span class="nu0">3447443</span>,<span class="nu0">3449443</span>,<span class="nu0">3452543</span>,<span class="nu0">3460643</span>,<span class="nu0">3466643</span>,<span class="nu0">3470743</span>,<span class="nu0">3479743</span>,<span class="nu0">3485843</span>,<span class="nu0">3487843</span>,<span class="nu0">3503053</span>,<span class="nu0">3515153</span>,<span class="nu0">3517153</span>,<span class="nu0">3528253</span>,<span class="nu0">3541453</span>,<span class="nu0">3553553</span>,<span class="nu0">3558553</span>,<span class="nu0">3563653</span>,<span class="nu0">3569653</span>,<span class="nu0">3586853</span>,<span class="nu0">3589853</span>,<span class="nu0">3590953</span>,<span class="nu0">3591953</span>,<span class="nu0">3594953</span>,<span class="nu0">3601063</span>,<span class="nu0">3607063</span>,<span class="nu0">3618163</span>,<span class="nu0">3621263</span>,<span class="nu0">3627263</span>,<span class="nu0">3635363</span>,<span class="nu0">3643463</span>,<span class="nu0">3646463</span>,<span class="nu0">3670763</span>,<span class="nu0">3673763</span>,<span class="nu0">3680863</span>,<span class="nu0">3689863</span>,<span class="nu0">3698963</span>,<span class="nu0">3708073</span>,<span class="nu0">3709073</span>,<span class="nu0">3716173</span>,<span class="nu0">3717173</span>,<span class="nu0">3721273</span>,<span class="nu0">3722273</span>,<span class="nu0">3728273</span>,<span class="nu0">3732373</span>,<span class="nu0">3743473</span>,<span class="nu0">3746473</span>,<span class="nu0">3762673</span>,<span class="nu0">3763673</span>,<span class="nu0">3765673</span>,<span class="nu0">3768673</span>,<span class="nu0">3769673</span>,<span class="nu0">3773773</span>,<span class="nu0">3774773</span>,<span class="nu0">3781873</span>,<span class="nu0">3784873</span>,<span class="nu0">3792973</span>,<span class="nu0">3793973</span>,<span class="nu0">3799973</span>,<span class="nu0">3804083</span>,<span class="nu0">3806083</span>,<span class="nu0">3812183</span>,<span class="nu0">3814183</span>,<span class="nu0">3826283</span>,<span class="nu0">3829283</span>,<span class="nu0">3836383</span>,<span class="nu0">3842483</span>,<span class="nu0">3853583</span>,<span class="nu0">3858583</span>,<span class="nu0">3863683</span>,<span class="nu0">3864683</span>,<span class="nu0">3867683</span>,<span class="nu0">3869683</span>,<span class="nu0">3871783</span>,<span class="nu0">3878783</span>,<span class="nu0">3893983</span>,<span class="nu0">3899983</span>,<span class="nu0">3913193</span>,<span class="nu0">3916193</span>,<span class="nu0">3918193</span>,<span class="nu0">3924293</span>,<span class="nu0">3927293</span>,<span class="nu0">3931393</span>,<span class="nu0">3938393</span>,<span class="nu0">3942493</span>,<span class="nu0">3946493</span>,<span class="nu0">3948493</span>,<span class="nu0">3964693</span>,<span class="nu0">3970793</span>,<span class="nu0">3983893</span>,<span class="nu0">3991993</span>,<span class="nu0">3994993</span>,<span class="nu0">3997993</span>,<span class="nu0">3998993</span>,<span class="nu0">7014107</span>,<span class="nu0">7035307</span>,<span class="nu0">7036307</span>,<span class="nu0">7041407</span>,<span class="nu0">7046407</span>,<span class="nu0">7057507</span>,<span class="nu0">7065607</span>,<span class="nu0">7069607</span>,<span class="nu0">7073707</span>,<span class="nu0">7079707</span>,<span class="nu0">7082807</span>,<span class="nu0">7084807</span>,<span class="nu0">7087807</span>,<span class="nu0">7093907</span>,<span class="nu0">7096907</span>,<span class="nu0">7100017</span>,<span class="nu0">7114117</span>,<span class="nu0">7115117</span>,<span class="nu0">7118117</span>,<span class="nu0">7129217</span>,<span class="nu0">7134317</span>,<span class="nu0">7136317</span>,<span class="nu0">7141417</span>,<span class="nu0">7145417</span>,<span class="nu0">7155517</span>,<span class="nu0">7156517</span>,<span class="nu0">7158517</span>,<span class="nu0">7159517</span>,<span class="nu0">7177717</span>,<span class="nu0">7190917</span>,<span class="nu0">7194917</span>,<span class="nu0">7215127</span>,<span class="nu0">7226227</span>,<span class="nu0">7246427</span>,<span class="nu0">7249427</span>,<span class="nu0">7250527</span>,<span class="nu0">7256527</span>,<span class="nu0">7257527</span>,<span class="nu0">7261627</span>,<span class="nu0">7267627</span>,<span class="nu0">7276727</span>,<span class="nu0">7278727</span>,<span class="nu0">7291927</span>,<span class="nu0">7300037</span>,<span class="nu0">7302037</span>,<span class="nu0">7310137</span>,<span class="nu0">7314137</span>,<span class="nu0">7324237</span>,<span class="nu0">7327237</span>,<span class="nu0">7347437</span>,<span class="nu0">7352537</span>,<span class="nu0">7354537</span>,<span class="nu0">7362637</span>,<span class="nu0">7365637</span>,<span class="nu0">7381837</span>,<span class="nu0">7388837</span>,<span class="nu0">7392937</span>,<span class="nu0">7401047</span>,<span class="nu0">7403047</span>,<span class="nu0">7409047</span>,<span class="nu0">7415147</span>,<span class="nu0">7434347</span>,<span class="nu0">7436347</span>,<span class="nu0">7439347</span>,<span class="nu0">7452547</span>,<span class="nu0">7461647</span>,<span class="nu0">7466647</span>,<span class="nu0">7472747</span>,<span class="nu0">7475747</span>,<span class="nu0">7485847</span>,<span class="nu0">7486847</span>,<span class="nu0">7489847</span>,<span class="nu0">7493947</span>,<span class="nu0">7507057</span>,<span class="nu0">7508057</span>,<span class="nu0">7518157</span>,<span class="nu0">7519157</span>,<span class="nu0">7521257</span>,<span class="nu0">7527257</span>,<span class="nu0">7540457</span>,<span class="nu0">7562657</span>,<span class="nu0">7564657</span>,<span class="nu0">7576757</span>,<span class="nu0">7586857</span>,<span class="nu0">7592957</span>,<span class="nu0">7594957</span>,<span class="nu0">7600067</span>,<span class="nu0">7611167</span>,<span class="nu0">7619167</span>,<span class="nu0">7622267</span>,<span class="nu0">7630367</span>,<span class="nu0">7632367</span>,<span class="nu0">7644467</span>,<span class="nu0">7654567</span>,<span class="nu0">7662667</span>,<span class="nu0">7665667</span>,<span class="nu0">7666667</span>,<span class="nu0">7668667</span>,<span class="nu0">7669667</span>,<span class="nu0">7674767</span>,<span class="nu0">7681867</span>,<span class="nu0">7690967</span>,<span class="nu0">7693967</span>,<span class="nu0">7696967</span>,<span class="nu0">7715177</span>,<span class="nu0">7718177</span>,<span class="nu0">7722277</span>,<span class="nu0">7729277</span>,<span class="nu0">7733377</span>,<span class="nu0">7742477</span>,<span class="nu0">7747477</span>,<span class="nu0">7750577</span>,<span class="nu0">7758577</span>,<span class="nu0">7764677</span>,<span class="nu0">7772777</span>,<span class="nu0">7774777</span>,<span class="nu0">7778777</span>,<span class="nu0">7782877</span>,<span class="nu0">7783877</span>,<span class="nu0">7791977</span>,<span class="nu0">7794977</span>,<span class="nu0">7807087</span>,<span class="nu0">7819187</span>,<span class="nu0">7820287</span>,<span class="nu0">7821287</span>,<span class="nu0">7831387</span>,<span class="nu0">7832387</span>,<span class="nu0">7838387</span>,<span class="nu0">7843487</span>,<span class="nu0">7850587</span>,<span class="nu0">7856587</span>,<span class="nu0">7865687</span>,<span class="nu0">7867687</span>,<span class="nu0">7868687</span>,<span class="nu0">7873787</span>,<span class="nu0">7884887</span>,<span class="nu0">7891987</span>,<span class="nu0">7897987</span>,<span class="nu0">7913197</span>,<span class="nu0">7916197</span>,<span class="nu0">7930397</span>,<span class="nu0">7933397</span>,<span class="nu0">7935397</span>,<span class="nu0">7938397</span>,<span class="nu0">7941497</span>,<span class="nu0">7943497</span>,<span class="nu0">7949497</span>,<span class="nu0">7957597</span>,<span class="nu0">7958597</span>,<span class="nu0">7960697</span>,<span class="nu0">7977797</span>,<span class="nu0">7984897</span>,<span class="nu0">7985897</span>,<span class="nu0">7987897</span>,<span class="nu0">7996997</span>,<span class="nu0">9002009</span>,<span class="nu0">9015109</span>,<span class="nu0">9024209</span>,<span class="nu0">9037309</span>,<span class="nu0">9042409</span>,<span class="nu0">9043409</span>,<span class="nu0">9045409</span>,<span class="nu0">9046409</span>,<span class="nu0">9049409</span>,<span class="nu0">9067609</span>,<span class="nu0">9073709</span>,<span class="nu0">9076709</span>,<span class="nu0">9078709</span>,<span class="nu0">9091909</span>,<span class="nu0">9095909</span>,<span class="nu0">9103019</span>,<span class="nu0">9109019</span>,<span class="nu0">9110119</span>,<span class="nu0">9127219</span>,<span class="nu0">9128219</span>,<span class="nu0">9136319</span>,<span class="nu0">9149419</span>,<span class="nu0">9169619</span>,<span class="nu0">9173719</span>,<span class="nu0">9174719</span>,<span class="nu0">9179719</span>,<span class="nu0">9185819</span>,<span class="nu0">9196919</span>,<span class="nu0">9199919</span>,<span class="nu0">9200029</span>,<span class="nu0">9209029</span>,<span class="nu0">9212129</span>,<span class="nu0">9217129</span>,<span class="nu0">9222229</span>,<span class="nu0">9223229</span>,<span class="nu0">9230329</span>,<span class="nu0">9231329</span>,<span class="nu0">9255529</span>,<span class="nu0">9269629</span>,<span class="nu0">9271729</span>,<span class="nu0">9277729</span>,<span class="nu0">9280829</span>,<span class="nu0">9286829</span>,<span class="nu0">9289829</span>,<span class="nu0">9318139</span>,<span class="nu0">9320239</span>,<span class="nu0">9324239</span>,<span class="nu0">9329239</span>,<span class="nu0">9332339</span>,<span class="nu0">9338339</span>,<span class="nu0">9351539</span>,<span class="nu0">9357539</span>,<span class="nu0">9375739</span>,<span class="nu0">9384839</span>,<span class="nu0">9397939</span>,<span class="nu0">9400049</span>,<span class="nu0">9414149</span>,<span class="nu0">9419149</span>,<span class="nu0">9433349</span>,<span class="nu0">9439349</span>,<span class="nu0">9440449</span>,<span class="nu0">9446449</span>,<span class="nu0">9451549</span>,<span class="nu0">9470749</span>,<span class="nu0">9477749</span>,<span class="nu0">9492949</span>,<span class="nu0">9493949</span>,<span class="nu0">9495949</span>,<span class="nu0">9504059</span>,<span class="nu0">9514159</span>,<span class="nu0">9526259</span>,<span class="nu0">9529259</span>,<span class="nu0">9547459</span>,<span class="nu0">9556559</span>,<span class="nu0">9558559</span>,<span class="nu0">9561659</span>,<span class="nu0">9577759</span>,<span class="nu0">9583859</span>,<span class="nu0">9585859</span>,<span class="nu0">9586859</span>,<span class="nu0">9601069</span>,<span class="nu0">9602069</span>,<span class="nu0">9604069</span>,<span class="nu0">9610169</span>,<span class="nu0">9620269</span>,<span class="nu0">9624269</span>,<span class="nu0">9626269</span>,<span class="nu0">9632369</span>,<span class="nu0">9634369</span>,<span class="nu0">9645469</span>,<span class="nu0">9650569</span>,<span class="nu0">9657569</span>,<span class="nu0">9670769</span>,<span class="nu0">9686869</span>,<span class="nu0">9700079</span>,<span class="nu0">9709079</span>,<span class="nu0">9711179</span>,<span class="nu0">9714179</span>,<span class="nu0">9724279</span>,<span class="nu0">9727279</span>,<span class="nu0">9732379</span>,<span class="nu0">9733379</span>,<span class="nu0">9743479</span>,<span class="nu0">9749479</span>,<span class="nu0">9752579</span>,<span class="nu0">9754579</span>,<span class="nu0">9758579</span>,<span class="nu0">9762679</span>,<span class="nu0">9770779</span>,<span class="nu0">9776779</span>,<span class="nu0">9779779</span>,<span class="nu0">9781879</span>,<span class="nu0">9782879</span>,<span class="nu0">9787879</span>,<span class="nu0">9788879</span>,<span class="nu0">9795979</span>,<span class="nu0">9801089</span>,<span class="nu0">9807089</span>,<span class="nu0">9809089</span>,<span class="nu0">9817189</span>,<span class="nu0">9818189</span>,<span class="nu0">9820289</span>,<span class="nu0">9822289</span>,<span class="nu0">9836389</span>,<span class="nu0">9837389</span>,<span class="nu0">9845489</span>,<span class="nu0">9852589</span>,<span class="nu0">9871789</span>,<span class="nu0">9888889</span>,<span class="nu0">9889889</span>,<span class="nu0">9896989</span>,<span class="nu0">9902099</span>,<span class="nu0">9907099</span>,<span class="nu0">9908099</span>,<span class="nu0">9916199</span>,<span class="nu0">9918199</span>,<span class="nu0">9919199</span>,<span class="nu0">9921299</span>,<span class="nu0">9923299</span>,<span class="nu0">9926299</span>,<span class="nu0">9927299</span>,<span class="nu0">9931399</span>,<span class="nu0">9932399</span>,<span class="nu0">9935399</span>,<span class="nu0">9938399</span>,<span class="nu0">9957599</span>,<span class="nu0">9965699</span>,<span class="nu0">9978799</span>,<span class="nu0">9980899</span>,<span class="nu0">9981899</span>,<span class="nu0">9989899</span><span class="br0">&#125;</span><span class="sy0">;</span>
+&#160;
+&#160;
+&#160;
+&#160;
+&#160;
+	<span class="kw1">public</span> <span class="kw1">static</span> <span class="kw4">void</span> main<span class="br0">&#40;</span><span class="kw3">String</span><span class="br0">&#91;</span><span class="br0">&#93;</span> args<span class="br0">&#41;</span> <span class="kw1">throws</span> <span class="kw3">IOException</span> 
+	<span class="br0">&#123;</span>
+		<span class="kw1">new</span> pprime<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">run</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">void</span> run<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="kw1">throws</span> <span class="kw3">IOException</span>
+	<span class="br0">&#123;</span>
+		Scanner cin<span class="sy0">=</span><span class="kw1">new</span> Scanner<span class="br0">&#40;</span><span class="kw1">new</span> <span class="kw3">FileReader</span><span class="br0">&#40;</span><span class="st0">&quot;pprime.in&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw3">PrintWriter</span> cout<span class="sy0">=</span><span class="kw1">new</span> <span class="kw3">PrintWriter</span><span class="br0">&#40;</span><span class="kw1">new</span> <span class="kw3">BufferedWriter</span><span class="br0">&#40;</span><span class="kw1">new</span> <span class="kw3">FileWriter</span><span class="br0">&#40;</span><span class="st0">&quot;pprime.out&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw4">int</span> start <span class="sy0">=</span> cin.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw4">int</span> end <span class="sy0">=</span> cin.<span class="me1">nextInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+		<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>i <span class="sy0">&lt;</span> <span class="nu0">781</span><span class="sy0">;</span>i<span class="sy0">++</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>prime<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&gt;=</span> start <span class="sy0">&amp;&amp;</span> prime<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;=</span> end<span class="br0">&#41;</span>
+				cout.<span class="me1">println</span><span class="br0">&#40;</span>prime<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+			<span class="kw1">else</span>
+				<span class="kw1">if</span><span class="br0">&#40;</span>prime<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&gt;</span> end <span class="br0">&#41;</span>
+					<span class="kw1">break</span><span class="sy0">;</span>
+		<span class="br0">&#125;</span>
+		cout.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+	<span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+USER<span class="sy0">:</span> Will Wang <span class="br0">&#91;</span>lazydom1<span class="br0">&#93;</span>
+TASK<span class="sy0">:</span> pprime
+LANG<span class="sy0">:</span> JAVA
+&#160;
+Compiling...
+<span class="me1">Compile</span><span class="sy0">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.101</span> secs, <span class="nu0">254320</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.094</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.086</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.115</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.101</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.101</span> secs, <span class="nu0">255012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.108</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.115</span> secs, <span class="nu0">255012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">9</span><span class="sy0">:</span> TEST OK <span class="br0">&#91;</span><span class="nu0">0.101</span> secs, <span class="nu0">255036</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+打表过，不解释。。。。</pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5634-0!*!*!*!*!*!* and timestamp 20131219164939 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;oldid=28694">http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;oldid=28694</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="Java.html">代码</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Code_Talk:USACO/pprime/Java&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Code%3AUSACO%2Fpprime%2FJava" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:USACO/pprime/Java" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:USACO/pprime/Java" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Code:USACO/pprime/Java&amp;oldid=28694" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过490次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Lazydomino&amp;action=edit&amp;redlink=1" class="new" title="用户:Lazydomino（尚未撰写）">Lazydomino</a>于2011年11月14日 (星期一) 16:39做出最后修改。 </li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.636 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

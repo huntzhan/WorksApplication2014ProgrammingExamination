@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/clocks - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/clocks", "wgTitle": "USACO/clocks", "wgCurRevisionId": 32677, "wgArticleId": 242, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_clocks action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/clocks</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="clocks.html#column-one">导航</a>, <a href="clocks.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="clocks.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="clocks.html#.E4.BD.8D.E8.BF.90.E7.AE.97.E5.8A.A0.E9.80.9F"><span class="tocnumber">1.1</span> <span class="toctext">位运算加速</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="clocks.html#.E6.96.B9.E6.B3.951.EF.BC.9A.E6.9E.9A.E4.B8.BE"><span class="tocnumber">1.2</span> <span class="toctext">方法1：枚举</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="clocks.html#.E6.96.B9.E6.B3.952.EF.BC.9ADFS"><span class="tocnumber">1.3</span> <span class="toctext">方法2：DFS</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="clocks.html#.E6.96.B9.E6.B3.953.EF.BC.9ABFS"><span class="tocnumber">1.4</span> <span class="toctext">方法3：BFS</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="clocks.html#.E6.96.B9.E6.B3.954.EF.BC.9A.E6.95.B0.E5.AD.A6.E6.96.B9.E6.B3.95"><span class="tocnumber">1.5</span> <span class="toctext">方法4：数学方法</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="clocks.html#.E6.96.B9.E6.B3.955.EF.BC.9A.E4.BC.A0.E8.AF.B4.E4.B8.AD.E7.9A.84.E2.80.9C.E8.A7.A3.E6.96.B9.E7.A8.8B.E6.B3.95.E2.80.9D"><span class="tocnumber">1.6</span> <span class="toctext">方法5：传说中的“解方程法”</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="clocks.html#.E6.96.B9.E6.B3.956.EF.BC.9A.E7.9B.B4.E6.8E.A5.E8.BE.93.E5.87.BA.E6.B3.95"><span class="tocnumber">1.7</span> <span class="toctext">方法6：直接输出法</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="clocks.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">1.8</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="clocks.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">1.9</span> <span class="toctext">引用</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h1><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h1>
+<p>可以用bfs，dfs，枚举，数学方法解
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=2" title="编辑段落：位运算加速">编辑</a>]</span> <span class="mw-headline" id=".E4.BD.8D.E8.BF.90.E7.AE.97.E5.8A.A0.E9.80.9F">位运算加速</span></h3>
+<p>说说位运算加速吧，不仅编程复杂度低，效率也高。注意到时钟只有四种状态，12点，3点，6点，9点。令它们为0，1，2，3（这样的定义好处很大）。
+</p><p>这样，它们对应的二进制数为：000，001，010，011。即，我们用三个位来记录一个时钟的状态（为什么不用两位？请思考）。
+</p><p>要tick一个时钟的时候，就给该位加上一，再用按位与的方法去除高位的1。
+</p><p>令最高的三位为时钟A，最低的三位为时钟I，那么：
+</p><p>数“57521883”用于清除每个时钟状态最高位的一（按位与）。
+</p><p>const long move[9] = {18911232, 19136512, 2363904, 16810048, 2134536, 262657, 36936, 73, 4617}
+</p><p>move[i]表示题述中的第i+1种方法
+</p><p>令f[q]为原状态，比如用题述中的第k种方法，那么可以写成 f[q + 1] = (f[q] + move[k - 1]) &amp; 57521883;
+</p><p>当9个时钟都回归12点的时候，巧的是状态f=0。这样，判断每个状态f是否为0，就知道是否求出可行解。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=3" title="编辑段落：方法1：枚举">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.951.EF.BC.9A.E6.9E.9A.E4.B8.BE">方法1：枚举</span></h3>
+<p>因为每种变换方法可以使用0~3次，并且每种变换方法在前与在后是等效的。所以，利用递归，按题中顺序枚举所有可能的解，并且每次记录下途径，那么第一种解就是我们要求的答案，输出即可。并且此方法简单易懂，复杂度很低。在usaco上测试最大的才用了0.097秒。
+主要程序步骤：
+</p><p>const
+</p>
+<pre> a:array[1..9,0..9] of byte=((4,1,2,4,5,0,0,0,0,0),
+                             (3,1,2,3,0,0,0,0,0,0),
+                             (4,2,3,5,6,0,0,0,0,0),
+                             (3,1,4,7,0,0,0,0,0,0),
+                             (5,2,4,5,6,8,0,0,0,0),
+                             (3,3,6,9,0,0,0,0,0,0),
+                             (4,4,5,7,8,0,0,0,0,0),
+                             (3,7,8,9,0,0,0,0,0,0),
+                             (4,5,6,8,9,0,0,0,0,0));
+</pre>
+<p>记录每种方法改变钟表的情况，a[i,0]表示需要改变的钟表的个数，其后a[i,0]个表示要改变的具体钟表的序号；
+</p><p>... ...
+</p><p>procedure try(n:integer;g,b:pp);
+var i,j,k:integer;
+begin
+</p>
+<pre> if n=10 then 检验是否为可行解；
+ for k:=0 to 3 do
+   begin
+     b[n]:=k;
+     for i:=1 to a[n,0] do inc(g[a[n,i]],k);//改变钟表；
+     try(n+1,g,b);
+     for i:=1 to a[n,0] do dec(g[a[n,i]],k);//变回原状态；
+   end;
+</pre>
+<p>end; 
+</p><p>... ... //感觉 是不是 少了点什么啊？
+</p><p>begin
+</p>
+<pre> 读入数据，把3，6，9，12变成1 2 3 4；
+ try;
+</pre>
+<p>end.
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=4" title="编辑段落：方法2：DFS">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.952.EF.BC.9ADFS">方法2：DFS</span></h3>
+<p>显而易见地，方案的顺序并不重要。而每种方案最多只能选择3次，如果4次相当于没有选择。这样，总的搜索量只有(4^9=262144)，用<a href="http://www.nocow.cn/index.php/DFS" title="DFS" class="mw-redirect">DFS</a>搜索所有状态，选择其中一个最小的输出即可。
+</p><p>可以采用位运算加速
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=5" title="编辑段落：方法3：BFS">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.953.EF.BC.9ABFS">方法3：BFS</span></h3>
+<p>用BFS完全可以完美解决本题，虽然有些划不来（毕竟枚举都可以过），但思想是可以值得借鉴的。
+1.判重，把3,6,9,12分别对应于1,2,3,0，这样一个状态就对应一个9位4进制数，hash数组就开到4^9左右
+2.剪枝(谁说BFS不能剪枝)，其实同DFS的剪枝，按非递减顺序扩展，每个操作最多做3次
+3.空间,如果开longint可能会MLE，于是改成byte，成功！
+如此一来，BFS可以应对所有数据，最大的也只要花了0.119s
+详细见pascal代码
+</p><p>因为已知初末状态，还可以考虑用双向广搜优化，最大时间0.054s。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=6" title="编辑段落：方法4：数学方法">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.954.EF.BC.9A.E6.95.B0.E5.AD.A6.E6.96.B9.E6.B3.95">方法4：数学方法</span></h3>
+<p>假设时钟abcdefghi中除了a都到了某一状态，现在有一系列转换可以使a转90度而其它钟不变，进行这一系列的转换，虽然行动次数多了，但钟没有变，已知没有可以直接转a的转换方法，所以其它的钟都是转了360*n度的(0&lt;=n且n为整数)就是自己独自转了4*n次(0&lt;=n且n为整数)，既然是4的倍数，那么就可以mod 4(and 3来的更快些)来抵消掉这些操作而钟的位置没变。这样就得出一个结论了，用枚举或bfs得出的最优解，它的解的前一个步骤为之一个状态.用刚才的理论，对于每个没到12点的钟作只让它转的一次的一系列操作，这样达到了全为12的一种状态，然后将每种操作mod 4，用枚举或bfs得出的最优解的前一个步骤时所做的步骤+最优解的最后一个步骤，这样继续向前推，就可以得到从初始状态开始，直接执行对于
+每个没到12点的钟作只让它转的一次的一系列操作，然后最后结果每种操作mod 4，就是枚举或bfs得出的
+最优解。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=7" title="编辑段落：方法5：传说中的“解方程法”">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.955.EF.BC.9A.E4.BC.A0.E8.AF.B4.E4.B8.AD.E7.9A.84.E2.80.9C.E8.A7.A3.E6.96.B9.E7.A8.8B.E6.B3.95.E2.80.9D">方法5：传说中的“解方程法”</span></h3>
+<p>和方法4差不多，原理便是对应每一种地图状态，都会有唯一的最优解（因为顺序的问题已经被题目本身排除了），所以对应每一个方法都可以列出九元一次式，然后根据输入数据用伟大的高斯同学的消元法解之然后取最优解即可。复杂度只是O(1)。
+九元一次式中移动方法1需要执行12+b[1]-2*b[2]+b[3]-2*b[4]-2*b[5]+3*b[6]+b[7]+3*b[8]-4*b[9]次，请自行推出移动方法2-9
+</p><p>12:42 2010年8月17日 (CST)再议吧，貌似列出方程之后等号后面是a[i]+4*n而不是a[i];--<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Comzyh&amp;action=edit&amp;redlink=1" class="new" title="用户:Comzyh（尚未撰写）">Comzyh</a> 12:42 2010年8月17日 (CST)
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=8" title="编辑段落：方法6：直接输出法">编辑</a>]</span> <span class="mw-headline" id=".E6.96.B9.E6.B3.956.EF.BC.9A.E7.9B.B4.E6.8E.A5.E8.BE.93.E5.87.BA.E6.B3.95">方法6：直接输出法</span></h3>
+<p>先编程求出只旋转其中一个钟的操作序列
+然后将这个结果作为const存储
+随后，将每个钟所需要的操作叠加起来，最后分别mod4
+（cfk:这不就是方法4吗=_=||……）
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=9" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/clocks/C.html" title="Code:USACO/clocks/C">c</a><br />
+<a href="../Code:USACO/clocks/Pascal.html" title="Code:USACO/clocks/Pascal">pascal</a><br />
+<a href="../Code:USACO/clocks/C++.html" title="Code:USACO/clocks/C++">C++</a><br />
+<a href="../Code:USACO/clocks/Java.html" title="Code:USACO/clocks/Java">Java</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit&amp;section=10" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external free" href="http://h.thec.cn/starforever/">http://h.thec.cn/starforever/</a>
+</p><p><a rel="nofollow" class="external free" href="http://train.usaco.org/">http://train.usaco.org/</a>
+</p><p><a rel="nofollow" class="external free" href="http://hi.baidu.com/leokan/blog/item/8e2ca9c2fa3aed1f0ef47784.html">http://hi.baidu.com/leokan/blog/item/8e2ca9c2fa3aed1f0ef47784.html</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 38/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:242-0!*!0!!zh-cn!*!* and timestamp 20131219164350 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;oldid=32677">http://www.nocow.cn/index.php?title=USACO/clocks&amp;oldid=32677</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="clocks.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/clocks&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fclocks" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/clocks" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/clocks" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;oldid=32677" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过31,581次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年4月2日 (星期二) 17:03做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Devilsoul" title="用户:Devilsoul">Devilsoul</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Lazydomino&amp;action=edit&amp;redlink=1" class="new" title="用户:Lazydomino（尚未撰写）">Lazydomino</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.217.202.116" title="特殊:用户贡献/183.217.202.116">183.217.202.116</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.184.119.134" title="特殊:用户贡献/119.184.119.134">119.184.119.134</a>和<a href="http://www.nocow.cn/index.php?title=USACO/clocks&amp;action=credits" title="USACO/clocks">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.107 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

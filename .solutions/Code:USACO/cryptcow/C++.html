@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:USACO/cryptcow/C++ - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:USACO/cryptcow/C++", "wgTitle": "USACO/cryptcow/C++", "wgCurRevisionId": 32668, "wgArticleId": 2788, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_USACO_cryptcow_C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:USACO/cryptcow/C++</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="C++.html#column-one">导航</a>, <a href="C++.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>orz
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+Compiling...
+Compile: OK
+&#160;
+Executing...
+   Test 1: TEST OK [0.011 secs, 2944 KB]
+   Test 2: TEST OK [0.032 secs, 2944 KB]
+   Test 3: TEST OK [0.000 secs, 2944 KB]
+   Test 4: TEST OK [0.011 secs, 2944 KB]
+   Test 5: TEST OK [0.011 secs, 2944 KB]
+   Test 6: TEST OK [0.011 secs, 2944 KB]
+   Test 7: TEST OK [0.011 secs, 2944 KB]
+   Test 8: TEST OK [0.011 secs, 2944 KB]
+   Test 9: TEST OK [0.000 secs, 2944 KB]
+   Test 10: TEST OK [0.000 secs, 2944 KB]
+&#160;
+All tests OK.
+ */</span>
+&#160;
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+<span class="co2">#include &lt;string.h&gt;</span>
+&#160;
+<span class="co2">#include &lt;time.h&gt;</span>
+<span class="co2">#include &lt;assert.h&gt;</span>
+&#160;
+<span class="co2">#define MAX_MSG_LEN     76</span>
+<span class="co2">#define MAX_N           9       // (75-47)/3</span>
+<span class="co2">#define MAX_N_TRIPLES   (MAX_N*MAX_N*MAX_N)</span>
+<span class="co2">#define C_          0</span>
+<span class="co2">#define O_          1</span>
+<span class="co2">#define W_          2           </span>
+<span class="co2">#define NOT_COW     3</span>
+&#160;
+<span class="kw4">char</span> Moo<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;Begin the Escape execution at the Break of Dawn&quot;</span><span class="sy4">;</span>
+<span class="kw4">int</span> Moo_len <span class="sy1">=</span> <span class="nu0">47</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">char</span> Hmm<span class="br0">&#91;</span>MAX_MSG_LEN<span class="br0">&#93;</span><span class="sy4">;</span>  <span class="co1">// message received</span>
+<span class="kw4">int</span> Hmm_len<span class="sy4">;</span>
+<span class="kw4">int</span> N<span class="sy4">;</span>      <span class="co1">// number of encryptions</span>
+&#160;
+<span class="kw4">int</span> cowpos<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>MAX_N <span class="sy2">+</span> <span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>    <span class="co1">// +2 for the start and end</span>
+<span class="kw4">int</span> T<span class="sy4">;</span>      <span class="co1">// number of triples</span>
+&#160;
+<span class="kw4">int</span> triple<span class="br0">&#91;</span>MAX_N_TRIPLES <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy4">;</span>   <span class="co1">// triples will be numbered</span>
+                                    <span class="co1">// starting from 1</span>
+                                    <span class="co1">// don't ask why</span>
+&#160;
+<span class="co1">// node in linked list</span>
+<span class="kw4">struct</span> llnode_t <span class="br0">&#123;</span>
+    <span class="kw4">int</span> data<span class="sy4">;</span>
+    llnode_t <span class="sy2">*</span>next<span class="sy4">;</span>
+<span class="br0">&#125;</span> <span class="sy2">*</span>its_triple<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>MAX_N<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+<span class="co1">// for curiosity's sake:</span>
+<span class="kw4">int</span> n_calls_to_find_tripleset <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">int</span> n_calls_to_find_ordering <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">int</span> starttime<span class="sy4">;</span>
+&#160;
+<span class="kw4">void</span> input <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">int</span> submoo <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>, <span class="kw4">int</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> subhmm <span class="br0">&#40;</span><span class="kw4">char</span> <span class="sy2">*</span>, <span class="kw4">int</span>, <span class="kw4">int</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> init <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">int</span> thingy <span class="br0">&#40;</span><span class="kw4">char</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> output <span class="br0">&#40;</span><span class="kw4">bool</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> find_tripleset <span class="br0">&#40;</span><span class="kw4">int</span> decoded_len, <span class="kw4">int</span> last_seg_start, <span class="kw4">int</span> <span class="sy2">*</span>its_triple_used<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> find_ordering <span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy2">*</span>curcowpos, <span class="kw4">int</span> <span class="sy2">*</span>triple_used, <span class="kw4">int</span> n_decodings_applied<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+<span class="co1">// add a node to the beginning of linked list</span>
+<span class="kw4">void</span> addnode <span class="br0">&#40;</span>llnode_t <span class="sy2">**</span>np, <span class="kw4">int</span> data<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    llnode_t <span class="sy2">*</span>temp <span class="sy1">=</span> <span class="sy2">*</span>np<span class="sy4">;</span>
+    <span class="sy2">*</span>np <span class="sy1">=</span> <span class="kw3">new</span> llnode_t<span class="sy4">;</span>
+    <span class="br0">&#40;</span><span class="sy2">*</span>np<span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>data <span class="sy1">=</span> data<span class="sy4">;</span>
+    <span class="br0">&#40;</span><span class="sy2">*</span>np<span class="br0">&#41;</span><span class="sy2">-</span><span class="sy1">&gt;</span>next <span class="sy1">=</span> temp<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> thingy <span class="br0">&#40;</span><span class="kw4">char</span> c<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">switch</span> <span class="br0">&#40;</span>c<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw1">case</span> <span class="st0">'C'</span><span class="sy4">:</span>
+        <span class="kw1">return</span> C_<span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="st0">'O'</span><span class="sy4">:</span>
+        <span class="kw1">return</span> O_<span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="st0">'W'</span><span class="sy4">:</span>
+        <span class="kw1">return</span> W_<span class="sy4">;</span>
+    <span class="kw1">default</span><span class="sy4">:</span>
+        <span class="kw1">return</span> NOT_COW<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// is word a subsequence of Moo, starting from position 'start' in Moo?</span>
+<span class="co1">// if so, return position of first character in Moo that starts it</span>
+<span class="co1">// otherwise return -1</span>
+<span class="kw4">int</span> submoo <span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>word, <span class="kw4">int</span> start<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> word_len <span class="sy1">=</span> <span class="kw3">strlen</span> <span class="br0">&#40;</span>word<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>word_len <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+        <span class="kw1">return</span> start<span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> i, j<span class="sy4">;</span>
+&#160;
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> start<span class="sy4">;</span> i <span class="sy1">&lt;=</span> Moo_len <span class="sy2">-</span> word_len<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span>j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;</span> word_len <span class="sy3">&amp;&amp;</span> Moo<span class="br0">&#91;</span>i<span class="sy2">+</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> word<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span>
+            <span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>j <span class="sy1">==</span> word_len<span class="br0">&#41;</span>
+            <span class="kw1">return</span> i<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">return</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// get Hmm[start..end]</span>
+<span class="kw4">void</span> subhmm <span class="br0">&#40;</span><span class="kw4">char</span> <span class="sy2">*</span>target, <span class="kw4">int</span> start, <span class="kw4">int</span> end<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> i, j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> start<span class="sy4">;</span> i <span class="sy1">&lt;=</span> end<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+        target<span class="br0">&#91;</span>j<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> Hmm<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    target<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">'<span class="es5">\0</span>'</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// output the answer</span>
+<span class="kw4">void</span> output <span class="br0">&#40;</span><span class="kw4">bool</span> result<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">FILE</span> <span class="sy2">*</span>fout <span class="sy1">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;cryptcow.out&quot;</span>, <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>result<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">fprintf</span> <span class="br0">&#40;</span>fout, <span class="st0">&quot;1&#160;%d<span class="es1">\n</span>&quot;</span>, N<span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;The answer is yes.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        <span class="kw3">fprintf</span> <span class="br0">&#40;</span>fout, <span class="st0">&quot;0 0<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;The answer is no.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw3">fclose</span><span class="br0">&#40;</span>fout<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;%d calls to find_tripleset;&#160;%d calls to find_ordering.<span class="es1">\n</span>&quot;</span>,
+        n_calls_to_find_tripleset, n_calls_to_find_ordering<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Runtime:&#160;%g seconds.<span class="es1">\n</span>&quot;</span>, <span class="br0">&#40;</span><span class="kw4">double</span><span class="br0">&#41;</span> <span class="br0">&#40;</span><span class="kw3">clock</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy2">-</span> starttime<span class="br0">&#41;</span> <span class="sy2">/</span> <span class="kw2">CLOCKS_PER_SEC</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">exit</span> <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// just get the input</span>
+<span class="kw4">void</span> input <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">FILE</span> <span class="sy2">*</span>fin <span class="sy1">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;cryptcow.in&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">fscanf</span> <span class="br0">&#40;</span>fin, <span class="st0">&quot;%[^<span class="es1">\n</span>]&quot;</span>, Hmm<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">fclose</span> <span class="br0">&#40;</span>fin<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+<span class="co2">#ifndef NDEBUG</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;%s<span class="es1">\n</span>&quot;</span>, Hmm<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// do stuff</span>
+<span class="kw4">void</span> init <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    Hmm_len <span class="sy1">=</span> <span class="kw3">strlen</span> <span class="br0">&#40;</span>Hmm<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// is length acceptable?</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm_len <span class="sy1">&lt;</span> Moo_len <span class="sy3">||</span> <span class="br0">&#40;</span>Hmm_len <span class="sy2">-</span> Moo_len<span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Length badness.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span>
+        N <span class="sy1">=</span> <span class="br0">&#40;</span>Hmm_len <span class="sy2">-</span> Moo_len<span class="br0">&#41;</span> <span class="sy2">/</span> <span class="nu0">3</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// while forming array cowpos[],</span>
+    <span class="co1">// make sure N = # of C's = # of O's = # of W's</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span>
+    <span class="kw4">int</span> chartype<span class="sy4">;</span>
+    <span class="kw4">int</span> ncows<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> totncows <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>   <span class="co1">// 1, and not 0, because of the start</span>
+&#160;
+    cowpos<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> Hmm_len<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        chartype <span class="sy1">=</span> thingy <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>chartype <span class="sy3">!</span><span class="sy1">=</span> NOT_COW<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy2">++</span>ncows<span class="br0">&#91;</span>chartype<span class="br0">&#93;</span> <span class="sy1">&gt;</span> N<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="co1">// too many cows</span>
+                <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Too many of one type of cow.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+            cowpos<span class="br0">&#91;</span>totncows<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> i<span class="sy4">;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>totncows <span class="sy1">==</span> <span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> chartype <span class="sy3">!</span><span class="sy1">=</span> C_<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="co1">// first cow is not a 'C'</span>
+                <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;First cow not C.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>totncows <span class="sy1">==</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy2">+</span><span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> chartype <span class="sy3">!</span><span class="sy1">=</span> W_<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="co1">// last cow is not a 'W'</span>
+                <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Last cow not W<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>totncows <span class="sy1">==</span> <span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> Hmm<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> Moo<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="co1">// first segments don't match</span>
+                <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;First segments don't match.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>totncows <span class="sy1">==</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy2">+</span><span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> Hmm<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> Moo<span class="br0">&#91;</span>i<span class="sy2">+</span>Moo_len<span class="sy2">-</span>Hmm_len<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="co1">// last segments don't match</span>
+                <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Last segments don't match.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    cowpos<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>N<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> Hmm_len<span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>ncows<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> N <span class="sy3">||</span> ncows<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> N <span class="sy3">||</span> ncows<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> N<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Wrong number of some cow.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm_len <span class="sy1">==</span> Moo_len<span class="br0">&#41;</span>
+        output <span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// find the triples that might work</span>
+    <span class="kw4">int</span> c, o, w<span class="sy4">;</span>
+    <span class="kw4">char</span> segment<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#91;</span>MAX_MSG_LEN<span class="br0">&#93;</span><span class="sy4">;</span>    <span class="co1">// [C, O, or W][left or right][]</span>
+    <span class="kw4">char</span> subword<span class="br0">&#91;</span>MAX_MSG_LEN<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> c_start<span class="sy4">;</span>
+&#160;
+    T <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>c <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> c <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> c<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>c<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'C'</span><span class="br0">&#41;</span>
+            <span class="kw1">continue</span><span class="sy4">;</span>
+&#160;
+        subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>c<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>c<span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>c<span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>c<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        c_start <span class="sy1">=</span> submoo <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        <span class="kw1">if</span> <span class="br0">&#40;</span>c_start <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Some segment does not exist.<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        <span class="kw1">for</span> <span class="br0">&#40;</span>o <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> o <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> o<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>o<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'O'</span><span class="br0">&#41;</span>
+                <span class="kw1">continue</span><span class="sy4">;</span>
+&#160;
+            subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>O_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>o<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>o<span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>O_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>o<span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>o<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+            <span class="co1">// the segment left of c and the segment right of o must fit</span>
+            <span class="co1">// together to form a subsequence of Moo</span>
+&#160;
+            <span class="kw3">strcpy</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw3">strcat</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>O_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>submoo <span class="br0">&#40;</span>subword, c_start<span class="br0">&#41;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw3">assert</span> <span class="br0">&#40;</span>submoo <span class="br0">&#40;</span>subword, <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">continue</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+&#160;
+            <span class="kw1">for</span> <span class="br0">&#40;</span>w <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> w <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> w<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>w<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'W'</span><span class="br0">&#41;</span>
+                    <span class="kw1">continue</span><span class="sy4">;</span>
+&#160;
+                subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>W_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>w<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>w<span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                subhmm <span class="br0">&#40;</span>segment<span class="br0">&#91;</span>W_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span>, cowpos<span class="br0">&#91;</span>w<span class="br0">&#93;</span> <span class="sy2">+</span> <span class="nu0">1</span>, cowpos<span class="br0">&#91;</span>w<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+                <span class="co1">// the segment left of o and the segment right of w must fit</span>
+                <span class="kw3">strcpy</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>O_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw3">strcat</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>W_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>submoo <span class="br0">&#40;</span>subword, <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+                    <span class="kw1">continue</span><span class="sy4">;</span>
+&#160;
+                <span class="co1">// the segment left of w and the segment right of c must fit</span>
+                <span class="kw3">strcpy</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>W_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw3">strcat</span> <span class="br0">&#40;</span>subword, segment<span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>submoo <span class="br0">&#40;</span>subword, <span class="nu0">0</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+                    <span class="kw1">continue</span><span class="sy4">;</span>
+&#160;
+                <span class="co1">// finally, after all these tests we have found a triple</span>
+                <span class="co1">// worthy of further consideration</span>
+                T<span class="sy2">++</span><span class="sy4">;</span>
+                triple<span class="br0">&#91;</span>T<span class="br0">&#93;</span><span class="br0">&#91;</span>C_<span class="br0">&#93;</span> <span class="sy1">=</span> c<span class="sy4">;</span>
+                triple<span class="br0">&#91;</span>T<span class="br0">&#93;</span><span class="br0">&#91;</span>O_<span class="br0">&#93;</span> <span class="sy1">=</span> o<span class="sy4">;</span>
+                triple<span class="br0">&#91;</span>T<span class="br0">&#93;</span><span class="br0">&#91;</span>W_<span class="br0">&#93;</span> <span class="sy1">=</span> w<span class="sy4">;</span>
+                addnode <span class="br0">&#40;</span><span class="sy3">&amp;</span>its_triple<span class="br0">&#91;</span>c<span class="br0">&#93;</span>, T<span class="br0">&#41;</span><span class="sy4">;</span>
+                addnode <span class="br0">&#40;</span><span class="sy3">&amp;</span>its_triple<span class="br0">&#91;</span>o<span class="br0">&#93;</span>, T<span class="br0">&#41;</span><span class="sy4">;</span>
+                addnode <span class="br0">&#40;</span><span class="sy3">&amp;</span>its_triple<span class="br0">&#91;</span>w<span class="br0">&#93;</span>, T<span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="co1">//printf (&quot;All&#160;%d triples found.\n&quot;, T);</span>
+&#160;
+    <span class="co1">// verify that each cow has at least one triple</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>its_triple<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Cow&#160;%d has no triples.<span class="es1">\n</span>&quot;</span>, i<span class="br0">&#41;</span><span class="sy4">;</span>
+            output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+&#160;
+<span class="co2">#ifndef NDEBUG</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Initialization results (after&#160;%g seconds):<span class="es1">\n</span>&quot;</span>,
+        <span class="br0">&#40;</span><span class="kw4">double</span><span class="br0">&#41;</span> <span class="br0">&#40;</span><span class="kw3">clock</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy2">-</span> starttime<span class="br0">&#41;</span> <span class="sy2">/</span> <span class="kw2">CLOCKS_PER_SEC</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\t</span>Number of encrpytions (possibly):&#160;%d.<span class="es1">\n</span>&quot;</span>, N<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\t</span>Number of triples:&#160;%d.<span class="es1">\n</span>&quot;</span>, T<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// use this function recursively</span>
+<span class="co1">// find a set of triples given:</span>
+<span class="co1">// - the length of Moo already decoded (i.e., the position in Moo from which</span>
+<span class="co1">//   further consideration is necessary)</span>
+<span class="co1">// - the id of the cow to the left of the last segment used,</span>
+<span class="co1">// - the triples that you've already committed to using</span>
+<span class="kw4">void</span> find_tripleset <span class="br0">&#40;</span><span class="kw4">int</span> decoded_len, <span class="kw4">int</span> last_seg_start, <span class="kw4">int</span> <span class="sy2">*</span>its_triple_used<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    n_calls_to_find_tripleset<span class="sy2">++</span><span class="sy4">;</span>
+&#160;
+<span class="co1">//  printf (&quot;Trying to find tripleset.\n&quot;);</span>
+&#160;
+    <span class="kw4">int</span> i<span class="sy4">;</span>
+    <span class="kw4">int</span> last_seg_end <span class="sy1">=</span> last_seg_start<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw4">int</span> last_seg_end_type <span class="sy1">=</span> thingy <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> last_seg_len<span class="sy4">;</span>
+    <span class="kw4">int</span> next_seg_start<span class="sy4">;</span>
+    <span class="kw4">int</span> triple_to_use<span class="sy4">;</span>
+&#160;
+    <span class="co1">// first see if the segment from last_seg_start to last_seg_end really fits</span>
+    <span class="kw3">assert</span> <span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy1">&lt;=</span> last_seg_start <span class="sy3">&amp;&amp;</span> last_seg_end <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    last_seg_len <span class="sy1">=</span> cowpos<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span> <span class="sy2">-</span> cowpos<span class="br0">&#91;</span>last_seg_start<span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>decoded_len <span class="sy2">+</span> last_seg_len <span class="sy1">&gt;</span> Moo_len<span class="br0">&#41;</span>
+        <span class="kw1">return</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> last_seg_len <span class="sy3">&amp;&amp;</span>
+            Moo<span class="br0">&#91;</span>decoded_len <span class="sy2">+</span> i<span class="br0">&#93;</span> <span class="sy1">==</span> Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>last_seg_start<span class="br0">&#93;</span><span class="sy2">+</span><span class="nu0">1</span><span class="sy2">+</span>i<span class="br0">&#93;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&lt;</span> last_seg_len<span class="br0">&#41;</span>
+        <span class="kw1">return</span><span class="sy4">;</span>
+&#160;
+<span class="co1">//  printf (&quot;The last segment does fit.\n&quot;);</span>
+&#160;
+    <span class="co1">// the last segment indeed fits</span>
+    decoded_len <span class="sy2">+</span><span class="sy1">=</span> last_seg_len<span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>last_seg_start <span class="sy1">==</span> <span class="nu0">3</span><span class="sy2">*</span>N <span class="sy3">&amp;&amp;</span> decoded_len <span class="sy1">==</span> Moo_len<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="co1">// we have found a successful tripleset!</span>
+&#160;
+<span class="co2">#ifndef NDEBUG</span>
+        <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;Tripleset found after&#160;%d calls to find_tripleset.<span class="es1">\n</span>&quot;</span>,
+            n_calls_to_find_tripleset<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+&#160;
+        <span class="kw4">int</span> triple_used<span class="br0">&#91;</span>MAX_N<span class="br0">&#93;</span><span class="sy4">;</span>
+        <span class="kw4">int</span> curcowpos<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>MAX_N<span class="sy2">+</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        <span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>Hmm<span class="br0">&#91;</span>cowpos<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'C'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                triple_used<span class="br0">&#91;</span>j<span class="sy2">++</span><span class="br0">&#93;</span> <span class="sy1">=</span> its_triple_used<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw3">memcpy</span> <span class="br0">&#40;</span>curcowpos, cowpos, <span class="kw3">sizeof</span> <span class="br0">&#40;</span><span class="sy2">*</span>cowpos<span class="br0">&#41;</span> <span class="sy2">*</span> <span class="br0">&#40;</span><span class="nu0">3</span><span class="sy2">*</span>N<span class="sy2">+</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        find_ordering <span class="br0">&#40;</span>curcowpos, triple_used, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="kw1">return</span><span class="sy4">;</span>     
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw3">assert</span> <span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy1">&lt;=</span> last_seg_end_type <span class="sy3">&amp;&amp;</span> last_seg_end_type <span class="sy1">&lt;</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">assert</span> <span class="br0">&#40;</span>last_seg_end <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>triple_to_use <span class="sy1">=</span> its_triple_used<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="co1">// the next segment to be used has already been decided</span>
+        next_seg_start <span class="sy1">=</span> triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        find_tripleset <span class="br0">&#40;</span>decoded_len, next_seg_start, its_triple_used<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span>
+        <span class="co1">// the next segment to be used is up for grabs</span>
+<span class="co1">//      printf (&quot;The next segment to be used is up for grabs.\n&quot;);</span>
+&#160;
+        llnode_t <span class="sy2">*</span>trytriple<span class="sy4">;</span>
+        <span class="kw3">assert</span> <span class="br0">&#40;</span><span class="nu0">0</span> <span class="sy1">&lt;</span> last_seg_end <span class="sy3">&amp;&amp;</span> last_seg_end <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+        <span class="kw1">for</span> <span class="br0">&#40;</span>trytriple <span class="sy1">=</span> its_triple<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span><span class="sy4">;</span>
+                trytriple <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> trytriple <span class="sy1">=</span> trytriple<span class="sy2">-</span><span class="sy1">&gt;</span>next<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            triple_to_use <span class="sy1">=</span> trytriple<span class="sy2">-</span><span class="sy1">&gt;</span>data<span class="sy4">;</span>
+&#160;
+            <span class="kw3">assert</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="sy1">&lt;=</span> triple_to_use <span class="sy3">&amp;&amp;</span> triple_to_use <span class="sy1">&lt;=</span> T<span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw3">assert</span> <span class="br0">&#40;</span><span class="nu0">1</span> <span class="sy1">&lt;=</span> triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+            <span class="kw3">assert</span> <span class="br0">&#40;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+            <span class="kw1">if</span> <span class="br0">&#40;</span>its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span>
+                <span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">continue</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+&#160;
+            <span class="kw1">if</span> <span class="br0">&#40;</span>its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span>
+                <span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">continue</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+&#160;
+            <span class="kw3">assert</span> <span class="br0">&#40;</span>last_seg_end <span class="sy1">==</span> triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span>last_seg_end_type<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+            its_triple_used<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span> <span class="sy1">=</span> triple_to_use<span class="sy4">;</span>
+            its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span>
+                <span class="sy1">=</span> triple_to_use<span class="sy4">;</span>
+            its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span>
+                <span class="sy1">=</span> triple_to_use<span class="sy4">;</span>
+&#160;
+            next_seg_start <span class="sy1">=</span> triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="sy4">;</span>
+            find_tripleset <span class="br0">&#40;</span>decoded_len, next_seg_start, its_triple_used<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+            its_triple_used<span class="br0">&#91;</span>last_seg_end<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+            its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span>
+                <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+            its_triple_used<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_to_use<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="br0">&#40;</span>last_seg_end_type <span class="sy2">+</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#93;</span>
+                <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="co1">// use this function recursively</span>
+<span class="co1">// find an ordering of the triples given in triple_used</span>
+<span class="co1">// that accomplishes the task given:</span>
+<span class="co1">// - the current positions of all cows, which includes</span>
+<span class="co1">//   information about which triples have already been used</span>
+<span class="co1">//   (those cows that have already been used are at position -1)</span>
+<span class="co1">// - which triples are to be used</span>
+<span class="kw4">void</span> find_ordering <span class="br0">&#40;</span><span class="kw4">int</span> <span class="sy2">*</span>curcowpos, <span class="kw4">int</span> <span class="sy2">*</span>triple_used, <span class="kw4">int</span> n_decodings_applied<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    n_calls_to_find_ordering<span class="sy2">++</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>n_decodings_applied <span class="sy1">==</span> N<span class="br0">&#41;</span>
+        output <span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> nextcowpos<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>MAX_N<span class="sy2">+</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> i, j, cpos, opos, wpos<span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> N<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        cpos <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_used<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#91;</span>C_<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        opos <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_used<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#91;</span>O_<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        wpos <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>triple<span class="br0">&#91;</span>triple_used<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="br0">&#91;</span>W_<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>cpos <span class="sy1">&gt;=</span> opos <span class="sy3">||</span> opos <span class="sy1">&gt;=</span> wpos<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">continue</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span>j <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> j <span class="sy1">&lt;=</span> <span class="nu0">3</span><span class="sy2">*</span>N<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">&lt;</span> cpos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> cpos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">&lt;</span> opos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">+</span> wpos <span class="sy2">-</span> opos <span class="sy2">-</span> <span class="nu0">2</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> opos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">&lt;</span> wpos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">+</span> cpos <span class="sy2">-</span> opos <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span>
+            <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">==</span> wpos<span class="br0">&#41;</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+            <span class="kw1">else</span>
+                nextcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> curcowpos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">-</span> <span class="nu0">3</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        find_ordering <span class="br0">&#40;</span>nextcowpos, triple_used, n_decodings_applied<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main <span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    starttime <span class="sy1">=</span> <span class="kw3">clock</span> <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    input <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    init <span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">int</span> its_triple_used<span class="br0">&#91;</span><span class="nu0">3</span><span class="sy2">*</span>MAX_N<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+    find_tripleset <span class="br0">&#40;</span><span class="nu0">0</span>, <span class="nu0">0</span>, its_triple_used<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="co1">// if you're still alive, the answer must be no</span>
+    output <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include&lt;fstream&gt; //by adventop</span>
+<span class="co2">#include&lt;cstring&gt;</span>
+<span class="co2">#define BIG 1500000</span>
+<span class="co2">#define LEN 77</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">char</span> End<span class="br0">&#91;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="st0">&quot;Begin the Escape execution at the Break of Dawn&quot;</span><span class="sy4">;</span>
+ofstream fout <span class="br0">&#40;</span><span class="st0">&quot;cryptcow.out&quot;</span>,ios<span class="sy4">::</span><span class="me2">out</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ifstream fin <span class="br0">&#40;</span><span class="st0">&quot;cryptcow.in&quot;</span>,ios<span class="sy4">::</span><span class="me2">in</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">bool</span> Hash<span class="br0">&#91;</span>BIG<span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">long</span> END<span class="sy1">=</span><span class="nu0">0</span>,HASH<span class="sy4">;</span>
+<span class="kw4">char</span> start<span class="br0">&#91;</span>LEN<span class="br0">&#93;</span>,fir<span class="br0">&#91;</span>LEN<span class="br0">&#93;</span>,STR<span class="br0">&#91;</span>LEN<span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw2">inline</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> BKDRhash<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>str<span class="br0">&#41;</span><span class="br0">&#123;</span> <span class="co1">//BKDRhash</span>
+    <span class="kw4">unsigned</span> <span class="kw4">long</span> seed<span class="sy1">=</span><span class="nu0">131313</span>,hash<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy2">*</span>str<span class="br0">&#41;</span> hash<span class="sy1">=</span>hash<span class="sy2">*</span>seed<span class="sy2">+</span><span class="br0">&#40;</span><span class="sy2">*</span>str<span class="sy2">++</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="br0">&#40;</span>hash <span class="sy3">&amp;</span> <span class="nu12">0x7FFFFFFF</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">1000003</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">inline</span> <span class="kw4">void</span> change<span class="br0">&#40;</span><span class="kw4">char</span> <span class="sy2">*</span>str,<span class="kw4">int</span> c,<span class="kw4">int</span> o,<span class="kw4">int</span> w<span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw4">int</span> len<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw3">memset</span><span class="br0">&#40;</span>STR,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>STR<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>c<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> STR<span class="br0">&#91;</span><span class="sy2">++</span>len<span class="br0">&#93;</span><span class="sy1">=</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>o<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>w<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> STR<span class="br0">&#91;</span><span class="sy2">++</span>len<span class="br0">&#93;</span><span class="sy1">=</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>c<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>o<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> STR<span class="br0">&#91;</span><span class="sy2">++</span>len<span class="br0">&#93;</span><span class="sy1">=</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>w<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> STR<span class="br0">&#91;</span><span class="sy2">++</span>len<span class="br0">&#93;</span><span class="sy1">=</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw3">strcpy</span><span class="br0">&#40;</span>str,STR<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw2">inline</span> <span class="kw4">bool</span> dfscut<span class="br0">&#40;</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy2">*</span>str<span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw4">int</span> len<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span>,Len,i,flag,Flag,lens<span class="sy1">=</span><span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy2">++</span>len<span class="sy1">&lt;</span>lens <span class="sy3">&amp;&amp;</span> str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'C'</span><span class="br0">&#41;</span> <span class="kw1">if</span><span class="br0">&#40;</span>End<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+    i<span class="sy1">=</span><span class="nu0">47</span><span class="sy4">;</span>Len<span class="sy1">=</span>len<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>len<span class="sy1">=</span>lens<span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span>len<span class="sy1">&gt;</span><span class="nu0">0</span> <span class="sy3">&amp;&amp;</span> str<span class="br0">&#91;</span>len<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'W'</span><span class="br0">&#41;</span> <span class="kw1">if</span><span class="br0">&#40;</span>End<span class="br0">&#91;</span><span class="sy2">--</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>str<span class="br0">&#91;</span><span class="sy2">--</span>len<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+    lens<span class="sy1">=</span>len<span class="sy4">;</span>len<span class="sy1">=</span>Len<span class="sy4">;</span>Len<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">&#40;</span>len<span class="sy1">&lt;</span>lens<span class="br0">&#41;</span><span class="br0">&#123;</span>
+        <span class="kw1">while</span><span class="br0">&#40;</span><span class="sy2">++</span>len<span class="sy1">&lt;</span>lens <span class="sy3">&amp;&amp;</span> str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'C'</span> <span class="sy3">&amp;&amp;</span> str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'O'</span> <span class="sy3">&amp;&amp;</span> str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'W'</span><span class="br0">&#41;</span>
+            fir<span class="br0">&#91;</span><span class="sy2">++</span>Len<span class="br0">&#93;</span><span class="sy1">=</span>str<span class="br0">&#91;</span>len<span class="br0">&#93;</span><span class="sy4">;</span>
+        Flag<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>len<span class="sy1">&lt;=</span>lens<span class="br0">&#41;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="kw3">strlen</span><span class="br0">&#40;</span>End<span class="br0">&#41;</span><span class="sy2">-</span>Len<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                flag<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+                <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span>i<span class="sy4">;</span>j<span class="sy1">&lt;=</span>i<span class="sy2">+</span>Len<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span>fir<span class="br0">&#91;</span>j<span class="sy2">-</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span>End<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>flag<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span><span class="br0">&#125;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span>flag<span class="br0">&#41;</span> <span class="br0">&#123;</span>Flag<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span><span class="kw1">break</span><span class="sy4">;</span><span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span>Flag<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+        Len<span class="sy1">=</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">bool</span> dfs<span class="br0">&#40;</span><span class="kw4">char</span> <span class="sy2">*</span>str,<span class="kw4">int</span> step<span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw4">char</span> DFS<span class="br0">&#91;</span>LEN<span class="br0">&#93;</span><span class="sy4">;</span>
+    HASH<span class="sy1">=</span>BKDRhash<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>Hash<span class="br0">&#91;</span>HASH<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>HASH<span class="sy1">==</span>END<span class="br0">&#41;</span> <span class="br0">&#123;</span>fout<span class="sy1">&lt;&lt;</span><span class="st0">&quot;1 &quot;</span><span class="sy1">&lt;&lt;</span>step<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span><span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span><span class="br0">&#125;</span>
+    Hash<span class="br0">&#91;</span>HASH<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>dfscut<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> o<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>o<span class="sy1">&lt;</span><span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>o<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>str<span class="br0">&#91;</span>o<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'O'</span><span class="br0">&#41;</span>
+        <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> c<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>c<span class="sy1">&lt;</span>o<span class="sy4">;</span>c<span class="sy2">++</span><span class="br0">&#41;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>str<span class="br0">&#91;</span>c<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'C'</span><span class="br0">&#41;</span>
+            <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> w<span class="sy1">=</span><span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>w<span class="sy1">&gt;</span>o<span class="sy4">;</span>w<span class="sy2">--</span><span class="br0">&#41;</span>
+                <span class="kw1">if</span><span class="br0">&#40;</span>str<span class="br0">&#91;</span>w<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'W'</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                    <span class="kw3">strcpy</span><span class="br0">&#40;</span>DFS,str<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">//avoid to use dynamic point</span>
+                    change<span class="br0">&#40;</span>DFS,c,o,w<span class="br0">&#41;</span><span class="sy4">;</span>
+                    <span class="kw1">if</span><span class="br0">&#40;</span>dfs<span class="br0">&#40;</span>DFS,step<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+    <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw3">memset</span><span class="br0">&#40;</span>Hash,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>Hash<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    END<span class="sy1">=</span>BKDRhash<span class="br0">&#40;</span>End<span class="br0">&#41;</span><span class="sy4">;</span>
+    fin.<span class="me1">getline</span><span class="br0">&#40;</span>start,LEN<span class="sy2">+</span><span class="nu0">2</span>,<span class="st0">'<span class="es1">\n</span>'</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="kw3">strlen</span><span class="br0">&#40;</span>start<span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">47</span><span class="br0">&#41;</span><span class="sy2">%</span><span class="nu19">3</span><span class="br0">&#41;</span> <span class="sy3">&amp;&amp;</span> <span class="sy3">!</span>dfs<span class="br0">&#40;</span>start,<span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#41;</span> fout<span class="sy1">&lt;&lt;</span><span class="st0">&quot;0 0&quot;</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ID: dccmx1
+PROG: cryptcow
+LANG: C++
+ */</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">const</span> <span class="kw4">int</span> HashSize<span class="sy1">=</span><span class="nu0">131071</span><span class="sy4">;</span>
+<span class="kw4">const</span> string dest<span class="sy1">=</span><span class="st0">&quot;Begin the Escape execution at the Break of Dawn&quot;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">bool</span> searched<span class="br0">&#91;</span>HashSize<span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">bool</span> IsEncrypted<span class="br0">&#40;</span>string text<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;cryptcow.in&quot;</span>,<span class="st0">&quot;r&quot;</span>,<span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;cryptcow.out&quot;</span>,<span class="st0">&quot;w&quot;</span>,<span class="kw2">stdout</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    string text<span class="sy4">;</span>
+    getline<span class="br0">&#40;</span><span class="kw3">cin</span>,text<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>IsEncrypted<span class="br0">&#40;</span>text<span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;1 &quot;</span><span class="sy1">&lt;&lt;</span>count<span class="br0">&#40;</span>text.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,text.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span>,<span class="st0">'C'</span><span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">else</span>
+    <span class="br0">&#123;</span>
+        <span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">&quot;0 0&quot;</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> Hash<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">bool</span> Impossible<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>text<span class="br0">&#41;</span><span class="sy4">;</span>
+string Transform<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>src,<span class="kw4">int</span> c,<span class="kw4">int</span> o,<span class="kw4">int</span> w<span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">bool</span> IsEncrypted<span class="br0">&#40;</span>string text<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> hash<span class="sy1">=</span>Hash<span class="br0">&#40;</span>text<span class="br0">&#41;</span><span class="sy2">%</span>HashSize<span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>searched<span class="br0">&#91;</span>hash<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="co1">//not reasonable, but works for most test data.</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    searched<span class="br0">&#91;</span>hash<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="sy1">==</span>dest<span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span>Impossible<span class="br0">&#40;</span>text<span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> o<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> o<span class="sy1">&lt;</span>text.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span> o<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="br0">&#91;</span>o<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'O'</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> c<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> c<span class="sy1">&lt;</span>o<span class="sy4">;</span> c<span class="sy2">++</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="br0">&#91;</span>c<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'C'</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> w<span class="sy1">=</span>text.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span> w<span class="sy1">&gt;</span>o<span class="sy4">;</span> w<span class="sy2">--</span><span class="br0">&#41;</span>
+                    <span class="br0">&#123;</span>
+                        <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="br0">&#91;</span>w<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'W'</span><span class="br0">&#41;</span>
+                        <span class="br0">&#123;</span>
+                            <span class="kw1">if</span> <span class="br0">&#40;</span>IsEncrypted<span class="br0">&#40;</span>Transform<span class="br0">&#40;</span>text,c,o,w<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+                            <span class="br0">&#123;</span>
+                                <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+                            <span class="br0">&#125;</span>
+                        <span class="br0">&#125;</span>
+                    <span class="br0">&#125;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">bool</span> Impossible<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>text<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>text.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy2">-</span>dest.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">%</span><span class="nu19">3</span><span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span>,j<span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span>i<span class="sy1">&lt;</span>text.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        j<span class="sy1">=</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'C'</span> <span class="sy3">&amp;&amp;</span> text<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'O'</span> <span class="sy3">&amp;&amp;</span> text<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="st0">'W'</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            <span class="kw1">while</span> <span class="br0">&#40;</span>j<span class="sy1">&lt;</span>text.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>text<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'C'</span> <span class="sy3">||</span> text<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'O'</span> <span class="sy3">||</span> text<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">==</span><span class="st0">'W'</span><span class="br0">&#41;</span>
+                <span class="br0">&#123;</span>
+                    <span class="kw1">break</span><span class="sy4">;</span>
+                <span class="br0">&#125;</span>
+                j<span class="sy2">++</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+&#160;
+            <span class="kw1">if</span> <span class="br0">&#40;</span>dest.<span class="me1">find</span><span class="br0">&#40;</span>text.<span class="me1">substr</span><span class="br0">&#40;</span>i,j<span class="sy2">-</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy1">==</span>string<span class="sy4">::</span><span class="me2">npos</span><span class="br0">&#41;</span>
+            <span class="br0">&#123;</span>
+                <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+&#160;
+        i<span class="sy1">=</span>j<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+&#160;
+    <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+string Transform<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>src,<span class="kw4">int</span> c,<span class="kw4">int</span> o,<span class="kw4">int</span> w<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">static</span> <span class="kw4">char</span> buffer<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> i,ich<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>c<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        buffer<span class="br0">&#91;</span>ich<span class="sy2">++</span><span class="br0">&#93;</span><span class="sy1">=</span>src<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span>o<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>w<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        buffer<span class="br0">&#91;</span>ich<span class="sy2">++</span><span class="br0">&#93;</span><span class="sy1">=</span>src<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span>c<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>o<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        buffer<span class="br0">&#91;</span>ich<span class="sy2">++</span><span class="br0">&#93;</span><span class="sy1">=</span>src<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span>w<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>src.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        buffer<span class="br0">&#91;</span>ich<span class="sy2">++</span><span class="br0">&#93;</span><span class="sy1">=</span>src<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    buffer<span class="br0">&#91;</span>ich<span class="sy2">++</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+    <span class="kw1">return</span> string<span class="br0">&#40;</span>buffer<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> Hash<span class="br0">&#40;</span><span class="kw4">const</span> string <span class="sy3">&amp;</span>str<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">long</span> h<span class="sy1">=</span><span class="nu0">0</span>,g<span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>str.<span class="me1">length</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        h<span class="sy1">=</span><span class="br0">&#40;</span>h<span class="sy1">&lt;&lt;</span><span class="nu0">4</span><span class="br0">&#41;</span><span class="sy2">+</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+        g<span class="sy1">=</span>h <span class="sy3">&amp;</span>0xf0000000l<span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>g<span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            h<span class="sy3">^</span><span class="sy1">=</span>g<span class="sy1">&gt;&gt;</span><span class="nu0">24</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        h<span class="sy3">&amp;</span><span class="sy1">=</span>~g<span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">return</span> h<span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+	ID:ymf11111
+	TASK:cryptcow
+	LANG:C++
+*/</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;cstdlib&gt;</span>
+&#160;
+<span class="co2">#define MAXB 80</span>
+<span class="co2">#define MAXH 3214567</span>
+<span class="co2">#define DES 1670966 //destination Hash value</span>
+&#160;
+<span class="kw4">typedef</span> <span class="kw4">char</span> STR<span class="br0">&#91;</span>MAXB<span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> elfhash<span class="br0">&#40;</span><span class="kw4">char</span> <span class="sy2">*</span> str<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+	<span class="kw4">unsigned</span> <span class="kw4">int</span> res <span class="sy1">=</span> <span class="nu0">0</span>,g<span class="sy4">;</span>
+	<span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy2">*</span>str<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		res <span class="sy1">=</span> <span class="br0">&#40;</span>res <span class="sy1">&lt;&lt;</span> <span class="nu0">4</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="sy2">*</span>str<span class="sy2">++</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	    g <span class="sy1">=</span> res <span class="sy3">&amp;</span> <span class="nu12">0xF0000000</span><span class="sy4">;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>g<span class="br0">&#41;</span> res <span class="sy3">^</span><span class="sy1">=</span> g <span class="sy1">&gt;&gt;</span> <span class="nu0">24</span><span class="sy4">;</span>
+		res <span class="sy3">&amp;</span><span class="sy1">=</span> ~g<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> res <span class="sy2">%</span> MAXH<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw2">inline</span> <span class="kw4">void</span> swap<span class="br0">&#40;</span><span class="kw4">int</span> pos1,<span class="kw4">int</span> pos2,<span class="kw4">int</span> pos3,<span class="kw4">char</span> <span class="sy2">*</span>str,<span class="kw4">char</span> <span class="sy2">*</span>tmp<span class="br0">&#41;</span> <span class="br0">&#123;</span> 
+	<span class="co1">//make sure that </span>
+	<span class="co1">//str[pos1] == 'C ' str[pos2] == 'O' str[pos3] == 'W'</span>
+	<span class="kw4">char</span> <span class="sy2">*</span>ptr <span class="sy1">=</span> tmp,len <span class="sy1">=</span> <span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>ptr,str,pos1<span class="br0">&#41;</span><span class="sy4">;</span> 
+	ptr <span class="sy2">+</span><span class="sy1">=</span> pos1<span class="sy4">;</span>
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>ptr,str <span class="sy2">+</span> pos2 <span class="sy2">+</span> <span class="nu0">1</span>,pos3 <span class="sy2">-</span> pos2 <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span> 
+	ptr <span class="sy2">+</span><span class="sy1">=</span> pos3 <span class="sy2">-</span> pos2 <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span> 
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>ptr,str <span class="sy2">+</span> pos1 <span class="sy2">+</span> <span class="nu0">1</span>,pos2 <span class="sy2">-</span> pos1 <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	ptr <span class="sy2">+</span><span class="sy1">=</span> pos2 <span class="sy2">-</span> pos1 <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>ptr,str <span class="sy2">+</span> pos3 <span class="sy2">+</span> <span class="nu0">1</span>,len <span class="sy2">-</span> pos3 <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	tmp<span class="br0">&#91;</span>len <span class="sy2">-</span> <span class="nu0">3</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>	
+&#160;
+&#160;
+<span class="kw4">bool</span> hash<span class="br0">&#91;</span>MAXH<span class="br0">&#93;</span>,exist<span class="br0">&#91;</span>MAXH<span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">int</span> Ccnt <span class="sy1">=</span> <span class="nu0">0</span>,Ocnt <span class="sy1">=</span> <span class="nu0">0</span>,Wcnt <span class="sy1">=</span> <span class="nu0">0</span>,maxstep<span class="sy4">;</span>
+<span class="kw4">int</span> prefix<span class="br0">&#91;</span>MAXB<span class="br0">&#93;</span>,suffix<span class="br0">&#91;</span>MAXB<span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">bool</span> search<span class="br0">&#40;</span><span class="kw4">int</span> step,<span class="kw4">char</span> <span class="sy2">*</span>str<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+	<span class="kw4">int</span> len <span class="sy1">=</span> <span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span>,hv <span class="sy1">=</span> elfhash<span class="br0">&#40;</span>str<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">int</span> Cpos<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span>,Opos<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span>,Wpos<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy4">;</span>
+	<span class="kw4">int</span> Ccnt,Ocnt,Wcnt,prev <span class="sy1">=</span> <span class="nu0">0</span>,lC,lO,lW,fpos <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+	STR tmp<span class="sy4">;</span>
+&#160;
+	Ccnt <span class="sy1">=</span> Ocnt <span class="sy1">=</span> Wcnt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>hv <span class="sy1">==</span> DES<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">//Success</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> len<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'C'</span> <span class="sy3">||</span> str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'O'</span> <span class="sy3">||</span> str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'W'</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>fpos <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> fpos <span class="sy1">=</span> i<span class="sy4">;</span> 
+			<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy2">-</span> prev <span class="sy1">&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span>
+			<span class="br0">&#123;</span>
+				<span class="kw3">memmove</span><span class="br0">&#40;</span>tmp,str <span class="sy2">+</span> prev,i <span class="sy2">-</span> prev<span class="br0">&#41;</span><span class="sy4">;</span>
+				tmp<span class="br0">&#91;</span>i <span class="sy2">-</span> prev<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span>exist<span class="br0">&#91;</span>elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+			prev <span class="sy1">=</span> i <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span>
+&#160;
+			<span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'C'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>Cpos<span class="br0">&#91;</span><span class="sy2">++</span>Ccnt<span class="br0">&#93;</span> <span class="sy1">=</span> i<span class="sy4">;</span> lC <span class="sy1">=</span> i<span class="sy4">;</span> <span class="kw1">if</span> <span class="br0">&#40;</span>Ccnt <span class="sy1">==</span> <span class="nu0">1</span> <span class="sy3">&amp;&amp;</span> <span class="br0">&#40;</span>Ocnt <span class="sy3">||</span> Wcnt<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span><span class="br0">&#125;</span>
+				<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'O'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>Opos<span class="br0">&#91;</span><span class="sy2">++</span>Ocnt<span class="br0">&#93;</span> <span class="sy1">=</span> i<span class="sy4">;</span> lO <span class="sy1">=</span> i<span class="sy4">;</span><span class="br0">&#125;</span>
+				<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'W'</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>Wpos<span class="br0">&#91;</span><span class="sy2">++</span>Wcnt<span class="br0">&#93;</span> <span class="sy1">=</span> i<span class="sy4">;</span> lW <span class="sy1">=</span> i<span class="sy4">;</span><span class="br0">&#125;</span> 
+&#160;
+		<span class="br0">&#125;</span><span class="co1">//scan</span>
+&#160;
+	<span class="kw1">if</span> <span class="br0">&#40;</span>hash<span class="br0">&#91;</span>hv<span class="br0">&#93;</span> <span class="sy3">||</span> step <span class="sy1">&gt;</span> maxstep<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>lW <span class="sy1">&lt;</span> lO <span class="sy3">||</span> lW <span class="sy1">&lt;</span> lC<span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>tmp,str,fpos<span class="br0">&#41;</span><span class="sy4">;</span>
+	tmp<span class="br0">&#91;</span>fpos<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> prefix<span class="br0">&#91;</span>fpos <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+	<span class="kw3">memmove</span><span class="br0">&#40;</span>tmp,str <span class="sy2">+</span> lW <span class="sy2">+</span> <span class="nu0">1</span>,len <span class="sy2">-</span> lW <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	tmp<span class="br0">&#91;</span>len <span class="sy2">-</span> lW <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span> <span class="sy3">!</span><span class="sy1">=</span> suffix<span class="br0">&#91;</span>len <span class="sy2">-</span> lW <span class="sy2">-</span> <span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+	hash<span class="br0">&#91;</span>hv<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> j <span class="sy1">&lt;=</span> Ocnt<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span>
+			<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> Ccnt<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>Opos<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">&gt;</span> Cpos<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>
+					<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> k <span class="sy1">=</span> Wcnt<span class="sy4">;</span> k <span class="sy1">&gt;=</span> <span class="nu0">1</span><span class="sy4">;</span> k<span class="sy2">--</span><span class="br0">&#41;</span>
+						<span class="kw1">if</span> <span class="br0">&#40;</span>Wpos<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy1">&gt;</span> Opos<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span>
+						<span class="br0">&#123;</span>
+							swap<span class="br0">&#40;</span>Cpos<span class="br0">&#91;</span>i<span class="br0">&#93;</span>,Opos<span class="br0">&#91;</span>j<span class="br0">&#93;</span>,Wpos<span class="br0">&#91;</span>k<span class="br0">&#93;</span>,str,tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+							<span class="kw1">if</span> <span class="br0">&#40;</span>search<span class="br0">&#40;</span>step <span class="sy2">+</span> <span class="nu0">1</span>,tmp<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span>
+						<span class="br0">&#125;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&#160;
+	STR str,tmp,dstr <span class="sy1">=</span> <span class="st0">&quot;Begin the Escape execution at the Break of Dawn&quot;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> len<span class="sy4">;</span>
+&#160;
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;cryptcow.in&quot;</span>,<span class="st0">&quot;r&quot;</span>,<span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;cryptcow.out&quot;</span>,<span class="st0">&quot;w&quot;</span>,<span class="kw2">stdout</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">memset</span><span class="br0">&#40;</span>hash,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>hash<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> <span class="nu0">47</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+		<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> i<span class="sy4">;</span> j <span class="sy1">&lt;</span> <span class="nu0">47</span><span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">memmove</span><span class="br0">&#40;</span>tmp,dstr <span class="sy2">+</span> i, j <span class="sy2">-</span> i <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+			tmp<span class="br0">&#91;</span>j <span class="sy2">-</span> i <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+			<span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> prefix<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+			exist<span class="br0">&#91;</span>elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> <span class="nu0">47</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw3">memmove</span><span class="br0">&#40;</span>tmp,dstr <span class="sy2">+</span> <span class="nu0">46</span> <span class="sy2">-</span> i,i <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		tmp<span class="br0">&#91;</span>i <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+		suffix<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> elfhash<span class="br0">&#40;</span>tmp<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="co1">//pre calc</span>
+&#160;
+	<span class="kw3">fgets</span><span class="br0">&#40;</span>str,MAXB,<span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	str<span class="br0">&#91;</span>len <span class="sy1">=</span> <span class="br0">&#40;</span><span class="kw3">strlen</span><span class="br0">&#40;</span>str<span class="br0">&#41;</span> <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+	<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> len<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'C'</span><span class="br0">&#41;</span> <span class="sy2">++</span>Ccnt<span class="sy4">;</span>
+			<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'O'</span><span class="br0">&#41;</span> <span class="sy2">++</span>Ocnt<span class="sy4">;</span>
+				<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>str<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="st0">'W'</span><span class="br0">&#41;</span> <span class="sy2">++</span>Wcnt<span class="sy4">;</span>
+&#160;
+	<span class="kw1">if</span>  <span class="br0">&#40;</span>elfhash<span class="br0">&#40;</span>str<span class="br0">&#41;</span> <span class="sy1">==</span> DES<span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&#160;%d<span class="es1">\n</span>&quot;</span>,<span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>Ccnt <span class="sy3">!</span><span class="sy1">=</span> Ocnt <span class="sy3">||</span> Ocnt <span class="sy3">!</span><span class="sy1">=</span> Wcnt <span class="sy3">||</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>len <span class="sy2">-</span> <span class="nu0">47</span><span class="br0">&#41;</span> <span class="sy2">%</span> <span class="nu0">3</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&#160;%d<span class="es1">\n</span>&quot;</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="kw1">else</span>
+			<span class="br0">&#123;</span>
+				maxstep <span class="sy1">=</span> <span class="br0">&#40;</span>len <span class="sy2">-</span> <span class="nu0">47</span><span class="br0">&#41;</span> <span class="sy2">/</span> <span class="nu0">3</span><span class="sy4">;</span>
+				<span class="kw1">if</span> <span class="br0">&#40;</span>search<span class="br0">&#40;</span><span class="nu0">1</span>,str<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&#160;%d<span class="es1">\n</span>&quot;</span>,<span class="nu0">1</span>,Ccnt<span class="br0">&#41;</span><span class="sy4">;</span>
+					<span class="kw1">else</span> <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&#160;%d<span class="es1">\n</span>&quot;</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>
+&#160;
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 13/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:2788-0!*!*!*!*!*!* and timestamp 20131219165220 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;oldid=32668">http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;oldid=32668</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="C++.html">代码</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Code_Talk:USACO/cryptcow/C%2B%2B&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Code%3AUSACO%2Fcryptcow%2FC%2B%2B" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:USACO/cryptcow/C%2B%2B" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:USACO/cryptcow/C%2B%2B" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;oldid=32668" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过3,667次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年3月31日 (星期日) 03:13做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/59.41.44.13" title="特殊:用户贡献/59.41.44.13">59.41.44.13</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.194.72.2" title="特殊:用户贡献/221.194.72.2">221.194.72.2</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/117.65.204.52" title="特殊:用户贡献/117.65.204.52">117.65.204.52</a>和<a href="http://www.nocow.cn/index.php?title=Code:USACO/cryptcow/C%2B%2B&amp;action=credits" title="Code:USACO/cryptcow/C++">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.493 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

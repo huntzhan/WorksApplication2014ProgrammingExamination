@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Graph Theory - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Graph_Theory", "wgTitle": "USACO/Graph Theory", "wgCurRevisionId": 32005, "wgArticleId": 5133, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Graph_Theory action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Graph Theory</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Graph_Theory.html#column-one">导航</a>, <a href="Graph_Theory.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p>什么是<strong>图</strong><em>(graph)</em>？</p>
+<p>形式上来说，一个图是这样的：<br />
+<ul><li> 所有<strong>顶点</strong><em>(vertices)</em> V 的集合；<br />
+</li><li> 所有<strong>边</strong><em>(edges)</em> E 的集合所构成的。每条边对应于一对顶点</p>
+</li></ul>
+<p>把顶点当做&#8220;地点&#8221;，那么所有顶点的集合就是所有地点的集合。按照这种比喻，边就可以看做连接每对地点之间的&#8220;路径&#8221;，所有边的集合就是所有路径的集合。</p>
+<p><br />
+<strong>表示</strong></p>
+<p>图通常被用那种类比的方法表示，顶点是点或者圆圈，边是连接它们的线。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph1.gif" alt="graph1.gif" /><br />
+在这个例图中，V = {1, 2, 3, 4, 5, 6} ，并且E = {(1,3), (1,6), (2,5), (3,4), (3,6)}。
+</p>
+<p>每一个顶点是集合 V 的一个成员。一个顶点有时候被叫做<strong>节点</strong><em>(node)</em>。</p>
+<p>每一条边是集合 E 的一个成员。注意，有些顶点并不会有边和其他的顶点相连。这样的顶点被称是&#8220;<strong>孤立</strong>&#8221;的。</p>
+<p>有时候，边是与数值相关联的，比如说长度或费用；这样的图被称作<strong>边权图</strong><em>(edge-weighted graphs)</em>，或者<strong>带权图</strong><em>(weighted graphs)</em>，这些被边关联的数值叫做边的<strong>权</strong><em>(weight)</em>。类似地，我们还定义<strong>点权图</strong><em>(node-weighted graphs)</em>。</p>
+<p><br />
+<strong>图论的例题</strong></p>
+<p>奶牛的电信<em>(Telecowmunication，USACO Championship 1996)</em></p>
+<p>描述：给定一个电脑的集合，和连接所有电脑的电缆的集合，至少需要破坏多少台电脑，才能使给定的2台电脑不能连线？(给定的2台电脑不会被破坏。)<br />
+图：图的顶点对应电脑，边即对应着电缆。</p>
+<p>骑马修栅栏<em>(Riding The Fences)</em><br />
+描述：农民约翰拥有大量的栅栏，他必须定期检查栅栏的完好。他时刻留意着栅栏们交点的位置，并记录了栅栏每个相交点的编号，以及与相交点相连的栅栏的编号。每一个栅栏与2个点相连。在某些交点，交点可能只是唯一一个栅栏的终点。<br />
+给定栅栏的布局，计算是否有一条路，能让农民约翰能骑马经过所有的栅栏，而不经过同一栅栏2次以上。农民约翰可以在任意一个地方开始和结束，但不能跨越它的场地（即，他唯一穿过2个交点的路只能沿着栅栏）。如果有这样的路径，就输出它。<br />
+图：农民约翰从交点出发，并经过所有栅栏一次。所以，图的顶点就是交点，边即栅栏。</p>
+<p><em>Knight moves</em><br />
+描述：给定一个8*8的棋盘，至少需要多少的骑士，使棋盘上的每一个点都可以被至少一个骑士攻击到。<br />
+图：这个图比较难以表述，棋盘上的每一格被看做一个顶点。如果一个骑士可以从一格攻击到另一格，则这2个格就可被称作有边相连。</p>
+<p>穿越栅栏<em>(Overfencing [Kolstad &amp; Schrijvers, Spring 1999 USACO Open])</em><br />
+描述：农民约翰在田野上建造了一个巨大的迷宫，他在留出了2个栅栏作为迷宫的2个&#8220;出口&#8221;。这个迷宫是一个&#8220;完美&#8221;的迷宫；你可以在里面任意一个地方，寻找到一条走出迷宫的路径。<br />
+给定迷宫的布局，计算从一个最&#8220;糟糕&#8221;的点走出迷宫需要的步数（即从该点以最优的方式走到最近的出口，所需的步数仍然是最多的）。<br />
+一个 W=5，H=3 的迷宫如下所示：<br />
+<font face="宋体">&#160;&#160;&#160;&#160;   +-+-+-+-+-+<br />
+&#160;&#160;&#160;&#160;   |&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;   |<br />
+&#160;&#160;&#160;&#160;   +-+ +-+ + +<br />
+&#160;&#160;&#160;&#160;   |&#160;&#160;&#160;&#160;   | | |<br />
+&#160;&#160;&#160;&#160;   + +-+-+ + +<br />
+&#160;&#160;&#160;&#160;   | |&#160;&#160;&#160;&#160;   | <br />
+&#160;&#160;&#160;&#160;   +-+ +-+-+-+</font><br />
+图：每一个格子都是一个顶点，如果相邻的2个格子之间，没有被墙分开，这2个格子就是有边相连。</p>
+<p><br />
+<strong>术语</strong></p>
+<p>让我们再看第一个例图。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph1.gif" alt="graph1.gif" />
+</p>
+<p>如果一条边的起点和终点都是<strong>同一个顶点</strong><em>(form (u,u))</em>，这条边被称为<strong>环边</strong><em>(self-loop)</em>，此例图中没有环边。</p>
+<p><strong>简单</strong><em>(simple)</em><strong> 图</strong>是指在边集 E 中，没有环图，且一条边不重复出现的图。如果图中多次包含了同一条边，或者包含环边，这种图被称作<strong>复杂图</strong><em>(multigraph)。</em>我们的讨论中，图都是简单图，例图就是一个简单图。</p>
+<p>边(u, v)是<strong>连接</strong><em>(incident)</em>了顶点 u 和顶点 v。例如，边(1,3)连接了顶点3。</p>
+<p>顶点的<strong>度</strong><em>(degree)</em>是连接到该顶点的边的个数，例图中，顶点3的度数是3，同时顶点4的度数是1。</p>
+<p>如果顶点 u 和 v 被一条边相连，那么 u 和 v 就是<strong>相连</strong><em>(adjacent)</em><strong>的</strong>。例图中，顶点2与顶点5相连。</p>
+<p>如果边的总数小于可能边的总数 ((N x (N-1))/2)，那么这个图是<strong>稀疏</strong><em>(sparse)</em><strong>的</strong>，否则就是<strong>稠密</strong><em>(dense)</em><strong>的</strong>。给定图是稠密的还是稀疏的，没有明确的界定。</p>
+<p><br />
+<strong>有向图<em>(Directed Graph)</em></strong></p>
+<p>上面所介绍的图都是<strong>无向</strong><em>(undirected)</em><strong>图</strong>，边都是&#8220;双向&#8221;的。如果我们能从顶点1到顶点3，那么我们也能从顶点3到顶点1。换句话说，如果边集中存在边(1, 3)，那么也存在边(3, 1)。</p>
+<p>但有时候图是有向的，在这种情况下，边是有方向的，这种边也被称作<strong>弧</strong><em>(arcs)</em>。</p>
+<p>有向图被带上箭号来表示方向。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph2.gif" alt="graph2.gif" /><br />
+每个顶点的<strong>出度</strong><em>(out-degree)</em>是从该顶点开始的弧的条数。每个顶点的<strong>入度</strong><em>(in-degree)</em>是在该顶点结束的弧的的条数。例图中，顶点6的入度数是2，出度数是1。
+</p>
+<p>一个图被假定为无向图，除非特别要求说明是有向图。</p>
+<p><br />
+<strong>路径<em>(Paths)</em></strong></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">从顶点 <font face="Consolas">u </font><font face="宋体">到顶点 </font><font face="Consolas">x</font><font face="宋体">的</font></span><span style="font-style: normal; font-size: 10.5pt; font-weight: bold; mso-spacerun: yes">路径</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">被定义为：</span><span style="font-style: normal; font-size: 10.5pt; font-weight: bold; mso-spacerun: yes">顶点序列</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">, v</span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes"> 1</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">, ..., v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">k</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，而且</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> = u</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">k</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> = x</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，并且</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> (v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0,</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> 是图中的一条边，</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1, </span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">2</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">), (v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">2</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">, v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">3</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes"> </span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">等等也是。这样路径的长度是 </span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">k</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">。</span></p>
+<p>例如，在上面的无向图，(4, 3, 1, 6) 是一条路径。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph3.gif" alt="graph3.gif" /><br />
+</p>
+<p>
+这条路径是说<strong>包含</strong><em>(contain)</em>了顶点<span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1</span>等等，也包含了边<span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0,</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1, </span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">2</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span>等等。</p>
+<p>如果在之间存在一条从 u 到 x 路径 p，则称 x 是从 u 经由 p <strong>可达</strong><em>(reachable)</em><strong>的</strong>。</p>
+<p>如果所有被经过的顶点在该顶点序列中只出现了一次，那么我们就称它是<strong>简单</strong><em>(simple)</em><strong>路径</strong>。</p>
+<p><strong>环<em>(cycle)</em></strong>是指起始和结束顶点是相同顶点的路径。<strong>简单</strong><em>(simple)</em><strong>环</strong>是指，除了起始（结束）顶点外，所有被经过的顶点在该环中只出现了一次。</p>
+<p>这些定义同样适用于有向图（例如， <span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">0,</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes"> v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">，</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">(v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">1, </span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">v </span><span style="font-style: italic; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">2</span><span style="font-style: italic; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">)</span> 等等必须为弧）。</p>
+<p><br />
+<strong>图的表示</strong></p>
+<p>选择图的表示是很重要的，不同的图表示方法有不同的时间和空间开销。</p>
+<p>顶点一般用编号来表示它们，所以我们可以用顶点编号来索引它们。因而，现在的问题重点集中在如何存储边上了。</p>
+<p><strong>* 边集(Edge List)</strong></p>
+<p>表示边最显而易见的方法是，存储一张包含所有边的表，用顶点对表示图中的每条边。</p>
+<p>这种表示方式容易编码，也容易来调试，更相当节省空间。但是，确定给定边是否存在所需要的代价是昂贵的，即确定2个顶点是否相连。添加一条边是很快速的，但是如果边在表的位置是未知的，并尝试删除它，就会使问题变得很棘手。</p>
+<p>对于带权图，边集表示法需要在每条边中添加一个元素，即边权。扩展这个数据结构来处理有向图很简单。表示稠密图也是微不足道的。</p>
+<p><strong>例：略。</strong></p>
+<p><strong>* 邻接矩阵(Adjacency Matrix)</strong></p>
+<p>第二种方法来表示图是利用了<strong>邻接矩阵</strong>。这是一个 <em>N*N</em> (N为顶点数)的二维数组。如果图中存在边 (i,j)，[i,j] 的值就是1，否则为0。对于一个无向图，这个矩阵是对称的。</p>
+<p>这种表示方法也很容易编码，但对空间的需求和浪费也很大，尤其是对于较大的稀疏图。矩阵变大时，调试起来也很麻烦。寻找与该顶点相连的边所需的代价是昂贵的<em>(linear in the number of vertices)</em>，但是判断2个顶点是否相连就很快速，而且添加删除一条边也很快。</p>
+<p>对于带权图，[i,j] 是用来存储边权。对于无权复杂图，[i,j] 是用来存储2个顶点之间边的数目。对于有权复杂图，表示它就变得很困难。</p>
+<p><strong>例：略。</strong></p>
+<p>有时候使用这样一个规则是非常给力的，假如一张图的邻接矩阵为A，a(ij)表示顶点i到顶点j的值（a(ij)为1时表示i可直接到达j,为0表示i不可直接到达j），那么把k个矩阵A相乘，得到的新矩阵中的a(ij)表示从顶点i到顶点j，边的个数为k的路径的个数。（译者：这个可能有点难懂，不过是图论中一个定理，是离散数学中的知识，没有学过离散数学和高等代数的同学可以翻下讲解邻接矩阵表示图那一章的定理和公里什么的）</p>
+<p><strong>* 邻接表(Adjacency List)</strong></p>
+<p>第三种表示方法是，存储与该顶点相连边的表。它可以用一个长度为<em> N</em> (N 为顶点数)的数组来实现。第 i 个数组元素是存储了与该顶点相连的边（边用与该边相连的顶点编号来表示）。</p>
+<p>这种表示方法较难编码，特别是2个顶点之间边的数目不受限制的时候，所以表必须为链表(或者动态分配内存)。调试它有点困难，特别是使用了链表的时候。但是，这种表示方法和边集使用的内存一样。在这种结构里，查找与该顶点相连的顶点所需代价是很便宜的。添加一条边是很快速的，但是如果边在表的位置是未知的，并尝试删除它，就会使问题变得很棘手。</p>
+<p>对于带权图，可以扩展数据结构，并在每条边上添加一个元素来表示权值。复杂图也是可以表示的。有向图也很容易，只需要单向存储弧，或者标记弧的方向就可以了。</p>
+<p><strong>例：略。</strong></p>
+<p><strong>选择合适的表示方法</strong></p>
+<p>对于一些图，图本身不需要全部存储。例如，对于上面的 <em>Knight moves</em> 和<em> Overfencing</em> 问题，只需要记录相邻顶点，以及检查邻接，所以不需要存储不相邻顶点的信息。这些信息来自图本身的暗示。</p>
+<p>如果按这种方法存储图是可行的，并且可以减少空间与编码复杂度，使编写和调试变得很简单，那么它通常就是正确的。</p>
+<p>假设 N 是顶点数，M 是边数，<span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">d</span><span style="font-style: normal; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">max</span>是某顶点最大度数，下面的表总结了几种方法的不同点：</p>
+<p>
+<table style="padding-bottom: 0pt; padding-left: 5.4pt; padding-right: 5.4pt; border-collapse: collapse; margin-left: 6.85pt; margin-right: 6.85pt; padding-top: 0pt; mso-table-layout-alt: fixed" class="FCK&#95;_ShowTableBorders">
+        <tr style="height: 13.6pt">
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: rgb(0,0,0) 0.5pt solid; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">效率</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: rgb(0,0,0) 0.5pt solid; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">边集</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: rgb(0,0,0) 0.5pt solid; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">邻接矩阵</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: rgb(0,0,0) 0.5pt solid; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">邻接表</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">空间</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">2*M</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">N</span><span style="font-style: normal; font-size: 10.5pt; vertical-align: super; font-weight: normal">2</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">2*M</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">判断是否相连</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">M</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">1</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">d</span><span style="font-style: normal; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">max</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">计算所有相连顶点</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">M</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">N</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">d</span><span style="font-style: normal; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">max</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">添加边</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">1</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">1</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">1</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: rgb(0,0,0) 0.5pt solid; padding-bottom: 0pt; padding-left: 5.4pt; width: 99.85pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="133">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">删除边</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">M</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 54.75pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="73">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">2</span></p>
+            </td>
+            <td style="border-bottom: rgb(0,0,0) 0.5pt solid; border-left: medium none; padding-bottom: 0pt; padding-left: 5.4pt; width: 49.5pt; padding-right: 5.4pt; border-top: medium none; border-right: rgb(0,0,0) 0.5pt solid; padding-top: 0pt" valign="top" width="66">
+            <p style="text-align: left; margin-top: 0pt; margin-bottom: 0pt" class="p0"><span style="font-style: normal; font-size: 10.5pt; font-weight: normal; mso-spacerun: yes">2*</span><span style="font-style: normal; font-size: 10.5pt; font-weight: normal">d</span><span style="font-style: normal; font-size: 10.5pt; vertical-align: sub; font-weight: normal; mso-spacerun: yes">max</span></p>
+            </td>
+        </tr>
+</table>
+</p>
+<p><br />
+<strong>连通性(Connectedness)</strong></p>
+<p>如果无向图的每对顶点都有路径相连，它就被称作<strong>连通图</strong>。例图不是连通的，因为顶点2和顶点4之间没有路径。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph1.gif" alt="graph1.gif" /><br />
+但是如果在顶点5和6之间添加一条边，这个图就变成了连通图。
+<img src="http://ace.delos.com/usaco/TEXT/graph1a.gif" alt="graph1a.gif" /><br />
+</p>
+<p>非连通图的<strong>连通分量</strong><em>(component)</em>是指它的极大连通子图，连通分量中的每对顶点都是互相可达的。原图有2个连通分量，{1, 3, 4, 6} 和 {2, 5}。注意 {1, 3, 4} 不是连通分量，因为它不是极大的。</p>
+<p>如果有向图的每对顶点都有路径相连，它就被称作<strong>强连通</strong><em>(strongly connected)</em><strong>图</strong>。</p>
+<p>一个有向图的<strong>强连通分量</strong><em>(strongly connected component)</em>是指非强连通图的极大连通子图。</p>
+<p><br />
+<strong>子图(Subgraphs)</strong></p>
+<p>如果 V' 是 V 的子集，而且E' 是 E 的子集，那么图 G' = (V', E') 是 G = (V, E) 的<strong>子图</strong>。</p>
+<p>在边集 E' 中出现的边必须是连接顶点集 V' 中2个顶点的边。</p>
+<p>举例，V' = {1, 3, 4, 2} 是例图的一个子图。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph4.gif" alt="graph4.gif" /><br />
+<strong>特殊的图</strong><br />
+</p>
+<p><strong>树</strong><em>(tree)</em>是指连通的，无环的无向图。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph5.gif" alt="graph5.gif" /><br />
+</p>
+<p>许多树是<strong>有根树</strong><em>(rooted)</em>，它们有个最高的节点，被称作<strong>根</strong><em>(root)</em>。在树中，除了根节点的每个节点都只有一个<strong>祖先</strong><em>(parent)</em>，即上面与它相连的节点。而且每个节点可能有很多<strong>子孙</strong><em>(children)</em>，即下面与它相连的节点，上图即是一个有根树。</p>
+<p><strong>森林</strong><em>(forest)</em>是指非连通的，无环的无向图。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph6.gif" alt="graph6.gif" /><br />
+</p>
+<p><strong>有向无环图</strong><em>(<strong>d</strong>irected <strong>a</strong>cyclic <strong>g</strong>raph)</em>通常被叫做dag。</p>
+<p><strong>完全</strong><em>(complete)</em><strong>图</strong>是指图中的任意顶点对都有边相连的图。</p>
+<p><img src="http://ace.delos.com/usaco/TEXT/graph7.gif" alt="graph7.gif" /><br />
+<strong>二分</strong><em>(bipartite)</em><strong>图</strong>是指顶点能被分成2个顶点集 <span style="font-size: 10.5pt; mso-spacerun: yes">V</span><span style="font-size: 10.5pt; vertical-align: sub; mso-spacerun: yes">1</span><span style="font-size: 10.5pt; mso-spacerun: yes"> 和 <font face="Consolas">V</font></span><span style="font-size: 10.5pt; vertical-align: sub; mso-spacerun: yes">2</span>，并且 <span style="font-size: 10.5pt; mso-spacerun: yes">V</span><span style="font-size: 10.5pt; vertical-align: sub; mso-spacerun: yes">1</span><span style="font-size: 10.5pt; mso-spacerun: yes"> 和 <font face="Consolas">V</font></span><span style="font-size: 10.5pt; vertical-align: sub; mso-spacerun: yes">2 </span>内部都没有边相连的图。<br />
+<img src="http://ace.delos.com/usaco/TEXT/graph8.gif" alt="graph8.gif" /><br />
+</p><p><br /><br />
+来源：<a rel="nofollow" class="external autonumber" href="http://hi.baidu.com/foreverbell_/blog/item/0f5497164e24460b4b90a738.html">[1]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 164/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5133-0!*!*!*!*!*!* and timestamp 20131219164358 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;oldid=32005">http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;oldid=32005</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Graph_Theory.html">翻译</a></li>
+				<li id="ca-talk"><a href="http://www.nocow.cn/index.php/Translate_Talk:USACO/Graph_Theory" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FGraph+Theory" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Graph_Theory" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Graph_Theory" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;oldid=32005" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,592次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2012年12月25日 (星期二) 13:10做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:PhoneBot" title="用户:PhoneBot">PhoneBot</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:ForeverBell&amp;action=edit&amp;redlink=1" class="new" title="用户:ForeverBell（尚未撰写）">ForeverBell</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.48.194.165" title="特殊:用户贡献/119.48.194.165">119.48.194.165</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/202.110.232.202" title="特殊:用户贡献/202.110.232.202">202.110.232.202</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Graph_Theory&amp;action=credits" title="Translate:USACO/Graph Theory">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.113 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

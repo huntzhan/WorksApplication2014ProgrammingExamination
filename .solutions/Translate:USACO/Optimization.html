@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Optimization - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Optimization", "wgTitle": "USACO/Optimization", "wgCurRevisionId": 33810, "wgArticleId": 5054, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Optimization action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Optimization</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Optimization.html#column-one">导航</a>, <a href="Optimization.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p><b>最优化</b>
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Optimization.html#.E4.BB.80.E4.B9.88.E6.98.AF.E6.9C.80.E4.BC.98.E5.8C.96.EF.BC.9F"><span class="tocnumber">1</span> <span class="toctext">什么是最优化？</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Optimization.html#.E4.B8.80.E4.B8.AA.E9.97.AE.E9.A2.98.EF.BC.9A.E9.93.BE"><span class="tocnumber">2</span> <span class="toctext">一个问题：链</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Optimization.html#.E4.BC.98.E5.8C.96.E7.9A.84.E5.9F.BA.E7.A1.80"><span class="tocnumber">3</span> <span class="toctext">优化的基础</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Optimization.html#.E9.93.BE.E9.97.AE.E9.A2.98.E7.9A.84.E4.BC.98.E5.8C.96"><span class="tocnumber">4</span> <span class="toctext">链问题的优化</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit&amp;section=1" title="编辑段落：什么是最优化？">编辑</a>]</span> <span class="mw-headline" id=".E4.BB.80.E4.B9.88.E6.98.AF.E6.9C.80.E4.BC.98.E5.8C.96.EF.BC.9F"> <b>什么是最优化？</b> </span></h2>
+<p><b>让你的工作代码更快</b>
+</p><p>注意你的工作。在你的程序工作之前，不要试图让它变得更快，因为调试查错可能将更为复杂。在为了优化（而不是调试查错）而对程序作出任何更改之前，给你的代码做一下备份。当你作出了3种深层次的优化之后，发现第一次的优化破坏了程序的正确性，而此时你又没有任何备份可以恢复之前的正确程序，没有再比这更为痛苦的事了。
+</p><p>这块内容将注意几种能加速程序而不更改算法的方法。当然如果有更快的算法，则你的思考方向就应该是思考那种算法，而不是让一种本来就很慢的算法快那么一小点，这就像在猪身上使用香水一样。（USACO这个比喻有点......）
+</p><p>尤其值得注意的是，本模块内容仅将讨论使递归下降程序变得更快的方法，尝试避免搜索整棵树。这种方法通常被归为搜索的<i>剪枝</i>。
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit&amp;section=2" title="编辑段落：一个问题：链">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E4.B8.AA.E9.97.AE.E9.A2.98.EF.BC.9A.E9.93.BE"> <b>一个问题：链</b> </span></h2>
+<p>这是一个在编译器中的现实问题，虽然在那个世界中只有乘法是可用的。
+</p><p>假设一个程序需要精确地得到x^n的值，而标准操作只有乘和除（没有 log/exp）。这些操作最少需要多少次？按次序输出为得到x^n所需要计算的x的幂值。
+</p><p>为了说明这个问题，以下给出的计算过程将仅表现指数，乘法将被表示为加法（两个指数的和），除法将被表示为减法（两个指数的差）。在合法的链中，每个指数都将是两个已得出的指数的和或差。所以计算x^8的序列将表示为：1 2 4 8；计算x^15的序列可以表示为：1 2 4 8 16 15
+</p><p><b>Test Set #1</b>
+</p><p>考虑计算集合[1..50]内的数据。所有时间将在233MHz的Pentium II处理器上得到。
+</p><p><b>一个基本的算法</b>
+</p><p>从1开始，进行深度优先搜索。
+</p><p><b>出现了什么问题？</b>
+</p><p>这个程序将永远不会终止。
+</p><p>所以需要改变算法以减少生成比答案更长的数列的次数。假设最长链的长度为32，为实现例子所需的运行时间达到了4658.34秒。
+</p><p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit&amp;section=3" title="编辑段落：优化的基础">编辑</a>]</span> <span class="mw-headline" id=".E4.BC.98.E5.8C.96.E7.9A.84.E5.9F.BA.E7.A1.80"> <b>优化的基础</b> </span></h2>
+<p><b>更早地剪枝，更频繁地剪枝</b>
+</p><p>思考：在一棵输出2的搜索树中，避免搜索出超过4个节点。
+</p><p>两个能使搜索更快的基本思想：
+</p>
+<ul><li><b>不要做任何愚蠢的事</b>
+</li><li><b>不要把事情做两遍</b>
+</li></ul>
+<p>问题在于如何找到进行了两遍的事,什么是愚蠢的事。这里所有的优化操作都建立在计算正确的前提下，你要保证你的程序是正确的。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit&amp;section=4" title="编辑段落：链问题的优化">编辑</a>]</span> <span class="mw-headline" id=".E9.93.BE.E9.97.AE.E9.A2.98.E7.9A.84.E4.BC.98.E5.8C.96"> <b>链问题的优化</b> </span></h2>
+<p><b>Observation #1</b>
+</p><p>有一种简单的方法可以先确定出一个数，或者纯粹是先得一个搜索的最大值。计算n的二进制表示形式，首先不断生成2的幂值，再将这些生成的数相加得到n。
+</p><p>举例说：n=43，则它的二进制形式为101011。因此，首先的到的数列为：1 2(10) 4(100) 8(1000) 16(10000) 32(100000)，所以计算1+2=3(11)，3+8=11(1011)，11+32=43(101011)。故输出数列：1 2 4 8 16 32 3 11 43。至少可以先得到一个“最优解”。
+</p><p>而这个程序的运行时间为4609.81秒。
+</p><p>评价：这只是勉强可以算是优化。虽然这避免了很多不必要的计算，但在一棵如此巨大的搜索树中确实不能起到太大作用。
+</p><p><b>Observation #2</b>
+</p><p>出现负数显然是愚蠢的，不要让它们出现在数列中。（证明过程略...）
+</p><p>现在新的运行时间为387.34秒。
+</p><p>出现0甚至更愚蠢。（证明过程略...）
+</p><p>新的运行时间：43.24秒。
+</p><p>评价：两个简单的操作减少了100倍数量级的运算时间，并且它们的代码非常容易写，这非常好地体现了优秀的优化。
+</p><p><b>Observation #3</b>
+</p><p>在一步操作中，可能生成的最大整数是当前已生成的序列中最大数的2倍，所以，如果当前最大值乘以  2^到达当前最优解的剩余操作数  小于目标，那么，停止。
+</p><p>运行时间：0.15秒。
+</p><p><br />
+</p><p>增加数据规模 
+</p><p>目前程序很快，我们应该增加数据规模了。新的数据中幂不大于300，运行时间是93.21秒。
+</p><p>注意4 
+</p><p>为什么不使用迭代加深搜索呢？这个搜索的分支系数很大，随着深度的增加结点数成指数级增长，所以进行迭代加深搜索所进行的多余运算相对而言是很少的。
+</p><p>运行时间: 93.05秒。
+</p><p>评价：既然这样,从数据看这是一个不强的优化(慢慢会好起来)。它使程序代码产生了很大的改变，出错的机会增加了，还没有带来任何好处。这令我们有点惊讶，它一向有很大作用。
+</p><p>注意5 
+</p><p>最近的操作必须使用倒数第二个数。如果不用，生成它干什么? (现在就呈现出可变下界深度优先搜索算法)。
+</p><p>运行时间: 7.47 秒 。
+</p><p>注意6 
+</p><p>不要复制已有的数。
+</p><p>运行时间:：3.40 秒
+</p><p>检查 
+</p><p>这样, 除了可变下界深度优先搜索以外，只有“Don't Do Anything Stupid”这一原则被体现了，执行时间减少了约842,510倍。这是好的，但也许可以再提高。
+</p><p>增加数据规模 
+</p><p>新的数据中幂不大于500，运行时间是206.71秒。
+</p><p>注意7 
+</p><p>如果一个数列的前缀没有得到解，在后面加什么数也没有用。例如，如果1 2 4 8 7得不到解，就不用尝试1 2 4 8 16 7了。
+</p><p>运行时间： 53.70 秒
+</p><p>注意8 
+</p><p>如果选择了i,数列中最大的数是j,而且i+j小于下一个需要的数,那就不要选择i。
+</p><p>运行时间: 44.52 秒。
+</p><p>注意9 
+</p><p>如果一个数列生成 x (x不是目标)用了j项，而且存在另外一个数列用了少于j项，我们应该用这个短的数列把它替换掉，获得一个“更好的”数列，这是最佳的。
+</p><p>错误! 
+</p><p>第一个反例: 10,127.用这种方法得到的解是17项，但是存在一个16项的方法。
+</p><p>这就是优化的风险：有时候，会得到错误结论。确保你不会掉入陷阱.
+</p><p>总结 
+</p><p>8个优化使运行时间缩小400万倍。可以使不大于500的数据在44.52秒内出解。有的程序可以在640k内存限制的情况下1.91秒内出解(无限制时0.85秒)。看看你的程序有多快。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 15/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:5054-0!*!*!!zh-cn!*!* and timestamp 20131219164606 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;oldid=33810">http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;oldid=33810</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Optimization.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Optimization&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FOptimization" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Optimization" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Optimization" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;oldid=33810" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过4,051次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年11月27日 (星期三) 21:22做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Rzzy&amp;action=edit&amp;redlink=1" class="new" title="用户:Rzzy（尚未撰写）">ZY</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.215.219.224" title="特殊:用户贡献/60.215.219.224">60.215.219.224</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/221.214.221.136" title="特殊:用户贡献/221.214.221.136">221.214.221.136</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/124.207.228.65" title="特殊:用户贡献/124.207.228.65">124.207.228.65</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Optimization&amp;action=credits" title="Translate:USACO/Optimization">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.123 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

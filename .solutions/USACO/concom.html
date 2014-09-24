@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/concom - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/concom", "wgTitle": "USACO/concom", "wgCurRevisionId": 32064, "wgArticleId": 299, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_concom action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/concom</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="concom.html#column-one">导航</a>, <a href="concom.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>（官方题解 译 by 逆铭）<br />
+这里使用的解题方法如下。我们记录哪些公司控制哪些公司，且当每次我们得知某公司控制了某公司百分之多少的股份，就更新我们的信息。<br />
+</p><p>数组“owns”记录了i公司拥有j公司的多少股份，包括直接控制以及间接控制。数组"controls"记录哪些公司被哪些公司控制。<br />（官方源码见参考代码-&gt;C）
+</p>
+<hr />
+<p>DFS
+</p><p>con[i,j]记录i控制j的股份
+</p><p>对于每个公司i，搜索i直接控股的所有公司，用cx[j]记录公司i控制了公司j的股份（直接和间接），将股份加到cx上，如果超过50就递归搜索公司j，每个公司至多只递归一次，所以用vis判重。最后搜索所有cx超过50的j，那么i控制j。
+速度还是比较快的:
+</p><p>Compiling...
+Compile: OK
+</p><p>Executing...
+</p>
+<pre>  Test 1: TEST OK [0.000 secs, 228 KB]
+  Test 2: TEST OK [0.000 secs, 228 KB]
+  Test 3: TEST OK [0.000 secs, 224 KB]
+  Test 4: TEST OK [0.000 secs, 228 KB]
+  Test 5: TEST OK [0.000 secs, 228 KB]
+  Test 6: TEST OK [0.000 secs, 224 KB]
+  Test 7: TEST OK [0.000 secs, 228 KB]
+  Test 8: TEST OK [0.000 secs, 228 KB]
+  Test 9: TEST OK [0.086 secs, 224 KB]
+</pre>
+<p>All tests OK.
+</p>
+<hr />
+<p>DFS还是很简单的：只要存入一个邻接矩阵，然后
+</p>
+<pre> for i:=1 to n do
+ begin
+   fillchar(c,sizeof(c),0);
+   fillchar(u,sizeof(u),false);
+   dfs(i);
+   for j:=1 to n do
+     if (i&lt;&gt;j)and(c[j]&gt;50) then writeln(i,' ',j);
+ end;
+</pre>
+<p>DFS的过程如下：
+</p>
+<pre> procedure dfs(x:integer);
+ var  i:integer;
+ begin
+   u[x]:=true;
+   for i:=1 to n do
+     inc(c[i],r[x,i]);
+   for i:=1 to n do
+     if (c[i]&gt;50)and not u[i] then dfs(i);
+ end;
+</pre>
+<p>//wrriten by basky
+---
+</p><p><br />
+算法类似Floyd,三重循环然后判断
+</p>
+<pre> for k:=1 to 100 do
+   for i:=1 to 100 do
+     for j:=1 to 100 do
+        if (f[i,k]&gt;=50) and (not vis[i,k,j]) then
+         begin
+           f[i,j]:=f[i,j]+f[k,j];
+           vis[i,k,j]:=true;
+         end;
+</pre>
+<p>要注意不要重复计数，所以用一个三维数组vis记录i,j,k三数是否已使用
+</p><p>PS:因为有第三种情况所以算法要多次执行，循环十次就可出解
+</p>
+<pre>                                                     --By D.puppet
+</pre>
+<p>——楼上的算法可能有误……=。=！
+</p><p><br />
+</p><p>floyd的算法我认为是对的，用了动态规划，没想不要乱说行不行！--by dam
+</p><p><br />
+</p><p><br />
+这道题用floyd确实有错，参考代码中利用floyd算法的pascal程序能AC，有运气的成分。
+把第二个pascal程序的floyd函数中下述语句：
+</p>
+<pre>   for k:=100 downto 1 do
+     for i:=100 downto 1 do
+       if i&lt;&gt;k then
+         for j:=100 downto 1 do
+</pre>
+<p>改为：
+</p>
+<pre>   for k:=1 to 100 do
+     for i:=1 to 100 do
+       if i&lt;&gt;k then
+         for j:=1 to 100 do
+</pre>
+<p>程序就会在第6个点WA掉～～原作者能过这道题，运气真的非常好～～
+floyd算法在这道题目中回溯不完整，参考代码通过多次调用floyd算法来弥补回溯，但是原理上还是错误的。（参考代码中连续调用了10次floyd，我不知道这个10次原作者是怎么算出来的）
+</p><p>我是如下的floyd：
+	          for k:=1 to sums do
+</p><p>			    for i:=1 to sums do
+</p><p>				  for j:=1 to sums do
+</p><p>				    if {(dp[i,j]&gt;50)or}(i=j) then continue
+</p><p>					else
+</p><p>					if (dp[i,k]&gt;50)and (not vst[i,k,j]){and(yy[k,j]&gt;0)} then
+</p><p>					  begin
+</p><p>					     dp[i,j]:=dp[i,j]+yy[k,j];
+</p><p>						 vst[i,k,j]:=true;
+</p><p>						 done:=false;
+</p><p>					  end;
+</p><p>(yy[i,j]表示i到j的直接控制股份)
+经测试，似乎1-8都可以8次一下的floyd出解，但第9个点用了50多次floyd……不过可以ac，0.611s。
+本题确实不可用参考代码中的第二个，虽然ac。如果把to改成downto就wa了。而以上的程序改为downto仍可以0.8s ac。
+问题似乎在用原floyd时，如果控股在于公司的子公司的子公司，那么这份股票会被加两次。（可以试一下test7，改成downto时会wa），所以每次只能添加公司直接控制的部分。
+——Phoeagon
+</p><p>楼上不要乱讲，有时对于这类直接求时会出现递归的题，常量循环的调整也是不错的选择。——Jollwish
+</p><p>用floyd盲目的增加执行次数并不能保证正确性，只能用BFS或DFS不断迭代求出正解。就好比如果出现了负环，bellman-ford迭代n次无法求出最短路，而SPFA通过不断迭代，能求出“更短”的路。 ——Ambush
+</p><p>直接宽搜. ---zdsoi2
+</p><p>小小总结一句吧，floyd的原理是错的(至于为什么，我想是因为本题不是严谨的传递闭包，所以有各种问题)，新手请直接略过，去看bfs或dfs迭代的算法。当然如同jollwish讲的：这个floyd算法考试时有骗分价值。——CZDleaf
+</p><p>这道题的FLOYD貌似只是近似算法，如果11次以上的传递（只有一条路径），10次循环还是有可能出错的。。。
+</p>
+<hr />
+<p>贪心亦可
+</p>
+<pre>       repeat
+               flag:=true;
+               for i:=1 to n do
+                       for j:=1 to n do if i&lt;&gt;j then
+                               if(h[i,j]&gt;50)and not k[i,j]then begin
+                                       flag:=false;
+                                       k[i,j]:=true;
+                                       for t:=1 to n do inc(h[i,t],h[j,t]);
+                               end;
+       until flag;//直接控制
+       repeat
+               flag:=true;
+               for i:=1 to n do
+                       for j:=1 to n do
+                               if(i&lt;&gt;j)and(k[i,j])then
+                               for t:=1 to n do
+                                       if(i&lt;&gt;t)and(j&lt;&gt;t)then
+                                               if k[j,t]and not k[i,t]then begin
+                                                       k[i,t]:=true;
+                                                       flag:=false;
+                                               end;
+       until flag;间接控制
+</pre>
+<p>上面的方法貌似不对，代码是不会过的
+</p><p>其实本题暴力穷举也能过,思想简单,但效率不高
+方法是对于每对i,j,枚举每个公司来更新i是否能控制j
+这里还要加几个小的优化,详情可以参照本菜的丑陋代码(ID是noip2012的那个)
+我是用PASCAL写的,最后一个点在USACO的评测机上是0.994秒,C/C++应该没问题,PASCAL就很难说了,可能会TLE
+</p><p><br />
+</p>
+<hr />
+<p>看大家的程序，有好多在搜索时扫描被控制的公司都是直接for循环，为什么不用考虑第一遍扫描时不能控制，但在后面能控制的公司的股份的支持下又能控制了的公司？？？
+</p><p>回答：考虑了，所以要多次执行循环，直到找不出任何新的控制关系的公司组为止。 ——mxalbert1996
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit&amp;section=2" title="编辑段落：另解">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E8.A7.A3">另解</span></h2>
+<p>遇到i可以控制j，就将i,j入队，然后跟着队列，将被控者的股份贡献给控制者,能控制新的就将他们入队，一直操作下去。
+代码见Pascal中的第二个（MZD）
+其实类似于SPFA（旁注）
+</p>
+<hr />
+<p>为了避免重复计算stock，可以先用一个数组inputState[][]存储输入的数据。然后再建两个数组：<b>long</b> conState[][]和<b>bool</b> owns[][]
+然后循环 不断更新owns和重建conState，直到owns不再变化。
+为了保证不重复计算，更新conState时只从inputState更新。
+具体做法如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">long</span> comLimit<span class="sy1">=</span><span class="nu0">101</span><span class="sy4">;</span>
+<span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span> owns<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+<span class="kw4">bool</span> changed<span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+<span class="co1">//work</span>
+<span class="kw1">while</span> <span class="br0">&#40;</span>changed<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+      changed<span class="sy1">=</span><span class="kw2">false</span><span class="sy4">;</span>
+      <span class="kw3">memset</span> <span class="br0">&#40;</span>conState,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>conState<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+      <span class="co1">//根据owns从inputState重建conState  </span>
+      <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+              <span class="kw1">if</span> <span class="br0">&#40;</span>owns<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span>
+              <span class="br0">&#123;</span>
+                 <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> j2<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j2<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>j2<span class="sy2">++</span><span class="br0">&#41;</span>
+                     <span class="co1">//conState[i][j]=x/inputState[i][j]=x  means i owns x% stocks of j</span>
+                     conState<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j2<span class="br0">&#93;</span><span class="sy2">+</span><span class="sy1">=</span>inputState<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#91;</span>j2<span class="br0">&#93;</span><span class="sy4">;</span>        
+              <span class="br0">&#125;</span>
+      <span class="co1">//根据conState更新owns</span>
+      <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+          <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">long</span> j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&lt;</span>comLimit<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+              <span class="kw1">if</span> <span class="br0">&#40;</span>conState<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">&gt;</span><span class="nu0">50</span> <span class="sy3">&amp;&amp;</span> owns<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">==</span><span class="kw2">false</span><span class="br0">&#41;</span>
+              <span class="br0">&#123;</span>
+                 changed<span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+                 owns<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span>
+              <span class="br0">&#125;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>Dijstra,好像很快就AC了,不知算法是否正确 <br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">uses</span> math;
+&#160;
+<span class="kw1">const</span>
+	MAXN <span class="sy0">=</span> <span class="nu0">100</span>;
+&#160;
+<span class="kw1">type</span>
+	arrn <span class="sy0">=</span> <span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">MAXN</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">longint</span>;
+&#160;
+<span class="kw1">var</span>
+	M<span class="sy0">,</span>i<span class="sy0">,</span>N<span class="sy0">,</span>x<span class="sy0">,</span>y<span class="sy0">,</span>p<span class="sy0">,</span>node<span class="sy0">,</span>j <span class="sy0">:</span> <span class="kw4">longint</span>;
+	hash <span class="sy0">:</span> <span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">MAXN</span><span class="br0">&#93;</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;
+	dist <span class="sy0">:</span> arrn;
+	map <span class="sy0">:</span> <span class="kw4">array</span><span class="br0">&#91;</span><span class="nu0">1</span>..<span class="me1">MAXN</span><span class="br0">&#93;</span> <span class="kw1">of</span> arrn;
+&#160;
+<span class="kw1">begin</span>
+	assign<span class="br0">&#40;</span>input<span class="sy0">,</span><span class="st_h">'concom.in'</span><span class="br0">&#41;</span>; reset<span class="br0">&#40;</span>input<span class="br0">&#41;</span>;
+	assign<span class="br0">&#40;</span>output<span class="sy0">,</span><span class="st_h">'concom.out'</span><span class="br0">&#41;</span>; rewrite<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+	<span class="kw3">readln</span><span class="br0">&#40;</span>M<span class="br0">&#41;</span>;
+	<span class="kw1">for</span> i <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> M <span class="kw1">do</span> <span class="kw1">begin</span>
+		<span class="kw3">readln</span><span class="br0">&#40;</span>x<span class="sy0">,</span>y<span class="sy0">,</span>p<span class="br0">&#41;</span>; map<span class="br0">&#91;</span>x<span class="sy0">,</span>y<span class="br0">&#93;</span> <span class="sy0">:=</span> p;
+		N <span class="sy0">:=</span> max<span class="br0">&#40;</span>N<span class="sy0">,</span>x<span class="br0">&#41;</span>; N <span class="sy0">:=</span> max<span class="br0">&#40;</span>N<span class="sy0">,</span>y<span class="br0">&#41;</span>;
+	<span class="kw1">end</span>;
+	<span class="kw1">for</span> node <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> N <span class="kw1">do</span> <span class="kw1">begin</span>
+		fillchar<span class="br0">&#40;</span>hash<span class="sy0">,</span>MAXN<span class="sy0">,</span><span class="nu0">0</span><span class="br0">&#41;</span>; hash<span class="br0">&#91;</span>node<span class="br0">&#93;</span> <span class="sy0">:=</span> <span class="kw2">true</span>;
+		dist <span class="sy0">:=</span> map<span class="br0">&#91;</span>node<span class="br0">&#93;</span>;
+		<span class="kw1">repeat</span>
+			<span class="kw1">for</span> i <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> N <span class="kw1">do</span>
+				<span class="kw1">if</span> <span class="kw1">not</span> hash<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw3">and</span> <span class="br0">&#40;</span>dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span> &gt; <span class="nu0">50</span><span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw1">break</span>;
+			<span class="kw1">if</span> hash<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw1">or</span> <span class="br0">&#40;</span>dist<span class="br0">&#91;</span>i<span class="br0">&#93;</span> &lt;<span class="sy0">=</span> <span class="nu0">50</span><span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw1">begin</span>
+				<span class="kw1">for</span> i <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> node<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+					<span class="kw1">if</span> hash<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw3">writeln</span><span class="br0">&#40;</span>node<span class="sy0">,</span><span class="st_h">' '</span><span class="sy0">,</span>i<span class="br0">&#41;</span>;
+				<span class="kw1">for</span> i <span class="sy0">:=</span> node<span class="sy0">+</span><span class="nu0">1</span> <span class="kw1">to</span> N <span class="kw1">do</span>
+					<span class="kw1">if</span> hash<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="kw1">then</span> <span class="kw3">writeln</span><span class="br0">&#40;</span>node<span class="sy0">,</span><span class="st_h">' '</span><span class="sy0">,</span>i<span class="br0">&#41;</span>;
+				<span class="kw1">break</span>;
+			<span class="kw1">end</span>;
+			hash<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">:=</span> <span class="kw2">true</span>;
+			<span class="kw1">for</span> j <span class="sy0">:=</span> <span class="nu0">1</span> <span class="kw1">to</span> N <span class="kw1">do</span> inc<span class="br0">&#40;</span>dist<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy0">,</span>map<span class="br0">&#91;</span>i<span class="sy0">,</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+		<span class="kw1">until</span> <span class="kw2">false</span>;
+	<span class="kw1">end</span>;
+	close<span class="br0">&#40;</span>input<span class="br0">&#41;</span>; close<span class="br0">&#40;</span>output<span class="br0">&#41;</span>;
+<span class="kw1">end</span>.</pre></div></div>
+<p>详见C++源码里面的第三个：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ID:GeorgeG1
+PROB:concom
+LANG:C++
+*/</span></pre></div></div>
+<p>yc5-yc:四重循环枚举AC！
+</p><p>难道数据没问题？
+11 11 51 这算什么？
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit&amp;section=3" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/concom/Pascal.html" title="Code:USACO/concom/Pascal">Pascal</a>
+</p><p><a href="../Code:USACO/concom/C.html" title="Code:USACO/concom/C">C</a>
+</p><p><a href="../Code:USACO/concom/C++.html" title="Code:USACO/concom/C++">C++</a>
+</p><p><br />
+此题用 宽搜     要不断更新（update）   就用宽搜           用floyd 只能是 rp高 才能过！！！！！
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 37/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:299-0!*!0!!*!*!* and timestamp 20131219164531 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;oldid=32064">http://www.nocow.cn/index.php?title=USACO/concom&amp;oldid=32064</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="concom.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk"><a href="http://www.nocow.cn/index.php/%E8%AE%A8%E8%AE%BA:USACO/concom" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fconcom" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/concom" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/concom" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;oldid=32064" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过19,915次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年1月6日 (星期日) 13:57做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/202.98.13.242" title="特殊:用户贡献/202.98.13.242">202.98.13.242</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/119.40.44.73" title="特殊:用户贡献/119.40.44.73">119.40.44.73</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.237.200.53" title="特殊:用户贡献/121.237.200.53">121.237.200.53</a>和<a href="http://www.nocow.cn/index.php?title=USACO/concom&amp;action=credits" title="USACO/concom">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.240 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

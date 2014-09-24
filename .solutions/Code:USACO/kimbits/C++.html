@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Code:USACO/kimbits/C++ - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Code", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 104, "wgPageName": "Code:USACO/kimbits/C++", "wgTitle": "USACO/kimbits/C++", "wgCurRevisionId": 31399, "wgArticleId": 3120, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-104 ns-subject page-Code_USACO_kimbits_C action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Code:USACO/kimbits/C++</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="C++.html#column-one">导航</a>, <a href="C++.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">（高效方法）直接计算组合数，快速缩小搜索范围
+     <span class="sy2">------</span>消逝者<span class="sy2">-------</span>
+USER<span class="sy4">:</span> Hujie Wang <span class="br0">&#91;</span>gtavice1<span class="br0">&#93;</span>
+TASK<span class="sy4">:</span> kimbits
+LANG<span class="sy4">:</span> C<span class="sy2">++</span>
+&#160;
+Compiling...
+<span class="me1">Compile</span><span class="sy4">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">9</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">10</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">11</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">12</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">13</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3180</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+&#160;
+<span class="coMULTI">/*
+PROG:kimbits
+LANG:C++
+*/</span>
+&#160;
+<span class="co1">//#include &quot;stdafx.h&quot;</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;cmath&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+ifstream fin<span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ofstream fout<span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> N,L,I,i,j,ans<span class="br0">&#91;</span><span class="nu0">31</span><span class="br0">&#93;</span><span class="sy4">;</span>
+vector<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> answer<span class="sy4">;</span>
+<span class="kw4">int</span> C<span class="br0">&#91;</span><span class="nu0">31</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">31</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span>
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">3</span>,<span class="nu0">3</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">4</span>,<span class="nu0">6</span>,<span class="nu0">4</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">5</span>,<span class="nu0">10</span>,<span class="nu0">10</span>,<span class="nu0">5</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">6</span>,<span class="nu0">15</span>,<span class="nu0">20</span>,<span class="nu0">15</span>,<span class="nu0">6</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">7</span>,<span class="nu0">21</span>,<span class="nu0">35</span>,<span class="nu0">35</span>,<span class="nu0">21</span>,<span class="nu0">7</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">8</span>,<span class="nu0">28</span>,<span class="nu0">56</span>,<span class="nu0">70</span>,<span class="nu0">56</span>,<span class="nu0">28</span>,<span class="nu0">8</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">9</span>,<span class="nu0">36</span>,<span class="nu0">84</span>,<span class="nu0">126</span>,<span class="nu0">126</span>,<span class="nu0">84</span>,<span class="nu0">36</span>,<span class="nu0">9</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">10</span>,<span class="nu0">45</span>,<span class="nu0">120</span>,<span class="nu0">210</span>,<span class="nu0">252</span>,<span class="nu0">210</span>,<span class="nu0">120</span>,<span class="nu0">45</span>,<span class="nu0">10</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">11</span>,<span class="nu0">55</span>,<span class="nu0">165</span>,<span class="nu0">330</span>,<span class="nu0">462</span>,<span class="nu0">462</span>,<span class="nu0">330</span>,<span class="nu0">165</span>,<span class="nu0">55</span>,<span class="nu0">11</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">12</span>,<span class="nu0">66</span>,<span class="nu0">220</span>,<span class="nu0">495</span>,<span class="nu0">792</span>,<span class="nu0">924</span>,<span class="nu0">792</span>,<span class="nu0">495</span>,<span class="nu0">220</span>,<span class="nu0">66</span>,<span class="nu0">12</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">13</span>,<span class="nu0">78</span>,<span class="nu0">286</span>,<span class="nu0">715</span>,<span class="nu0">1287</span>,<span class="nu0">1716</span>,<span class="nu0">1716</span>,<span class="nu0">1287</span>,<span class="nu0">715</span>,<span class="nu0">286</span>,<span class="nu0">78</span>,<span class="nu0">13</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">14</span>,<span class="nu0">91</span>,<span class="nu0">364</span>,<span class="nu0">1001</span>,<span class="nu0">2002</span>,<span class="nu0">3003</span>,<span class="nu0">3432</span>,<span class="nu0">3003</span>,<span class="nu0">2002</span>,<span class="nu0">1001</span>,<span class="nu0">364</span>,<span class="nu0">91</span>,<span class="nu0">14</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">15</span>,<span class="nu0">105</span>,<span class="nu0">455</span>,<span class="nu0">1365</span>,<span class="nu0">3003</span>,<span class="nu0">5005</span>,<span class="nu0">6435</span>,<span class="nu0">6435</span>,<span class="nu0">5005</span>,<span class="nu0">3003</span>,<span class="nu0">1365</span>,<span class="nu0">455</span>,<span class="nu0">105</span>,<span class="nu0">15</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">16</span>,<span class="nu0">120</span>,<span class="nu0">560</span>,<span class="nu0">1820</span>,<span class="nu0">4368</span>,<span class="nu0">8008</span>,<span class="nu0">11440</span>,<span class="nu0">12870</span>,<span class="nu0">11440</span>,<span class="nu0">8008</span>,<span class="nu0">4368</span>,<span class="nu0">1820</span>,<span class="nu0">560</span>,<span class="nu0">120</span>,<span class="nu0">16</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">17</span>,<span class="nu0">136</span>,<span class="nu0">680</span>,<span class="nu0">2380</span>,<span class="nu0">6188</span>,<span class="nu0">12376</span>,<span class="nu0">19448</span>,<span class="nu0">24310</span>,<span class="nu0">24310</span>,<span class="nu0">19448</span>,<span class="nu0">12376</span>,<span class="nu0">6188</span>,<span class="nu0">2380</span>,<span class="nu0">680</span>,<span class="nu0">136</span>,<span class="nu0">17</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">18</span>,<span class="nu0">153</span>,<span class="nu0">816</span>,<span class="nu0">3060</span>,<span class="nu0">8568</span>,<span class="nu0">18564</span>,<span class="nu0">31824</span>,<span class="nu0">43758</span>,<span class="nu0">48620</span>,<span class="nu0">43758</span>,<span class="nu0">31824</span>,<span class="nu0">18564</span>,<span class="nu0">8568</span>,<span class="nu0">3060</span>,<span class="nu0">816</span>,<span class="nu0">153</span>,<span class="nu0">18</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">19</span>,<span class="nu0">171</span>,<span class="nu0">969</span>,<span class="nu0">3876</span>,<span class="nu0">11628</span>,<span class="nu0">27132</span>,<span class="nu0">50388</span>,<span class="nu0">75582</span>,<span class="nu0">92378</span>,<span class="nu0">92378</span>,<span class="nu0">75582</span>,<span class="nu0">50388</span>,<span class="nu0">27132</span>,<span class="nu0">11628</span>,<span class="nu0">3876</span>,<span class="nu0">969</span>,<span class="nu0">171</span>,<span class="nu0">19</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">20</span>,<span class="nu0">190</span>,<span class="nu0">1140</span>,<span class="nu0">4845</span>,<span class="nu0">15504</span>,<span class="nu0">38760</span>,<span class="nu0">77520</span>,<span class="nu0">125970</span>,<span class="nu0">167960</span>,<span class="nu0">184756</span>,<span class="nu0">167960</span>,<span class="nu0">125970</span>,<span class="nu0">77520</span>,<span class="nu0">38760</span>,<span class="nu0">15504</span>,<span class="nu0">4845</span>,<span class="nu0">1140</span>,<span class="nu0">190</span>,<span class="nu0">20</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">21</span>,<span class="nu0">210</span>,<span class="nu0">1330</span>,<span class="nu0">5985</span>,<span class="nu0">20349</span>,<span class="nu0">54264</span>,<span class="nu0">116280</span>,<span class="nu0">203490</span>,<span class="nu0">293930</span>,<span class="nu0">352716</span>,<span class="nu0">352716</span>,<span class="nu0">293930</span>,<span class="nu0">203490</span>,<span class="nu0">116280</span>,<span class="nu0">54264</span>,<span class="nu0">20349</span>,<span class="nu0">5985</span>,<span class="nu0">1330</span>,<span class="nu0">210</span>,<span class="nu0">21</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">22</span>,<span class="nu0">231</span>,<span class="nu0">1540</span>,<span class="nu0">7315</span>,<span class="nu0">26334</span>,<span class="nu0">74613</span>,<span class="nu0">170544</span>,<span class="nu0">319770</span>,<span class="nu0">497420</span>,<span class="nu0">646646</span>,<span class="nu0">705432</span>,<span class="nu0">646646</span>,<span class="nu0">497420</span>,<span class="nu0">319770</span>,<span class="nu0">170544</span>,<span class="nu0">74613</span>,<span class="nu0">26334</span>,<span class="nu0">7315</span>,<span class="nu0">1540</span>,<span class="nu0">231</span>,<span class="nu0">22</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">23</span>,<span class="nu0">253</span>,<span class="nu0">1771</span>,<span class="nu0">8855</span>,<span class="nu0">33649</span>,<span class="nu0">100947</span>,<span class="nu0">245157</span>,<span class="nu0">490314</span>,<span class="nu0">817190</span>,<span class="nu0">1144066</span>,<span class="nu0">1352078</span>,<span class="nu0">1352078</span>,<span class="nu0">1144066</span>,<span class="nu0">817190</span>,<span class="nu0">490314</span>,<span class="nu0">245157</span>,<span class="nu0">100947</span>,<span class="nu0">33649</span>,<span class="nu0">8855</span>,<span class="nu0">1771</span>,<span class="nu0">253</span>,<span class="nu0">23</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">24</span>,<span class="nu0">276</span>,<span class="nu0">2024</span>,<span class="nu0">10626</span>,<span class="nu0">42504</span>,<span class="nu0">134596</span>,<span class="nu0">346104</span>,<span class="nu0">735471</span>,<span class="nu0">1307504</span>,<span class="nu0">1961256</span>,<span class="nu0">2496144</span>,<span class="nu0">2704156</span>,<span class="nu0">2496144</span>,<span class="nu0">1961256</span>,<span class="nu0">1307504</span>,<span class="nu0">735471</span>,<span class="nu0">346104</span>,<span class="nu0">134596</span>,<span class="nu0">42504</span>,<span class="nu0">10626</span>,<span class="nu0">2024</span>,<span class="nu0">276</span>,<span class="nu0">24</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">25</span>,<span class="nu0">300</span>,<span class="nu0">2300</span>,<span class="nu0">12650</span>,<span class="nu0">53130</span>,<span class="nu0">177100</span>,<span class="nu0">480700</span>,<span class="nu0">1081575</span>,<span class="nu0">2042975</span>,<span class="nu0">3268760</span>,<span class="nu0">4457400</span>,<span class="nu0">5200300</span>,<span class="nu0">5200300</span>,<span class="nu0">4457400</span>,<span class="nu0">3268760</span>,<span class="nu0">2042975</span>,<span class="nu0">1081575</span>,<span class="nu0">480700</span>,<span class="nu0">177100</span>,<span class="nu0">53130</span>,<span class="nu0">12650</span>,<span class="nu0">2300</span>,<span class="nu0">300</span>,<span class="nu0">25</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">26</span>,<span class="nu0">325</span>,<span class="nu0">2600</span>,<span class="nu0">14950</span>,<span class="nu0">65780</span>,<span class="nu0">230230</span>,<span class="nu0">657800</span>,<span class="nu0">1562275</span>,<span class="nu0">3124550</span>,<span class="nu0">5311735</span>,<span class="nu0">7726160</span>,<span class="nu0">9657700</span>,<span class="nu0">10400600</span>,<span class="nu0">9657700</span>,<span class="nu0">7726160</span>,<span class="nu0">5311735</span>,<span class="nu0">3124550</span>,<span class="nu0">1562275</span>,<span class="nu0">657800</span>,<span class="nu0">230230</span>,<span class="nu0">65780</span>,<span class="nu0">14950</span>,<span class="nu0">2600</span>,<span class="nu0">325</span>,<span class="nu0">26</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">27</span>,<span class="nu0">351</span>,<span class="nu0">2925</span>,<span class="nu0">17550</span>,<span class="nu0">80730</span>,<span class="nu0">296010</span>,<span class="nu0">888030</span>,<span class="nu0">2220075</span>,<span class="nu0">4686825</span>,<span class="nu0">8436285</span>,<span class="nu0">13037895</span>,<span class="nu0">17383860</span>,<span class="nu0">20058300</span>,<span class="nu0">20058300</span>,<span class="nu0">17383860</span>,<span class="nu0">13037895</span>,<span class="nu0">8436285</span>,<span class="nu0">4686825</span>,<span class="nu0">2220075</span>,<span class="nu0">888030</span>,<span class="nu0">296010</span>,<span class="nu0">80730</span>,<span class="nu0">17550</span>,<span class="nu0">2925</span>,<span class="nu0">351</span>,<span class="nu0">27</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">28</span>,<span class="nu0">378</span>,<span class="nu0">3276</span>,<span class="nu0">20475</span>,<span class="nu0">98280</span>,<span class="nu0">376740</span>,<span class="nu0">1184040</span>,<span class="nu0">3108105</span>,<span class="nu0">6906900</span>,<span class="nu0">13123110</span>,<span class="nu0">21474180</span>,<span class="nu0">30421755</span>,<span class="nu0">37442160</span>,<span class="nu0">40116600</span>,<span class="nu0">37442160</span>,<span class="nu0">30421755</span>,<span class="nu0">21474180</span>,<span class="nu0">13123110</span>,<span class="nu0">6906900</span>,<span class="nu0">3108105</span>,<span class="nu0">1184040</span>,<span class="nu0">376740</span>,<span class="nu0">98280</span>,<span class="nu0">20475</span>,<span class="nu0">3276</span>,<span class="nu0">378</span>,<span class="nu0">28</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">29</span>,<span class="nu0">406</span>,<span class="nu0">3654</span>,<span class="nu0">23751</span>,<span class="nu0">118755</span>,<span class="nu0">475020</span>,<span class="nu0">1560780</span>,<span class="nu0">4292145</span>,<span class="nu0">10015005</span>,<span class="nu0">20030010</span>,<span class="nu0">34597290</span>,<span class="nu0">51895935</span>,<span class="nu0">67863915</span>,<span class="nu0">77558760</span>,<span class="nu0">77558760</span>,<span class="nu0">67863915</span>,<span class="nu0">51895935</span>,<span class="nu0">34597290</span>,<span class="nu0">20030010</span>,<span class="nu0">10015005</span>,<span class="nu0">4292145</span>,<span class="nu0">1560780</span>,<span class="nu0">475020</span>,<span class="nu0">118755</span>,<span class="nu0">23751</span>,<span class="nu0">3654</span>,<span class="nu0">406</span>,<span class="nu0">29</span>,<span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+<span class="br0">&#123;</span><span class="nu0">1</span>,<span class="nu0">30</span>,<span class="nu0">435</span>,<span class="nu0">4060</span>,<span class="nu0">27405</span>,<span class="nu0">142506</span>,<span class="nu0">593775</span>,<span class="nu0">2035800</span>,<span class="nu0">5852925</span>,<span class="nu0">14307150</span>,<span class="nu0">30045015</span>,<span class="nu0">54627300</span>,<span class="nu0">86493225</span>,<span class="nu0">119759850</span>,<span class="nu0">145422675</span>,<span class="nu0">155117520</span>,<span class="nu0">145422675</span>,<span class="nu0">119759850</span>,<span class="nu0">86493225</span>,<span class="nu0">54627300</span>,<span class="nu0">30045015</span>,<span class="nu0">14307150</span>,<span class="nu0">5852925</span>,<span class="nu0">2035800</span>,<span class="nu0">593775</span>,<span class="nu0">142506</span>,<span class="nu0">27405</span>,<span class="nu0">4060</span>,<span class="nu0">435</span>,<span class="nu0">30</span>,<span class="nu0">1</span><span class="br0">&#125;</span>,
+<span class="br0">&#125;</span><span class="sy4">;</span>
+<span class="kw4">void</span> calculate<span class="br0">&#40;</span><span class="kw4">int</span> pos,<span class="kw4">int</span> one_left<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw4">long</span> <span class="kw4">long</span> sum<span class="sy1">=</span><span class="nu0">2</span>,lower<span class="sy1">=</span><span class="nu0">2</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>I<span class="sy1">==</span><span class="nu0">1</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		answer.<span class="me1">push_back</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>I<span class="sy1">==</span><span class="nu0">2</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		answer.<span class="me1">push_back</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		<span class="kw1">return</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">else</span>
+	 <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> one_pos<span class="sy1">=</span><span class="nu0">2</span><span class="sy4">;</span>one_pos<span class="sy1">&lt;=</span>pos<span class="sy4">;</span>one_pos<span class="sy2">++</span><span class="br0">&#41;</span>
+	 <span class="br0">&#123;</span>
+	  <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> m<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span><span class="br0">&#40;</span>m<span class="sy1">&lt;=</span>one_left<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy3">&amp;&amp;</span><span class="br0">&#40;</span>m<span class="sy1">&lt;=</span>one_pos<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>m<span class="sy2">++</span><span class="br0">&#41;</span>
+	   sum<span class="sy2">+</span><span class="sy1">=</span>C<span class="br0">&#91;</span>one_pos<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>m<span class="br0">&#93;</span><span class="sy4">;</span>
+	  <span class="kw1">if</span><span class="br0">&#40;</span><span class="br0">&#40;</span>I<span class="sy1">&gt;</span>lower<span class="br0">&#41;</span><span class="sy3">&amp;&amp;</span><span class="br0">&#40;</span>I<span class="sy1">&lt;=</span>sum<span class="br0">&#41;</span><span class="br0">&#41;</span>
+	  <span class="br0">&#123;</span>
+		  answer.<span class="me1">push_back</span><span class="br0">&#40;</span>one_pos<span class="br0">&#41;</span><span class="sy4">;</span>
+		  <span class="kw1">if</span><span class="br0">&#40;</span>one_left<span class="sy2">-</span><span class="nu0">1</span><span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span>
+		  <span class="br0">&#123;</span>
+		   I<span class="sy2">-</span><span class="sy1">=</span>lower<span class="sy4">;</span>
+		   calculate<span class="br0">&#40;</span>one_pos<span class="sy2">-</span><span class="nu0">1</span>,one_left<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		  <span class="br0">&#125;</span>
+          <span class="kw1">return</span><span class="sy4">;</span> 
+	  <span class="br0">&#125;</span>
+	  lower<span class="sy1">=</span>sum<span class="sy4">;</span>
+	 <span class="br0">&#125;</span>	 
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw3">memset</span><span class="br0">&#40;</span>ans,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>ans<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	fin<span class="sy1">&gt;&gt;</span>N<span class="sy1">&gt;&gt;</span>L<span class="sy1">&gt;&gt;</span>I<span class="sy4">;</span>
+	calculate<span class="br0">&#40;</span>N,L<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span>answer.<span class="me1">size</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+	 <span class="kw1">if</span><span class="br0">&#40;</span>answer<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span><span class="br0">&#41;</span>
+	  ans<span class="br0">&#91;</span>N<span class="sy2">-</span>answer<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span>N<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+	 fout<span class="sy1">&lt;&lt;</span>ans<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+	fout<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+	fin.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	fout.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ID: onetwog2
+PROG: kimbits
+LANG: C++
+*/</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;cstdio&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> c<span class="br0">&#40;</span><span class="kw4">long</span> a,<span class="kw4">long</span> b<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>a<span class="sy1">&lt;</span>b<span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw4">long</span> <span class="kw4">long</span> res<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>b<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		res<span class="sy2">*</span><span class="sy1">=</span><span class="br0">&#40;</span>a<span class="sy2">-</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		res<span class="sy2">/</span><span class="sy1">=</span>i<span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">return</span> res<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> superC<span class="br0">&#40;</span><span class="kw4">long</span> a,<span class="kw4">long</span> b<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw4">long</span> <span class="kw4">long</span> res<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>b<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+		res<span class="sy2">+</span><span class="sy1">=</span>c<span class="br0">&#40;</span>a,i<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">return</span> res<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> ans<span class="br0">&#91;</span><span class="nu0">100</span><span class="br0">&#93;</span>,index,maxGe,wei<span class="sy4">;</span>
+<span class="kw4">void</span> fun<span class="br0">&#40;</span><span class="kw4">long</span> wei,<span class="kw4">long</span> <span class="kw4">long</span> index,<span class="kw4">long</span> left<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>wei<span class="sy1">==</span><span class="nu0">0</span><span class="br0">&#41;</span>
+		<span class="kw1">return</span> <span class="sy4">;</span>
+	<span class="kw4">long</span> <span class="kw4">long</span> done<span class="sy1">=</span>superC<span class="br0">&#40;</span>wei<span class="sy2">-</span><span class="nu0">1</span>,left<span class="br0">&#41;</span><span class="sy4">;</span>
+	ans<span class="br0">&#91;</span>wei<span class="br0">&#93;</span><span class="sy1">=</span><span class="sy3">!</span><span class="br0">&#40;</span>done<span class="sy1">&gt;=</span>index<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>done<span class="sy1">&gt;=</span>index<span class="br0">&#41;</span>
+		fun<span class="br0">&#40;</span>wei<span class="sy2">-</span><span class="nu0">1</span>,index,left<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		fun<span class="br0">&#40;</span>wei<span class="sy2">-</span><span class="nu0">1</span>,index<span class="sy2">-</span>done,left<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span>,<span class="st0">&quot;r&quot;</span>,<span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span>,<span class="st0">&quot;w&quot;</span>,<span class="kw2">stdout</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>wei<span class="sy1">&gt;&gt;</span>maxGe<span class="sy1">&gt;&gt;</span>index<span class="sy4">;</span>
+	fun<span class="br0">&#40;</span>wei,index,maxGe<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span>wei<span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>
+		<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>ans<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">USER<span class="sy4">:</span> Yaguang Ding <span class="br0">&#91;</span>dingyag1<span class="br0">&#93;</span>
+TASK<span class="sy4">:</span> kimbits
+LANG<span class="sy4">:</span> C<span class="sy2">++</span>
+&#160;
+Compiling...
+<span class="me1">Compile</span><span class="sy4">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.022</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">9</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">10</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">11</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">12</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">13</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">2892</span> KB<span class="br0">&#93;</span>
+&#160;
+<span class="coMULTI">/*
+ID:dingyag1
+LANG:C++
+TASK:kimbits
+*/</span>
+&#160;
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;math.h&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> dp<span class="br0">&#91;</span><span class="nu0">33</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">33</span><span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> digui<span class="br0">&#40;</span><span class="kw4">int</span> N,<span class="kw4">int</span> L<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>N<span class="sy1">==</span><span class="nu0">0</span> <span class="sy3">||</span> L<span class="sy1">==</span><span class="nu0">0</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw1">if</span> <span class="br0">&#40;</span>dp<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#91;</span>L<span class="br0">&#93;</span><span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span><span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">return</span> dp<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#91;</span>L<span class="br0">&#93;</span><span class="sy4">;</span>
+	<span class="br0">&#125;</span>
+	dp<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#91;</span>L<span class="br0">&#93;</span><span class="sy1">=</span>digui<span class="br0">&#40;</span>N<span class="sy2">-</span><span class="nu0">1</span>,L<span class="br0">&#41;</span><span class="sy2">+</span>digui<span class="br0">&#40;</span>N<span class="sy2">-</span><span class="nu0">1</span>,L<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">return</span> dp<span class="br0">&#91;</span>N<span class="br0">&#93;</span><span class="br0">&#91;</span>L<span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span>,<span class="st0">&quot;r&quot;</span>,<span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span>,<span class="st0">&quot;w&quot;</span>,<span class="kw2">stdout</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">unsigned</span> <span class="kw4">int</span> N,L,I<span class="sy4">;</span>
+	<span class="kw4">int</span> i,j,num<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw4">unsigned</span> <span class="kw4">int</span> t<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>N<span class="sy1">&gt;&gt;</span>L<span class="sy1">&gt;&gt;</span>I<span class="sy4">;</span>
+	I<span class="sy2">-</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span>t<span class="sy1">=</span>N<span class="sy4">;</span>t<span class="sy1">&gt;</span><span class="nu0">0</span><span class="sy4">;</span><span class="sy2">--</span>t<span class="br0">&#41;</span>
+	<span class="br0">&#123;</span>
+		<span class="kw1">if</span> <span class="br0">&#40;</span>I <span class="sy3">&amp;&amp;</span> digui<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="nu0">1</span>,L<span class="br0">&#41;</span><span class="sy1">&lt;=</span>I<span class="br0">&#41;</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="sy4">;</span>
+			I<span class="sy2">-</span><span class="sy1">=</span>digui<span class="br0">&#40;</span>t<span class="sy2">-</span><span class="nu0">1</span>,L<span class="br0">&#41;</span><span class="sy4">;</span>
+			L<span class="sy2">-</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+		<span class="kw1">else</span>
+		<span class="br0">&#123;</span>
+			<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="nu0">0</span><span class="sy4">;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#125;</span>
+	<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+	<span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">//排列组合+动态规划</span>
+<span class="coMULTI">/*
+ID:ybojan2
+LANG:C++
+TASK:kimbits
+*/</span>
+&#160;
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+&#160;
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+&#160;
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    ifstream fin<span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    ofstream fout<span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+    <span class="kw4">long</span> <span class="kw4">long</span> n,l,t,c<span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span>,f<span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+    fin<span class="sy1">&gt;&gt;</span>n<span class="sy1">&gt;&gt;</span>l<span class="sy1">&gt;&gt;</span>t<span class="sy4">;</span>
+    <span class="kw3">memset</span><span class="br0">&#40;</span>c,<span class="nu0">0</span>,<span class="kw3">sizeof</span><span class="br0">&#40;</span>c<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+        c<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&lt;=</span>i<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+            c<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">=</span>c<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy2">+</span>c<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+        f<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&lt;=</span>n<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+            f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">=</span>f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy2">+</span>c<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i<span class="sy1">=</span>n<span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>t<span class="sy1">&gt;</span>f<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>l<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+                         fout<span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="sy4">;</span>
+                         t<span class="sy2">-</span><span class="sy1">=</span>f<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>l<span class="br0">&#93;</span><span class="sy4">;</span>
+                         l<span class="sy2">--</span><span class="sy4">;</span>
+                         <span class="br0">&#125;</span>
+        <span class="kw1">else</span> <span class="br0">&#123;</span>
+             fout<span class="sy1">&lt;&lt;</span><span class="nu0">0</span><span class="sy4">;</span>
+             <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+    fout<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p><br />
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">    <span class="coMULTI">/*
+  ID:nettle99
+  PROG:kimbits
+  LANG:C++
+  */</span>
+&#160;
+  <span class="co2">#include &lt;cstdio&gt;</span>
+  <span class="co2">#define MAXV 32</span>
+  <span class="kw4">typedef</span> <span class="kw4">unsigned</span> unint<span class="sy4">;</span>
+&#160;
+  <span class="kw4">FILE</span> <span class="sy2">*</span>fin <span class="sy1">=</span> <span class="kw3">fopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span>, <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  <span class="kw4">FILE</span> <span class="sy2">*</span>fout <span class="sy1">=</span> <span class="kw3">fopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span>, <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+&#160;
+  unint f<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span>, N, L, I<span class="sy4">;</span>
+&#160;
+  <span class="kw4">void</span> Pre<span class="br0">&#40;</span><span class="br0">&#41;</span>
+  <span class="br0">&#123;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>unint i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> N<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+      f<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>unint i <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> L<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span>
+      <span class="kw1">for</span> <span class="br0">&#40;</span>unint j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;=</span> N<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>i <span class="sy1">&gt;</span> j<span class="br0">&#41;</span> f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> f<span class="br0">&#91;</span>i <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+          <span class="kw1">else</span>
+            <span class="kw1">for</span> <span class="br0">&#40;</span>unint k <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> k <span class="sy1">&lt;</span> j<span class="sy4">;</span> k<span class="sy2">++</span><span class="br0">&#41;</span>
+              f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">+</span><span class="sy1">=</span> f<span class="br0">&#91;</span>i <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="sy4">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw4">bool</span> g<span class="br0">&#91;</span>MAXV<span class="br0">&#93;</span><span class="sy4">;</span>
+&#160;
+  <span class="kw4">void</span> Doit<span class="br0">&#40;</span><span class="br0">&#41;</span>
+  <span class="br0">&#123;</span>
+  unint tmp <span class="sy1">=</span> I, i <span class="sy1">=</span> L, k<span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>
+      <span class="br0">&#123;</span>
+        k <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+        <span class="kw1">while</span> <span class="br0">&#40;</span>tmp <span class="sy1">&gt;</span> f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>
+          <span class="br0">&#123;</span>
+            tmp <span class="sy2">-</span><span class="sy1">=</span> f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy4">;</span>
+            k<span class="sy2">++</span><span class="sy4">;</span>
+          <span class="br0">&#125;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>tmp <span class="sy1">==</span> f<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="br0">&#41;</span>
+          <span class="br0">&#123;</span>
+            <span class="kw1">for</span> <span class="br0">&#40;</span>unint t <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> t <span class="sy1">&lt;</span> i <span class="sy3">&amp;&amp;</span> k <span class="sy2">-</span> t <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="sy4">;</span> t<span class="sy2">++</span><span class="br0">&#41;</span>
+              g<span class="br0">&#91;</span>k <span class="sy2">-</span> t<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+            <span class="kw1">break</span><span class="sy4">;</span>
+          <span class="br0">&#125;</span>
+        g<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+        i<span class="sy2">--</span><span class="sy4">;</span>
+      <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> N<span class="sy4">;</span> i <span class="sy1">&gt;=</span> <span class="nu0">1</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">&#41;</span>
+      <span class="kw3">fprintf</span><span class="br0">&#40;</span>fout, <span class="st0">&quot;%d&quot;</span>, g<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw3">fprintf</span><span class="br0">&#40;</span>fout, <span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="sy4">;</span>
+  <span class="br0">&#125;</span>
+&#160;
+  <span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+  <span class="br0">&#123;</span>
+    <span class="kw3">fscanf</span><span class="br0">&#40;</span>fin, <span class="st0">&quot;%u%u%u&quot;</span>, <span class="sy3">&amp;</span>N, <span class="sy3">&amp;</span>L, <span class="sy3">&amp;</span>I<span class="br0">&#41;</span><span class="sy4">;</span>
+    Pre<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    Doit<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="br0">&#125;</span></pre></div></div><hr />
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">我用搜索过的，只有一个剪枝，详细见程序。。
+&#160;
+Compiling...
+<span class="me1">Compile</span><span class="sy4">:</span> OK
+&#160;
+Executing...
+   <span class="me1">Test</span> <span class="nu0">1</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.054</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">9</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">10</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">11</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">12</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.011</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">13</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3012</span> KB<span class="br0">&#93;</span>
+&#160;
+All tests OK.
+&#160;
+<span class="coMULTI">/*
+ ID:echooat1
+ LANG:C++
+ TASK:kimbits
+ */</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> CountBit<span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> X<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+X <span class="sy1">=</span> <span class="br0">&#40;</span>X <span class="sy3">&amp;</span> <span class="nu12">0x55555555</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span>X <span class="sy1">&gt;&gt;</span> <span class="nu0">1</span> <span class="sy3">&amp;</span> <span class="nu12">0x55555555</span><span class="br0">&#41;</span><span class="sy4">;</span>
+X <span class="sy1">=</span> <span class="br0">&#40;</span>X <span class="sy3">&amp;</span> <span class="nu12">0x33333333</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span>X <span class="sy1">&gt;&gt;</span> <span class="nu0">2</span> <span class="sy3">&amp;</span> <span class="nu12">0x33333333</span><span class="br0">&#41;</span><span class="sy4">;</span>
+X <span class="sy1">=</span> <span class="br0">&#40;</span>X <span class="sy3">&amp;</span> <span class="nu12">0x0F0F0F0F</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span>X <span class="sy1">&gt;&gt;</span> <span class="nu0">4</span> <span class="sy3">&amp;</span> <span class="nu12">0x0F0F0F0F</span><span class="br0">&#41;</span><span class="sy4">;</span>
+X <span class="sy1">=</span> <span class="br0">&#40;</span>X <span class="sy3">&amp;</span> <span class="nu12">0x00FF00FF</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span>X <span class="sy1">&gt;&gt;</span> <span class="nu0">8</span> <span class="sy3">&amp;</span> <span class="nu12">0x00FF00FF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+X <span class="sy1">=</span> <span class="br0">&#40;</span>X <span class="sy3">&amp;</span> <span class="nu12">0x0000FFFF</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span>X <span class="sy1">&gt;&gt;</span> <span class="nu0">16</span> <span class="sy3">&amp;</span> <span class="nu12">0x0000FFFF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw1">return</span><span class="br0">&#40;</span>X<span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="kw4">int</span> argc,<span class="kw4">char</span><span class="sy2">**</span> argv<span class="br0">&#41;</span><span class="br0">&#123;</span>
+ <span class="kw4">long</span> <span class="kw4">long</span> n,l,k,temp<span class="sy1">=</span><span class="nu0">0</span>,ans<span class="sy4">;</span>
+ ifstream fin<span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ ofstream fout<span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ fin <span class="sy1">&gt;&gt;</span>l<span class="sy1">&gt;&gt;</span>n<span class="sy1">&gt;&gt;</span>k<span class="sy4">;</span>
+ <span class="kw4">long</span> <span class="kw4">long</span> y<span class="sy1">=</span><span class="br0">&#40;</span><span class="br0">&#40;</span>1LL<span class="br0">&#41;</span><span class="sy1">&lt;&lt;</span>n<span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>k<span class="sy1">&lt;=</span>y<span class="br0">&#41;</span><span class="br0">&#123;</span>
+	 ans<span class="sy1">=</span>k<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+	 <span class="kw4">long</span> a<span class="br0">&#91;</span><span class="nu0">40</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+ <span class="kw1">while</span><span class="br0">&#40;</span>ans<span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+  a<span class="br0">&#91;</span><span class="sy2">++</span>a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy1">=</span>ans<span class="sy3">&amp;</span><span class="nu0">1</span><span class="sy4">;</span>
+  ans<span class="sy1">&gt;&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span>l<span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>fout <span class="sy1">&lt;&lt;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+ fout <span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+ fin.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>fout.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ <span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ <span class="br0">&#125;</span>
+ y<span class="sy2">--</span><span class="sy4">;</span>
+<span class="kw4">long</span> i<span class="sy1">=</span>y<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+ temp<span class="sy1">=</span>y<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span>
+<span class="kw1">while</span><span class="br0">&#40;</span>i<span class="sy1">&lt;=</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span>l<span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+     <span class="kw4">long</span> p<span class="sy1">=</span><span class="br0">&#40;</span>CountBit<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>p<span class="sy1">&gt;</span>n<span class="br0">&#41;</span><span class="br0">&#123;</span>i<span class="sy2">++</span><span class="sy4">;</span><span class="kw1">continue</span><span class="sy4">;</span><span class="br0">&#125;</span>
+   <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span><span class="br0">&#40;</span>i<span class="sy3">&amp;</span><span class="br0">&#40;</span><span class="br0">&#40;</span>1LL<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>n<span class="sy2">-</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>temp<span class="sy2">+</span><span class="br0">&#40;</span>1LL<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>n<span class="sy2">-</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy1">&lt;</span>k<span class="br0">&#41;</span><span class="br0">&#123;</span>
+		  i<span class="sy2">+</span><span class="sy1">=</span><span class="br0">&#40;</span>1LL<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>n<span class="sy2">-</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		  temp<span class="sy2">+</span><span class="sy1">=</span><span class="br0">&#40;</span>1LL<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>n<span class="sy2">-</span>p<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+		  <span class="kw1">continue</span><span class="sy4">;</span>
+	  <span class="br0">&#125;</span><span class="kw1">else</span> <span class="br0">&#123;</span>
+		  ans<span class="sy1">=</span>i<span class="sy2">+</span>k<span class="sy2">-</span>temp<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+		  <span class="kw1">break</span><span class="sy4">;</span>
+	  <span class="br0">&#125;</span>
+  ans<span class="sy1">=</span>i<span class="sy4">;</span>
+  i<span class="sy2">++</span><span class="sy4">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>p<span class="sy1">&lt;=</span>n<span class="br0">&#41;</span>temp<span class="sy2">++</span><span class="sy4">;</span>
+  <span class="kw1">if</span><span class="br0">&#40;</span>k<span class="sy1">==</span>temp<span class="br0">&#41;</span><span class="kw1">break</span><span class="sy4">;</span>
+  <span class="br0">&#125;</span>
+ <span class="kw4">long</span> a<span class="br0">&#91;</span><span class="nu0">40</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+ <span class="kw1">while</span><span class="br0">&#40;</span>ans<span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+  a<span class="br0">&#91;</span><span class="sy2">++</span>a<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#93;</span><span class="sy1">=</span>ans<span class="sy3">&amp;</span><span class="nu0">1</span><span class="sy4">;</span>
+  ans<span class="sy1">&gt;&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>
+ <span class="br0">&#125;</span>
+ <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">long</span> i<span class="sy1">=</span>l<span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>fout <span class="sy1">&lt;&lt;</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+ fout <span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+ fin.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>fout.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+ <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+ID:	
+PROG:	kimbits
+LANG:	C++		
+*/</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;algorithm&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">long</span> <span class="kw4">long</span> dp<span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">32</span><span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span>, <span class="st0">&quot;r&quot;</span>, <span class="kw2">stdin</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw3">freopen</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span>, <span class="st0">&quot;w&quot;</span>, <span class="kw2">stdout</span><span class="br0">&#41;</span><span class="sy4">;</span>
+	<span class="kw4">int</span> n,k<span class="sy4">;</span>
+	<span class="kw4">long</span> <span class="kw4">long</span> r<span class="sy4">;</span>
+	<span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>n<span class="sy1">&gt;&gt;</span>k<span class="sy1">&gt;&gt;</span>r<span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+&#160;
+		<span class="kw1">if</span><span class="br0">&#40;</span>i <span class="sy1">&gt;=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;=</span>k<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+					<span class="kw1">if</span><span class="br0">&#40;</span>j <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">&#41;</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+					<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>j <span class="sy1">&lt;=</span> i<span class="br0">&#41;</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> dp<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy2">+</span> dp<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+					<span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>j <span class="sy1">&gt;</span> i<span class="br0">&#41;</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy4">;</span>
+				<span class="br0">&#125;</span>	
+		<span class="kw1">else</span> <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> j <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> j <span class="sy1">&lt;=</span> k<span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">&#41;</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> 
+		<span class="co1">//if(i == n)for(int j = 0; j &lt;= k; j++)</span>
+		<span class="co1">//	printf(&quot;dp[%d][%d] =&#160;%I64d%c&quot;, i, j, dp[i][j], j==k?'\n':' ');</span>
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> ret<span class="br0">&#91;</span><span class="nu0">33</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span><span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span>
+	<span class="kw1">while</span><span class="br0">&#40;</span>r <span class="sy1">&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		<span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy1">=</span> n<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span> i<span class="sy1">&gt;=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+			<span class="kw1">if</span><span class="br0">&#40;</span>dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy1">&lt;</span> r<span class="br0">&#41;</span><span class="br0">&#123;</span>
+				ret<span class="br0">&#91;</span>n<span class="sy2">-</span>i<span class="br0">&#93;</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+				r <span class="sy2">-</span><span class="sy1">=</span> dp<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>k<span class="br0">&#93;</span><span class="sy4">;</span>
+				<span class="co1">//cout&lt;&lt;n-i&lt;&lt;&quot; &quot;&lt;&lt;r+dp[i][k]&lt;&lt;&quot; &quot;&lt;&lt;dp[i][k]&lt;&lt;&quot;r=&quot;&lt;&lt;r&lt;&lt;endl;</span>
+				<span class="kw1">break</span><span class="sy4">;</span>
+			<span class="br0">&#125;</span>	
+		<span class="br0">&#125;</span>
+		k<span class="sy2">--</span><span class="sy4">;</span>	
+	<span class="br0">&#125;</span>
+	<span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">while</span><span class="br0">&#40;</span>ret<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="sy3">&amp;&amp;</span>i <span class="sy1">&lt;=</span> n<span class="br0">&#41;</span> i<span class="sy2">++</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">&#40;</span>i <span class="sy1">=</span> n<span class="sy2">+</span><span class="nu0">1</span><span class="br0">&#41;</span> i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+	<span class="kw1">for</span><span class="br0">&#40;</span><span class="sy4">;</span> i <span class="sy1">&lt;=</span> n<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+		<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;%d&quot;</span>, ret<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy4">;</span>	
+	<span class="br0">&#125;</span>
+	<span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;<span class="es1">\n</span>&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=edit&amp;section=1" title="编辑段落：搜索+剪枝">编辑</a>]</span> <span class="mw-headline" id=".E6.90.9C.E7.B4.A2.2B.E5.89.AA.E6.9E.9D">搜索+剪枝</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">   Test <span class="nu0">1</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">2</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">3</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">4</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">5</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">6</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">7</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.027</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">8</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">9</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">10</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">11</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">12</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+   Test <span class="nu0">13</span><span class="sy4">:</span> TEST OK <span class="br0">&#91;</span><span class="nu16">0.000</span> secs, <span class="nu0">3024</span> KB<span class="br0">&#93;</span>
+<span class="coMULTI">/*
+ID: skyxxzc1
+PROG: kimbits
+LANG: C++
+*/</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;fstream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+ofstream out<span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="co1">//ostream&amp; out=cout;</span>
+ifstream in <span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="kw4">void</span> printBin<span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span> num,<span class="kw4">unsigned</span> <span class="kw4">int</span> len<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span> i<span class="sy1">=</span>len<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy3">!</span><span class="sy1">=</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span><span class="co1">//dirty hack</span>
+        out<span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>num<span class="sy3">&amp;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span>i<span class="br0">&#41;</span><span class="sy4">?</span><span class="nu0">1</span><span class="sy4">:</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy4">;</span>
+<span class="br0">&#125;</span>
+&#160;
+<span class="kw4">unsigned</span> <span class="kw4">int</span> nOne<span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span> x<span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  x <span class="sy1">=</span> <span class="br0">&#40;</span>x <span class="sy3">&amp;</span> <span class="nu12">0x55555555</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x <span class="sy1">&gt;&gt;</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0x55555555</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  x <span class="sy1">=</span> <span class="br0">&#40;</span>x <span class="sy3">&amp;</span> <span class="nu12">0x33333333</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x <span class="sy1">&gt;&gt;</span> <span class="nu0">2</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0x33333333</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  x <span class="sy1">=</span> <span class="br0">&#40;</span>x <span class="sy3">&amp;</span> <span class="nu12">0x0F0F0F0F</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x <span class="sy1">&gt;&gt;</span> <span class="nu0">4</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0x0F0F0F0F</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  x <span class="sy1">=</span> <span class="br0">&#40;</span>x <span class="sy3">&amp;</span> <span class="nu12">0x00FF00FF</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x <span class="sy1">&gt;&gt;</span> <span class="nu0">8</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0x00FF00FF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  x <span class="sy1">=</span> <span class="br0">&#40;</span>x <span class="sy3">&amp;</span> <span class="nu12">0x0000FFFF</span><span class="br0">&#41;</span> <span class="sy2">+</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>x <span class="sy1">&gt;&gt;</span> <span class="nu0">16</span><span class="br0">&#41;</span> <span class="sy3">&amp;</span> <span class="nu12">0x0000FFFF</span><span class="br0">&#41;</span><span class="sy4">;</span>
+  <span class="kw1">return</span> x<span class="sy4">;</span>
+<span class="br0">&#125;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+  <span class="kw4">unsigned</span> <span class="kw4">int</span> N,L,I<span class="sy4">;</span>
+  in<span class="sy1">&gt;&gt;</span>N<span class="sy1">&gt;&gt;</span>L<span class="sy1">&gt;&gt;</span>I<span class="sy4">;</span>
+  <span class="kw4">unsigned</span> <span class="kw4">int</span> count<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+&#160;
+  <span class="kw1">for</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="br0">&#40;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span>N<span class="br0">&#41;</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+    <span class="kw4">int</span> s<span class="sy1">=</span>nOne<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>s<span class="sy1">&lt;=</span>L<span class="br0">&#41;</span><span class="br0">&#123;</span>
+      count<span class="sy2">++</span><span class="sy4">;</span>
+      <span class="kw1">if</span><span class="br0">&#40;</span><span class="sy3">!</span><span class="br0">&#40;</span>i<span class="sy3">&amp;</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>L<span class="sy2">-</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+        <span class="kw1">if</span><span class="br0">&#40;</span>count<span class="sy2">+</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>L<span class="sy2">-</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy1">&lt;</span>I<span class="br0">&#41;</span><span class="br0">&#123;</span>
+          count<span class="sy2">+</span><span class="sy1">=</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>L<span class="sy2">-</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+          i<span class="sy2">+</span><span class="sy1">=</span><span class="br0">&#40;</span><span class="br0">&#40;</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="br0">&#40;</span>L<span class="sy2">-</span>s<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span><span class="br0">&#123;</span>
+          printBin<span class="br0">&#40;</span>i<span class="sy2">+</span>I<span class="sy2">-</span>count,N<span class="br0">&#41;</span><span class="sy4">;</span>
+          out<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+          <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+      <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="kw1">else</span><span class="br0">&#123;</span>
+      i<span class="sy2">+</span><span class="sy1">=</span><span class="br0">&#40;</span>i<span class="sy3">&amp;</span><span class="br0">&#40;</span>i<span class="sy3">^</span><span class="br0">&#40;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">if</span><span class="br0">&#40;</span>count<span class="sy1">==</span>I<span class="br0">&#41;</span><span class="br0">&#123;</span>
+      printBin<span class="br0">&#40;</span>i,N<span class="br0">&#41;</span><span class="sy4">;</span>
+      out<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+      <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+  <span class="br0">&#125;</span>
+  <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="coMULTI">/*
+{
+    ID:houbeij1
+    PROG:kimbits
+    LANG:C++
+}
+Compiling...
+Compile: OK
+&#160;
+Executing...
+   Test 1: TEST OK [0.000 secs, 3348 KB]
+   Test 2: TEST OK [0.000 secs, 3348 KB]
+   Test 3: TEST OK [0.000 secs, 3348 KB]
+   Test 4: TEST OK [0.000 secs, 3348 KB]
+   Test 5: TEST OK [0.000 secs, 3348 KB]
+   Test 6: TEST OK [0.000 secs, 3348 KB]
+   Test 7: TEST OK [0.000 secs, 3348 KB]
+   Test 8: TEST OK [0.000 secs, 3348 KB]
+   Test 9: TEST OK [0.000 secs, 3348 KB]
+   Test 10: TEST OK [0.000 secs, 3348 KB]
+   Test 11: TEST OK [0.000 secs, 3348 KB]
+   Test 12: TEST OK [0.000 secs, 3348 KB]
+   Test 13: TEST OK [0.000 secs, 3348 KB]
+&#160;
+All tests OK.
+*/</span>
+<span class="co2">#include&lt;iostream&gt;</span>
+<span class="co2">#include&lt;fstream&gt;</span>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span>
+<span class="kw4">int</span> a<span class="br0">&#91;</span><span class="nu0">35</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">35</span><span class="br0">&#93;</span>,tot<span class="br0">&#91;</span><span class="nu0">35</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">35</span><span class="br0">&#93;</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>
+    <span class="kw4">int</span> l<span class="sy4">;</span>
+    <span class="kw4">long</span> <span class="kw4">long</span> x<span class="sy4">;</span>
+    ifstream fin<span class="sy4">;</span>
+    fin.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.in&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    fin<span class="sy1">&gt;&gt;</span>n<span class="sy1">&gt;&gt;</span>l<span class="sy1">&gt;&gt;</span>x<span class="sy4">;</span>
+    fin.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">int</span> i,j<span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+        tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>l<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        tot<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&lt;=</span>n<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+        <span class="kw1">for</span> <span class="br0">&#40;</span>j<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>j<span class="sy1">&lt;=</span>l<span class="sy4">;</span>j<span class="sy2">++</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+            a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">=</span>a<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy2">+</span>a<span class="br0">&#91;</span>i<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+            tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy1">=</span>a<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy2">+</span>tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="sy2">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+    j<span class="sy1">=</span>l<span class="sy4">;</span>
+    <span class="kw4">int</span> leave<span class="sy1">=</span>x<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+    ofstream fout<span class="sy4">;</span>
+    fout.<span class="me1">open</span><span class="br0">&#40;</span><span class="st0">&quot;kimbits.out&quot;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy1">=</span>n<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>i<span class="sy1">&gt;=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy2">--</span><span class="br0">&#41;</span>
+    <span class="br0">&#123;</span>
+        <span class="co1">//cout&lt;&lt;leave&lt;&lt;&quot; &quot;;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>leave<span class="sy1">&gt;=</span>tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span>
+        <span class="br0">&#123;</span>
+           leave<span class="sy2">-</span><span class="sy1">=</span>tot<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="sy4">;</span>
+           j<span class="sy2">--</span><span class="sy4">;</span>
+           fout<span class="sy1">&lt;&lt;</span><span class="nu0">1</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span>
+        <span class="br0">&#123;</span>
+            fout<span class="sy1">&lt;&lt;</span><span class="nu0">0</span><span class="sy4">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span>
+    fout<span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span>
+    fout.<span class="me1">close</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 71/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3120-0!*!*!*!*!*!* and timestamp 20131219165122 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;oldid=31399">http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;oldid=31399</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-code" class="selected"><a href="C++.html">代码</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Code_Talk:USACO/kimbits/C%2B%2B&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Code%3AUSACO%2Fkimbits%2FC%2B%2B" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Code:USACO/kimbits/C%2B%2B" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Code:USACO/kimbits/C%2B%2B" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;oldid=31399" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过2,957次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:107229HR" title="用户:107229HR">107229HR</a>于2012年9月10日 (星期一) 23:08做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Wearaway&amp;action=edit&amp;redlink=1" class="new" title="用户:Wearaway（尚未撰写）">王胡杰</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Skyxxzc&amp;action=edit&amp;redlink=1" class="new" title="用户:Skyxxzc（尚未撰写）">张诚</a>、NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Onetwogoo" title="用户:Onetwogoo">Onetwogoo</a>和<a href="http://www.nocow.cn/index.php?title=Code:USACO/kimbits/C%2B%2B&amp;action=credits" title="Code:USACO/kimbits/C++">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.844 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/lamps - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/lamps", "wgTitle": "USACO/lamps", "wgCurRevisionId": 33340, "wgArticleId": 284, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_lamps action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/lamps</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="lamps.html#column-one">导航</a>, <a href="lamps.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="lamps.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="lamps.html#.E5.88.86.E6.9E.90_2"><span class="tocnumber">2</span> <span class="toctext">分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="lamps.html#.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D"><span class="tocnumber">2.1</span> <span class="toctext">==============================================================================</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="lamps.html#.E4.B8.80.E7.A7.8D.E8.B7.9F.E8.AF.B8.E4.BD.8D.E6.88.AA.E7.84.B6.E4.B8.8D.E5.90.8C.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.88.E4.BB.A3.E7.A0.81.E6.98.AF.E6.AF.94.E8.BE.83.E7.AE.80.E6.B4.81.E7.9A.84.EF.BC.89"><span class="tocnumber">3</span> <span class="toctext">一种跟诸位截然不同的方法（代码是比较简洁的）</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="lamps.html#.E6.A8.A1.E6.8B.9F.E9.80.80.E6.95.A3.EF.BC.81"><span class="tocnumber">4</span> <span class="toctext">模拟退散！</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="lamps.html#.E4.B8.8D.E5.A4.9A.E5.8A.A0.E8.80.83.E8.99.91.2C.E6.B3.A8.E6.84.8F.E4.B8.80.E7.82.B9.E5.B0.B1.E5.A4.9F.E4.BA.86"><span class="tocnumber">5</span> <span class="toctext">不多加考虑,注意一点就够了</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="lamps.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">6</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="lamps.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">7</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>还可以从另外一个方面考虑：
+从按键个数而言，如果C大于&gt;4，我们把它不断减小2，使它小于4（这个过程也就相当于把重复的按键去掉），最后我们再枚举每一种按键所能得到的结果，加以判断就可以了。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=2" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90_2">分析</span></h2>
+<p>每个按钮按2次和没按效果是一样的。所以每个按钮或者按或者不按，一共有2^4=16种状态。枚举每个按钮是否按下，然后生成结果，排序输出即可（注意判重）。
+</p><p>另外灯1和灯7,2和8,3和9...是一样的因此当N&gt;=6时只需处理前6个,排序时转换为10进制数,
+输出时反复输出前6个的状态.
+</p><p><br />
+</p><p>深究：
+</p><p>这道题如果深究的话会变得非常简单，
+但是提前声明，如果对这道题兴趣不大，或者是初学者，建议跳过，
+刚才的分析已经足以过这道题。
+我们现在记不按按钮，以及按下1，2，3，4按钮分别O，①，②，③，④，
+那么，按下3，4，可以记为③④，以此类推，
+我们发现一个问题，那就是①，②，③之间微妙的关系，
+①②=③，而②③=①，①③=②（可以自己试试），于是我们知道，①②③也相当与不按，即相差3的倍数也可互相转换；
+</p><p><br />
+所以，所谓前四个的16种按法其实只有8种，
+分别为：O,①，②，③，④，①④，②④，③④；
+</p><p><br />
+然后讨论c，
+由于当c&gt;4时，均可化为当c&lt;=4的情况，
+所以我们先讨论当c&lt;=4的情况，
+</p><p>当c=0时，只有一种O；
+</p><p>当c=1时，四种：①，②，③，④；
+</p><p>当c=2时，除了④均可（可以自己想想）；
+</p><p>当c=3时，由于3-1=2，所以c=1的情况都满足，而在c=2中，把所有有前三类的展开，如①④变为②③④，
+可知满足c=2的同时满足c=3，所以c=3其实是c=2和c=1的并集，即所有按法均可。
+</p><p>当c=4时，由于4-1=3（①②③相当于不按），且4-2=2，由上，c=4也是所有按法均可。
+</p><p><br />
+当c&gt;4时，我先有一个引理：对于任意的正整数n&gt;1，均可写成n=2*p+3*q(p,q为非负整数）的形式，
+证明如下：若n为偶数，必然成立，若n为奇数，必然大于2，则n-3必为非负偶数，得证。
+由这个引理我们可以知道，任意c&gt;4均可写成，c=2*p+3*q+3(p,q为非负整数）的形式，而可知，
+对于两个相同的按键，以及情况①②③（按键三次），均相当于不按，所以任意c&gt;4均可化归为c=3的情况，
+即当c&gt;4时，所有按法均可。
+</p><p>综上所述，
+</p><p>当c=0时，只有一种O；
+</p><p>当c=1时，四种：①，②，③，④；
+</p><p>当c=2时，除了④均可；
+</p><p>当c&gt;2时，所有按法均可。
+</p><p>好了，这样一来就非常简单了，
+只有四种情况，8种按法。
+</p>
+<hr />
+<p><b>另一种判断按下按钮数是否为C的方法（与上面的差不多）：</b>
+</p><p>在判断是否按了c次时，就不好直接判断了，因为我们的思路是：“每个按钮按2次和没按效果是一样的。所以每个按钮或者按或者不按” 但是实际上每个按钮按2次和没按效果有细微差别——就是按的次数。
+</p><p>为了解决这个问题，我从奇偶考虑：假如有两种情况结果相同，但按的次数不同，分别为a,b。而如果a-b是偶数，那么按的次数少的那种情况完全可以通过按2K次来凑够次数（k为正整数），因此，我们可以用mod语句来完成判断是否能凑够c次，用此方法可以发现不用判重了，因为我搜索的是基本情况，而其他的情况自然被无形的滤掉了
+具体过程如下：（change(k)表示按第k个按钮，在这里就不贴出了。）
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">function</span> check<span class="sy0">:</span><span class="kw4">boolean</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> cy <span class="kw1">do</span>
+    <span class="kw1">if</span> now<span class="br0">&#91;</span>y<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span>&lt;&gt;<span class="nu0">1</span> <span class="kw1">then</span> exit<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> cny <span class="kw1">do</span>
+    <span class="kw1">if</span> now<span class="br0">&#91;</span>ny<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#93;</span>&lt;&gt;<span class="nu0">0</span> <span class="kw1">then</span> exit<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+  <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>c <span class="kw1">mod</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">=</span><span class="br0">&#40;</span>tn <span class="kw1">mod</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="coMULTI">{检查是否能凑够c次}</span> <span class="kw3">and</span> <span class="br0">&#40;</span>tn&lt;<span class="sy0">=</span>c<span class="br0">&#41;</span> <span class="kw1">then</span>
+    exit<span class="br0">&#40;</span><span class="kw2">true</span><span class="br0">&#41;</span>
+    <span class="kw1">else</span> exit<span class="br0">&#40;</span><span class="kw2">false</span><span class="br0">&#41;</span>;
+<span class="kw1">end</span>;
+&#160;
+<span class="kw1">procedure</span>  tryit<span class="br0">&#40;</span>k<span class="sy0">:</span><span class="kw4">integer</span><span class="br0">&#41;</span>;
+<span class="kw1">var</span>
+  i<span class="sy0">,</span>j<span class="sy0">,</span>t<span class="sy0">:</span><span class="kw4">integer</span>;
+<span class="kw1">begin</span>
+  <span class="kw1">if</span> <span class="br0">&#40;</span>k&gt;<span class="nu0">4</span><span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw1">begin</span> <span class="kw1">if</span> check <span class="kw1">then</span> rec; exit; <span class="kw1">end</span>;
+  change<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+  inc<span class="br0">&#40;</span>tn<span class="br0">&#41;</span>;
+  tryit<span class="br0">&#40;</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>;<span class="co1">//按</span>
+  dec<span class="br0">&#40;</span>tn<span class="br0">&#41;</span>;
+  change<span class="br0">&#40;</span>k<span class="br0">&#41;</span>;
+  tryit<span class="br0">&#40;</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#41;</span>; <span class="co1">//不按</span>
+<span class="kw1">end</span>;（by ymfoi）</pre></div></div>
+<hr />
+<p>关于状态的记录，这题可以用位运算简化，如上面所说，用一个longint存储前6位的状态就行了。而4种操作也很简单，用异或就可以搞定：
+</p><p>操作1：异或(111111)2=63
+</p><p>操作2：异或(010101)2=21
+</p><p>操作3：异或(101010)2=42
+</p><p>操作4：异或(001001)2=9 【这个地方不对是(100100)2=36，轻信别人我调了一节课...】
+</p><p>//由于位数是从左向右数的，因此操作4是正确的。
+</p><p>判断状态是否符合题意，则可以用&amp;和|完成：
+</p><p>先将题目给出的灯的状态映射到0～5之间，即(灯的编号-1)%6
+</p><p>生成一个6位二进制数isOn，其中题目给出是ON的灯的对应位为1，其余为0
+</p><p>生成一个6位二进制数isOff，其中题目给出是OFF的灯的对应位为0，其余为1
+</p><p>若当前状态state满足：
+</p><p>(state&amp;isOn)==isOn &amp;&amp; (state|isOff)==isOff
+</p><p>则state满足题目要求。
+</p><p><br />
+另外，关于判断某一状态是否能由c次按键得到，如果某一状态能由x次按键得到，若c-x为偶数，则该状态进行c-x次操作1后状态不变。
+</p><p>如果用DFS或枚举，x&lt;=4即可。
+</p><p><br />
+详细请见参考代码里的GeorgeG1的C++源程序
+</p>
+<hr />
+<p>首先不要读错了题,不是正好按了c次，是&lt;=c次都可以。-------------（不知道你怎么读出这么深奥的题意 - - 表示无奈）
+</p><p>其实不用这么麻烦。只用记录和前四个检验前四个灯就行了。
+</p><p>为什么呢。
+</p><p>1号灯 ——代表了所有3的倍数+1的奇数号灯
+</p><p>2号灯 ——代表了所有不是3的倍数+1的偶数号灯
+</p><p>3号灯 ——代表了所有不是3的倍数+1的奇数号灯
+</p><p>4号灯 ——代表了所有3的倍数+1的偶数号灯
+</p><p>读入数据的时候就可以处理
+</p><p>例如
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">  <span class="kw3">read</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span>;
+  <span class="kw1">while</span> tmp&lt;&gt;<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span>
+   <span class="kw1">begin</span>
+     <span class="kw1">if</span> <span class="br0">&#40;</span>tmp<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">mod</span> <span class="nu0">3</span><span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span>
+      <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span> <span class="kw1">then</span> a<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">else</span> a<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+     <span class="kw1">if</span> <span class="br0">&#40;</span>tmp<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">mod</span> <span class="nu0">3</span>&lt;&gt;<span class="nu0">0</span> <span class="kw1">then</span>
+      <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span> <span class="kw1">then</span> a<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">else</span> a<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">:=</span><span class="nu0">1</span>;
+     <span class="kw3">read</span><span class="br0">&#40;</span>tmp<span class="br0">&#41;</span>;
+   <span class="kw1">end</span>;
+   <span class="kw3">readln</span>;</pre></div></div>
+<p><br />
+处理的过程其实就是16种方案 
+</p><p>每个按钮都可以选择按还是不按
+</p><p>把每个方案求出来就是，当然最好记录一下每种方案最少按键次数
+</p><p>如果这个次数&lt;=c就可以输出了。
+</p><p><br />
+至于按钮的处理。
+</p><p>你可以选择用xor.
+</p><p>因为只需要记录前4个.所以一个b[]:longint就够了。
+</p><p>首先全部赋值成15 即二进制下的1111
+</p><p>按钮1 —— b[x] xor 15 (1111)
+</p><p>按钮2 —— b[x] xor 10 (1010)
+</p><p>按钮3 —— b[x] xor 5  (0101)
+</p><p>按钮4 —— b[x] xor 9  (1001)
+</p><p><br />
+</p><p>至于输出
+</p><p>例如先将前四个数放进zl数组里
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1">  <span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> n <span class="kw1">do</span>
+   <span class="kw1">begin</span>
+     <span class="kw1">if</span> i&lt;<span class="sy0">=</span><span class="nu0">4</span> <span class="kw1">then</span> <span class="kw3">write</span><span class="br0">&#40;</span>zl<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>;
+     <span class="kw1">if</span> i&gt;<span class="nu0">4</span> <span class="kw1">then</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">mod</span> <span class="nu0">3</span> <span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span>
+       <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw3">write</span><span class="br0">&#40;</span>zl<span class="br0">&#91;</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">else</span> <span class="kw3">write</span><span class="br0">&#40;</span>zl<span class="br0">&#91;</span><span class="nu0">4</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+     <span class="kw1">if</span> i&gt;<span class="nu0">4</span> <span class="kw1">then</span>
+      <span class="kw1">if</span> <span class="br0">&#40;</span>i<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="kw1">mod</span> <span class="nu0">3</span> &lt;&gt;<span class="nu0">0</span> <span class="kw1">then</span>
+       <span class="kw1">if</span> <span class="kw3">odd</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span> <span class="kw1">then</span> <span class="kw3">write</span><span class="br0">&#40;</span>zl<span class="br0">&#91;</span><span class="nu0">3</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="kw1">else</span> <span class="kw3">write</span><span class="br0">&#40;</span>zl<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="br0">&#41;</span>;
+   <span class="kw1">end</span>;
+   大功告成。  by  重庆一中zzl</pre></div></div>
+<pre> 补充一点点，输出时候用一个1 shl 6 -1 的布尔数组，转换成十进制数存在布尔数组里就可以解决字典序问题，不需要排序了。
+</pre>
+<h6><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=3" title="编辑段落：==============================================================================">编辑</a>]</span> <span class="mw-headline" id=".3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D">==============================================================================</span></h6>
+<p>我想补充一下楼上的说法，我觉得题目中所要求的状态还是在恰好c次是的状态，以下是原题“Write a program to determine all the possible final configurations of the N lamps that are consistent with the given information, without repetitions. ”我不知道你英语怎么样……反正……
+而按你的理解之所以也可以做对是偶然。本身题目中四种操作都是只有奇偶两种状态的，而任意两种状态之间都是可以在4步之内相互转化的，也就是说，超出四步以后任意状态都是可以到达的，所要做的就是符合题目的目标状态。
+</p>
+<pre>   事实上这个题目是可以根据奇偶性解决的。
+   每種操作都只有奇偶两种状态，因此只要确定每种操作的奇偶性就可以确定灯的状态了。
+   按照楼上的枚举毫无疑问会有操作不同但状态相同的情况（即使做少操作数也会有，比如1和2、3），还得判重。
+   出现这个原因是因为其实有的状态是根本到不了的，就是说与给出的C是不相符合的。
+   我们可以用三重0..1的循环来确定操作1到3的奇偶，那么4就可以由c和前面三个状态来确定。
+   其实任意操作按键不同但出现重复的情况的操作总数的奇偶都是不同的（废话，要不不就成了一种情况了……），
+   一旦操作4的奇偶确定，c更确定了，那么前三种操作和的奇偶也就确定了，从而不可能会出现重复。
+   你可以自己考虑一下，或者试着列一下。
+code： 
+for a1:=0 to 1 do
+if c-a1&gt;=0 then              {加IF就可以不用单独处理c&lt;4的情况}
+for a2:=0 to 1 do
+ if c-a1-a2&gt;=0 then
+ for a3:=0 to 1 do
+  if c-a1-a2-a3&gt;=0 then
+   begin
+   a4:=(c-a1-a2-a3) mod 2;
+   sou;                      {判断是否符合要求}
+   end;
+        OK，解说完毕，就此闪人。                   ----做好事不留名的活雷锋
+</pre>
+<p><br />
+小于C次的那种做法可行是因为，你一种按钮重复按两次使他没有改变状态。
+1111
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=4" title="编辑段落：一种跟诸位截然不同的方法（代码是比较简洁的）">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.80.E7.A7.8D.E8.B7.9F.E8.AF.B8.E4.BD.8D.E6.88.AA.E7.84.B6.E4.B8.8D.E5.90.8C.E7.9A.84.E6.96.B9.E6.B3.95.EF.BC.88.E4.BB.A3.E7.A0.81.E6.98.AF.E6.AF.94.E8.BE.83.E7.AE.80.E6.B4.81.E7.9A.84.EF.BC.89">一种跟诸位截然不同的方法（代码是比较简洁的）</span></h2>
+<p>这个题，首先，我们需要知道这个电灯系统的一个比较邪恶的性质，其实不论咋搞，都是每隔六位循环的！！
+有了这个，我们就可以使用常量表来搞了。自己动一下手，不要偷懒。自己推算一下所有的情况，用light[][]表示这个情况的集合（仅包含前六个灯，并且已经人工进行了排
+序），然后再用一个数组minnum记录light[][]中对应的每种情况的最少操作次数，然后，呵呵，就不用我多说了，诸位该自己爽了。。。。
+爆一下我自己的常量表：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">light<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span>
+                <span class="br0">&#123;</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">0</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">&#125;</span>,
+                <span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">&#125;</span>,
+               <span class="br0">&#125;</span><span class="sy4">;</span>
+&#160;
+minnum<span class="br0">&#91;</span><span class="nu0">50</span><span class="br0">&#93;</span><span class="sy1">=</span><span class="br0">&#123;</span><span class="nu0">0</span>,<span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">0</span><span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
+<p>具体参考我的c++代码（talenth1/c++参考代码）
+</p><p><b>//</b>这个是不是有点问题的 就是light[8]的最少操作次数是0，但只操作1次就不能出现这种状态
+</p><p>类似的质疑：010101这个状态应该能1次按出来，同样的我没能发现011011 用2次翻转的方法 我觉得应该是这样
+</p><p>000000  能1 2 3 4 5……
+</p><p>010101  能1 2 3 4 5……
+</p><p>101010  能1 2 3 4 5……
+</p><p>111111  能0 2 3 4 5……
+</p><p>100100  能2 3 4 5 6……
+</p><p>011011  能1 3 4 5 6……
+</p><p>110001  能2 3 4 5 6……
+</p><p>001110  能2 3 4 5 6……
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=5" title="编辑段落：模拟退散！">编辑</a>]</span> <span class="mw-headline" id=".E6.A8.A1.E6.8B.9F.E9.80.80.E6.95.A3.EF.BC.81">模拟退散！</span></h2>
+<p>这题完全可以从“最终态”考虑。其实根本不用什么“奇偶”，只要了解c对最终态的影响就可以了。
+</p><p>引用第一位朋友的话：
+“综上所述，
+</p><p>当c=0时，只有一种O；
+</p><p>当c=1时，四种：①，②，③，④；
+</p><p>当c=2时，除了④均可；
+</p><p>当c&gt;2时，所有按法均可。
+</p><p>好了，这样一来就非常简单了，
+只有四种情况，8种按法。
+”
+由此可见，最终态只有8种。而这些灯是“6个一组，每组相同”的。所以读入开关灯的时候只用 mod 6。如果两个灯编号 mod 6 相同，而开关状态不同，如1号灯开而7号灯关(1 mod 6=7 mod 6)，就直接输出'IMPOSSIBLE'。
+</p><p>如果这里的灯通过了，就再把每个灯(编号 mod 6)和那8种状态比较，如果符合就输出，没有符合就输出'IMPOSSIBLE'。
+</p><p>这样两个优化一起用，就全部 0 sec AC 了。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=6" title="编辑段落：不多加考虑,注意一点就够了">编辑</a>]</span> <span class="mw-headline" id=".E4.B8.8D.E5.A4.9A.E5.8A.A0.E8.80.83.E8.99.91.2C.E6.B3.A8.E6.84.8F.E4.B8.80.E7.82.B9.E5.B0.B1.E5.A4.9F.E4.BA.86">不多加考虑,注意一点就够了</span></h2>
+<p>我脑子比较简单,所以说最简单的
+就是如上面诸位所说,注意到,虽然灯最多有100盏,但6盏以后的灯都是前6盏的重复
+即BFS的每一层最多产生2^6 = 64种状态
+利用这一点就足以优化到全部0.0sec
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=7" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/lamps/C++.html" title="Code:USACO/lamps/C++">c++</a><br />
+<a href="../Code:USACO/lamps/C.html" title="Code:USACO/lamps/C">c</a><br />
+<a href="../Code:USACO/lamps/Pascal.html" title="Code:USACO/lamps/Pascal">pascal</a><br />
+<a href="../Code:USACO/lamps/Java.html" title="Code:USACO/lamps/Java">Java</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit&amp;section=8" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[1]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[2]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 66/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:284-0!*!0!!zh-cn!*!* and timestamp 20131219164526 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;oldid=33340">http://www.nocow.cn/index.php?title=USACO/lamps&amp;oldid=33340</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="lamps.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/lamps&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Flamps" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/lamps" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/lamps" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;oldid=33340" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过21,741次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Fan_dh&amp;action=edit&amp;redlink=1" class="new" title="用户:Fan dh（尚未撰写）">Fan dh</a>于2013年8月8日 (星期四) 13:43做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Mickeyandkaka&amp;action=edit&amp;redlink=1" class="new" title="用户:Mickeyandkaka（尚未撰写）">吕伟斌</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Cosechy_movingbot&amp;action=edit&amp;redlink=1" class="new" title="用户:Cosechy movingbot（尚未撰写）">cosechy@gmail.com</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:%E9%9D%92%E7%9F%B3&amp;action=edit&amp;redlink=1" class="new" title="用户:青石（尚未撰写）">青石</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Cotton" title="用户:Cotton">Cotton</a>和<a href="http://www.nocow.cn/index.php?title=USACO/lamps&amp;action=credits" title="USACO/lamps">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.252 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

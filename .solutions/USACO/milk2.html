@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/milk2 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/milk2", "wgTitle": "USACO/milk2", "wgCurRevisionId": 33240, "wgArticleId": 232, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["USACO Chapter 1"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_milk2 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/milk2</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="milk2.html#column-one">导航</a>, <a href="milk2.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_1.html#Chapter_1.2" title="USACO Chapter 1" class="mw-redirect">Chapter 1 .2</a>中的OI题目<b>Milking Cows</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/milk2.html" title="Translate:USACO/milk2">翻译</a>，<a href="../Code:USACO/milk2/C.html" title="Code:USACO/milk2/C">C语言代码</a>，<a href="../Code:USACO/milk2/C++.html" title="Code:USACO/milk2/C++">C++语言代码</a>，<a href="../Code:USACO/milk2/Pascal.html" title="Code:USACO/milk2/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="milk2.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="milk2.html#.E7.A6.BB.E6.95.A3.E5.8C.96"><span class="tocnumber">1.1</span> <span class="toctext">离散化</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="milk2.html#.E7.BA.BF.E6.AE.B5.E6.A0.91"><span class="tocnumber">1.2</span> <span class="toctext">线段树</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="milk2.html#.E6.80.80.E7.96.91.E6.98.AF.E7.BA.BF.E6.AE.B5.E6.A0.91.E7.9A.84.E5.8F.98.E5.BD.A2.EF.BC.9F"><span class="tocnumber">1.3</span> <span class="toctext">怀疑是线段树的变形？</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="milk2.html#.E6.A0.87.E8.AE.B0.E6.95.B0.E7.BB.84.EF.BC.88.E5.93.88.E5.B8.8C.EF.BC.89"><span class="tocnumber">1.4</span> <span class="toctext">标记数组（哈希）</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="milk2.html#.E5.8F.AB.E4.BB.80.E4.B9.88.E5.A5.BD.E5.91.A2.EF.BC.9F.E5.B9.B6.E6.9F.A5.E9.9B.86.E5.8A.A0.E9.80.9F.E7.9B.B4.E6.8E.A5.E6.A8.A1.E6.8B.9F"><span class="tocnumber">1.5</span> <span class="toctext">叫什么好呢？并查集加速直接模拟</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="milk2.html#.E5.88.86.E6.AE.B5.E5.8A.A8.E8.A7.84"><span class="tocnumber">1.6</span> <span class="toctext">分段动规</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="milk2.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">2</span> <span class="toctext">参考代码</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>有四种思想
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=2" title="编辑段落：离散化">编辑</a>]</span> <span class="mw-headline" id=".E7.A6.BB.E6.95.A3.E5.8C.96">离散化</span></h3>
+<p>（其实就是进行了优化的搜索而已）
+</p><p>按照开始时间升序排序，然后从左到右扫一遍，复杂度是O(nlogn+n)的（排序+扫一遍，用堆、合并、快排都可以）。
+</p><p>所谓从左到右扫一遍，就是记录一个当前区间，[tmp_begin , tmp_end]
+</p><p>如果下一组数据的begin比tmp_end的小（或相等），则是连接起来的，检查这组数据的end，取max{end , tmp_end}。
+</p><p>如果下一组数据的begin比tmp_end的大，则是相互断开的，整理本区间，ans1取max{tmp_end - tmp_begin , ans1}。ans2取max{begin - tmp_end , ans2}
+割线+++++++++++
+</p><p><br />
+我觉得其实是不用排序的
+</p><p>设bi,ei分别为第i个输入inc(map[bi]);dec(map[ei])
+</p><p>记录下min_x和max_y,从min_x到max~y-1扫描,分别统计最大的连续0的个数、连续非零数的个数
+</p><p>缺点是代码很长啊。。
+</p><p>++++++++++++++++++++++++++++
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=3" title="编辑段落：线段树">编辑</a>]</span> <span class="mw-headline" id=".E7.BA.BF.E6.AE.B5.E6.A0.91">线段树</span></h3>
+<p>本题的规模是1e6，简单的模拟是O(nm)(n是奶牛个数，m是最大范围)的，会超时。(但是本题数据远没有描述的那么恐怖,直接模拟也是很快的}
+</p><p>用线段树统计区间，复杂度降为O(nlogm+m)，可以接受。
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=4" title="编辑段落：怀疑是线段树的变形？">编辑</a>]</span> <span class="mw-headline" id=".E6.80.80.E7.96.91.E6.98.AF.E7.BA.BF.E6.AE.B5.E6.A0.91.E7.9A.84.E5.8F.98.E5.BD.A2.EF.BC.9F">怀疑是线段树的变形？</span></h3>
+<p>把每个输入看作是一个所谓的“线段”，只有开头和结尾。
+</p><p>既然每条线段有重叠现象，马上想出可以合并！按照开头和结尾从小到大排序，for一遍，如果发现前后两条线段开头与结尾重叠了，
+</p><p>（当然也要考虑被完全包括的情况），马上修改开头与结尾，并删除（可以标记），最后在剩下的线段中统计就可以了。
+</p><p>（好像非常易懂，也很容易实现）
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=5" title="编辑段落：标记数组（哈希）">编辑</a>]</span> <span class="mw-headline" id=".E6.A0.87.E8.AE.B0.E6.95.B0.E7.BB.84.EF.BC.88.E5.93.88.E5.B8.8C.EF.BC.89">标记数组（哈希）</span></h3>
+<p>1e6的范围，开一个布尔数组完全可以，有人为TRUE，无人为FALSE，注意边界即可。最后线性扫描即可。
+</p><p>时间复杂度，应该是O(n),n为最后结束的时间。
+</p><p>缺点就是……比较慢
+</p><p>+++++++++++本是同算法，相割何太急++++++++++++
+</p><p>和我的方法比较像，但我做了些优化
+</p><p>预处理：
+</p>
+<pre> 建立一个数组a。
+ 读入，若为起点将a[i]加1，若为终点将a[i]减1。
+ （这时顺便找出总的起点与终点）；
+</pre>
+<p>算法开始：
+</p>
+<pre> 将数组扫一遍（注意从总的起点扫到总的终点），这时将x（初始为0）加上a[i]。
+  若遇到x由0变1，或由1变0，
+  将这个点计入数组ans[]。
+  然后再将ans扫描一遍，大家可能都想到了：
+   若i为奇数，ans[i+1]-ans[i] 应该是有人的时间间隔；
+   若i为偶数，反之。
+</pre>
+<pre>这个算法是O(n)，实际效果不错，但我也不知道应该叫什么。
+</pre>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=6" title="编辑段落：叫什么好呢？并查集加速直接模拟">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.AB.E4.BB.80.E4.B9.88.E5.A5.BD.E5.91.A2.EF.BC.9F.E5.B9.B6.E6.9F.A5.E9.9B.86.E5.8A.A0.E9.80.9F.E7.9B.B4.E6.8E.A5.E6.A8.A1.E6.8B.9F">叫什么好呢？并查集加速直接模拟</span></h3>
+<p>记录一个fa[i]表示i之后第一个没覆盖的点。
+下次遇到这里的时候就可以直接跳过了。
+复杂度大概算o（n）吧。
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=7" title="编辑段落：分段动规">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.AE.B5.E5.8A.A8.E8.A7.84">分段动规</span></h3>
+<hr />消逝的分割线-------------------------
+<pre>          消逝者--<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:183.16.23.147&amp;action=edit&amp;redlink=1" class="new" title="用户:183.16.23.147（尚未撰写）">183.16.23.147</a> 22:26 2011年11月3日 (CST)
+</pre>
+<p>时间复杂度（nlogn),全部0毫秒。
+以开始时间从小到大快排每个农民
+</p><p>快排后：
+</p><p>f[i]表示第i个农民所在的最长连续线段
+last_start表示这个线段的起点。
+a[i].begin 第i个农民的起点时间，a[i].end 终点时间
+</p><p>可以得出方程：
+f[i]={max{f[i-1],a[i].end} (a[i].begin&lt;=f[i-1]) //加上第i个农民仍然连续
+</p>
+<pre>     a[i].end             (a[i].begin&gt;f[i-1])  /*加上第i个农民变不连续 
+                                                 在这里开始以此农民的开始时间的新的一条连续线段，
+                                                 更新last_start=a[i].begin作为新起点，因为有间隔，
+                                                 所以更新longest_idle_time=max(longest_idle_time,a[i].begin-f[i-1]);*/
+</pre>
+<p>在每次循环处理后longest_continuous_time=max(longest_continuous_time,f[i]-last_start)
+最后输出longest_continuous_time和longest_idle_time即可。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit&amp;section=8" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/milk2/C.html" title="Code:USACO/milk2/C">C</a>
+</p><p><a href="../Code:USACO/milk2/Pascal.html" title="Code:USACO/milk2/Pascal">Pascal</a>
+</p><p><a href="../Code:USACO/milk2/C++.html" title="Code:USACO/milk2/C++">C++</a>
+</p><p><a href="../Code:USACO/milk2/Java.html" title="Code:USACO/milk2/Java">Java</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 78/1000000
+Post-expand include size: 370/2097152 bytes
+Template argument size: 67/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:232-0!*!0!!zh-cn!*!* and timestamp 20131219164453 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;oldid=33240">http://www.nocow.cn/index.php?title=USACO/milk2&amp;oldid=33240</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">1个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:USACO_Chapter_1" title="分类:USACO Chapter 1">USACO Chapter 1</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="milk2.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/milk2&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fmilk2" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/milk2" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/milk2" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;oldid=33240" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过33,558次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月1日 (星期四) 17:57做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Slzxcys&amp;action=edit&amp;redlink=1" class="new" title="用户:Slzxcys（尚未撰写）">陈宇松</a>和<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Zlz123456789&amp;action=edit&amp;redlink=1" class="new" title="用户:Zlz123456789（尚未撰写）">zlz</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/202.110.232.202" title="特殊:用户贡献/202.110.232.202">202.110.232.202</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.87.221.47" title="特殊:用户贡献/218.87.221.47">218.87.221.47</a>和<a href="http://www.nocow.cn/index.php?title=USACO/milk2&amp;action=credits" title="USACO/milk2">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.162 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

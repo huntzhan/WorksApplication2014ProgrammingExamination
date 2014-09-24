@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/window - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/window", "wgTitle": "USACO/window", "wgCurRevisionId": 28728, "wgArticleId": 1189, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 5"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for pascal
+ * CSS class: source-pascal, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.pascal.source-pascal .de1, .pascal.source-pascal .de2 {}
+.pascal.source-pascal  {font-family:monospace;}
+.pascal.source-pascal .imp {font-weight: bold; color: red;}
+.pascal.source-pascal li, .pascal.source-pascal .li1 {font-weight: normal; vertical-align:top;}
+.pascal.source-pascal .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.pascal.source-pascal .li2 {font-weight: bold; vertical-align:top;}
+.pascal.source-pascal .kw1 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw2 {color: #000000; font-weight: bold;}
+.pascal.source-pascal .kw3 {color: #000066;}
+.pascal.source-pascal .kw4 {color: #000066; font-weight: bold;}
+.pascal.source-pascal .co1 {color: #666666; font-style: italic;}
+.pascal.source-pascal .coMULTI {color: #666666; font-style: italic;}
+.pascal.source-pascal .es0 {color: #000099; font-weight: bold;}
+.pascal.source-pascal .es_h {color: #000099; font-weight: bold;}
+.pascal.source-pascal .br0 {color: #009900;}
+.pascal.source-pascal .sy0 {color: #339933;}
+.pascal.source-pascal .st0 {color: #ff0000;}
+.pascal.source-pascal .st_h {color: #ff0000;}
+.pascal.source-pascal .nu0 {color: #cc66cc;}
+.pascal.source-pascal .me1 {color: #0066ee;}
+.pascal.source-pascal .ln-xtra, .pascal.source-pascal li.ln-xtra, .pascal.source-pascal div.ln-xtra {background-color: #ffc;}
+.pascal.source-pascal span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_window action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/window</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="window.html#column-one">导航</a>, <a href="window.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_5.html#Chapter_5.3" title="USACO Chapter 5" class="mw-redirect">Chapter 5 .3</a>中的OI题目<b>Window Area</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/window.html" title="Translate:USACO/window">翻译</a>，<a href="../Code:USACO/window/C.html" title="Code:USACO/window/C">C语言代码</a>，<a href="../Code:USACO/window/C++.html" title="Code:USACO/window/C++">C++语言代码</a>，<a href="../Code:USACO/window/Pascal.html" title="Code:USACO/window/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="window.html#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">问题分析</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="window.html#.E7.AE.97.E6.B3.95.E4.B8.80"><span class="tocnumber">1.1</span> <span class="toctext">算法一</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="window.html#.E7.AE.97.E6.B3.95.E4.BA.8C"><span class="tocnumber">1.2</span> <span class="toctext">算法二</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="window.html#.E7.AE.97.E6.B3.95.E4.B8.89"><span class="tocnumber">1.3</span> <span class="toctext">算法三</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="window.html#.E7.AE.97.E6.B3.95.E5.9B.9B_.E6.BC.82.E6.B5.AE.E6.B3.95"><span class="tocnumber">1.4</span> <span class="toctext">算法四 漂浮法</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="window.html#.E7.AE.97.E6.B3.95.E4.BA.94.EF.BC.9A"><span class="tocnumber">1.5</span> <span class="toctext">算法五：</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="window.html#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">2</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=2" title="编辑段落：算法一">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.B8.80">算法一</span></h3>
+<p>算法并不难，只要想清楚了就很容易写出程序了。
+首先，对于每块放入的窗户，设定一个高度值。这个高度值应该是所有窗户中最大的。同时要维护两个值：所有窗户的最大高度和最小高度，初始时这两个值均为0。每次新放入窗户时，这个窗户的高度就设为最大高度+1，同时更新最大高度。置顶和置底的操作相应进行。去掉窗户时更新最大高度和最小高度。
+这样前4个操作就很容易了。现在来考虑第5个操作。需要用到矩形切割的知识。
+所谓矩形切割，就是把两个矩形不相交的部分切开，以利于统计。比如两个矩形a,b，如果a有在b左边的部分，那么就把它切下来；接下来如果有在b右边的部分，也切下来；同样，上下也可以仿照这种方法操作。
+实现第5个操作需要开一个队列。初始时队首为待统计的矩形。实现的时候每次先找一个高度比待统计矩形高，且没有计算过的矩形，记录一下当前队尾。取出一个队首元素，用这个矩形切割队首，切得的所有矩形依次放入队尾。重复上述步骤直到当前队首等于原来的队尾。
+所有符合的矩形都统计完以后，队列中所有矩形的面积和除以待统计矩形的面积就是这个操作的答案。
+</p><p>注：数据规模很小，最大的数据也只有600行而已，所以队列完全不必要用链队，数组即可。
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=3" title="编辑段落：算法二">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.BA.8C">算法二</span></h3>
+<p>其实思想和算法一是一样的，但是使用了字符串操作，大大简化了代码。另，计算面积时参考了3.1的rect1
+<br />详细实现可以参考<a href="../Code:USACO/window/Pascal.html#.E7.AE.97.E6.B3.95.E4.BA.8C" title="Code:USACO/window/Pascal">源代码</a>
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=4" title="编辑段落：算法三">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.B8.89">算法三</span></h3>
+<p>（by dfs35123 <a rel="nofollow" class="external free" href="http://dfs35123.spaces.live.com">http://dfs35123.spaces.live.com</a> ）
+这道题用的是矩形切割。（我所理解的）矩形切割就是某一个矩形被上面的矩形所切割，最多切成9个小矩形。
+然后再用更上面一层的矩形（递归地）切割这切出来的周围8个小矩形，一直处理到上面每一层的矩形都结束。
+</p><p>我第一次做这个题用的方法是：
+1.用一个数组win来记录每“层”对应的窗口。
+2.每次新建窗口，新建一个最上层，放在最上层。
+3.每次删除窗口，就把win[这一层]赋值为0对应的ASCII码。
+4.每次置顶：在顶上新建一层，放在上面。删除原窗口。置底与置顶类似。
+5.每次s()操作：对这个矩形调用矩形切割函数。用上面的每层来切割它。最后没有被覆盖的就是露着的面积。
+这个方法很简单，所以我感觉这个题很简单。结果，一交，发现第10组数据超时。
+</p><p>这组数据的s操作相当多，其他操作很少。所以反复调用函数就会超时。
+</p><p>于是我想了一个新的方法。
+用see[]记录某个矩形能看见的面积。每次新建、删除、置顶、置底都要维护，而s()就可以直接出结果。
+</p><p>1.新建窗口时：
+</p>
+<pre> 能看见面积=总面积。
+ 从上向下做矩形切割。
+ 下面的矩形减去被这个矩形盖住的面积。
+</pre>
+<p>2.置顶时：
+</p>
+<pre> 能看见面积=总面积。
+ 从上向下做矩形切割。
+ 这个矩形原来的位置以上的所有矩形减去相应的面积。原来位置一下的矩形面积不变。
+</pre>
+<p>3.置底时：
+</p>
+<pre> 能看见面积=总面积。
+ 从上向下做矩形切割。每次该矩形减去相应面积。
+ 原位置以上所有矩形面积不变。以下矩形加上相应面积。
+</pre>
+<p>4.删除时：
+</p>
+<pre> 从上向下做矩形切割。
+ 原位置以上所有矩形面积不变。以下矩形加上相应面积。
+</pre>
+<p>注意数据阴人。给出的矩形两个对角，可能是左上右下，也可能是左下右上！一定要处理！
+附：我写的矩形切割是自己发明的代码，不是正统的版本，比较麻烦。所以没有发到nocow上。想看的可以到<a rel="nofollow" class="external free" href="http://dfs35123.spaces.live.com/blog/cns!A6CB032EC0980F16!565.entry">http://dfs35123.spaces.live.com/blog/cns!A6CB032EC0980F16!565.entry</a>
+</p><p>hydralisk:针对算法三小说明一下，矩形切割每次最多切出来4个就行了，而不是8个，这样写起来轻松一些，效率高一些。代码在java里面。（java真ws啊真ws）
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=5" title="编辑段落：算法四 漂浮法">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E5.9B.9B_.E6.BC.82.E6.B5.AE.E6.B3.95">算法四 漂浮法</span></h3>
+<p>//from Error
+</p><p>前面的四个操作在之前的算法中都已有描述，在此就不在阐述，主要说一下最后一个操作的面积计算法。
+</p><p>此题可以用到漂浮法。
+</p><p>在每次询问时，想象先将在被询问窗口之上的所有窗口按层次放入大海中，最后将被询问窗口放在最底端，由于浮力作用这个窗口会向上浮，在上浮时如果碰撞
+</p><p>到上方窗口时，则将这个窗口所有没被碰撞的部分继续执行上浮操作，直到浮出水面为止，就进行统计浮出水面的面积，所有浮出水面的面积之和就是可见的面
+</p><p>积。具体过程可以用递归来实现。
+</p><p>Pascal递归代码如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="pascal source-pascal"><pre class="de1"><span class="kw1">procedure</span> <span class="kw1">try</span><span class="br0">&#40;</span>k<span class="sy0">,</span>x0<span class="sy0">,</span>y0<span class="sy0">,</span>x1<span class="sy0">,</span>y1<span class="sy0">:</span><span class="kw4">longint</span><span class="br0">&#41;</span>;
+ <span class="kw1">begin</span>
+  <span class="kw1">while</span> <span class="br0">&#40;</span>k&gt;<span class="nu0">0</span><span class="br0">&#41;</span><span class="kw3">and</span><span class="br0">&#40;</span><span class="br0">&#40;</span>x1&lt;<span class="sy0">=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x0</span><span class="br0">&#41;</span><span class="kw1">or</span><span class="br0">&#40;</span>x0&gt;<span class="sy0">=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x1</span><span class="br0">&#41;</span><span class="kw1">or</span><span class="br0">&#40;</span>y1&lt;<span class="sy0">=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y0</span><span class="br0">&#41;</span><span class="kw1">or</span><span class="br0">&#40;</span>y0&gt;<span class="sy0">=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y1</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="kw1">do</span> dec<span class="br0">&#40;</span>k<span class="br0">&#41;</span>; <span class="co1">//如果不发生碰撞则跳过</span>
+  <span class="kw1">if</span> k<span class="sy0">=</span><span class="nu0">0</span> <span class="kw1">then</span> <span class="kw1">begin</span> area<span class="sy0">:=</span>area<span class="sy0">+</span><span class="br0">&#40;</span>x1<span class="sy0">-</span>x0<span class="br0">&#41;</span><span class="sy0">*</span><span class="br0">&#40;</span>y1<span class="sy0">-</span>y0<span class="br0">&#41;</span>; exit; <span class="kw1">end</span>; <span class="co1">//如果浮出水面则累加面积</span>
+  <span class="kw1">if</span> x0&lt;a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x0</span> <span class="kw1">then</span> <span class="kw1">begin</span> <span class="kw1">try</span><span class="br0">&#40;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span>x0<span class="sy0">,</span>y0<span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x0</span><span class="sy0">,</span>y1<span class="br0">&#41;</span>; x0<span class="sy0">:=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x0</span>; <span class="kw1">end</span>; <span class="co1">//分割左边未碰撞面后继续上浮</span>
+  <span class="kw1">if</span> y0&lt;a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y0</span> <span class="kw1">then</span> <span class="kw1">begin</span> <span class="kw1">try</span><span class="br0">&#40;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span>x0<span class="sy0">,</span>y0<span class="sy0">,</span>x1<span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y0</span><span class="br0">&#41;</span>; y0<span class="sy0">:=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y0</span>; <span class="kw1">end</span>; <span class="co1">//分割下边未碰撞面后继续上浮</span>
+  <span class="kw1">if</span> x1&gt;a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x1</span> <span class="kw1">then</span> <span class="kw1">begin</span> <span class="kw1">try</span><span class="br0">&#40;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x1</span><span class="sy0">,</span>y0<span class="sy0">,</span>x1<span class="sy0">,</span>y1<span class="br0">&#41;</span>; x1<span class="sy0">:=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">x1</span>; <span class="kw1">end</span>; <span class="co1">//分割右边未碰撞面后继续上浮</span>
+  <span class="kw1">if</span> y1&gt;a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y1</span> <span class="kw1">then</span> <span class="kw1">begin</span> <span class="kw1">try</span><span class="br0">&#40;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">,</span>x0<span class="sy0">,</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y1</span><span class="sy0">,</span>x1<span class="sy0">,</span>y1<span class="br0">&#41;</span>; y1<span class="sy0">:=</span>a<span class="br0">&#91;</span>k<span class="br0">&#93;</span>.<span class="me1">y1</span>; <span class="kw1">end</span>; <span class="co1">//分割上边未碰撞面后继续上浮</span>
+ <span class="kw1">end</span>;</pre></div></div>
+<p>代码中a数组是按层次存放的所有窗口的左下角和右上角坐标，即a[1]代表最顶层窗口，a[n]代表最底层窗口。
+</p><p>详细请参见Pascal代码算法四。所有点全部0.000s。
+</p><p><br />
+</p>
+<h3><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=6" title="编辑段落：算法五：">编辑</a>]</span> <span class="mw-headline" id=".E7.AE.97.E6.B3.95.E4.BA.94.EF.BC.9A">算法五：</span></h3>
+<p>每个window储存一个高度，前四个操作只需更改高度即可， s（X）时，统计出比X低的window， 坐标离散化，floodfill， 统计即可。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit&amp;section=7" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<ul><li><a href="../Code:USACO/window/Pascal.html" title="Code:USACO/window/Pascal">Pascal程序代码</a>
+</li><li><a href="../Code:USACO/window/C++.html" title="Code:USACO/window/C++">C++程序代码</a>
+</li><li><a href="../Code:USACO/window/Java.html" title="Code:USACO/window/Java">Java程序代码</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 87/1000000
+Post-expand include size: 877/2097152 bytes
+Template argument size: 66/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1189-0!*!0!!zh-cn!*!* and timestamp 20131219164634 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;oldid=28728">http://www.nocow.cn/index.php?title=USACO/window&amp;oldid=28728</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="http://www.nocow.cn/index.php?title=%E5%88%86%E7%B1%BB:USACO_Chapter_5&amp;action=edit&amp;redlink=1" class="new" title="分类:USACO Chapter 5（尚未撰写）">USACO Chapter 5</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="window.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/window&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fwindow" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/window" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/window" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/window&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/window&amp;oldid=28728" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过8,139次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2011年11月26日 (星期六) 10:48做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Xiongnanbin&amp;action=edit&amp;redlink=1" class="new" title="用户:Xiongnanbin（尚未撰写）">南斌</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/118.122.35.2" title="特殊:用户贡献/118.122.35.2">118.122.35.2</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/111.226.73.162" title="特殊:用户贡献/111.226.73.162">111.226.73.162</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/60.5.97.15" title="特殊:用户贡献/60.5.97.15">60.5.97.15</a>和<a href="http://www.nocow.cn/index.php?title=USACO/window&amp;action=credits" title="USACO/window">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.240 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

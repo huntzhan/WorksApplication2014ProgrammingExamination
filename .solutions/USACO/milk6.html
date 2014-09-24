@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/milk6 - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/milk6", "wgTitle": "USACO/milk6", "wgCurRevisionId": 33270, "wgArticleId": 1167, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 4"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_milk6 action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/milk6</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="milk6.html#column-one">导航</a>, <a href="milk6.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_4.html#Chapter_4.4" title="USACO Chapter 4" class="mw-redirect">Chapter 4 .4</a>中的OI题目<b>Pollutant Control</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/milk6.html" title="Translate:USACO/milk6">翻译</a>，<a href="../Code:USACO/milk6/C.html" title="Code:USACO/milk6/C">C语言代码</a>，<a href="../Code:USACO/milk6/C++.html" title="Code:USACO/milk6/C++">C++语言代码</a>，<a href="../Code:USACO/milk6/Pascal.html" title="Code:USACO/milk6/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="milk6.html#.E8.8B.A5.E9.A3.8E.E7.9A.84.E7.AE.97.E6.B3.95"><span class="tocnumber">1</span> <span class="toctext">若风的算法</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="milk6.html#.E6.AD.A3.E7.A1.AE.E7.9A.84.E8.A7.A3.E6.B3.95"><span class="tocnumber">2</span> <span class="toctext">正确的解法</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="milk6.html#.E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90"><span class="tocnumber">3</span> <span class="toctext">问题分析</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="milk6.html#.E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F"><span class="tocnumber">4</span> <span class="toctext">范例程序</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit&amp;section=1" title="编辑段落：若风的算法">编辑</a>]</span> <span class="mw-headline" id=".E8.8B.A5.E9.A3.8E.E7.9A.84.E7.AE.97.E6.B3.95"> 若风的算法 </span></h2>
+<p>下面的每个多项式算法我感觉都有反例了，如果你相信的话，可以看看我的做法。有分析+<i><b>证明</b></i>+程序。
+因为是作为解题报告而存在的，所以写的非常啰嗦（褒义词叫详细~~）。就不复制过来了……偶然发现原来的blog崩了。重发之<a rel="nofollow" class="external free" href="http://hi.baidu.com/fmlzlkalohbcgod/item/f775ae07057d5cc0ff240d81">http://hi.baidu.com/fmlzlkalohbcgod/item/f775ae07057d5cc0ff240d81</a>
+</p><p><br />
+我的想法与这位同志差不多。
+</p><p>不要想复杂了。
+</p><p>只要把容量为c的边重赋权为c*1001+1，即可解决前两问。
+</p><p>再按编号从小往大的顺序枚举每条边，判断去掉之后最大流减小值是否等于边权。是则输出。 // 为什么要这样做? 直接从原点开始做一个floodfill 然后枚举每条边如果端点一个被访问过一个没有 不就可以判定这条边在最小割中么? --路人甲 // 个人认为路人甲的算法可以举出反例：满足题目条件的最小割可能不止一个，需要按字典序依次枚举 --路人乙
+</p><p>完全没有必要像下面某几位仁兄一样麻烦还错了（没有冒犯之意）。
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit&amp;section=2" title="编辑段落：正确的解法">编辑</a>]</span> <span class="mw-headline" id=".E6.AD.A3.E7.A1.AE.E7.9A.84.E8.A7.A3.E6.B3.95">正确的解法</span></h2>
+<p>具体的可以看这篇文章：<a rel="nofollow" class="external free" href="http://bbs.noi.bdez.cn:8080/viewthread.php?tid=44&amp;extra=page%3D1">http://bbs.noi.bdez.cn:8080/viewthread.php?tid=44&amp;extra=page%3D1</a>
+</p><p>代码流程：
+</p><p>s1&#160;: 按编号顺序存边表L1。然后，按容量递减顺序(容量相等时，编号小的在前)mergesort，得到L2
+s2&#160;: HLPP求出最大流tot
+s3&#160;: 按L2的顺序枚举边，如果该边的容量小于等于最大流tot，且删除该边后，再求一次得到的最大流与删除前的最大流之差等于该边容量，那么，该边一定属于最小割，删除它，否则就恢复。
+s4&#160;: 经s3删边后，最大流&gt;0，那么剩下的边中仍有边属于最小割。我们可以按L1的顺序递归搜索，枚举每个边是不是属于最小割，并加入一些剪枝。
+s5&#160;: 求出最小割后，把要输出的边按标号countsort一下。
+</p><p>具体代码请进Pascal题解区或者上面的连接
+</p><p>个人认为此方法无法保证字典序最小。
+</p><p>这两个方法是错的吧？是我理解错了还是方法的错了？反正第一个程序应该是错的。
+反例:
+</p>
+<pre>9 11
+1 2 4
+1 3 3
+2 4 100
+3 4 100
+4 5 5
+4 6 1
+4 7 1
+5 8 100
+6 8 100
+7 8 100
+8 9 100
+</pre>
+<p>这组数据输出为：
+</p>
+<pre>7 2
+1
+2
+</pre>
+<p>再提供一组数据：
+</p>
+<pre>8 9
+7 8 1
+1 2 1
+1 3 1
+6 8 1
+2 4 100
+3 4 100
+4 5 100
+5 7 100
+5 6 100
+</pre>
+<p>输出：
+</p>
+<pre>2 2
+1
+4
+</pre>
+<p>如果输出：
+</p>
+<pre>2 3 一般是因为使用了改权值的方法，只能保证和最小，不能保证字典序最小。
+1 2 一般是因为在使用搜索的解法的时候，没有判断去掉割边后原点和终点是否连通。
+</pre>
+<p>过了这两组应该就是正确的了
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit&amp;section=3" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<p>本题比较麻烦，要用到最小割最大流定理。
+首先求出最大流，那么最小割的容量就是最大流的流量。
+然后找有没有容量=最小割容量的“桥”（这里的桥就是去掉这条边后，由源点出发无法到达汇点），如果有那么这个桥就是答案。
+然后对每条容量不大于最小割的边，去掉后求一次最大流（估计这里我的算法太麻烦了）。如果流量的减少量=这条边的容量，那么这条边一定属于最小割。找出这样所有的边后，如果这些边的容量和=最小割容量，那么符合题目条件的最小割已求出。
+剩下的工作就是搜索了。用dfsid，每次增加深度限制，按边的编号大小顺序扩展，搜索是否存在一种方案使得这些边的权值与已求出的必然属于最小割的边的权值之和等于最小割。然后judge一下是否去掉这些边后源点与汇点不连通。如果不连通，则说明已经找到解，可直接输出。
+数据规模不算大，一般的BFS已经足可胜任最大流的工作。不过我用的是预流推进，最大数据也不超过0.1s。在熟练的前提下，还是尽量用更好的算法吧^_^。
+</p><p>数据中可能存在两点之间有多条边的情况，可以在求最大流时把这些边并成一条边，然后在求最小割的边集时再拆开。
+</p>
+<hr />
+<p>标程用了一种很不错的方法。因为总共只有1000条边，那么将每个边容量*1001+1作为新的容量（注意这里指每次读入的每个边），那么最大流mod 1001就是最小割去的边数。最大流=值 div 1001。首先这对最大流求肯定没影响，其次，我们知道对以每一条增广路大小取决于最小的那个，这里的+1就派上了用场。
+在同样可一减去2条边和减去一条边使其不连通时，减去两条边对应+2&gt;+1所以，求最大流时会选择+1 ，同样，对于那些必须删的边多少个+1其实就等于删了多少条边。
+路人甲：我认为如果同时减去两条边的话，对流量的增加这个不还是1么……应该是只对于若该条增光路上已经有一条边在之前被增广过，那么就会有一个0，就不增广1了。
+</p><p>我认为直接枚举满流量的边求删的边是不对的，例如：
+</p>
+<pre>1-3:5
+1-2-3:5
+3-4:5
+</pre>
+<p>可能求出最大流为5，可能1-2-3为满流，但此时减去1-2-3，或1-3，都是不对的。必须减去3-4。
+用残量网络求出传递闭包可以求出真正必须删的边。
+</p><p><br />
+</p>
+<hr />
+<p>很明显地，这是一个最小割的模型，设每边的权值为原始权值，则最大流的值就是最小割的容量，即最小损失。根据胡兄的论文(07WC)，只要从源点进行一次floodfill就可以得出最小割集。
+现在有两个问题：停止的线路数，使开始输入顺序最小
+为解决这两个问题，可将每边的权值修改为500000+i+500000*1001*c，这个式子有什么用呢？首先，每边的权值都加上500000，那么最大流(maxflow%(500000*1001))/500000就是停止的线路的数量，取500000的原因是500000&gt; (0+999)*1000/2，即最大情况下0~999的i的和，否则可能由于i的值而使结果偏大。i项的含义就很明显了，为使输入顺序最小。最后一项中的1001则是因为最多有1000条边，所以500000*1001*c &gt; 500000*1000，这三项分别独立，从而得出结果。
+程序可以参见：
+<a rel="nofollow" class="external free" href="http://dementrock.blog.com/?p=130">http://dementrock.blog.com/?p=130</a>
+</p><p>个人认为这种加权方式显然无法保证字典序最小，只能保证序号和最小。
+</p>
+<hr />
+<p>先求解一次最大流 然后将满流的边全部改成1 然后在求解一次 所得结果即为最少所割遍数
+求解方案的话 对第一次最大流网络中慢流且在第二次最大流中满流的边 按照在第一次中通过的增广路径的数目排序 然后取出前最少所割遍数的合法的边--个人想法，未证实
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit&amp;section=4" title="编辑段落：范例程序">编辑</a>]</span> <span class="mw-headline" id=".E8.8C.83.E4.BE.8B.E7.A8.8B.E5.BA.8F">范例程序</span></h2>
+<ul><li><a href="../Code:USACO/milk6/Pascal.html" title="Code:USACO/milk6/Pascal">Pascal程序代码</a>
+</li><li><a href="../Code:USACO/milk6/C.html" title="Code:USACO/milk6/C">C程序代码</a>
+</li><li><a href="../Code:USACO/milk6/C++.html" title="Code:USACO/milk6/C++">C++程序代码</a>
+</li><li><a href="http://www.nocow.cn/index.php?title=Code:USACO/milk6/JAVA&amp;action=edit&amp;redlink=1" class="new" title="Code:USACO/milk6/JAVA（尚未撰写）">JAVA程序代码</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 66/1000000
+Post-expand include size: 875/2097152 bytes
+Template argument size: 72/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1167-0!*!0!!zh-cn!*!* and timestamp 20131219164622 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;oldid=33270">http://www.nocow.cn/index.php?title=USACO/milk6&amp;oldid=33270</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:USACO_Chapter_4" title="分类:USACO Chapter 4">USACO Chapter 4</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="milk6.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/milk6&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fmilk6" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/milk6" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/milk6" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;oldid=33270" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过11,275次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Liumengyun&amp;action=edit&amp;redlink=1" class="new" title="用户:Liumengyun（尚未撰写）">Liumengyun</a>于2013年8月5日 (星期一) 16:18做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Zhouyuc1&amp;action=edit&amp;redlink=1" class="new" title="用户:Zhouyuc1（尚未撰写）">ZYC</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:%E5%87%8C%E4%BA%91%E4%B8%83%E9%A3%8E" title="用户:凌云七风">唐翔昊</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/14.158.232.193" title="特殊:用户贡献/14.158.232.193">14.158.232.193</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.46.11.128" title="特殊:用户贡献/183.46.11.128">183.46.11.128</a>和<a href="http://www.nocow.cn/index.php?title=USACO/milk6&amp;action=credits" title="USACO/milk6">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.158 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

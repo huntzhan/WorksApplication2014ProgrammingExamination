@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/range - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/range", "wgTitle": "USACO/range", "wgCurRevisionId": 33463, "wgArticleId": 428, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_range action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/range</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="range.html#column-one">导航</a>, <a href="range.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><table id="toc" class="toc"><tr><td><div id="toctitle"><h2>目录</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="range.html#.E5.88.86.E6.9E.90"><span class="tocnumber">1</span> <span class="toctext">分析</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="range.html#.E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF"><span class="tocnumber">2</span> <span class="toctext">枚举思路</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="range.html#.E5.8F.88.E4.B8.80.E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF.E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF"><span class="tocnumber">3</span> <span class="toctext">又一枚举思路枚举思路</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="range.html#N.5E3.E5.8F.AA.E8.A6.81.E5.8A.A0.E4.B8.AA.E5.89.8D.E7.BC.80.E5.92.8C.E5.B0.B1.E8.A1.8C.E4.BA.86"><span class="tocnumber">4</span> <span class="toctext">N^3只要加个前缀和就行了</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="range.html#.E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81"><span class="tocnumber">5</span> <span class="toctext">参考代码</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="range.html#.E5.BC.95.E7.94.A8"><span class="tocnumber">6</span> <span class="toctext">引用</span></a></li>
+</ul>
+</td></tr></table>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=1" title="编辑段落：分析">编辑</a>]</span> <span class="mw-headline" id=".E5.88.86.E6.9E.90">分析</span></h2>
+<p>这道题可以动态规划。二维的动态规划。
+</p><p>状态定义：G[i][j]为以(i,j)为左上角顶点的正方形的最大边长。
+</p><p>边界条件：G[i][j]为初始读入的矩阵。
+</p><p>状态转移方程：
+	G[i][j]=min{ G[i+1][j] , G[i][j+1] , G[i+1][j+1] } + 1;
+</p><p>解析：
+G[i+1][j] , G[i][j+1] , G[i+1][j+1]分别为(i,j)向下、向右、向右下一格的状况。
+在(n-1,n-1)当且仅当三者都为1的时候，正方形才能扩充。从最右下向上，依次扩充即可。<br />
+--<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:CmYkRgB123" title="用户:CmYkRgB123">CmYkRgB123</a> 21:32 2008年4月17日 (CST)
+</p><p><br />
+</p><p>这道题也可以直接模拟计算以每个格为左上角顶点的最大正方形的边长:
+对每一格,在当前已有的长度为K-1的正方形基础上,若右侧与下侧能同时加上长为K宽为1的矩形条,则得到长度为K的正方形.
+</p><p>在判断是否有完整的矩形条时,先预处理得到从左到右与从上到下的累加数组:
+</p>
+<pre> sum_horizon[i][j]=sum_horizon[i][j-1]+a[i][j];
+ sum_vertical[i][j]=sum_vertical[i-1][j]+a[i][j]; 
+</pre>
+<p>并利用等式判断:
+</p>
+<pre> sum_horizon[i+k-1][j+k-1]-sum_horizon[i+k-1][j-1]==K &amp;&amp;
+ sum_vertical[i+k-1][j+k-1]-sum_vertical[i-1][j+k-1]==K
+</pre>
+<p>算法复杂度O(N3).
+--[[User:jay23jack] 17:27 2008年7月27日 (CST)
+</p><p><br />
+另一算法：
+</p>
+<pre> opt[i,j]表示以i,j为右下角，可构成的最大正方形的边长
+ 方程为：
+    opt[i,j]:=min(opt[i-1,j],opt[i,j-1],opt[i-1,j-1])+1;
+ 再开一数组F，用来统计边长相同的正方形的个数，因为边长小的与边长大的存在包含关系，所以最后将边长大的正方形的个数再累加到
+  边长比它小的正方形内，输出即可。详见代码6                                
+                                                                                                            --D.puppet
+</pre>
+<p>上面的算法时间复杂度是O(N^2)，我写的带4个二重循环（其中1个是读入）。
+</p><p>①读入；②用上面的算法，注意当读入的矩阵中map[i][j]='0'时，opt[i][j]必定是0；③统计边长相同的正方形（用桶排序的原理）；
+④按照上面的方法加起来。
+</p><p>虽然时间复杂度是O(N^2)，但是常数比较大。 --Fruderica
+</p><p>O(N^2logN)的一个算法：
+</p><p>枚举左上角后二分确定最大边长.结果处理同上一算法.
+详细内容见C++代码2                --cgy4ever
+</p><p><br />
+</p><p>思路同上，不过使用单调队列确定最大边长，时间复杂度为O（N^2），空间复杂度不能优化为O（N），我的Pascal写了70多行...
+</p><p><br />
+O（N^3）简单易想算法。 dp[k][i][j]表示以k为边长左上角为（i，j）的正方形是否能构成。那么
+dp[k][i][j] = dp[k-1][i][j] &amp;&amp; dp[k-1][i][j+1] &amp;&amp; dp[k-1][i+1][j] &amp;&amp; maze[i+k][j+k] 
+(maze[i][j]表示矩形点(i,j)的bool值)dp的过程中统计即可。
+期中3维数组超内存降维或者用滚动数组。代码见C++
+</p><p><br />
+其实这个题可以类比最优子矩阵，只不过求的是所有的矩阵，用类似最优子矩阵的方法枚举所有子矩阵即可，详见pascal代码7
+</p><p><br />
+另一思路：
+先统计出f[i][j](从（0，0）开始，在长为i，宽为j的范围内障碍的数量)，f[i][j]=f[i-1][j]+f[i][j-1]-f[i-1][j-1]+map[i][j];(map[i][j]:若无障碍为0,有障碍为1)。然后搜索范围（w,r）到(i,j)范围内是否有障碍，即f[i][j]-f[w][j]-f[i][r]+f[w][r]是否为0，累计可得答案。具体代码见C.    --by Eagle747
+<br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=2" title="编辑段落：枚举思路">编辑</a>]</span> <span class="mw-headline" id=".E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF">枚举思路</span></h2>
+<p>先预处理f[i,j]数组，表示以i,j为右下角的矩形中有几个1，然后枚举每个正方形，如果正方形中的1的个数等于这个正方形的面积则累加，详见pascal代码110
+</p><p>思路2：(i,j)代表左上角坐标，f[i,j,c]表示左上角坐标坐标i,j，边长为c的正方形牧草存不存在。先枚举每个坐标（从1到n-1），然后从小长度到大长度检查，如果小的不行那么直接break，检查的方法就是
+1.如果f[i(-1),j(-1),c+1]是true，那么标记f[i,j,c]是true，返回true。
+2.else 枚举多出来的一横行和一纵行，如果都是1，就返回true，标记f[i,j,c]为true。 
+优势：对小的数据（就是0多的),那么方法2就足够了。对大的数据（也就是1多的），方法1又能极大优化。最大数据0.1s-------来自某蒟蒻
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=3" title="编辑段落：又一枚举思路枚举思路">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.88.E4.B8.80.E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF.E6.9E.9A.E4.B8.BE.E6.80.9D.E8.B7.AF">又一枚举思路枚举思路</span></h2>
+<p><br />
+<b>这枚举.</b>
+超弱的算法o(n^4)吧大概就是每个格子都枚举但是强大的USACO服务器还是让我过了，算有人都能瞬间看懂的代码，详见
+C++mingxiy1这完全不用DP嘛....--<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:%E6%98%8E%E6%BA%AA%E6%9C%88&amp;action=edit&amp;redlink=1" class="new" title="用户:明溪月（尚未撰写）">明溪月</a> 2012年10月25日 (四) 16:37 (CST)
+<br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=4" title="编辑段落：N^3只要加个前缀和就行了">编辑</a>]</span> <span class="mw-headline" id="N.5E3.E5.8F.AA.E8.A6.81.E5.8A.A0.E4.B8.AA.E5.89.8D.E7.BC.80.E5.92.8C.E5.B0.B1.E8.A1.8C.E4.BA.86">N^3只要加个前缀和就行了</span></h2>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=5" title="编辑段落：参考代码">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.82.E8.80.83.E4.BB.A3.E7.A0.81">参考代码</span></h2>
+<p><a href="../Code:USACO/range/C++.html" title="Code:USACO/range/C++">C++</a><br />
+<a href="../Code:USACO/range/C.html" title="Code:USACO/range/C">c</a><br />
+<a href="../Code:USACO/range/Pascal.html" title="Code:USACO/range/Pascal">pascal</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit&amp;section=6" title="编辑段落：引用">编辑</a>]</span> <span class="mw-headline" id=".E5.BC.95.E7.94.A8">引用</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://www.acmwiki.com/">[1]</a>
+<a rel="nofollow" class="external autonumber" href="http://h.thec.cn/starforever/">[2]</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://train.usaco.org/">[3]</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 27/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:428-0!*!0!!zh-cn!*!* and timestamp 20131219164558 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;oldid=33463">http://www.nocow.cn/index.php?title=USACO/range&amp;oldid=33463</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="range.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/range&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Frange" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/range" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/range" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/range&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/range&amp;oldid=33463" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过14,196次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年8月17日 (星期六) 20:13做出最后修改。 在<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:%E6%98%8E%E6%BA%AA%E6%9C%88&amp;action=edit&amp;redlink=1" class="new" title="用户:明溪月（尚未撰写）">丰</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Yu776e&amp;action=edit&amp;redlink=1" class="new" title="用户:Yu776e（尚未撰写）">Yu776e</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.18.71.171" title="特殊:用户贡献/121.18.71.171">121.18.71.171</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/27.115.7.100" title="特殊:用户贡献/27.115.7.100">27.115.7.100</a>和<a href="http://www.nocow.cn/index.php?title=USACO/range&amp;action=credits" title="USACO/range">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.146 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

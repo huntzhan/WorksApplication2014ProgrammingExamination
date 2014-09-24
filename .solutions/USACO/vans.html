@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>USACO/vans - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "USACO/vans", "wgTitle": "USACO/vans", "wgCurRevisionId": 33738, "wgArticleId": 1176, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": ["版权无争议的内容", "USACO Chapter 6"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-USACO_vans action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">USACO/vans</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="../USACO.1.html" title="USACO">USACO</a></span></div>
+		<div id="jump-to-nav">跳转到： <a href="vans.html#column-one">导航</a>, <a href="vans.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><pre> 这篇文章可以证实是由NOCOW用户原创，不存在任何版权争议。
+ 本文作者同意以<a href="http://www.nocow.cn/index.php/NOCOW:GFDL" title="NOCOW:GFDL" class="mw-redirect">GNU FDL</a>、<a href="http://www.nocow.cn/index.php/NOCOW:CC-by-sa" title="NOCOW:CC-by-sa">CC-by-sa</a>和<a href="http://www.nocow.cn/index.php/NOCOW:GNU_LGPL" title="NOCOW:GNU LGPL">GNU LGPL</a>（如果适用）三种版权发布此文章（不包括翻译文章中属于原始所有者的部分版权）。
+ 如果你修改了这篇文章并且不同意用GNU FDL以外的版权发布，可以换一个<a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%A8%A1%E6%9D%BF" title="分类:版权模板">版权模板</a>或者移除此模板。
+</pre>
+<dl><dd>这是<a href="../USACO.1.html" title="USACO" class="mw-redirect">USACO</a> <a href="../USACO_Chapter_6.html#Chapter_6.1" title="USACO Chapter 6" class="mw-redirect">Chapter 6 .1</a>中的OI题目<b>Postal Vans</b>的<b>介绍及题解</b>，参见 <a href="../Translate:USACO/vans.html" title="Translate:USACO/vans">翻译</a>，<a href="http://www.nocow.cn/index.php?title=Code:USACO/vans/C&amp;action=edit&amp;redlink=1" class="new" title="Code:USACO/vans/C（尚未撰写）">C语言代码</a>，<a href="../Code:USACO/vans/C++.html" title="Code:USACO/vans/C++">C++语言代码</a>，<a href="../Code:USACO/vans/Pascal.html" title="Code:USACO/vans/Pascal">Pascal语言代码</a>。
+</dd></dl>
+<p><br />
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit&amp;section=1" title="编辑段落：问题分析">编辑</a>]</span> <span class="mw-headline" id=".E9.97.AE.E9.A2.98.E5.88.86.E6.9E.90">问题分析</span></h2>
+<p>诡异算法 by Maigo（至今不知道原理是什么）：
+设a[i]表示第i列的左上和左下角有直线连通时的路径数，b[i]表示第i列的左上和左下角没有直线连通时的路径数，则有：
+b[i]:=a[i-1]+b[i-1];
+a[i]=2+a[i-2]+2(a[i-2]+b[i-2]+a[i-1]+b[i-1]+...)
+=2+a[i-2]+2(b[i-1]+b[i-2]+...)
+其中a[i]的值可以在计算过程中累加。
+这样算法的时间复杂度仅为O(n)。加上高精度运算也能轻松通过。
+</p><p>在这再加一些
+来自BillyLinux大牛{<a rel="nofollow" class="external free" href="http://billylinux.blog.hexun.com/10542440_d.html}">http://billylinux.blog.hexun.com/10542440_d.html}</a>
+这一题可以用DP解决：
+</p><p>考虑到要经过每一个点，那么对于最后形成的路，每一竖条横向的路不是4条就是2条，总共8种（不考虑路径方向）：
+</p>
+<pre>
+1   2   3   4   5   6   7   8
+
+— — —          — —
+
+—       — —    — —
+
+   —    —    — — —
+
+—              — — — —
+</pre>
+<p>（7中最上面的与最下面的相连、8中最上面的与第二个相连）
+</p><p>并且对于经过最后面的4个点，路径形状只可能是两种（3、8），于是我们定义两个状态
+</p><p>a[i]——有i竖条，以3号形状结尾的路径数
+</p><p>b[i]——有i竖条，以8号形状结尾的路径数
+</p><p>例如：对于i=3：
+</p><p><br />
+a[3]=2  b[3]=2
+</p><p>接下来的问题，就是如何进行状态转移：
+</p><p>我们考虑下面的几种情况：
+</p><p>对于a[i]，它可以接在a[i-2]、a[i-3]……与b[i-2]、b[i-3]……上（这里的接上，指的是中间不出现3号与8号路径），并且除了a[i-2]以外，其他都有两种接法（a[i-2]有3种），因此经过分类，我们可以得到：
+</p><p>a[i]=2*(a[i-2]+a[i-3]+……+a[2]+b[i-2]+b[i-3]+……+b[2]+1)+a[i-2]
+</p><p>而对于b[i],不难发现，他只能接在a[i-1]与b[i-1]上，因此有
+</p><p>b[i]=a[i-1]+b[i-1]
+</p><p>于是我们可以将a[i]化简为
+</p><p>a[i]=a[i-2]+2+2*(b[i-1]+b[i-2]+……b[3])
+</p><p>至此问题大致解决，另外需要注意的是要用高精度。
+</p><p><br />
+</p><p><br />
+这里是我写的一份详细的题解，由于里面图很多，所以不便贴在这里~~好心的管理员帮忙吧！
+</p><p><a rel="nofollow" class="external free" href="http://www.oibh.org/bbs/thread-16548-1-1.html(提醒：已经404)">http://www.oibh.org/bbs/thread-16548-1-1.html(提醒：已经404)</a>
+</p><p><br />
+</p><p>补充一个本题的递推式(by curimit)：
+</p><p>n≥5时，有如下的递推关系：
+f(n)=2f(n-1)+2f(n-2)-2f(n-3)+f(n-4)
+</p><p>初值：
+f（1）=0，f（2）=2，f（3）=4，f（4）=12
+</p><p>从第5项开始向后推即可。
+</p><p><br />
+</p><p><b>关于上面递推式的求解方法</b>(by Tearhap_断章):
+</p><p>求环路总数量等价于求起点(1,1)终点(2,1)的哈密顿路的数量*2（定义点（2,1）在（1,1）下方）
+</p><p>定义f[i]为i*4矩阵中(1,1)→(2,1)哈密顿路的数量
+</p><p>g[i]为i*4矩阵中(1,1)→(4,2)的哈密顿路数量
+</p><p>则f[i]=f[i-1]+g[i-1] （画画图感受一下）
+</p><p>然后讨论第一列点的走入走出方式（共4种，画画图）可以算出
+</p><p>g[i]=g1[i]+g2[i]+g3[i]+g4[i]=g[i-2]+2*f[i-1]+g[i-1]-g[i-3]
+</p><p>把g用f[i]-f[i-1]代进去 解函数方程
+</p><p>可得到以上的f[n]=2f[n-1]+2f[n-2]-2f[n-3]+f[n-4]的结论
+--CD：更极品的是算出递推式的通项式，O(高精度计算)！
+</p>
+<hr />
+<p>回LS，通项式不好说了。。不过矩阵本菜倒是推了个。。
+(f1 f2 f3 f4)*矩阵=(f2 f3 f4 f5) 然后用快速幂加速就ok，下面是矩阵。。
+</p><p>0 0 0 1 
+</p><p>1 0 0 -2
+</p><p>0 1 0 2
+</p><p>0 0 1 2          
+</p><p>By SongS                                            
+</p>
+<hr />
+<p>很明显，这个题目也可以用基于连通性的状态压缩动态规划来做，有兴趣的可以练习练习。
+很诡异啊，我用URAL1519的AC代码搞，竟然在N=30全部爆0....
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit&amp;section=2" title="编辑段落：详细的题解">编辑</a>]</span> <span class="mw-headline" id=".E8.AF.A6.E7.BB.86.E7.9A.84.E9.A2.98.E8.A7.A3">详细的题解</span></h2>
+<p>精心制作了一份：————pty
+<a rel="nofollow" class="external free" href="http://www.docin.com/p-94253938.html">http://www.docin.com/p-94253938.html</a>
+</p>
+<h2><span class="editsection">[<a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit&amp;section=3" title="编辑段落：另外一种方法">编辑</a>]</span> <span class="mw-headline" id=".E5.8F.A6.E5.A4.96.E4.B8.80.E7.A7.8D.E6.96.B9.E6.B3.95">另外一种方法</span></h2>
+<p>见5.4.4题解，至少这个方法勉强能过吧
+</p><p>贴下运行时间
+</p>
+<pre>
+USER: ****** [y1y2t341]
+TASK: vans
+LANG: C
+
+Compiling...
+Compile: OK
+
+Executing...
+   Test 1: TEST OK [0.011 secs, 9644 KB]
+   Test 2: TEST OK [0.011 secs, 9644 KB]
+   Test 3: TEST OK [0.011 secs, 9644 KB]
+   Test 4: TEST OK [0.000 secs, 9644 KB]
+   Test 5: TEST OK [0.011 secs, 9644 KB]
+   Test 6: TEST OK [0.032 secs, 9644 KB]
+   Test 7: TEST OK [0.043 secs, 9644 KB]
+   Test 8: TEST OK [0.076 secs, 9644 KB]
+   Test 9: TEST OK [0.259 secs, 9644 KB]
+   Test 10: TEST OK [0.443 secs, 9644 KB]
+   Test 11: TEST OK [0.907 secs, 9644 KB]
+</pre>
+<p>还有，可以预处理转移方案，但是我还没加上去就AC了
+</p><p>路人m：没看到上面的“很明显，这个题目也可以用基于连通性的状态压缩动态规划来做，有兴趣的可以练习练习。 很诡异啊，我用URAL1519的AC代码搞，竟然在N=30全部爆0....”吗？
+</p><p>1
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 74/1000000
+Post-expand include size: 861/2097152 bytes
+Template argument size: 66/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:1176-0!*!0!!*!*!* and timestamp 20131219164646 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;oldid=33738">http://www.nocow.cn/index.php?title=USACO/vans&amp;oldid=33738</a>”</div>
+		<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%A1%B5%E9%9D%A2%E5%88%86%E7%B1%BB" title="特殊:页面分类">2个分类</a>: <ul><li><a href="http://www.nocow.cn/index.php/%E5%88%86%E7%B1%BB:%E7%89%88%E6%9D%83%E6%97%A0%E4%BA%89%E8%AE%AE%E7%9A%84%E5%86%85%E5%AE%B9" title="分类:版权无争议的内容">版权无争议的内容</a></li><li><a href="http://www.nocow.cn/index.php?title=%E5%88%86%E7%B1%BB:USACO_Chapter_6&amp;action=edit&amp;redlink=1" class="new" title="分类:USACO Chapter 6（尚未撰写）">USACO Chapter 6</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="vans.html" title="查看内容页面 [c]" accesskey="c">条目</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=%E8%AE%A8%E8%AE%BA:USACO/vans&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=USACO%2Fvans" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/USACO/vans" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/USACO/vans" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;oldid=33738" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过12,108次。</li>
+		<li id="credits">本页面由NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/183.4.76.99" title="特殊:用户贡献/183.4.76.99">183.4.76.99</a>于2013年11月3日 (星期日) 20:13做出最后修改。 在NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Yyt12345&amp;action=edit&amp;redlink=1" class="new" title="用户:Yyt12345（尚未撰写）">Yyt12345</a>、NOCOW匿名用户<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/121.18.71.171" title="特殊:用户贡献/121.18.71.171">121.18.71.171</a>、<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/220.168.98.225" title="特殊:用户贡献/220.168.98.225">220.168.98.225</a>和<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E8%B4%A1%E7%8C%AE/218.77.114.11" title="特殊:用户贡献/218.77.114.11">218.77.114.11</a>和<a href="http://www.nocow.cn/index.php?title=USACO/vans&amp;action=credits" title="USACO/vans">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.166 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

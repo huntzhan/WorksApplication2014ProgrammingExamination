@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr" class="client-nojs">
+<head>
+<title>Translate:USACO/Dynamic Programming - NOCOW</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.18.1" />
+<link rel="alternate" type="application/x-wiki" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;action=edit" />
+<link rel="edit" title="编辑" href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;action=edit" />
+<link rel="shortcut icon" href="http://www.nocow.cn/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.nocow.cn/opensearch_desc.php" title="NOCOW (zh-cn)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.nocow.cn/api.php?action=rsd" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="NOCOW的Atom" href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&amp;only=styles&amp;skin=monobook&amp;*" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=styles&amp;skin=monobook&amp;*" />
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: newnocow:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
+</style>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.config.set({"wgCanonicalNamespace": "Translate", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 102, "wgPageName": "Translate:USACO/Dynamic_Programming", "wgTitle": "USACO/Dynamic Programming", "wgCurRevisionId": 29413, "wgArticleId": 3385, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
+}
+</script><script>if(window.mw){
+	mw.loader.load(["mediawiki.page.startup"]);
+}
+</script>
+<style type="text/css">/*<![CDATA[*/
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "http://www.nocow.cn/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-102 ns-subject page-Translate_USACO_Dynamic_Programming action-view skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="localNotice" lang="zh-cn" dir="ltr"><p>为防止广告，目前nocow只有登录用户能够创建新页面。如要创建页面请先<a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95" title="特殊:用户登录">登录/注册</a>（新用户需要等待1个小时才能正常使用该功能）。
+</p></div></div>
+	<h1 id="firstHeading" class="firstHeading">Translate:USACO/Dynamic Programming</h1>
+	<div id="bodyContent">
+		<div id="siteSub">来自NOCOW</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">跳转到： <a href="Dynamic_Programming.html#column-one">导航</a>, <a href="Dynamic_Programming.html#searchInput">搜索</a></div>
+		<!-- start content -->
+<div lang="zh-cn" dir="ltr" class="mw-content-ltr"><p align="center"><strong>动态规划</strong></p>
+<p>引言
+</p><p>译 by 铭(特别感谢,这是她在N次死机中译出来的)
+</p><p><br />
+作为显著减少算法运行时间（从指数的到多项式的）的一种编程技巧，动态规划是一个令人困惑的名字。它的基本思想是努力避免重复解决相同问题或子问题。如下面的问题证明了它的威力：
+</p><p>已知10,000个整数的序列（整数大于0小于100,000），求最长递减子序列。注意，子序列不一定非得连续。
+</p><p>递归下降解法
+</p><p>解决此问题显然的方法是递归下降。只需找到循环和一个终止条件。看看下面的解法：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"> <span class="nu0">1</span> <span class="co2">#include &lt;stdio.h&gt;</span>
+&#160;
+&#160;
+ <span class="nu0">2</span>  <span class="kw4">long</span> n<span class="sy0">,</span> sequence<span class="br0">&#91;</span><span class="nu0">10000</span><span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="nu0">3</span>  main <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="nu0">4</span>       FILE <span class="sy0">*</span>in<span class="sy0">,</span> <span class="sy0">*</span>out<span class="sy0">;</span>                     
+ <span class="nu0">5</span>       <span class="kw4">int</span> i<span class="sy0">;</span>                             
+ <span class="nu0">6</span>       in <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>     
+ <span class="nu0">7</span>       out <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;output.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>   
+ <span class="nu0">8</span>       <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>             
+ <span class="nu0">9</span>       <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>sequence<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">10</span>       <span class="kw3">fprintf</span> <span class="br0">&#40;</span>out<span class="sy0">,</span> <span class="st0">&quot;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> check <span class="br0">&#40;</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">99999</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">11</span>       <span class="kw3">exit</span> <span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">12</span>  <span class="br0">&#125;</span>
+&#160;
+&#160;
+<span class="nu0">13</span>  check <span class="br0">&#40;</span>start<span class="sy0">,</span> nmatches<span class="sy0">,</span> smallest<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">14</span>      <span class="kw4">int</span> better<span class="sy0">,</span> i<span class="sy0">,</span> best<span class="sy0">=</span>nmatches<span class="sy0">;</span>
+<span class="nu0">15</span>      <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> start<span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">16</span>          <span class="kw1">if</span> <span class="br0">&#40;</span>sequence<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;</span> smallest<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">17</span>              better <span class="sy0">=</span> check <span class="br0">&#40;</span>i<span class="sy0">,</span> nmatches<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span> sequence<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">18</span>              <span class="kw1">if</span> <span class="br0">&#40;</span>better <span class="sy0">&gt;</span> best<span class="br0">&#41;</span> best <span class="sy0">=</span> better<span class="sy0">;</span>
+<span class="nu0">19</span>          <span class="br0">&#125;</span>
+<span class="nu0">20</span>      <span class="br0">&#125;</span>
+<span class="nu0">21</span>      <span class="kw1">return</span> best<span class="sy0">;</span>
+<span class="nu0">22</span>  <span class="br0">&#125;</span></pre></div></div>
+<p>1-9行和11-12行有疑义。它们创建了一些标准变量控制输入。秘密就在于第10行的递归程序‘check’。‘check’程序知道它应该从哪开始查寻较小的整数，当前最长序列的长度及最小整数。由于额外调用的开销，当“开始”不超过其合适的范围，它就会“自动地”终止。‘check’程序本身很简单。它沿着列表寻找比当前‘smallest’更小的整数。如果找到了，‘check’递归调用它本身来寻找更多的整数。
+</p><p>同递归解法随之而来的问题是运行时间：
+</p><p>N Seconds
+</p><p>60 0.130
+</p><p>70 0.360
+</p><p>80 2.390
+</p><p>90 13.190
+</p><p>由于序列的最大长度可能会接近6位数，这个解法是受限的。 
+</p><p>从末端开始
+</p><p>当利用向前或从前面开始的方法无法运作时，从相反的方面开始处理问题却可以收获良多。像这个例子可以先从序列的末端开始。
+另外，用一点儿存贮空间来交换执行效率也会获利很多。另一种程序可能会从序列的末尾开始，用一个辅助变量来记录当前最长递减（子）序列。
+考虑长度为1的序列从末端开始的情况。任意长度为1的序列都满足最长序列的所有标准。本例将‘bestsofar’数组标记为‘1’。
+考虑序列的最后两个元素。如果倒数第二个数字比最后那个大，那么‘bestsofar’为2（1+最后那个数字的‘bestsofar’）。否则为1。
+考虑在最后两个元素之前的任一元素。如果它比接近末尾的那个元素值大，它的‘bestsofar’元素至少比更接近末尾的较小元素的'bestsofar'大1。最后‘bestsofar’的最大值就是最长递减子序列的长度。
+这很明显是一个 O(N 2)算法。代码如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"> <span class="nu0">1</span>  <span class="co2">#include &lt;stdio.h&gt;</span>
+ <span class="nu0">2</span>  <span class="co2">#define MAXN 10000</span>
+ <span class="nu0">3</span>  main <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="nu0">4</span>      <span class="kw4">long</span> num<span class="br0">&#91;</span>MAXN<span class="br0">&#93;</span><span class="sy0">,</span> bestsofar<span class="br0">&#91;</span>MAXN<span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="nu0">5</span>      FILE <span class="sy0">*</span>in<span class="sy0">,</span> <span class="sy0">*</span>out<span class="sy0">;</span>
+ <span class="nu0">6</span>      <span class="kw4">long</span> n<span class="sy0">,</span> i<span class="sy0">,</span> j<span class="sy0">,</span> longest <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="nu0">7</span>      in <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="nu0">8</span>      out <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;output.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="nu0">9</span>      <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">10</span>      <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>num<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">11</span>      bestsofar<span class="br0">&#91;</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+<span class="nu0">12</span>      <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> n<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span> i <span class="sy0">&gt;=</span> <span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">--</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">13</span>          bestsofar<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+<span class="nu0">14</span>          <span class="kw1">for</span> <span class="br0">&#40;</span>j <span class="sy0">=</span> i<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">;</span> j <span class="sy0">&lt;</span> n<span class="sy0">;</span> j<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">15</span>              <span class="kw1">if</span> <span class="br0">&#40;</span>num<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy0">&lt;</span> num<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> bestsofar<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy0">&gt;=</span> bestsofar<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span>  <span class="br0">&#123;</span>
+<span class="nu0">16</span>                  bestsofar<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> bestsofar<span class="br0">&#91;</span>j<span class="br0">&#93;</span> <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span>
+<span class="nu0">17</span>                  <span class="kw1">if</span> <span class="br0">&#40;</span>bestsofar<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&gt;</span> longest<span class="br0">&#41;</span> longest <span class="sy0">=</span> bestsofar<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span>
+<span class="nu0">18</span>              <span class="br0">&#125;</span>
+<span class="nu0">19</span>          <span class="br0">&#125;</span>
+<span class="nu0">20</span>      <span class="br0">&#125;</span>
+<span class="nu0">21</span>      <span class="kw3">fprintf</span><span class="br0">&#40;</span>out<span class="sy0">,</span> <span class="st0">&quot;bestsofar is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> longest<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">22</span>      <span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">23</span>  <span class="br0">&#125;</span></pre></div></div>
+<p>同样地，11行建立了末尾条件。12-20行以‘i’循环从后计数和‘j’循环从前计数的巧妙直接的方法运行O（N2）算法。尽管比前面的那个算法多1行，运行时间却更佳：
+</p><p>N Secs
+</p><p>1000 0.080
+</p><p>2000 0.240
+</p><p>3000 0.550
+</p><p>4000 0.950
+</p><p>5000 1.450
+</p><p>6000 2.080
+</p><p>7000 2.990
+</p><p>8000 3.700
+</p><p>9000 4.700
+</p><p>10000 6.330
+</p><p>11000 7.350
+</p><p>当N=9000时，算法依就很慢(对于比赛来说)。
+内部循环（“寻找任意较小的数”）乞求用一些存储空间来交换时间。
+一组不同的值最好存在辅助数组中。数组‘bestrun’的指针是最长子序列的长度，其值是率领子序列的第一个（也被证明是最佳的）整数。执行该数组。当遇到一个整数比在这个数组中的值大时就意味着可能会产生一个新的更长的序列。新整数可能是一个新的“序列最佳首部”，也可能不是。看下面这个序列：
+</p><p>10 8 9 4 6 3
+</p><p>从右向左浏览（从后向前），遇到3之后‘bestrun’数组有且只有一个元素：
+</p><p>0：3
+</p><p>继续浏览，6比3大，‘bestrun’数组变成：
+</p><p>0:3
+</p><p>1:6
+</p><p>4不比6大，但它比3大，所以数组变为：
+</p><p>0:3
+</p><p>1:4
+</p><p>9使数组增大为：
+</p><p>0:3
+</p><p>1:4
+</p><p>2:9
+</p><p>8同4使数组变成：
+</p><p>0:3
+</p><p>1:4
+</p><p>2:8
+</p><p>l0再次扩增数组为：
+</p><p>0:3
+</p><p>1:4
+</p><p>2:8
+</p><p>3:10
+</p><p>于是结果出来了：4（数组中有4个元素）。
+</p><p>因为‘bestrun’数组可能比处理过的序列长度增长得慢，这个算法可能比上一个运行得要快。实际上是增速很多。代码如下：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"> <span class="nu0">1</span>  <span class="co2">#include &lt;stdio.h&gt;</span>
+ <span class="nu0">2</span>  <span class="co2">#define MAXN 200000</span>
+ <span class="nu0">3</span>  main <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+ <span class="nu0">4</span>      FILE <span class="sy0">*</span>in<span class="sy0">,</span> <span class="sy0">*</span>out<span class="sy0">;</span>
+ <span class="nu0">5</span>      <span class="kw4">long</span> num<span class="br0">&#91;</span>MAXN<span class="br0">&#93;</span><span class="sy0">,</span> bestrun<span class="br0">&#91;</span>MAXN<span class="br0">&#93;</span><span class="sy0">;</span>
+ <span class="nu0">6</span>      <span class="kw4">long</span> n<span class="sy0">,</span> i<span class="sy0">,</span> j<span class="sy0">,</span> highestrun <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+ <span class="nu0">7</span>      in <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="nu0">8</span>      out <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;output.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+ <span class="nu0">9</span>      <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">10</span>      <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="kw3">fscanf</span><span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%ld&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>num<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">11</span>      bestrun<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">=</span> num<span class="br0">&#91;</span>n<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">;</span>
+<span class="nu0">12</span>      highestrun <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+<span class="nu0">13</span>      <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> n<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span> i <span class="sy0">&gt;=</span> <span class="nu0">0</span><span class="sy0">;</span> i<span class="sy0">--</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">14</span>          <span class="kw1">if</span> <span class="br0">&#40;</span>num<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;</span> bestrun<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">15</span>            bestrun<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">=</span> num<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span>
+<span class="nu0">16</span>            <span class="kw1">continue</span><span class="sy0">;</span>
+<span class="nu0">17</span>        <span class="br0">&#125;</span>
+<span class="nu0">18</span>        <span class="kw1">for</span> <span class="br0">&#40;</span>j <span class="sy0">=</span> highestrun <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">;</span> j <span class="sy0">&gt;=</span> <span class="nu0">0</span><span class="sy0">;</span> j<span class="sy0">--</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">19</span>            <span class="kw1">if</span> <span class="br0">&#40;</span>num<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&gt;</span> bestrun<span class="br0">&#91;</span>j<span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+<span class="nu0">20</span>                <span class="kw1">if</span> <span class="br0">&#40;</span>j <span class="sy0">==</span> highestrun <span class="sy0">-</span> <span class="nu0">1</span> <span class="sy0">||</span> num<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">&lt;</span> bestrun<span class="br0">&#91;</span>j<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="br0">&#123;</span>
+<span class="nu0">21</span>                    bestrun<span class="br0">&#91;</span><span class="sy0">++</span>j<span class="br0">&#93;</span> <span class="sy0">=</span> num<span class="br0">&#91;</span>i<span class="br0">&#93;</span><span class="sy0">;</span>
+<span class="nu0">22</span>                    <span class="kw1">if</span> <span class="br0">&#40;</span>j <span class="sy0">==</span> highestrun<span class="br0">&#41;</span> highestrun<span class="sy0">++;</span>
+<span class="nu0">23</span>                    <span class="kw2">break</span><span class="sy0">;</span>
+<span class="nu0">24</span>                <span class="br0">&#125;</span>
+<span class="nu0">25</span>            <span class="br0">&#125;</span>
+<span class="nu0">26</span>        <span class="br0">&#125;</span>
+<span class="nu0">27</span>      <span class="br0">&#125;</span>
+<span class="nu0">28</span>      <span class="kw3">printf</span><span class="br0">&#40;</span><span class="st0">&quot;best is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> highestrun<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">29</span>      <span class="kw3">exit</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="nu0">30</span>  <span class="br0">&#125;</span></pre></div></div>
+<p><br />
+同样地，11-12行是初始化。14-17行是对一个新的最小的元素优化。它们可以放在26行之后。通常，这些行只能影响输入以最坏方式分类的这种最糟糕情况的算法。
+18-26行查找‘bestrun’列表并含括了所有异常和棘手的情况（大于第一个元素？在中间插入？数组溢出？）。不用背诵，你应该可以马上将该代码写出来。速度很重要。下表比较了本算法和上一个算法，加看出当N变成5位数时本算法仍工作得不错：
+</p><p>N orig Improved
+</p><p>1000 0.080 0.030
+</p><p>2000 0.240 0.030
+</p><p>3000 0.550 0.050
+</p><p>4000 0.950 0.060
+</p><p>5000 1.450 0.080
+</p><p>6000 2.080 0.090
+</p><p>7000 2.990 0.110
+</p><p>8000 3.700 0.130
+</p><p>9000 4.700 0.140
+</p><p>10000 6.330 0.160
+</p><p>11000 7.350 0.170
+</p><p>20000 0.290
+</p><p>40000 0.570
+</p><p>60000 &amp;&#160;;nbs p; 0.910
+</p><p>80000 1.290
+</p><p>100000 2.220
+</p><p>Marcin Mika指出你可以将此算法如下化简：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#define SIZE 200000</span>
+<span class="co2">#define MAX(x,y) ((x)&gt;(y)?(x):(y))</span>
+&#160;
+<span class="kw4">int</span>     best<span class="br0">&#91;</span>SIZE<span class="br0">&#93;</span><span class="sy0">;</span>        <span class="co1">// best[] holds values of the optimal sub-sequence</span>
+&#160;
+<span class="kw4">int</span> 
+main <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    FILE <span class="sy0">*</span>in  <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    FILE <span class="sy0">*</span>out <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;output.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;w&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw4">int</span>     i<span class="sy0">,</span> n<span class="sy0">,</span> k<span class="sy0">,</span> x<span class="sy0">,</span> sol <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+&#160;
+    <span class="kw3">fscanf</span> <span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>	<span class="co1">// N = how many integers to read in</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+	best<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+	<span class="kw3">fscanf</span> <span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+	<span class="kw1">for</span> <span class="br0">&#40;</span>k <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">&gt;</span> x<span class="sy0">;</span> k<span class="sy0">++</span><span class="br0">&#41;</span>
+	    <span class="sy0">;</span>
+	best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">=</span> x<span class="sy0">;</span>
+	sol <span class="sy0">=</span> MAX <span class="br0">&#40;</span>sol<span class="sy0">,</span> k <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;best is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sol<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div>
+<p>为了不溢出，Tyler Lu指出：
+目前存在的算法使用线性查找来寻找合适的位置在‘bestrun’数组中插入一个整数。但是，因为辅助数组已分好类，我们可以用二叉查找（O（logN））。这样对于大型序列我们的运行时间就降下来了。下面是将上面代码修改后的解法：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#define SIZE 200000</span>
+<span class="co2">#define MAX(x,y) ((x)&gt;(y)?(x):(y))</span>
+&#160;
+<span class="kw4">int</span>     best<span class="br0">&#91;</span>SIZE<span class="br0">&#93;</span><span class="sy0">;</span>        <span class="co1">// best[] holds values of the optimal sub-sequence</span>
+&#160;
+<span class="kw4">int</span>
+main <span class="br0">&#40;</span><span class="kw4">void</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    FILE <span class="sy0">*</span>in  <span class="sy0">=</span> <span class="kw3">fopen</span> <span class="br0">&#40;</span><span class="st0">&quot;input.txt&quot;</span><span class="sy0">,</span> <span class="st0">&quot;r&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw4">int</span> i<span class="sy0">,</span> n<span class="sy0">,</span> k<span class="sy0">,</span> x<span class="sy0">,</span> sol<span class="sy0">;</span>
+    <span class="kw4">int</span> low<span class="sy0">,</span> high<span class="sy0">;</span>
+&#160;
+    <span class="kw3">fscanf</span> <span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>n<span class="br0">&#41;</span><span class="sy0">;</span>	<span class="co1">// N = how many integers to read in</span>
+    <span class="co1">// read in the first integer</span>
+    <span class="kw3">fscanf</span> <span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>best<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    sol <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+    <span class="kw1">for</span> <span class="br0">&#40;</span>i <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> n<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        best<span class="br0">&#91;</span>i<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+    	  <span class="kw3">fscanf</span> <span class="br0">&#40;</span>in<span class="sy0">,</span> <span class="st0">&quot;%d&quot;</span><span class="sy0">,</span> <span class="sy0">&amp;</span>x<span class="br0">&#41;</span><span class="sy0">;</span>
+&#160;
+        <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy0">&gt;=</span> best<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+          k <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+          best<span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span> <span class="sy0">=</span> x<span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+        <span class="kw1">else</span> <span class="br0">&#123;</span>
+          <span class="co1">// use binary search instead</span>
+          low <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+          high <span class="sy0">=</span> sol<span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;</span>
+          <span class="kw1">for</span><span class="br0">&#40;</span><span class="sy0">;;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            k <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="br0">&#40;</span>low <span class="sy0">+</span> high<span class="br0">&#41;</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">;</span>
+            <span class="co1">// go lower in the array</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy0">&gt;</span> best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> x <span class="sy0">&gt;</span> best<span class="br0">&#91;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              high <span class="sy0">=</span> k <span class="sy0">-</span> <span class="nu0">1</span><span class="sy0">;</span>
+              <span class="kw1">continue</span><span class="sy0">;</span>
+            <span class="br0">&#125;</span>
+            <span class="co1">// go higher in the array</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy0">&lt;</span> best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> x <span class="sy0">&lt;</span> best<span class="br0">&#91;</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+              low <span class="sy0">=</span> k <span class="sy0">+</span> <span class="nu0">1</span><span class="sy0">;</span>
+              <span class="kw1">continue</span><span class="sy0">;</span>
+            <span class="br0">&#125;</span>
+            <span class="co1">// check if right spot</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy0">&gt;</span> best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> x <span class="sy0">&lt;</span> best<span class="br0">&#91;</span>k<span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+              best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">=</span> x<span class="sy0">;</span>
+            <span class="kw1">if</span><span class="br0">&#40;</span>x <span class="sy0">&lt;</span> best<span class="br0">&#91;</span>k<span class="br0">&#93;</span> <span class="sy0">&amp;&amp;</span> x <span class="sy0">&gt;</span> best<span class="br0">&#91;</span>k<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+              best<span class="br0">&#91;</span><span class="sy0">++</span>k<span class="br0">&#93;</span> <span class="sy0">=</span> x<span class="sy0">;</span>
+            <span class="kw2">break</span><span class="sy0">;</span>
+          <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+	      sol <span class="sy0">=</span> MAX <span class="br0">&#40;</span>sol<span class="sy0">,</span> k <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="kw3">printf</span> <span class="br0">&#40;</span><span class="st0">&quot;best is&#160;%d<span class="es1">\n</span>&quot;</span><span class="sy0">,</span> sol<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw3">fclose</span><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy0">;</span>
+<span class="br0">&#125;</span></pre></div></div> 
+<p>摘要
+</p><p>这些程序证明了动态规划背后的主要构想：在先前找到的算法的基础上建立更大的算法。这种逐步建立的解法通常能产生速度非常快的程序。
+由于前面编程的挑战，主要的子问题是：在已知元素的右侧数字中找到最大的递减子序列（及其第一个值）。
+这种方法可解决被称为“一维的”一类问题。
+</p><p>二维动态规划
+</p><p>有时可能会创建如此的多维问题：已知两个整数序列，求二者的最长公共子序列。
+这里，子问题就是较小序列（原来子序列末端部分）的最长公共子序列。首先，如果两序列之中的一个序列只含有一个元素，那解法就不重要了（或者所求元素在另一个序列中或者不在）。
+考虑在第一个序列最后i个元素和在第二个元素最后j个元素中找到最长公共子序列的问题。有两种可能。第一个末尾部分的首元素可能在最大公共子序列中也可能不在。不包含第一个末尾部分首元素的最长公共序列就是第一个序列最后i-1个元素和第二个序列最后j个无素的最长公共子序列。第二个序列的末尾部分中某元素同第一个序列末尾部分的首元素一样且能找到在那些匹配元素之后元素的最长公共子序列，这导致了第二种可能。
+</p><p>伪代码
+</p><p>下面是本算法的伪代码：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="co2"># the tail of the second sequence is empty</span>
+<span class="nu0">1</span> <span class="kw1">for</span> element <span class="sy0">=</span> <span class="nu0">1</span> to length1
+<span class="nu0">2</span> length<span class="br0">&#91;</span>element<span class="sy0">,</span> length2<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">0</span>
+&#160;
+&#160;
+<span class="co2"># the tail of the first sequence has one element</span>
+<span class="nu0">3</span> matchelem <span class="sy0">=</span> <span class="nu0">0</span>
+<span class="nu0">4</span> <span class="kw1">for</span> element <span class="sy0">=</span> length2 to <span class="nu0">1</span>
+<span class="nu0">5</span> <span class="kw1">if</span> list1<span class="br0">&#91;</span>length1<span class="br0">&#93;</span> <span class="sy0">=</span> list2<span class="br0">&#91;</span>element<span class="br0">&#93;</span>
+<span class="nu0">6</span> matchelem <span class="sy0">=</span> <span class="nu0">1</span>
+<span class="nu0">7</span> <span class="kw1">if</span> matchelem <span class="sy0">=</span> <span class="nu0">0</span> then
+<span class="nu0">8</span> length<span class="br0">&#91;</span>length1<span class="sy0">,</span>element<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">0</span>
+<span class="nu0">9</span> <span class="kw1">else</span>
+<span class="nu0">10</span> length<span class="br0">&#91;</span>length1<span class="sy0">,</span>e lement<span class="br0">&#93;</span> <span class="sy0">=</span> <span class="nu0">1</span>
+&#160;
+&#160;
+<span class="co2"># loop over the beginning of the tail of the first sequence</span>
+<span class="nu0">11</span> <span class="kw1">for</span> loc <span class="sy0">=</span> length1<span class="sy0">-</span><span class="nu0">1</span> to <span class="nu0">1</span>
+<span class="nu0">12</span> maxlen <span class="sy0">=</span> <span class="nu0">0</span>
+<span class="nu0">13</span> <span class="kw1">for</span> element <span class="sy0">=</span> length2 to <span class="nu0">1</span>
+<span class="co2"># longest common subsequence doesn't include first element</span>
+<span class="nu0">14</span> <span class="kw1">if</span> length<span class="br0">&#91;</span>loc<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>element<span class="br0">&#93;</span> <span class="sy0">&gt;</span> maxlen
+<span class="nu0">15</span> maxlen <span class="sy0">=</span> length<span class="br0">&#91;</span>loc<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>element<span class="br0">&#93;</span>
+<span class="co2"># longest common subsequence includes first element</span>
+<span class="nu0">16</span> <span class="kw1">if</span> list1<span class="br0">&#91;</span>loc<span class="br0">&#93;</span> <span class="sy0">=</span> list2<span class="br0">&#91;</span>element<span class="br0">&#93;</span> 
+<span class="nu0">17</span> <span class="sy0">&amp;</span>nbs p<span class="sy0">;</span> <span class="sy0">;</span> length<span class="br0">&#91;</span>loc<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>element<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">&gt;</span> maxlen
+<span class="nu0">18</span> maxlen <span class="sy0">=</span> length<span class="br0">&#91;</span>loc<span class="sy0">,</span>element<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span> <span class="sy0">+</span> <span class="nu0">1</span>
+<span class="nu0">19</span> length<span class="br0">&#91;</span>loc<span class="sy0">,</span>element<span class="br0">&#93;</span> <span class="sy0">=</span> maxlen</pre></div></div> 
+<p>这个程序的运行时间是O（NxM），N和M分别为序列的长度。
+本算法并不直接计算最长公共子序列。但是，如果给出长度矩阵，你就可以很快地确定子序列了：
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="nu0">1</span> location1 <span class="sy0">=</span> <span class="nu0">1</span>
+<span class="nu0">2</span> location2 <span class="sy0">=</span> <span class="nu0">1</span>
+&#160;
+&#160;
+<span class="nu0">3</span> <span class="kw1">while</span> <span class="br0">&#40;</span>length<span class="br0">&#91;</span>location1<span class="sy0">,</span>location2<span class="br0">&#93;</span> <span class="sy0">!=</span> <span class="nu0">0</span><span class="br0">&#41;</span>
+<span class="nu0">4</span> flag <span class="sy0">=</span> False
+<span class="nu0">5</span> <span class="kw1">for</span> element <span class="sy0">=</span> location2 to length2
+<span class="nu0">6</span> <span class="kw1">if</span> <span class="br0">&#40;</span>list1<span class="br0">&#91;</span>location1<span class="br0">&#93;</span> <span class="sy0">=</span> list2<span class="br0">&#91;</span>element<span class="br0">&#93;</span> AND
+<span class="nu0">7</span> length<span class="br0">&#91;</span>location1<span class="sy0">+</span><span class="nu0">1</span><span class="sy0">,</span>element<span class="sy0">+</span><span class="nu0">1</span><span class="br0">&#93;</span><span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">=</span> length<span class="br0">&#91;</span>location1<span class="sy0">,</span>location2<span class="br0">&#93;</span>
+<span class="nu0">8</span> output <span class="br0">&#40;</span>list1<span class="br0">&#91;</span>location1<span class="br0">&#93;</span><span class="sy0">,</span>list2<span class="br0">&#91;</span>element<span class="br0">&#93;</span><span class="br0">&#41;</span>
+<span class="nu0">9</span> location2 <span class="sy0">=</span> element <span class="sy0">+</span> <span class="nu0">1</span>
+<span class="nu0">10</span> flag <span class="sy0">=</span> True
+<span class="nu0">11</span> <span class="kw2">break</span> <span class="kw1">for</span>
+<span class="nu0">12</span> location1 <span class="sy0">=</span> location1 <span class="sy0">+</span> <span class="nu0">1</span></pre></div></div> 
+<p>动态规划的技巧就是找到子问题来解决它。有时它需要多个参数：
+</p><p>双调序列是指第一部分递增且第二部分递减的序列。求一整数列的最长双调序列（双调可以是先增再减也可以是先减再增，但本问题只考虑先增加再减少的情况）。
+这个问题的子问题是最长双调序列和序列前缀的最长递减序列。
+</p><p>有时子问题被很好的隐藏起来了：
+你刚赢得一场比赛，奖励是一份免费到加拿大的旅游。你必须乘飞机游玩，城市从东到西依次排列。另外，根据规则，你必须从最西侧的城市开始一直向东游览，直到你到达最东边的城市，再一直向西飞回到起点。另外每个城市参观一次（当然起点城市除外）。
+已知城市顺序和乘坐的航班（你只能在某些城市间飞，因为你可以从A城飞到B城不意味着你可以向其它方向下），求你最多能参观多少个城市。
+若使用动态规划应注意的是你的位置和你的方向，但重要的是你采用的路径（因为在回程时你不能再次参观某个己参观过的城市），而且路径数不能太多，否则将无法解出（并存贮）所有子问题的答案。
+但是，如果不是寻找上面描述的路径，而是用另一不同的方式，那么状态数将大大减少。想像一下，有两个旅行者从最西侧的城市出发。两旅行者轮流向东走，而旅行者走的下一站总是最西侧的城市，但是两旅行者不能在同一个城市，除非他们在第一个或最后一个城市。但是，其中一个旅行者只允许使用“相反的班次”，即他可以从A城飞到B城当且仅当有一架从B城飞往A城的航班飞机。
+从两个旅行者的路径中找到可以组合成一个环程旅行（用一个旅行者的正常路径飞到最东边的城市，然后再用另一个旅行者相反的路径返回最西侧的城市）并不太困难。而当旅行者x走了，你知道旅行者y除了他现在所在的城市外没参观过任何一个旅行者x东边的城市，否则x在y西侧时旅行者y已经走过一次了。于是两旅行者的路径就无法接在一起了。此算法能产生参观城市最大值的原因留作练习。
+</p><p>通过动态规划将问题求解
+</p><p>一般地，动态规划解法应用在那些可能会花费指数级时间的算法上，因此如果有界限问题在任意但输入较少的情况下太大以至于不能以指数时间级运行时，可考虑使用动态规划法。基本上，任何问题你只要考虑到用递归下降的方法，如果输入不超过30就可以试试是否有动态规划的解法存在。
+</p><p>寻找子问题
+</p><p>如上所述，找到子问题是进行动态规划的重要一步。你的目的是用少量的数据，如一个整数、一对整数、一个布尔数和一个整数等等，完整地描述出算法的状态。
+若不失败，子问题会是一个问题的“尾端”。也就是说，有一个进行递归下降的方法这样每一步你只能处理一小部分数据。举个例子，在飞行旅游的那道题中，你可从使用递归下降的方法找到完整的路径，那也意味着你得记住你的位置和你已参观过的城市（记城列表或布尔数组的形式）。这样动态规划要做的就太多了。但是在你向东飞的一对城市问使用递归给已知常数是需要递归的非常小的一部分数据。
+如果路线很重要，除非路径很短，你不要使用动态规划。但是正如飞行旅行问题，路线也许不重要，就看你怎么看了。
+</p><p>示例题目
+</p><p>多边形游戏《1998 IOI》
+</p><p>想像一个均匀的N边形。结点处放入数字，边放入操作符‘+’或‘x’。第一次去掉一条边。然后，合并边，即计算出操作符两边结点的值，将其代替原来的边和结点，举例如下：
+</p><p>...-- 3 --+-- 5 --*-- 7 --...
+</p><p>...----- 8 ----*----- 7 --...
+</p><p>...-------- 56 -----------...
+</p><p><br />
+已知一作好标记的N边形，求最后计算出的最大值。
+</p><p>子集和《春季98 USACO》
+</p><p>从1到N（N在1到39之间）的连续整数的集合，可将其分成和相等的两个集合，例如，若N=3，将集合《1，2，3》分成《3》和《1，2》两个子集合且其和相等。这计为单独划分（如，反序计为同样的划分，并不增加划分数）。
+若N=7，有4种方法将集合{1, 2, 3, ... 7} 分成和相等的两部分：
+</p><p>{1,6,7} - {2,3,4,5} 
+</p><p>{2,5,7} - {1,3,4,6} 
+</p><p>{3,4,7} - {1,2,5,6} 
+</p><p>{1,2,4,7} - {3,5,6} 
+</p><p><br />
+已知N，打印将从1到N个整数的集合分成和相等的两个集合的各种方法。若没有则打印0。
+</p><p>数字游戏《IOI96 ，maybe》
+</p><p>已知不超过100个整数（-32000_32000）列，两个对手依次轮流从数列的最左边或最后边去掉一个数。游戏到最后每个玩家的分是他去掉的数的和。已知一数列，假设第二位玩家玩得非常好，求第一位玩家赢时的最高分。
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 23/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key newnocow:pcache:idhash:3385-0!*!*!*!*!*!* and timestamp 20131219164520 -->
+</div><div class="printfooter">
+来自“<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;oldid=29413">http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;oldid=29413</a>”</div>
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>查看</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-translate" class="selected"><a href="Dynamic_Programming.html">翻译</a></li>
+				<li id="ca-talk" class="new"><a href="http://www.nocow.cn/index.php?title=Translate_Talk:USACO/Dynamic_Programming&amp;action=edit&amp;redlink=1" title="关于内容页面的讨论 [t]" accesskey="t">讨论</a></li>
+				<li id="ca-edit"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;action=edit" title="你可以编辑本页。请在保存前预览一下。 [e]" accesskey="e">编辑</a></li>
+				<li id="ca-history"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;action=history" title="本页面的早前修订版本 [h]" accesskey="h">历史</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>个人工具</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://www.nocow.cn/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=Translate%3AUSACO%2FDynamic+Programming" title="我们希望您可以登入，但不强求 [o]" accesskey="o">登录/创建账户</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a title="访问首页" style="background-image: url(http://www.nocow.cn/skins/common/images/wiki.png);" href="../�%2596页.html"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>导航</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage"><a href="../�%2596页.html" title="访问首页 [z]" accesskey="z">首页</a></li>
+				<li id="n-portal"><a href="http://www.nocow.cn/index.php/NOCOW:%E7%A4%BE%E5%8C%BA%E4%B8%BB%E9%A1%B5" title="关于本项目，你可以做什么，在哪里找到你需要的事物">社区主页</a></li>
+				<li id="n-currentevents"><a href="http://www.nocow.cn/index.php/NOCOW:NOCOW%E8%BF%91%E6%9C%9F%E5%8F%91%E5%B1%95%E8%AE%A1%E5%88%92" title="查看当前事件的背景信息">当前事件</a></li>
+				<li id="n-recentchanges"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9" title="本wiki的最近更改列表 [r]" accesskey="r">最近更改</a></li>
+				<li id="n-randompage"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" title="随机进入一个页面 [x]" accesskey="x">随机页面</a></li>
+				<li id="n-help"><a href="http://www.nocow.cn/index.php/%E5%B8%AE%E5%8A%A9:%E7%9B%AE%E5%BD%95" title="寻求帮助的地方">使用帮助</a></li>
+				<li id="n-sitemap-text"><a href="http://www.nocow.cn/index.php/NOCOW%E5%9C%B0%E5%9B%BE">NOCOW地图</a></li>
+				<li id="n-sandbox-text"><a href="http://www.nocow.cn/index.php/NOCOW:%E6%96%B0%E6%89%8B%E8%AF%95%E7%BB%83%E5%9C%BA">新手试练场</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">搜索</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://www.nocow.cn/index.php" id="searchform">
+				<input type='hidden' name="title" value="特殊:搜索"/>
+				<input type="search" name="search" title="在NOCOW中搜索 [f]" accesskey="f" id="searchInput" />
+				<input type="submit" name="go" value="进入" title="如果相同的标题存在的话便直接前往该页面" id="searchGoButton" class="searchButton" />&#160;
+				<input type="submit" name="fulltext" value="搜索" title="搜索含这些文字的页面" id="mw-searchButton" class="searchButton" />
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>工具箱</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/Translate:USACO/Dynamic_Programming" title="所有链入本页的wiki页面列表 [j]" accesskey="j">链入页面</a></li>
+				<li id="t-recentchangeslinked"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/Translate:USACO/Dynamic_Programming" title="本页链入的页面的最近更改 [k]" accesskey="k">链出更改</a></li>
+				<li id="t-specialpages"><a href="http://www.nocow.cn/index.php/%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面列表 [q]" accesskey="q">特殊页面</a></li>
+				<li><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;printable=yes" rel="alternate">可打印版</a></li>
+				<li id="t-permalink"><a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;oldid=29413" title="本页面该修订版本的永久链接">永久链接</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="http://www.nocow.cn/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="http://www.nocow.cn/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+	</div>
+	<ul id="f-list">
+		<li id="viewcount">此页面已被浏览过8,490次。</li>
+		<li id="credits">本页面由NOCOW用户<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Cotton" title="用户:Cotton">Cotton</a>于2012年1月23日 (星期一) 19:33做出最后修改。 在<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:%E5%9C%A3%E5%A8%81%E5%BB%89" title="用户:圣威廉">刘源</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:Gnaggnoyil" title="用户:Gnaggnoyil">SuperBrother</a>、NOCOW用户<a href="http://www.nocow.cn/index.php?title=%E7%94%A8%E6%88%B7:Hustminrui&amp;action=edit&amp;redlink=1" class="new" title="用户:Hustminrui（尚未撰写）">Hustminrui</a>和<a href="http://www.nocow.cn/index.php/%E7%94%A8%E6%88%B7:PhoneBot" title="用户:PhoneBot">PhoneBot</a>和<a href="http://www.nocow.cn/index.php?title=Translate:USACO/Dynamic_Programming&amp;action=credits" title="Translate:USACO/Dynamic Programming">其他</a>的工作基础上。</li>
+		<li id="copyright">本站全部文字内容使用<a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>授权。</li>
+		<li id="privacy"><a href="http://www.nocow.cn/index.php/NOCOW:%E9%9A%90%E7%A7%81%E6%9D%83%E6%94%BF%E7%AD%96" title="NOCOW:隐私权政策">隐私权政策</a></li>
+		<li id="about"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%B3%E4%BA%8E" title="NOCOW:关于">关于NOCOW</a></li>
+		<li id="disclaimer"><a href="http://www.nocow.cn/index.php/NOCOW:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="NOCOW:免责声明">免责声明</a></li>
+		<li id="miibeian"><a href="http://www.miibeian.gov.cn" rel="nofollow">陕ICP备09005692号</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
+}
+</script>
+<script src="http://www.nocow.cn/load.php?debug=false&amp;lang=zh-cn&amp;modules=site&amp;only=scripts&amp;skin=monobook&amp;*"></script>
+<script>if(window.mw){
+	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
+	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":true,"searchNs101":false,"searchNs102":true,"searchNs103":false,"searchNs104":false,"searchNs105":false,"searchNs106":true,"searchNs107":false,"searchNs108":true,"searchNs109":false,"searchNs110":true,"searchNs111":false,"searchNs112":true,"searchNs113":false,"searchNs114":true,"searchNs115":true,"searchNs116":true,"searchNs117":false,"searchNs118":true,"searchNs119":false,"searchNs120":true,"searchNs121":false,"searchNs122":true,"searchNs123":false,"searchNs124":true,"searchNs125":false,"searchNs126":true,
+	"searchNs127":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
+	
+	/* cache key: newnocow:resourceloader:filter:minify-js:4:9d09b6dc2353a89934e2338dc02930d3 */
+}
+</script><!-- Served in 0.521 secs. --><!-- google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8008676-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script></body></html>

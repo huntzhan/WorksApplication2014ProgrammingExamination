@@ -1,0 +1,1 @@
+wget --mirror --convert-links --no-parent --page-requisites --adjust-extension --accept-regex='http://www.nocow.cn/index.php/Translate:USACO/*|http://www.nocow.cn/index.php/USACO/*|http://www.nocow.cn/index.php/Code:USACO/*|http://www.nocow.cn/index.php/USACO_Training' http://www.nocow.cn/index.php/%E9%A6%96%E9%A1%B5
