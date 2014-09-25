@@ -59,7 +59,9 @@ using DistanceMatrix = vector<vector<int>>;
 // Coordinate of symbols. Given that "Coordinate example", "example.first"
 // represents the row index and "example.second" represents the column index.
 using Coordinate = pair<int, int>;
-using SubsetIndexPair = pair<string, int>;
+
+using GroupIndexValueMapping = unordered_map<int, int>;
+using GroupValue = unordered_map<string, GroupIndexValueMapping>;
 
 
 const char kStartSymbol = 'S';
@@ -78,19 +80,6 @@ struct hash<Coordinate> {
   size_t operator()(const Coordinate &target) const {
     // XOR of hash results.
     return hash<int>()(target.first) ^ hash<int>()(target.second);
-  }
-};
-
-template <>
-struct hash<SubsetIndexPair> {
-  using result_type = size_t;
-  using argument_type = SubsetIndexPair;
-  // call operator.
-  size_t operator()(const SubsetIndexPair &target) const {
-    // XOR of hash results.
-    using BitsetIn32Bits = bitset<32>;
-    BitsetIn32Bits temp(target.first);
-    return hash<BitsetIn32Bits>()(temp) ^ hash<int>()(target.second);
   }
 };
 
@@ -329,7 +318,7 @@ class TSPCalculator {
   void UpdateMinLengths(
       const string &checkpoint_set,
       const DistanceMatrix &distance_matrix,
-      unordered_map<SubsetIndexPair, int> *min_lengths_ptr);
+      GroupValue *min_lengths_ptr);
 };
 
 vector<string> TSPCalculator::GenerateSetsOfCheckpoints(
@@ -348,7 +337,7 @@ vector<string> TSPCalculator::GenerateSetsOfCheckpoints(
 void TSPCalculator::UpdateMinLengths(
     const string &checkpoint_set,
     const DistanceMatrix &distance_matrix,
-    unordered_map<SubsetIndexPair, int> *min_lengths_ptr) {
+    GroupValue *min_lengths_ptr) {
 
   vector<int> indices;
   for (int index = 0; index != checkpoint_set.size(); ++index) {
@@ -361,21 +350,23 @@ void TSPCalculator::UpdateMinLengths(
     string previous_subset(checkpoint_set);
     previous_subset[index] = '0';
 
-    // init total_min to max value.
-    int total_min = numeric_limits<int>::max();
+    // init total_minimum to max value.
+    int total_minimum = numeric_limits<int>::max();
     // loop over the rest of indices.
     for (const int &other_index : indices) {
       if (other_index == index) { continue; }
-      auto subset_index_pair = SubsetIndexPair(previous_subset, other_index);
-      int current_length = (*min_lengths_ptr)[subset_index_pair]
+      // access previous result.
+      const int &previous_length =
+          (*min_lengths_ptr)[previous_subset][other_index];
+      // calculate current length.
+      int current_length = previous_length
                            + distance_matrix[index][other_index];
-      if (current_length < total_min) {
-        total_min = current_length;
+      if (current_length < total_minimum) {
+        total_minimum = current_length;
       }
     }
     // update min_lengths.
-    auto subset_index_pair = SubsetIndexPair(checkpoint_set, index);
-    (*min_lengths_ptr)[subset_index_pair] = total_min;
+    (*min_lengths_ptr)[checkpoint_set][index] = total_minimum;
   }
 }
 
@@ -387,14 +378,13 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   const int checkpoint_size = dimension - 2;
 
   // init.
-  unordered_map<SubsetIndexPair, int> min_lengths;
+  GroupValue min_lengths;
   auto init_sets = GenerateSetsOfCheckpoints(checkpoint_size, 1);
   for (int checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     // C({j}, j) := 1;
     const string &init_set = init_sets[checkpoint_index];
-    const auto subset_index_pair = SubsetIndexPair(init_set, checkpoint_index);
-    min_lengths[subset_index_pair] =
+    min_lengths[init_set][checkpoint_index] =
         distance_matrix[source_index][checkpoint_index];
   }
 
@@ -414,8 +404,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 
   for (int checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
-    auto subset_index_pair = SubsetIndexPair(all_checkpoints, checkpoint_index);
-    int current_length = min_lengths[subset_index_pair]
+    int current_length = min_lengths[all_checkpoints][checkpoint_index]
                          + distance_matrix[checkpoint_index][goal_index];
     if (current_length < total_minimum) {
       total_minimum = current_length;
