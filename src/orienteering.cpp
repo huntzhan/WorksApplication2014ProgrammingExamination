@@ -72,6 +72,70 @@ const char kCheckpointSymbol = '@';
 const char kCloseBlockSymbol = '#';
 
 
+// ============================================================================
+// Declearation of classes.
+// ============================================================================
+class InputHandler {
+ public:
+  void ReadFromInputStream(istream *in_ptr);
+
+  vector<string> orienteering_map_;
+  Coordinate start_;
+  Coordinate goal_;
+  vector<Coordinate> checkpoints_;
+
+ private:
+  void RecordCoordinate(const int &row_index, const int &column_index);
+};
+
+
+class DistanceMatrixGenerator {
+ public:
+  bool Generate(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets);
+
+  DistanceMatrix distance_matrix_;
+
+ private:
+  bool FindShortestPathFromSingleSource(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets,
+      const int &source_index);
+
+  template <typename Element>
+  vector<vector<Element>> InitMatrix(
+      const int &row_size, const int &column_size,
+      const Element &default_value);
+
+  bool IsValid(
+      const Coordinate &coordinate,
+      const int &row_size, const int &column_size);
+
+  vector<Coordinate> NextCoordinates(
+      const Coordinate &coordinate,
+      const int &row_size, const int &column_size);
+};
+
+
+class TSPCalculator {
+ public:
+  int CalculateMinLength(const DistanceMatrix &distance_matrix);
+
+ private:
+  vector<StrictBitset> GenerateSetsOfCheckpoints(
+      const int &length, const int &owned_elements);
+
+  void UpdateMinLengths(
+      const StrictBitset &checkpoint_set,
+      const DistanceMatrix &distance_matrix,
+      GroupValue *min_lengths_ptr);
+};
+
+
+// ============================================================================
+// Definition of classes.
+// ============================================================================
 namespace std {
 
 template <>
@@ -87,19 +151,6 @@ struct hash<Coordinate> {
 
 }  // namespace std
 
-
-class InputHandler {
- public:
-  void ReadFromInputStream(istream *in_ptr);
-
-  vector<string> orienteering_map_;
-  Coordinate start_;
-  Coordinate goal_;
-  vector<Coordinate> checkpoints_;
-
- private:
-  void RecordCoordinate(const int &row_index, const int &column_index);
-};
 
 void InputHandler::RecordCoordinate(const int &row_index,
                                     const int &column_index) {
@@ -139,35 +190,6 @@ void InputHandler::ReadFromInputStream(istream *in_ptr) {
     }
   }
 }
-
-
-class DistanceMatrixGenerator {
- public:
-  bool Generate(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets);
-
-  DistanceMatrix distance_matrix_;
-
- private:
-  bool FindShortestPathFromSingleSource(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets,
-      const int &source_index);
-
-  template <typename Element>
-  vector<vector<Element>> InitMatrix(
-      const int &row_size, const int &column_size,
-      const Element &default_value);
-
-  bool IsValid(
-      const Coordinate &coordinate,
-      const int &row_size, const int &column_size);
-
-  vector<Coordinate> NextCoordinates(
-      const Coordinate &coordinate,
-      const int &row_size, const int &column_size);
-};
 
 template <typename Element>
 vector<vector<Element>> DistanceMatrixGenerator::InitMatrix(
@@ -308,21 +330,6 @@ bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
   }
 }
 
-
-class TSPCalculator {
- public:
-  int CalculateMinLength(const DistanceMatrix &distance_matrix);
-
- private:
-  vector<StrictBitset> GenerateSetsOfCheckpoints(
-      const int &length, const int &owned_elements);
-
-  void UpdateMinLengths(
-      const StrictBitset &checkpoint_set,
-      const DistanceMatrix &distance_matrix,
-      GroupValue *min_lengths_ptr);
-};
-
 // length would always > 0.
 vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
     const int &length, const int &owned_elements) {
@@ -422,7 +429,9 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 }
 
 
+// ============================================================================
 // Skeleton code for the examination.
+// ============================================================================
 class Orienteering {
  public:
   void main();
