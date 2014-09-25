@@ -21,38 +21,39 @@
 // dynamic programming.
 
 
-#include <istream>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <utility>
-#include <unordered_set>
+#include <algorithm>
+#include <bitset>
 #include <cstddef>
 #include <functional>
-#include <queue>
-#include <algorithm>
+#include <iostream>
+#include <istream>
 #include <iterator>
-#include <unordered_map>
 #include <limits>
+#include <queue>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
-using std::istream;
+
 using std::cin;
 using std::cout;
-using std::endl;
-using std::vector;
-using std::pair;
-using std::make_pair;
-using std::string;
-using std::unordered_set;
-using std::size_t;
-using std::queue;
-using std::find;
 using std::distance;
-using std::next_permutation;
+using std::endl;
 using std::fill;
-using std::unordered_map;
+using std::find;
+using std::istream;
+using std::make_pair;
+using std::next_permutation;
 using std::numeric_limits;
-using std::stoi;
+using std::pair;
+using std::queue;
+using std::string;
+using std::size_t;
+using std::unordered_map;
+using std::unordered_set;
+using std::vector;
 
 // Two-dimension matrix represents shortest path of every pair of targets.
 using DistanceMatrix = vector<vector<int>>;
@@ -60,7 +61,14 @@ using DistanceMatrix = vector<vector<int>>;
 // represents the row index and "example.second" represents the column index.
 using Coordinate = pair<int, int>;
 using SubsetWithIndex = pair<string, int>;
-// hash for Coordinate.
+
+
+const char kStartSymbol = 'S';
+const char kGoalSymbol = 'G';
+const char kCheckpointSymbol = '@';
+const char kCloseBlockSymbol = '#';
+
+
 namespace std {
 
 template <>
@@ -81,18 +89,13 @@ struct hash<SubsetWithIndex> {
   // call operator.
   size_t operator()(const SubsetWithIndex &target) const {
     // XOR of hash results.
-    return hash<int>()(stoi(target.first)) ^ hash<int>()(target.second);
+    using BitsetIn32Bits = bitset<32>;
+    BitsetIn32Bits temp(target.first);
+    return hash<BitsetIn32Bits>()(temp) ^ hash<int>()(target.second);
   }
 };
 
 }  // namespace std
-
-
-const char kStartSymbol = 'S';
-const char kGoalSymbol = 'G';
-const char kCheckpointSymbol = '@';
-const char kOpenBlockSymbol = '.';
-const char kCloseBlockSymbol = '#';
 
 
 class InputHandler {
@@ -155,7 +158,7 @@ class DistanceMatrixGenerator {
       const vector<string> &orienteering_map,
       const vector<Coordinate> &targets);
 
-  DistanceMatrix distance_matrix;
+  DistanceMatrix distance_matrix_;
 
  private:
   bool FindShortestPathFromSingleSource(
@@ -220,9 +223,9 @@ vector<Coordinate> DistanceMatrixGenerator::NextCoordinates(
 bool DistanceMatrixGenerator::Generate(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets) {
-  // init distance_matrix.
+  // init distance_matrix_.
   const int target_size = targets.size();
-  distance_matrix = InitMatrix(target_size, target_size, 0);
+  distance_matrix_ = InitMatrix(target_size, target_size, 0);
   // fill the matrix.
   for (int source_index = 0; source_index != targets.size(); ++source_index) {
     bool success_flag = FindShortestPathFromSingleSource(
@@ -275,9 +278,9 @@ bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
       const int target_index = distance(
           targets.cbegin(),
           find(targets.cbegin(), targets.cend(), coordinate));
-      // now, we can fill element of the distance_matrix, pointed by
+      // now, we can fill element of the distance_matrix_, pointed by
       // (source_index, target_index), with the value distance.
-      distance_matrix[source_index][target_index] = current_distance;
+      distance_matrix_[source_index][target_index] = current_distance;
       ++searched_targets;
     }
 
@@ -432,16 +435,31 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 
 
 // Skeleton code for the examination.
-// class Orienteering {
-//  public:
-//   void main();
-// };
-// 
-// void Orienteering::main() {
-//   InputHandler input_handler;
-//   input_handler.ReadFromInputStream(&cin);
-// }
-//
+class Orienteering {
+ public:
+  void main();
+};
+
+void Orienteering::main() {
+  InputHandler input_handler;
+  input_handler.ReadFromInputStream(&cin);
+
+  auto targets = input_handler.checkpoints_;
+  targets.push_back(input_handler.start_);
+  targets.push_back(input_handler.goal_);
+  const auto &orienteering_map = input_handler.orienteering_map_;
+
+  DistanceMatrixGenerator generator;
+  generator.Generate(orienteering_map, targets);
+
+  const auto &distance_matrix = generator.distance_matrix_;
+  TSPCalculator calculator;
+  int min_length = calculator.CalculateMinLength(distance_matrix);
+
+  // output.
+  cout << min_length << endl;
+}
+
 // int main(int argc, char* argv[]) {
 //   Orienteering o;
 //   o.main();

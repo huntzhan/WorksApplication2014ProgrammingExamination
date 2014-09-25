@@ -41,7 +41,7 @@ TEST(shortest_path, simple) {
   bool run_flag = generator.Generate(orienteering_map, targets);
   EXPECT_TRUE(run_flag);
 
-  const auto &dm = generator.distance_matrix;
+  const auto &dm = generator.distance_matrix_;
   EXPECT_EQ(dm[0][1], 2);
   EXPECT_EQ(dm[1][0], 2);
 
