@@ -44,7 +44,6 @@ using std::endl;
 using std::fill;
 using std::find;
 using std::istream;
-using std::make_pair;
 using std::next_permutation;
 using std::numeric_limits;
 using std::pair;
@@ -60,7 +59,7 @@ using DistanceMatrix = vector<vector<int>>;
 // Coordinate of symbols. Given that "Coordinate example", "example.first"
 // represents the row index and "example.second" represents the column index.
 using Coordinate = pair<int, int>;
-using SubsetWithIndex = pair<string, int>;
+using SubsetIndexPair = pair<string, int>;
 
 
 const char kStartSymbol = 'S';
@@ -83,11 +82,11 @@ struct hash<Coordinate> {
 };
 
 template <>
-struct hash<SubsetWithIndex> {
+struct hash<SubsetIndexPair> {
   using result_type = size_t;
-  using argument_type = SubsetWithIndex;
+  using argument_type = SubsetIndexPair;
   // call operator.
-  size_t operator()(const SubsetWithIndex &target) const {
+  size_t operator()(const SubsetIndexPair &target) const {
     // XOR of hash results.
     using BitsetIn32Bits = bitset<32>;
     BitsetIn32Bits temp(target.first);
@@ -116,16 +115,15 @@ void InputHandler::RecordCoordinate(const int &row_index,
   const char &symbol = orienteering_map_[row_index][column_index];
   switch (symbol) {
     case kStartSymbol: {
-      start_ = make_pair(row_index, column_index);
+      start_ = Coordinate(row_index, column_index);
       break;
     }
     case kGoalSymbol: {
-      goal_ = make_pair(row_index, column_index);
+      goal_ = Coordinate(row_index, column_index);
       break;
     }
     case kCheckpointSymbol: {
-      checkpoints_.push_back(
-          make_pair(row_index, column_index));
+      checkpoints_.push_back(Coordinate(row_index, column_index));
       break;
     }
   }
@@ -208,10 +206,10 @@ vector<Coordinate> DistanceMatrixGenerator::NextCoordinates(
   const int &y = coordinate.second;
   // generate coordinates adjacent to current coordinates.
   vector<Coordinate> next_coordinates;
-  for (const auto &next_coordinate : {make_pair(x - 1, y),  // up.
-                                      make_pair(x + 1, y),  // down.
-                                      make_pair(x, y - 1),  // left.
-                                      make_pair(x, y + 1)}) {  // right.
+  for (const auto &next_coordinate : {Coordinate(x - 1, y),  // up.
+                                      Coordinate(x + 1, y),  // down.
+                                      Coordinate(x, y - 1),  // left.
+                                      Coordinate(x, y + 1)}) {  // right.
     if (IsValid(next_coordinate, row_size, column_size)) {
       next_coordinates.push_back(
           std::move(next_coordinate));
@@ -331,7 +329,7 @@ class TSPCalculator {
   void UpdateMinLengths(
       const string &checkpoint_set,
       const DistanceMatrix &distance_matrix,
-      unordered_map<SubsetWithIndex, int> *min_lengths_ptr);
+      unordered_map<SubsetIndexPair, int> *min_lengths_ptr);
 };
 
 vector<string> TSPCalculator::GenerateSetsOfCheckpoints(
@@ -350,7 +348,7 @@ vector<string> TSPCalculator::GenerateSetsOfCheckpoints(
 void TSPCalculator::UpdateMinLengths(
     const string &checkpoint_set,
     const DistanceMatrix &distance_matrix,
-    unordered_map<SubsetWithIndex, int> *min_lengths_ptr) {
+    unordered_map<SubsetIndexPair, int> *min_lengths_ptr) {
 
   vector<int> indices;
   for (int index = 0; index != checkpoint_set.size(); ++index) {
@@ -368,16 +366,16 @@ void TSPCalculator::UpdateMinLengths(
     // loop over the rest of indices.
     for (const int &other_index : indices) {
       if (other_index == index) { continue; }
-      auto subset_with_index = make_pair(previous_subset, other_index);
-      int current_length = (*min_lengths_ptr)[subset_with_index]
+      auto subset_index_pair = SubsetIndexPair(previous_subset, other_index);
+      int current_length = (*min_lengths_ptr)[subset_index_pair]
                            + distance_matrix[index][other_index];
       if (current_length < total_min) {
         total_min = current_length;
       }
     }
     // update min_lengths.
-    auto subset_with_index = make_pair(checkpoint_set, index);
-    (*min_lengths_ptr)[subset_with_index] = total_min;
+    auto subset_index_pair = SubsetIndexPair(checkpoint_set, index);
+    (*min_lengths_ptr)[subset_index_pair] = total_min;
   }
 }
 
@@ -389,14 +387,14 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   const int checkpoint_size = dimension - 2;
 
   // init.
-  unordered_map<SubsetWithIndex, int> min_lengths;
+  unordered_map<SubsetIndexPair, int> min_lengths;
   auto init_sets = GenerateSetsOfCheckpoints(checkpoint_size, 1);
   for (int checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     // C({j}, j) := 1;
     const string &init_set = init_sets[checkpoint_index];
-    const auto subset_with_index = make_pair(init_set, checkpoint_index);
-    min_lengths[subset_with_index] =
+    const auto subset_index_pair = SubsetIndexPair(init_set, checkpoint_index);
+    min_lengths[subset_index_pair] =
         distance_matrix[source_index][checkpoint_index];
   }
 
@@ -416,9 +414,8 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 
   for (int checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
-    auto subset_with_index = make_pair(
-        all_checkpoints, checkpoint_index);
-    int current_length = min_lengths[subset_with_index]
+    auto subset_index_pair = SubsetIndexPair(all_checkpoints, checkpoint_index);
+    int current_length = min_lengths[subset_index_pair]
                          + distance_matrix[checkpoint_index][goal_index];
     if (current_length < min_length_from_start_to_goal) {
       min_length_from_start_to_goal = current_length;
