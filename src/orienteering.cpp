@@ -32,6 +32,7 @@
 #include <limits>
 #include <queue>
 #include <string>
+#include <thread>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
@@ -55,6 +56,7 @@ using std::pair;
 using std::queue;
 using std::string;
 using std::size_t;
+using std::thread;
 using std::unordered_map;
 using std::unordered_set;
 using std::vector;
@@ -334,15 +336,23 @@ bool DistanceMatrixGenerator::Generate(
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
 
   // fill the matrix.
-  vector<future<bool>> future_objs;
+  unsigned int max_thread_size = thread::hardware_concurrency();
+  queue<future<bool>> future_objs_queue;
   for (size_t source_index = 0; source_index != targets.size(); ++source_index) {
     // multithreading.
-    future_objs.push_back(
+    future_objs_queue.push(
         async(fcn, this, orienteering_map, targets, source_index));
-  }
-  // make sure all tasks finished.
-  for (auto &future_obj : future_objs) {
-    if (!future_obj.get()) { return false; }
+
+    // limit the number of threads on running.
+    if (future_objs_queue.size() == max_thread_size
+        || source_index == targets.size() - 1) {
+      // wait for threads.
+      while (!future_objs_queue.empty()) {
+        auto &future_obj = future_objs_queue.front();
+        if (!future_obj.get()) { return false; }
+        future_objs_queue.pop();
+      }
+    }
   }
   // all is well.
   return true;
