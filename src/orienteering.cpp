@@ -335,12 +335,16 @@ vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
     const int &length, const int &owned_elements) {
   vector<StrictBitset> checkpoint_sets;
   // seed of permutation.
-  string seed(length, '0');
-  fill(seed.rbegin(), seed.rbegin() + owned_elements, '1');
+  vector<bool> seed(length, false);
+  fill(seed.begin(), seed.begin() + owned_elements, true);
   // generate permutations.
   do {
-    checkpoint_sets.push_back(StrictBitset(seed));
-  } while (next_permutation(seed.begin(), seed.end()));
+    StrictBitset current_set;
+    for (int index = 0; index != seed.size(); ++index) {
+      if (seed[index]) { current_set.set(index); }
+    }
+    checkpoint_sets.push_back(std::move(current_set));
+  } while (next_permutation(seed.rbegin(), seed.rend()));
   return checkpoint_sets;
 }
 
