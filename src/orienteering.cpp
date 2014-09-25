@@ -25,6 +25,7 @@
 #include <bitset>
 #include <cstddef>
 #include <functional>
+#include <future>
 #include <iostream>
 #include <istream>
 #include <iterator>
@@ -37,6 +38,7 @@
 #include <vector>
 
 
+using std::async;
 using std::bitset;
 using std::cin;
 using std::cout;
@@ -44,6 +46,8 @@ using std::distance;
 using std::endl;
 using std::fill;
 using std::find;
+using std::function;
+using std::future;
 using std::istream;
 using std::next_permutation;
 using std::numeric_limits;
@@ -231,22 +235,6 @@ vector<Coordinate> DistanceMatrixGenerator::NextCoordinates(
   return next_coordinates;
 }
 
-bool DistanceMatrixGenerator::Generate(
-    const vector<string> &orienteering_map,
-    const vector<Coordinate> &targets) {
-  // init distance_matrix_.
-  const int target_size = targets.size();
-  distance_matrix_ = InitMatrix(target_size, target_size, 0);
-  // fill the matrix.
-  for (int source_index = 0; source_index != targets.size(); ++source_index) {
-    bool success_flag = FindShortestPathFromSingleSource(
-        orienteering_map, targets, source_index);
-    if (!success_flag) { return false; }
-  }
-  // all is well.
-  return true;
-}
-
 // Find the shortest paths from single source to all the others by using BFS.
 bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
     const vector<string> &orienteering_map,
@@ -328,6 +316,36 @@ bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
   } else {
     return false;
   }
+}
+
+bool DistanceMatrixGenerator::Generate(
+    const vector<string> &orienteering_map,
+    const vector<Coordinate> &targets) {
+  // function to be called concurrently.
+  using MemberFunction = bool (
+      DistanceMatrixGenerator *,
+      const vector<string> &,
+      const vector<Coordinate> &,
+      const int &);
+  function<MemberFunction> fcn =
+      &DistanceMatrixGenerator::FindShortestPathFromSingleSource;
+  // init distance_matrix_.
+  const int target_size = targets.size();
+  distance_matrix_ = InitMatrix(target_size, target_size, 0);
+
+  // fill the matrix.
+  vector<future<bool>> future_objs;
+  for (int source_index = 0; source_index != targets.size(); ++source_index) {
+    // multithreading.
+    future_objs.push_back(
+        async(fcn, this, orienteering_map, targets, source_index));
+  }
+  // make sure all tasks finished.
+  for (auto &future_obj : future_objs) {
+    if (!future_obj.get()) { return false; }
+  }
+  // all is well.
+  return true;
 }
 
 // length would always > 0.
@@ -451,7 +469,11 @@ void Orienteering::main() {
   const auto &orienteering_map = input_handler.orienteering_map_;
 
   DistanceMatrixGenerator generator;
-  generator.Generate(orienteering_map, targets);
+  bool flag = generator.Generate(orienteering_map, targets);
+  if (!flag) {
+    cout << -1 << endl;
+    return;
+  }
 
   const auto &distance_matrix = generator.distance_matrix_;
   TSPCalculator calculator;
