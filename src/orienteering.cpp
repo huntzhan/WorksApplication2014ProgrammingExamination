@@ -40,6 +40,7 @@
 
 
 using std::async;
+using std::bind;
 using std::bitset;
 using std::cin;
 using std::cout;
@@ -81,6 +82,76 @@ const char kCloseBlockSymbol = '#';
 // ============================================================================
 // Declearation of classes.
 // ============================================================================
+template <typename ReturnElementType>
+struct ConcurrencyHandler {
+  using VecFuncs = vector<function<ReturnElementType ()>>;
+  using ReturnType = vector<ReturnElementType>;
+  static ReturnType Run(const VecFuncs &funcs);
+};
+
+template <>
+struct ConcurrencyHandler<void> {
+  using VecFuncs = vector<function<void ()>>;
+  static void Run(const VecFuncs &funcs);
+};
+
+template <typename ReturnElementType>
+typename ConcurrencyHandler<ReturnElementType>::ReturnType
+ConcurrencyHandler<ReturnElementType>::Run(const VecFuncs &funcs) {
+  // cached of return values of funcs.
+  ReturnType cached_results;
+  // maximum number of threads supported by OS.
+  unsigned int max_thread_size = thread::hardware_concurrency();
+
+  // queue for tracking of on-running threads.
+  queue<future<ReturnElementType>> future_objs_queue;
+  auto clear_queue = [&]() {
+    while (!future_objs_queue.empty()) {
+      auto &future_obj = future_objs_queue.front();
+      cached_results.push_back(future_obj.get());
+      future_objs_queue.pop();
+    }
+  };
+
+  for (const auto &func : funcs) {
+    // multithreading.
+    future_objs_queue.push(async(func));
+    // limit the number of threads on running.
+    if (future_objs_queue.size() == max_thread_size) {
+      // wait for threads.
+      clear_queue();
+    }
+  }
+  clear_queue();
+  return cached_results;
+}
+
+void ConcurrencyHandler<void>::Run(const VecFuncs &funcs) {
+  // maximum number of threads supported by OS.
+  unsigned int max_thread_size = thread::hardware_concurrency();
+
+  queue<future<void>> future_objs_queue;
+  auto clear_queue = [&]() {
+    while (!future_objs_queue.empty()) {
+      auto &future_obj = future_objs_queue.front();
+      future_obj.get();
+      future_objs_queue.pop();
+    }
+  };
+
+  for (const auto &func : funcs) {
+    // multithreading.
+    future_objs_queue.push(async(func));
+    // limit the number of threads on running.
+    if (future_objs_queue.size() == max_thread_size) {
+      // wait for threads.
+      clear_queue();
+    }
+  }
+  clear_queue();
+}
+
+
 class InputHandler {
  public:
   void ReadFromInputStream(istream *in_ptr);
@@ -335,24 +406,15 @@ bool DistanceMatrixGenerator::Generate(
   const int target_size = targets.size();
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
 
-  // fill the matrix.
-  unsigned int max_thread_size = thread::hardware_concurrency();
-  queue<future<bool>> future_objs_queue;
+  ConcurrencyHandler<bool>::VecFuncs funcs;
   for (size_t source_index = 0; source_index != targets.size(); ++source_index) {
-    // multithreading.
-    future_objs_queue.push(
-        async(fcn, this, orienteering_map, targets, source_index));
+    funcs.push_back(
+        bind(fcn, this, orienteering_map, targets, source_index));
+  }
 
-    // limit the number of threads on running.
-    if (future_objs_queue.size() == max_thread_size
-        || source_index == targets.size() - 1) {
-      // wait for threads.
-      while (!future_objs_queue.empty()) {
-        auto &future_obj = future_objs_queue.front();
-        if (!future_obj.get()) { return false; }
-        future_objs_queue.pop();
-      }
-    }
+  auto flags = ConcurrencyHandler<bool>::Run(funcs);
+  if (find(flags.cbegin(), flags.cend(), false) != flags.cend()){
+    return false;
   }
   // all is well.
   return true;
