@@ -176,8 +176,8 @@ TEST(shortest_path, large_input) {
       "####################################################################################################"};
 
   vector<Coordinate> targets;
-  for (int x = 0; x != 100; ++x) {
-    for (int y = 0; y != 100; ++y) {
+  for (size_t x = 0; x != 100; ++x) {
+    for (size_t y = 0; y != 100; ++y) {
       if (orienteering_map[x][y] == kCheckpointSymbol) {
         targets.push_back(Coordinate(x, y));
       }

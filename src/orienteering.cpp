@@ -66,7 +66,7 @@ using DistanceMatrix = vector<vector<int>>;
 using Coordinate = pair<int, int>;
 
 using StrictBitset = bitset<32>;
-using GroupIndexValueMapping = unordered_map<int, int>;
+using GroupIndexValueMapping = unordered_map<size_t, int>;
 using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
 
 
@@ -89,7 +89,7 @@ class InputHandler {
   vector<Coordinate> checkpoints_;
 
  private:
-  void RecordCoordinate(const int &row_index, const int &column_index);
+  void RecordCoordinate(const size_t &row_index, const size_t &column_index);
 };
 
 
@@ -105,7 +105,7 @@ class DistanceMatrixGenerator {
   bool FindShortestPathFromSingleSource(
       const vector<string> &orienteering_map,
       const vector<Coordinate> &targets,
-      const int &source_index);
+      const size_t &source_index);
 
   template <typename Element>
   vector<vector<Element>> InitMatrix(
@@ -156,8 +156,8 @@ struct hash<Coordinate> {
 }  // namespace std
 
 
-void InputHandler::RecordCoordinate(const int &row_index,
-                                    const int &column_index) {
+void InputHandler::RecordCoordinate(const size_t &row_index,
+                                    const size_t &column_index) {
   const char &symbol = orienteering_map_[row_index][column_index];
   switch (symbol) {
     case kStartSymbol: {
@@ -178,18 +178,18 @@ void InputHandler::RecordCoordinate(const int &row_index,
 // Load orienteering map from standard input.
 void InputHandler::ReadFromInputStream(istream *in_ptr) {
   // setup orienteering_map_.
-  int width = 0, height = 0;
+  size_t width = 0, height = 0;
   *in_ptr >> width >> height;
 
-  for (int counter = 0; counter != height; ++counter) {
+  for (size_t counter = 0; counter != height; ++counter) {
     string line;
     *in_ptr >> line;
     orienteering_map_.push_back(line);
   }
 
   // find start, goal and checkpoints.
-  for (int row_index = 0; row_index != height; ++row_index) {
-    for (int column_index = 0; column_index != width; ++column_index) {
+  for (size_t row_index = 0; row_index != height; ++row_index) {
+    for (size_t column_index = 0; column_index != width; ++column_index) {
       RecordCoordinate(row_index, column_index);
     }
   }
@@ -239,7 +239,7 @@ vector<Coordinate> DistanceMatrixGenerator::NextCoordinates(
 bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets,
-    const int &source_index) {
+    const size_t &source_index) {
   // speed up search by using hash table.
   unordered_set<Coordinate> hashed_targets(targets.cbegin(), targets.cend());
   // get source coordinate.
@@ -261,7 +261,7 @@ bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
   // counter of distance.
   int current_distance = 0;
   // counter of searched targets. 
-  int searched_targets = 0;
+  size_t searched_targets = 0;
 
   // binds out_queue_ptr to first_queue, binds in_queue_ptr to second_queue.
   auto out_queue_ptr = &first_queue;
@@ -274,7 +274,7 @@ bool DistanceMatrixGenerator::FindShortestPathFromSingleSource(
     if (hashed_targets.find(coordinate) != hashed_targets.end()) {
       // current coordinate is target.
       // get index of target in targets, with the same coordinate.
-      const int target_index = distance(
+      const size_t target_index = distance(
           targets.cbegin(),
           find(targets.cbegin(), targets.cend(), coordinate));
       // now, we can fill element of the distance_matrix_, pointed by
@@ -326,7 +326,7 @@ bool DistanceMatrixGenerator::Generate(
       DistanceMatrixGenerator *,
       const vector<string> &,
       const vector<Coordinate> &,
-      const int &);
+      const size_t &);
   function<MemberFunction> fcn =
       &DistanceMatrixGenerator::FindShortestPathFromSingleSource;
   // init distance_matrix_.
@@ -335,7 +335,7 @@ bool DistanceMatrixGenerator::Generate(
 
   // fill the matrix.
   vector<future<bool>> future_objs;
-  for (int source_index = 0; source_index != targets.size(); ++source_index) {
+  for (size_t source_index = 0; source_index != targets.size(); ++source_index) {
     // multithreading.
     future_objs.push_back(
         async(fcn, this, orienteering_map, targets, source_index));
@@ -358,7 +358,7 @@ vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
   // generate permutations.
   do {
     StrictBitset current_set;
-    for (int index = 0; index != seed.size(); ++index) {
+    for (size_t index = 0; index != seed.size(); ++index) {
       if (seed[index]) { current_set.set(index); }
     }
     checkpoint_sets.push_back(std::move(current_set));
@@ -371,14 +371,14 @@ void TSPCalculator::UpdateMinLengths(
     const DistanceMatrix &distance_matrix,
     GroupValue *min_lengths_ptr) {
 
-  vector<int> indices;
-  for (int index = 0; index != checkpoint_set.size(); ++index) {
+  vector<size_t> indices;
+  for (size_t index = 0; index != checkpoint_set.size(); ++index) {
     if (checkpoint_set[index]) {
       indices.push_back(index);
     }
   }
 
-  for (const int &index : indices) {
+  for (const size_t &index : indices) {
     // make previous subset.
     StrictBitset previous_subset(checkpoint_set);
     previous_subset.reset(index);
@@ -386,7 +386,7 @@ void TSPCalculator::UpdateMinLengths(
     // init total_minimum to max value.
     int total_minimum = numeric_limits<int>::max();
     // loop over the rest of indices.
-    for (const int &other_index : indices) {
+    for (const size_t &other_index : indices) {
       if (other_index == index) { continue; }
       // access previous result.
       const int &previous_length =
@@ -406,9 +406,9 @@ void TSPCalculator::UpdateMinLengths(
 // Solve TSP problem based on dynamic programming.
 int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   const int dimension = distance_matrix.size();
-  const int goal_index = dimension - 1;
-  const int source_index = dimension - 2;
-  const int checkpoint_size = dimension - 2;
+  const size_t goal_index = dimension - 1;
+  const size_t source_index = dimension - 2;
+  const size_t checkpoint_size = dimension - 2;
 
   // for the case that there's no checkpoints.
   if (checkpoint_size == 0) {
@@ -418,7 +418,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   // init.
   GroupValue min_lengths;
   auto init_sets = GenerateSetsOfCheckpoints(checkpoint_size, 1);
-  for (int checkpoint_index = 0;
+  for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
 
     const auto &init_set = init_sets[checkpoint_index];
@@ -426,7 +426,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
         distance_matrix[source_index][checkpoint_index];
   }
   // internal step.
-  for (int subset_size = 2;
+  for (size_t subset_size = 2;
        subset_size <= checkpoint_size; ++subset_size) {
     
     for (const auto &checkpoint_set 
@@ -439,7 +439,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
       GenerateSetsOfCheckpoints(checkpoint_size, checkpoint_size).front();
 
   int total_minimum = numeric_limits<int>::max();
-  for (int checkpoint_index = 0;
+  for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     int current_length = min_lengths[all_checkpoints][checkpoint_index]
                          + distance_matrix[checkpoint_index][goal_index];
