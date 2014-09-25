@@ -26,7 +26,7 @@ using std::ostringstream;
 using std::make_pair;
 
 
-TEST(project, intput) {
+TEST(project, simple_intput) {
   ostringstream ostrm;
   ostrm << 5 << " " <<  5 << endl;
   ostrm << "#####" << endl;

@@ -410,24 +410,23 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 
   // final step.
   const string all_checkpoints(checkpoint_size, '1');
-  int min_length_from_start_to_goal = numeric_limits<int>::max();
+  int total_minimum = numeric_limits<int>::max();
 
   for (int checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     auto subset_index_pair = SubsetIndexPair(all_checkpoints, checkpoint_index);
     int current_length = min_lengths[subset_index_pair]
                          + distance_matrix[checkpoint_index][goal_index];
-    if (current_length < min_length_from_start_to_goal) {
-      min_length_from_start_to_goal = current_length;
+    if (current_length < total_minimum) {
+      total_minimum = current_length;
     }
   }
 
   // for the case that there's no checkpoints.
-  if (min_length_from_start_to_goal == numeric_limits<int>::max()) {
-    min_length_from_start_to_goal =
-      distance_matrix[source_index][goal_index];
+  if (total_minimum == numeric_limits<int>::max()) {
+    total_minimum = distance_matrix[source_index][goal_index];
   }
-  return min_length_from_start_to_goal;
+  return total_minimum;
 }
 
 
