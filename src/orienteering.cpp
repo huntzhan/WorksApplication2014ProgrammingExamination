@@ -57,7 +57,6 @@ using std::pair;
 using std::queue;
 using std::string;
 using std::size_t;
-using std::thread;
 using std::unordered_map;
 using std::unordered_set;
 using std::vector;
@@ -88,68 +87,6 @@ struct ConcurrencyHandler {
   using ReturnType = vector<ReturnElementType>;
   static ReturnType Run(const VecFuncs &funcs);
 };
-
-template <>
-struct ConcurrencyHandler<void> {
-  using VecFuncs = vector<function<void ()>>;
-  static void Run(const VecFuncs &funcs);
-};
-
-template <typename ReturnElementType>
-typename ConcurrencyHandler<ReturnElementType>::ReturnType
-ConcurrencyHandler<ReturnElementType>::Run(const VecFuncs &funcs) {
-  // cached of return values of funcs.
-  ReturnType cached_results;
-  // maximum number of threads supported by OS.
-  unsigned int max_thread_size = thread::hardware_concurrency();
-
-  // queue for tracking of on-running threads.
-  queue<future<ReturnElementType>> future_objs_queue;
-  auto clear_queue = [&]() {
-    while (!future_objs_queue.empty()) {
-      auto &future_obj = future_objs_queue.front();
-      cached_results.push_back(future_obj.get());
-      future_objs_queue.pop();
-    }
-  };
-
-  for (const auto &func : funcs) {
-    // multithreading.
-    future_objs_queue.push(async(func));
-    // limit the number of threads on running.
-    if (future_objs_queue.size() == max_thread_size) {
-      // wait for threads.
-      clear_queue();
-    }
-  }
-  clear_queue();
-  return cached_results;
-}
-
-void ConcurrencyHandler<void>::Run(const VecFuncs &funcs) {
-  // maximum number of threads supported by OS.
-  unsigned int max_thread_size = thread::hardware_concurrency();
-
-  queue<future<void>> future_objs_queue;
-  auto clear_queue = [&]() {
-    while (!future_objs_queue.empty()) {
-      auto &future_obj = future_objs_queue.front();
-      future_obj.get();
-      future_objs_queue.pop();
-    }
-  };
-
-  for (const auto &func : funcs) {
-    // multithreading.
-    future_objs_queue.push(async(func));
-    // limit the number of threads on running.
-    if (future_objs_queue.size() == max_thread_size) {
-      // wait for threads.
-      clear_queue();
-    }
-  }
-  clear_queue();
-}
 
 
 class InputHandler {
@@ -227,6 +164,27 @@ struct hash<Coordinate> {
 };
 
 }  // namespace std
+
+
+template <typename ReturnElementType>
+typename ConcurrencyHandler<ReturnElementType>::ReturnType
+ConcurrencyHandler<ReturnElementType>::Run(const VecFuncs &funcs) {
+  // cached of return values of funcs.
+  ReturnType cached_results;
+
+  // queue for tracking of on-running threads.
+  queue<future<ReturnElementType>> future_objs_queue;
+  for (const auto &func : funcs) {
+    // multithreading.
+    future_objs_queue.push(async(func));
+  }
+  while (!future_objs_queue.empty()) {
+    auto &future_obj = future_objs_queue.front();
+    cached_results.push_back(future_obj.get());
+    future_objs_queue.pop();
+  }
+  return cached_results;
+}
 
 
 void InputHandler::RecordCoordinate(const size_t &row_index,
