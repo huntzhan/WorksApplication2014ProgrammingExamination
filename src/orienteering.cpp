@@ -52,6 +52,7 @@ using std::fill;
 using std::find;
 using std::function;
 using std::future;
+using std::hash;
 using std::istream;
 using std::next_permutation;
 using std::numeric_limits;
@@ -82,6 +83,8 @@ const char kGoalSymbol = 'G';
 const char kCheckpointSymbol = '@';
 const char kCloseBlockSymbol = '#';
 const int kIntMax = numeric_limits<int>::max();
+
+hash<int> HashInt;
 
 
 // ============================================================================
@@ -175,7 +178,8 @@ struct hash<Coordinate> {
   // call operator.
   size_t operator()(const Coordinate &target) const {
     // XOR of hash results.
-    return hash<int>()(target.first) ^ hash<int>()(target.second);
+    // return hash<int>()(target.first) ^ hash<int>()(target.second);
+    return HashInt(target.first) ^ HashInt(target.second);
   }
 };
 
@@ -261,13 +265,12 @@ vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
   const int &y = coordinate.second;
   // generate coordinates adjacent to current coordinates.
   vector<Coordinate> next_coordinates;
-  for (const auto &next_coordinate : {Coordinate(x - 1, y),  // up.
-                                      Coordinate(x + 1, y),  // down.
-                                      Coordinate(x, y - 1),  // left.
-                                      Coordinate(x, y + 1)}) {  // right.
+  for (auto &next_coordinate : {Coordinate(x - 1, y),     // up.
+                                Coordinate(x + 1, y),     // down.
+                                Coordinate(x, y - 1),     // left.
+                                Coordinate(x, y + 1)}) {  // right.
     if (IsValid(next_coordinate, row_size, column_size)) {
-      next_coordinates.push_back(
-          std::move(next_coordinate));
+      next_coordinates.push_back(std::move(next_coordinate));
     }
   }
   return next_coordinates;
@@ -336,9 +339,8 @@ bool DMGeneratorWithBFS::FindShortestPaths(
     }
 
     // generate coordinates for searching.
-    auto next_coordinates = NextCoordinates(
-        coordinate, row_size, column_size);
-    for (const Coordinate &next_coordinate : next_coordinates) {
+    for (Coordinate &next_coordinate :
+         NextCoordinates(coordinate, row_size, column_size)) {
       const int &x = next_coordinate.first;
       const int &y = next_coordinate.second;
       // searched.
@@ -347,7 +349,7 @@ bool DMGeneratorWithBFS::FindShortestPaths(
       if (orienteering_map[x][y] == kCloseBlockSymbol) { continue; }
 
       // valid coordinate!
-      in_queue_ptr->push(next_coordinate);
+      in_queue_ptr->push(std::move(next_coordinate));
       // mark visited.
       searched_coordinate[x][y] = true;
     }
@@ -425,6 +427,8 @@ void TSPCalculator::UpdateMinLengths(
     const DistanceMatrix &distance_matrix,
     GroupValue *min_lengths_ptr) {
 
+  GroupValue &min_lengths = *min_lengths_ptr;
+
   vector<size_t> indices;
   for (size_t index = 0; index != checkpoint_set.size(); ++index) {
     if (checkpoint_set[index]) {
@@ -443,8 +447,7 @@ void TSPCalculator::UpdateMinLengths(
     for (const size_t &other_index : indices) {
       if (other_index == index) { continue; }
       // access previous result.
-      const int &previous_length =
-          (*min_lengths_ptr)[previous_subset][other_index];
+      const int &previous_length = min_lengths[previous_subset][other_index];
       // calculate current length.
       int current_length = previous_length
                            + distance_matrix[index][other_index];
@@ -453,7 +456,7 @@ void TSPCalculator::UpdateMinLengths(
       }
     }
     // update min_lengths.
-    (*min_lengths_ptr)[checkpoint_set][index] = total_minimum;
+    min_lengths[checkpoint_set][index] = total_minimum;
   }
 }
 
@@ -482,8 +485,8 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   // internal step.
   for (size_t subset_size = 2;
        subset_size <= checkpoint_size; ++subset_size) {
-    for (const auto &checkpoint_set
-         : GenerateSetsOfCheckpoints(checkpoint_size, subset_size)) {
+    for (const auto &checkpoint_set :
+         GenerateSetsOfCheckpoints(checkpoint_size, subset_size)) {
       UpdateMinLengths(checkpoint_set, distance_matrix, &min_lengths);
     }
   }
