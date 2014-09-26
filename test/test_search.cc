@@ -37,7 +37,7 @@ TEST(shortest_path, simple) {
     make_pair(2, 3),  // G.
     make_pair(3, 1)}; // @.
 
-  DistanceMatrixGenerator generator;
+  DMGeneratorWithBFS generator;
   bool run_flag = generator.Generate(orienteering_map, targets);
   EXPECT_TRUE(run_flag);
 
@@ -65,7 +65,7 @@ TEST(shortest_path, error_case) {
     make_pair(2, 3),  // G.
     make_pair(3, 1)}; // @.
 
-  DistanceMatrixGenerator generator;
+  DMGeneratorWithBFS generator;
   bool run_flag = generator.Generate(orienteering_map, targets);
   EXPECT_FALSE(run_flag);
 }
@@ -184,7 +184,7 @@ TEST(shortest_path, large_input) {
     }
   }
 
-  DistanceMatrixGenerator generator;
+  DMGeneratorWithBFS generator;
   bool run_flag = generator.Generate(orienteering_map, targets);
   EXPECT_TRUE(run_flag);
 }
