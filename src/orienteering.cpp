@@ -81,6 +81,7 @@ const char kStartSymbol = 'S';
 const char kGoalSymbol = 'G';
 const char kCheckpointSymbol = '@';
 const char kCloseBlockSymbol = '#';
+const int kIntMax = numeric_limits<int>::max();
 
 
 // ============================================================================
@@ -116,26 +117,8 @@ class DistanceMatrixGeneratorInterface {
       const vector<Coordinate> &targets) = 0;
   // output.
   DistanceMatrix distance_matrix_;
-};
 
-
-class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface{
- public:
-  bool Generate(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets) override;
-
- private:
-  bool FindShortestPathFromSingleSource(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets,
-      const size_t &source_index);
-
-  template <typename Element>
-  vector<vector<Element>> InitMatrix(
-      const int &row_size, const int &column_size,
-      const Element &default_value);
-
+  // Shared logic.
   bool IsValid(
       const Coordinate &coordinate,
       const int &row_size, const int &column_size);
@@ -143,6 +126,25 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface{
   vector<Coordinate> NextCoordinates(
       const Coordinate &coordinate,
       const int &row_size, const int &column_size);
+
+  template <typename Element>
+  vector<vector<Element>> InitMatrix(
+      const int &row_size, const int &column_size,
+      const Element &default_value);
+};
+
+
+class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
+ public:
+  bool Generate(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets) override;
+
+ private:
+  bool FindShortestPaths(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets,
+      const size_t &source_index);
 };
 
 
@@ -220,6 +222,7 @@ void InputHandler::RecordCoordinate(const size_t &row_index,
   }
 }
 
+
 // Load orienteering map from standard input.
 void InputHandler::ReadFromInputStream(istream *in_ptr) {
   // setup orienteering_map_.
@@ -240,19 +243,8 @@ void InputHandler::ReadFromInputStream(istream *in_ptr) {
   }
 }
 
-template <typename Element>
-vector<vector<Element>> DMGeneratorWithBFS::InitMatrix(
-    const int &row_size, const int &column_size,
-    const Element &default_value) {
-  vector<vector<Element>> matrix;
-  for (int counter = 0; counter != row_size; ++counter) {
-    // init a row for each target.
-    matrix.push_back(vector<Element>(column_size, default_value));
-  }
-  return matrix;
-}
 
-inline bool DMGeneratorWithBFS::IsValid(
+inline bool DistanceMatrixGeneratorInterface::IsValid(
     const Coordinate &coordinate,
     const int &row_size, const int &column_size) {
   const int &x = coordinate.first;
@@ -260,7 +252,8 @@ inline bool DMGeneratorWithBFS::IsValid(
   return (0 <= x && x < row_size) && (0 <= y && y < column_size);
 }
 
-vector<Coordinate> DMGeneratorWithBFS::NextCoordinates(
+
+vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
     const Coordinate &coordinate,
     const int &row_size, const int &column_size) {
   // indexs.
@@ -280,8 +273,22 @@ vector<Coordinate> DMGeneratorWithBFS::NextCoordinates(
   return next_coordinates;
 }
 
+
+template <typename Element>
+vector<vector<Element>> DistanceMatrixGeneratorInterface::InitMatrix(
+    const int &row_size, const int &column_size,
+    const Element &default_value) {
+  vector<vector<Element>> matrix;
+  for (int counter = 0; counter != row_size; ++counter) {
+    // init a row for each target.
+    matrix.push_back(vector<Element>(column_size, default_value));
+  }
+  return matrix;
+}
+
+
 // Find the shortest paths from single source to all the others by using BFS.
-bool DMGeneratorWithBFS::FindShortestPathFromSingleSource(
+bool DMGeneratorWithBFS::FindShortestPaths(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets,
     const size_t &source_index) {
@@ -363,6 +370,7 @@ bool DMGeneratorWithBFS::FindShortestPathFromSingleSource(
   }
 }
 
+
 bool DMGeneratorWithBFS::Generate(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets) {
@@ -372,8 +380,7 @@ bool DMGeneratorWithBFS::Generate(
       const vector<string> &,
       const vector<Coordinate> &,
       const size_t &);
-  function<MemberFunction> fcn =
-      &DMGeneratorWithBFS::FindShortestPathFromSingleSource;
+  function<MemberFunction> fcn = &DMGeneratorWithBFS::FindShortestPaths;
   // init distance_matrix_.
   const int target_size = targets.size();
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
@@ -393,6 +400,7 @@ bool DMGeneratorWithBFS::Generate(
   return true;
 }
 
+
 // length would always > 0.
 vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
     const int &length, const int &owned_elements) {
@@ -410,6 +418,7 @@ vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
   } while (next_permutation(seed.rbegin(), seed.rend()));
   return checkpoint_sets;
 }
+
 
 void TSPCalculator::UpdateMinLengths(
     const StrictBitset &checkpoint_set,
@@ -429,7 +438,7 @@ void TSPCalculator::UpdateMinLengths(
     previous_subset.reset(index);
 
     // init total_minimum to max value.
-    int total_minimum = numeric_limits<int>::max();
+    int total_minimum = kIntMax;
     // loop over the rest of indices.
     for (const size_t &other_index : indices) {
       if (other_index == index) { continue; }
@@ -447,6 +456,7 @@ void TSPCalculator::UpdateMinLengths(
     (*min_lengths_ptr)[checkpoint_set][index] = total_minimum;
   }
 }
+
 
 // Solve TSP problem based on dynamic programming.
 int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
@@ -481,7 +491,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   const StrictBitset all_checkpoints =
       GenerateSetsOfCheckpoints(checkpoint_size, checkpoint_size).front();
 
-  int total_minimum = numeric_limits<int>::max();
+  int total_minimum = kIntMax;
   for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     int current_length = min_lengths[all_checkpoints][checkpoint_index]
@@ -501,6 +511,7 @@ class Orienteering {
  public:
   void main();
 };
+
 
 void Orienteering::main() {
   InputHandler input_handler;
@@ -525,6 +536,7 @@ void Orienteering::main() {
   // output.
   cout << min_length << endl;
 }
+
 
 // int main(int argc, char* argv[]) {
 //   Orienteering o;
