@@ -26,9 +26,7 @@
 #include <algorithm>
 #include <bitset>
 #include <cstddef>
-#include <cstdlib>
 #include <functional>
-#include <future>
 #include <iostream>
 #include <istream>
 #include <iterator>
@@ -42,8 +40,6 @@
 #include <vector>
 
 
-using std::abs;
-using std::async;
 using std::bind;
 using std::bitset;
 using std::cin;
@@ -52,9 +48,6 @@ using std::distance;
 using std::endl;
 using std::fill;
 using std::find;
-using std::function;
-using std::future;
-using std::hash;
 using std::istream;
 using std::map;
 using std::min_element;
@@ -92,20 +85,10 @@ const char kCheckpointSymbol = '@';
 const char kCloseBlockSymbol = '#';
 const int kIntMax = numeric_limits<int>::max();
 
-hash<int> HashInt;
-
 
 // ============================================================================
 // Declearation of classes.
 // ============================================================================
-template <typename ReturnElementType>
-struct ConcurrencyHandler {
-  using VecFuncs = vector<function<ReturnElementType ()>>;
-  using ReturnType = vector<ReturnElementType>;
-  static ReturnType Run(const VecFuncs &funcs);
-};
-
-
 class InputHandler {
  public:
   void ReadFromInputStream(istream *in_ptr);
@@ -163,21 +146,6 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
 };
 
 
-class DMGeneratorWithAStar : public DistanceMatrixGeneratorInterface {
- public:
-  bool Generate(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets) override;
-
- private:
-  int FindShortestPathFromSourceToGoal(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets,
-      const size_t &source_index,
-      const size_t &goal_index);
-};
-
-
 class TSPCalculator {
  public:
   int CalculateMinLength(const DistanceMatrix &distance_matrix);
@@ -193,26 +161,6 @@ class TSPCalculator {
 // ============================================================================
 // Definition of classes.
 // ============================================================================
-template <typename ReturnElementType>
-typename ConcurrencyHandler<ReturnElementType>::ReturnType
-ConcurrencyHandler<ReturnElementType>::Run(const VecFuncs &funcs) {
-  // cached of return values of funcs.
-  ReturnType cached_results;
-  // queue for tracking of on-running threads.
-  queue<future<ReturnElementType>> future_objs_queue;
-  for (const auto &func : funcs) {
-    // multithreading.
-    future_objs_queue.push(async(func));
-  }
-  while (!future_objs_queue.empty()) {
-    auto &future_obj = future_objs_queue.front();
-    cached_results.push_back(future_obj.get());
-    future_objs_queue.pop();
-  }
-  return cached_results;
-}
-
-
 void InputHandler::RecordCoordinate(const size_t &row_index,
                                     const size_t &column_index) {
   const char &symbol = orienteering_map_[row_index][column_index];
@@ -415,124 +363,21 @@ bool DMGeneratorWithBFS::FindShortestPaths(
 bool DMGeneratorWithBFS::Generate(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets) {
-  // function to be called concurrently.
-  using MemberFunction = bool (
-      DMGeneratorWithBFS *,
-      const vector<string> &,
-      const vector<Coordinate> &,
-      const size_t &);
-  function<MemberFunction> fcn = &DMGeneratorWithBFS::FindShortestPaths;
 
   // init distance_matrix_.
   const int target_size = targets.size();
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
   BuildNeighbors(orienteering_map);
 
-  ConcurrencyHandler<bool>::VecFuncs funcs;
   for (size_t source_index = 0;
        source_index != targets.size(); ++source_index) {
-    funcs.push_back(
-        bind(fcn, this, orienteering_map, targets, source_index));
-  }
-
-  auto flags = ConcurrencyHandler<bool>::Run(funcs);
-  if (find(flags.cbegin(), flags.cend(), false) != flags.cend()) {
-    return false;
+    bool is_success = FindShortestPaths(
+        orienteering_map, targets, source_index);
+    if (!is_success) {
+      return false;
+    }
   }
   // all is well.
-  return true;
-}
-
-
-// return the shortest distance from source to goal.
-int DMGeneratorWithAStar::FindShortestPathFromSourceToGoal(
-    const vector<string> &orienteering_map,
-    const vector<Coordinate> &targets,
-    const size_t &source_index,
-    const size_t &goal_index) {
-
-  const Coordinate &source = targets[source_index];
-  const Coordinate &goal = targets[goal_index];
-
-  map<Coordinate, int> g_score;
-  set<Coordinate> closed;
-
-  map<Coordinate, int> f_score;
-  using IntCoordinatePair = pair<int, Coordinate>;
-  set<IntCoordinatePair> opened;
-
-  f_score[source] = 0;
-  opened.insert(IntCoordinatePair(0, source));
-
-  while (!opened.empty()) {
-    // pop the item with minimum f_score.
-    auto min_iter = opened.begin();
-    IntCoordinatePair current_item = *min_iter;
-    const Coordinate &current = current_item.second;
-    opened.erase(min_iter);
-
-    if (current == goal) {
-      // end searching.
-      return g_score[current];
-    }
-
-    // mark current as closed.
-    closed.insert(current);
-
-    for (const auto &neighbor : neighbors_[current]) {
-      // check closed_set.
-      if (closed.find(neighbor) != closed.end()) { continue; }
-
-      int tentative_g_score = g_score[current] + 1;
-      if (g_score.find(neighbor) == g_score.end()) {
-        // if neighbor not in g_score.
-        g_score[neighbor] = kIntMax;
-      }
-      if (tentative_g_score < g_score[neighbor]) {
-        // update g_score.
-        g_score[neighbor] = tentative_g_score;
-        // remove neighbor from opened if exist.
-        if (f_score.find(neighbor) != f_score.end()) {
-          auto neighbor_iter = opened.find(
-              IntCoordinatePair(f_score[neighbor], neighbor));
-          opened.erase(neighbor_iter);
-        }
-        // update f_score.
-        const int heuristic_cost =
-            abs(neighbor.first - goal.first) +
-            abs(neighbor.second - neighbor.second);
-        f_score[neighbor] = tentative_g_score + heuristic_cost;
-        // added to opened.
-        opened.insert(
-            IntCoordinatePair(f_score[neighbor], neighbor));
-      }
-    }
-  }
-  return -1;
-}
-
-
-bool DMGeneratorWithAStar::Generate(
-      const vector<string> &orienteering_map,
-      const vector<Coordinate> &targets) {
-  // init matrix.
-  const int target_size = targets.size();
-  distance_matrix_ = InitMatrix(target_size, target_size, 0);
-  BuildNeighbors(orienteering_map);
-
-  for (size_t source_index = 0;
-       source_index != targets.size(); ++source_index) {
-    for (size_t goal_index = source_index + 1;
-         goal_index < targets.size(); ++goal_index) {
-      int length = FindShortestPathFromSourceToGoal(
-          orienteering_map, targets, source_index, goal_index);
-      if (length == -1) {
-        return false;
-      }
-      distance_matrix_[source_index][goal_index] = length;
-      distance_matrix_[goal_index][source_index] = length;
-    }
-  }
   return true;
 }
 
@@ -621,7 +466,7 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     int current_length = min_lengths[all_checkpoints][checkpoint_index]
-                         + distance_matrix[checkpoint_index][goal_index];
+                         + distance_matrix[goal_index][checkpoint_index];
     if (current_length < total_minimum) {
       total_minimum = current_length;
     }
@@ -664,8 +509,8 @@ void Orienteering::main() {
 }
 
 
-int main(int argc, char* argv[]) {
-  Orienteering o;
-  o.main();
-  return 0;
-}
+// int main(int argc, char* argv[]) {
+//   Orienteering o;
+//   o.main();
+//   return 0;
+// }
