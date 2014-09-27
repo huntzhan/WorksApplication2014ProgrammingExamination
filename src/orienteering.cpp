@@ -201,7 +201,6 @@ typename ConcurrencyHandler<ReturnElementType>::ReturnType
 ConcurrencyHandler<ReturnElementType>::Run(const VecFuncs &funcs) {
   // cached of return values of funcs.
   ReturnType cached_results;
-
   // queue for tracking of on-running threads.
   queue<future<ReturnElementType>> future_objs_queue;
   for (const auto &func : funcs) {
@@ -240,12 +239,13 @@ void InputHandler::RecordCoordinate(const size_t &row_index,
 // Load orienteering map from standard input.
 void InputHandler::ReadFromInputStream(istream *in_ptr) {
   // setup orienteering_map_.
+  istream &in = *in_ptr;
   size_t width = 0, height = 0;
-  *in_ptr >> width >> height;
+  in >> width >> height;
 
   for (size_t counter = 0; counter != height; ++counter) {
     string line;
-    *in_ptr >> line;
+    in >> line;
     orienteering_map_.push_back(line);
   }
 
@@ -291,8 +291,8 @@ vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
 void DistanceMatrixGeneratorInterface::BuildNeighbors(
     const vector<string> &orienteering_map) {
 
-  const int row_size = orienteering_map.size();
-  const int column_size = orienteering_map.front().size();
+  const size_t row_size = orienteering_map.size();
+  const size_t column_size = orienteering_map.front().size();
   auto IsCloseBlock = [&](const size_t &x, const size_t &y) {
     return orienteering_map[x][y] == kCloseBlockSymbol;
   };
