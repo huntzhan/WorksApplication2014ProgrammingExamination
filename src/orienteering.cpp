@@ -183,9 +183,6 @@ class TSPCalculator {
   int CalculateMinLength(const DistanceMatrix &distance_matrix);
 
  private:
-  vector<StrictBitset> GenerateSetsOfCheckpoints(
-      const int &length, const int &owned_elements);
-
   void UpdateMinLengths(
       const StrictBitset &checkpoint_set,
       const DistanceMatrix &distance_matrix,
@@ -540,25 +537,6 @@ bool DMGeneratorWithAStar::Generate(
 }
 
 
-// length would always > 0.
-vector<StrictBitset> TSPCalculator::GenerateSetsOfCheckpoints(
-    const int &length, const int &owned_elements) {
-  vector<StrictBitset> checkpoint_sets;
-  // seed of permutation.
-  vector<bool> seed(length, false);
-  fill(seed.begin(), seed.begin() + owned_elements, true);
-  // generate permutations.
-  do {
-    StrictBitset current_set;
-    for (size_t index = 0; index != seed.size(); ++index) {
-      if (seed[index]) { current_set.set(index); }
-    }
-    checkpoint_sets.push_back(std::move(current_set));
-  } while (next_permutation(seed.rbegin(), seed.rend()));
-  return checkpoint_sets;
-}
-
-
 void TSPCalculator::UpdateMinLengths(
     const StrictBitset &checkpoint_set,
     const DistanceMatrix &distance_matrix,
@@ -610,9 +588,20 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
     return distance_matrix[source_index][goal_index];
   }
 
+  // checkpoint_sets for DP.
+  vector<vector<StrictBitset>> checkpoint_sets(checkpoint_size + 1);
+  unsigned max_bit_pattern =
+      StrictBitset(string(checkpoint_size, '1')).to_ulong();
+  for (unsigned bit_pattern = 1;
+       bit_pattern <= max_bit_pattern; ++bit_pattern) {
+    StrictBitset checkpoint_set(bit_pattern);
+    auto &bucket = checkpoint_sets[checkpoint_set.count()];
+    bucket.push_back(std::move(checkpoint_set));
+  }
+
   // init.
   GroupValue min_lengths;
-  auto init_sets = GenerateSetsOfCheckpoints(checkpoint_size, 1);
+  const auto &init_sets = checkpoint_sets[1];
   for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     const auto &init_set = init_sets[checkpoint_index];
@@ -622,15 +611,12 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   // internal step.
   for (size_t subset_size = 2;
        subset_size <= checkpoint_size; ++subset_size) {
-    for (const auto &checkpoint_set :
-         GenerateSetsOfCheckpoints(checkpoint_size, subset_size)) {
+    for (const auto &checkpoint_set : checkpoint_sets[subset_size]) {
       UpdateMinLengths(checkpoint_set, distance_matrix, &min_lengths);
     }
   }
   // final step.
-  const StrictBitset all_checkpoints =
-      GenerateSetsOfCheckpoints(checkpoint_size, checkpoint_size).front();
-
+  const auto &all_checkpoints = checkpoint_sets[checkpoint_size].front();
   int total_minimum = kIntMax;
   for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
@@ -678,8 +664,8 @@ void Orienteering::main() {
 }
 
 
-// int main(int argc, char* argv[]) {
-//   Orienteering o;
-//   o.main();
-//   return 0;
-// }
+int main(int argc, char* argv[]) {
+  Orienteering o;
+  o.main();
+  return 0;
+}
