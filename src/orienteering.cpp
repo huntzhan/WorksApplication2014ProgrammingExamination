@@ -147,6 +147,11 @@ class DistanceMatrixGeneratorInterface {
   DistanceMatrix distance_matrix_;
 
   // Shared logic.
+  template <typename Element>
+  vector<vector<Element>> InitMatrix(
+      const int &row_size, const int &column_size,
+      const Element &default_value);
+
   bool IsValid(
       const Coordinate &coordinate,
       const int &row_size, const int &column_size);
@@ -155,10 +160,9 @@ class DistanceMatrixGeneratorInterface {
       const Coordinate &coordinate,
       const int &row_size, const int &column_size);
 
-  template <typename Element>
-  vector<vector<Element>> InitMatrix(
-      const int &row_size, const int &column_size,
-      const Element &default_value);
+  void BuildNeighbors(const vector<string> &orienteering_map);
+  // valid neighbors of each coordinate.
+  unordered_map<Coordinate, vector<Coordinate>> neighbors_;
 };
 
 
@@ -174,6 +178,7 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
       const vector<Coordinate> &targets,
       const size_t &source_index);
 };
+
 
 class DMGeneratorWithAStar : public DistanceMatrixGeneratorInterface {
  public:
@@ -299,6 +304,42 @@ vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
 }
 
 
+// Generate valid neighbors for each coordinate.
+void DistanceMatrixGeneratorInterface::BuildNeighbors(
+    const vector<string> &orienteering_map) {
+
+  const int row_size = orienteering_map.size();
+  const int column_size = orienteering_map.front().size();
+  auto IsCloseBlock = [&](const size_t &x, const size_t &y) {
+    return orienteering_map[x][y] == kCloseBlockSymbol;
+  };
+
+  for (size_t row_index = 0; row_index != row_size; ++row_index) {
+    for (size_t column_index = 0;
+         column_index != column_size; ++column_index) {
+      // Don't process close block.
+      if (IsCloseBlock(row_index, column_index)) { continue; }
+
+      Coordinate current(row_index, column_index);
+      auto neighbors = NextCoordinates(current, row_size, column_size);
+      // filter out close block.
+      auto neighbor_iter = neighbors.begin();
+      while (neighbor_iter != neighbors.end()) {
+        const int &x = neighbor_iter->first;
+        const int &y = neighbor_iter->second;
+        if (IsCloseBlock(x, y)) {
+          neighbor_iter = neighbors.erase(neighbor_iter);
+        } else {
+          ++neighbor_iter;
+        }
+      }
+      // keep neighbors.
+      neighbors_[current] = neighbors;
+    }
+  }
+}
+
+
 template <typename Element>
 vector<vector<Element>> DistanceMatrixGeneratorInterface::InitMatrix(
     const int &row_size, const int &column_size,
@@ -361,17 +402,14 @@ bool DMGeneratorWithBFS::FindShortestPaths(
     }
 
     // generate coordinates for searching.
-    for (Coordinate &next_coordinate :
-         NextCoordinates(coordinate, row_size, column_size)) {
+    for (const auto &next_coordinate : neighbors_[coordinate]) {
       const int &x = next_coordinate.first;
       const int &y = next_coordinate.second;
       // searched.
       if (searched_coordinate[x][y]) { continue; }
-      // close block.
-      if (orienteering_map[x][y] == kCloseBlockSymbol) { continue; }
 
       // valid coordinate!
-      in_queue_ptr->push(std::move(next_coordinate));
+      in_queue_ptr->push(next_coordinate);
       // mark visited.
       searched_coordinate[x][y] = true;
     }
@@ -405,9 +443,11 @@ bool DMGeneratorWithBFS::Generate(
       const vector<Coordinate> &,
       const size_t &);
   function<MemberFunction> fcn = &DMGeneratorWithBFS::FindShortestPaths;
+
   // init distance_matrix_.
   const int target_size = targets.size();
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
+  BuildNeighbors(orienteering_map);
 
   ConcurrencyHandler<bool>::VecFuncs funcs;
   for (size_t source_index = 0;
@@ -432,8 +472,6 @@ int DMGeneratorWithAStar::FindShortestPathFromSourceToGoal(
     const size_t &source_index,
     const size_t &goal_index) {
 
-  const int row_size = orienteering_map.size();
-  const int column_size = orienteering_map.front().size();
   const Coordinate &source = targets[source_index];
   const Coordinate &goal = targets[goal_index];
 
@@ -462,11 +500,7 @@ int DMGeneratorWithAStar::FindShortestPathFromSourceToGoal(
     // mark current as closed.
     closed.insert(current);
 
-    for (auto neighbor : NextCoordinates(current, row_size, column_size)) {
-      // check close block.
-      const size_t &x = neighbor.first;
-      const size_t &y = neighbor.second;
-      if (orienteering_map[x][y] == kCloseBlockSymbol) { continue; }
+    for (const auto &neighbor : neighbors_[current]) {
       // check closed_set.
       if (closed.find(neighbor) != closed.end()) { continue; }
 
@@ -505,6 +539,7 @@ bool DMGeneratorWithAStar::Generate(
   // init matrix.
   const int target_size = targets.size();
   distance_matrix_ = InitMatrix(target_size, target_size, 0);
+  BuildNeighbors(orienteering_map);
 
   for (size_t source_index = 0;
        source_index != targets.size(); ++source_index) {
