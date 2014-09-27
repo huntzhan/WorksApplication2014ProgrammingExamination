@@ -33,10 +33,10 @@
 #include <istream>
 #include <iterator>
 #include <limits>
+#include <map>
 #include <queue>
 #include <string>
 #include <unordered_map>
-#include <unordered_set>
 #include <set>
 #include <utility>
 #include <vector>
@@ -56,6 +56,7 @@ using std::function;
 using std::future;
 using std::hash;
 using std::istream;
+using std::map;
 using std::min_element;
 using std::next_permutation;
 using std::numeric_limits;
@@ -65,7 +66,6 @@ using std::set;
 using std::string;
 using std::size_t;
 using std::unordered_map;
-using std::unordered_set;
 using std::vector;
 
 
@@ -79,7 +79,7 @@ using DistanceMatrix = vector<vector<int>>;
 using Coordinate = pair<int, int>;
 // Types used in TSPCalculator.
 using StrictBitset = bitset<32>;
-using GroupIndexValueMapping = unordered_map<size_t, int>;
+using GroupIndexValueMapping = map<size_t, int>;
 using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
 
 
@@ -162,7 +162,7 @@ class DistanceMatrixGeneratorInterface {
 
   void BuildNeighbors(const vector<string> &orienteering_map);
   // valid neighbors of each coordinate.
-  unordered_map<Coordinate, vector<Coordinate>> neighbors_;
+  map<Coordinate, vector<Coordinate>> neighbors_;
 };
 
 
@@ -358,8 +358,7 @@ bool DMGeneratorWithBFS::FindShortestPaths(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets,
     const size_t &source_index) {
-  // speed up search by using hash table.
-  unordered_set<Coordinate> hashed_targets(targets.cbegin(), targets.cend());
+  set<Coordinate> targets_set(targets.cbegin(), targets.cend());
   // get source coordinate.
   const Coordinate &source_coordinate = targets[source_index];
 
@@ -389,7 +388,7 @@ bool DMGeneratorWithBFS::FindShortestPaths(
          && searched_targets < targets.size()) {
     const auto &coordinate = out_queue_ptr->front();
     // check target in constant time.
-    if (hashed_targets.find(coordinate) != hashed_targets.end()) {
+    if (targets_set.find(coordinate) != targets_set.end()) {
       // current coordinate is target.
       // get index of target in targets, with the same coordinate.
       const size_t target_index = distance(
@@ -475,10 +474,10 @@ int DMGeneratorWithAStar::FindShortestPathFromSourceToGoal(
   const Coordinate &source = targets[source_index];
   const Coordinate &goal = targets[goal_index];
 
-  unordered_map<Coordinate, int> g_score;
-  unordered_set<Coordinate> closed;
+  map<Coordinate, int> g_score;
+  set<Coordinate> closed;
 
-  unordered_map<Coordinate, int> f_score;
+  map<Coordinate, int> f_score;
   using IntCoordinatePair = pair<int, Coordinate>;
   set<IntCoordinatePair> opened;
 
