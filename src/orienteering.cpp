@@ -27,6 +27,7 @@
 #include <algorithm>
 #include <bitset>
 #include <cstddef>
+#include <cstdlib>
 #include <functional>
 #include <future>
 #include <iostream>
@@ -37,10 +38,12 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <set>
 #include <utility>
 #include <vector>
 
 
+using std::abs;
 using std::async;
 using std::bind;
 using std::bitset;
@@ -54,10 +57,12 @@ using std::function;
 using std::future;
 using std::hash;
 using std::istream;
+using std::min_element;
 using std::next_permutation;
 using std::numeric_limits;
 using std::pair;
 using std::queue;
+using std::set;
 using std::string;
 using std::size_t;
 using std::unordered_map;
@@ -150,6 +155,20 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
       const size_t &source_index);
 };
 
+class DMGeneratorWithAStar : public DistanceMatrixGeneratorInterface {
+ public:
+  bool Generate(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets) override;
+
+ private:
+  int FindShortestPathFromSourceToGoal(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets,
+      const size_t &source_index,
+      const size_t &goal_index);
+};
+
 
 class TSPCalculator {
  public:
@@ -184,6 +203,106 @@ struct hash<Coordinate> {
 };
 
 }  // namespace std
+
+
+// return the shortest distance from source to goal.
+int DMGeneratorWithAStar::FindShortestPathFromSourceToGoal(
+    const vector<string> &orienteering_map,
+    const vector<Coordinate> &targets,
+    const size_t &source_index,
+    const size_t &goal_index) {
+
+  const int row_size = orienteering_map.size();
+  const int column_size = orienteering_map.front().size();
+  const Coordinate &source = targets[source_index];
+  const Coordinate &goal = targets[goal_index];
+
+  unordered_map<Coordinate, int> g_score;
+  unordered_set<Coordinate> closed;
+
+  unordered_map<Coordinate, int> f_score;
+  using IntCoordinatePair = pair<int, Coordinate>;
+  set<IntCoordinatePair> opened;
+
+  f_score[source] = 0;
+  opened.insert(IntCoordinatePair(0, source));
+
+  while (!opened.empty()) {
+    // pop the item with minimum f_score.
+    auto min_iter = opened.begin();
+    IntCoordinatePair current_item = *min_iter;
+    const Coordinate &current = current_item.second;
+    opened.erase(min_iter);
+
+    if (current == goal) {
+      // end searching.
+      return g_score[current];
+    }
+
+    // mark current as closed.
+    closed.insert(current);
+
+    for (auto neighbor : NextCoordinates(current, row_size, column_size)) {
+      // check close block.
+      const size_t &x = neighbor.first;
+      const size_t &y = neighbor.second;
+      if (orienteering_map[x][y] == kCloseBlockSymbol) { continue; }
+      // check closed_set.
+      if (closed.find(neighbor) != closed.end()) { continue; }
+
+      int tentative_g_score = g_score[current] + 1;
+
+      if (g_score.find(neighbor) == g_score.end()) {
+        // if neighbor not in g_score.
+        g_score[neighbor] = kIntMax;
+      }
+      if (tentative_g_score < g_score[neighbor]) {
+        // update g_score.
+        g_score[neighbor] = tentative_g_score;
+
+        // remove neighbor from opened if exist.
+        if (f_score.find(neighbor) != f_score.end()) {
+          auto neighbor_iter = opened.find(
+              IntCoordinatePair(f_score[neighbor], neighbor));
+          opened.erase(neighbor_iter);
+        }
+        // update f_score.
+        const int heuristic_cost =
+            abs(neighbor.first - goal.first) +
+            abs(neighbor.second - neighbor.second);
+        f_score[neighbor] = tentative_g_score + heuristic_cost;
+        // added to opened.
+        opened.insert(
+            IntCoordinatePair(f_score[neighbor], neighbor));
+      }
+    }
+  }
+  return -1;
+}
+
+
+bool DMGeneratorWithAStar::Generate(
+      const vector<string> &orienteering_map,
+      const vector<Coordinate> &targets) {
+  // init matrix.
+  const int target_size = targets.size();
+  distance_matrix_ = InitMatrix(target_size, target_size, 0);
+
+  for (size_t source_index = 0;
+       source_index != targets.size(); ++source_index) {
+    for (size_t goal_index = source_index + 1;
+         goal_index < targets.size(); ++goal_index) {
+      int length = FindShortestPathFromSourceToGoal(
+          orienteering_map, targets, source_index, goal_index);
+      if (length == -1) {
+        return false;
+      }
+      distance_matrix_[source_index][goal_index] = length;
+      distance_matrix_[goal_index][source_index] = length;
+    }
+  }
+  return true;
+}
 
 
 template <typename ReturnElementType>
