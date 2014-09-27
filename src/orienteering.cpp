@@ -98,23 +98,6 @@ hash<int> HashInt;
 // ============================================================================
 // Declearation of classes.
 // ============================================================================
-namespace std {
-
-template <>
-struct hash<Coordinate> {
-  using result_type = size_t;
-  using argument_type = Coordinate;
-  // call operator.
-  size_t operator()(const Coordinate &target) const {
-    // XOR of hash results.
-    // return hash<int>()(target.first) ^ hash<int>()(target.second);
-    return HashInt(target.first) ^ HashInt(target.second);
-  }
-};
-
-}  // namespace std
-
-
 template <typename ReturnElementType>
 struct ConcurrencyHandler {
   using VecFuncs = vector<function<ReturnElementType ()>>;
