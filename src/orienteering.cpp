@@ -48,9 +48,9 @@
 #include <limits>
 #include <map>
 #include <queue>
+#include <set>
 #include <string>
 #include <unordered_map>
-#include <set>
 #include <utility>
 #include <vector>
 
@@ -69,8 +69,8 @@ using std::numeric_limits;
 using std::pair;
 using std::queue;
 using std::set;
-using std::string;
 using std::size_t;
+using std::string;
 using std::unordered_map;
 using std::vector;
 
@@ -116,26 +116,27 @@ class InputHandler {
   // stream.
   void ReadFromInputStream(istream *in_ptr);
 
-  // Results of loading data.
+  // Output.
   vector<string> orienteering_map_;
   Coordinate start_;
   Coordinate goal_;
   vector<Coordinate> checkpoints_;
 
  private:
-  // Auxiliary function that records the coordinates of speical character.
+  // Auxiliary function that records the coordinates of start, goal and
+  // checkpoints.
   void RecordCoordinate(const size_t &row_index, const size_t &column_index);
 };
 
 
 // Defines the interface of distance matrix generator. Derived class should
-// override `Generate` member function and fill the `distance_matrix_` data
+// override `Generate` member function, and fill the `distance_matrix_` data
 // member in the overrided `Generate` member function. `Generate` return true
 // if everything is fine. Otherwise the function would return false,
 // indicating "players cannot arrive at the goal from the start by passing all
 // the checkpoints".
 //
-// The class also provoide some useful operation during the generation of
+// The class also provoides some useful operations during the generation of
 // distance matrix. `InitMatrix` would generator a `row_size` * `column_size`
 // matrix filled with `default_value`. `BuildNeighbors` could build the
 // mapping from each coordinate to its valid neighbors, in which the valid
@@ -216,6 +217,7 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
 class TSPCalculatorInterface {
  public:
   // Interface should be overrided by derived class.
+  //
   // The input of `CalculateMinLength` is a little bit tricky. Suppose
   // `distance_matrix` is a N * N 2-D array, the function would consider
   // (N - 2) as the index of start point, (N - 1) as the index of goal point
@@ -259,7 +261,7 @@ class TSPCalculatorWithBitset : public TSPCalculatorInterface {
 
 
 // Solve the TSP problem based on dynamic programming. This class implemented
-// the same strategy with `TSPCalculatorWithBitset`, but in a more effcient
+// the same strategy as `TSPCalculatorWithBitset`, but in a more effcient
 // and less readable way.
 //
 // Sample usage:
@@ -356,9 +358,10 @@ void DistanceMatrixGeneratorInterface::BuildNeighbors(
   for (size_t row_index = 0; row_index != row_size; ++row_index) {
     for (size_t column_index = 0;
          column_index != column_size; ++column_index) {
-      // Don't process close block.
-      if (IsCloseBlock(row_index, column_index)) { continue; }
-
+      if (IsCloseBlock(row_index, column_index)) {
+        // Don't process close block.
+        continue;
+      }
       Coordinate current(row_index, column_index);
       auto neighbors = NextCoordinates(current, row_size, column_size);
       // filter out close block.
@@ -383,12 +386,10 @@ template <typename Element>
 vector<vector<Element>> DistanceMatrixGeneratorInterface::InitMatrix(
     const int &row_size, const int &column_size,
     const Element &default_value) {
-  vector<vector<Element>> matrix;
-  for (int counter = 0; counter != row_size; ++counter) {
-    // init a row for each target.
-    matrix.push_back(vector<Element>(column_size, default_value));
-  }
-  return matrix;
+  using Line = vector<Element>;
+  return vector<Line>(
+      row_size,
+      Line(column_size, default_value));
 }
 
 
@@ -397,6 +398,7 @@ bool DMGeneratorWithBFS::FindShortestPaths(
     const vector<string> &orienteering_map,
     const vector<Coordinate> &targets,
     const size_t &source_index) {
+  // speedup query by using std::set.
   set<Coordinate> targets_set(targets.cbegin(), targets.cend());
   // get source coordinate.
   const Coordinate &source_coordinate = targets[source_index];
@@ -404,52 +406,54 @@ bool DMGeneratorWithBFS::FindShortestPaths(
   // init first_queue with first target; second_queue is empty.
   queue<Coordinate> first_queue, second_queue;
   first_queue.push(source_coordinate);
+  // binds out_queue_ptr to first_queue, binds in_queue_ptr to second_queue.
+  auto out_queue_ptr = &first_queue;
+  auto in_queue_ptr = &second_queue;
 
   // init matrix that records searched coordinates.
   const int row_size = orienteering_map.size();
   const int column_size = orienteering_map.front().size();
   auto searched_coordinate = InitMatrix(row_size, column_size, false);
   // mark source coordinate as searched.
-  const int &x = source_coordinate.first;
-  const int &y = source_coordinate.second;
-  searched_coordinate[x][y] = true;
+  const int &current_x = source_coordinate.first;
+  const int &current_y = source_coordinate.second;
+  searched_coordinate[current_x][current_y] = true;
 
   // counter of distance.
   int current_distance = 0;
   // counter of searched targets.
   size_t searched_targets = 0;
 
-  // binds out_queue_ptr to first_queue, binds in_queue_ptr to second_queue.
-  auto out_queue_ptr = &first_queue;
-  auto in_queue_ptr = &second_queue;
   // carry out BFS.
   while (!out_queue_ptr->empty()
          && searched_targets < targets.size()) {
-    const auto &coordinate = out_queue_ptr->front();
-    // check target in constant time.
-    if (targets_set.find(coordinate) != targets_set.end()) {
-      // current coordinate is target.
-      // get index of target in targets, with the same coordinate.
+    // get the first element from queue.
+    const auto &current = out_queue_ptr->front();
+
+    if (targets_set.find(current) != targets_set.end()) {
+      // `current` is a target.
+      // get index of `target` in `targets`, with the same coordinate.
       const size_t target_index = distance(
           targets.cbegin(),
-          find(targets.cbegin(), targets.cend(), coordinate));
+          find(targets.cbegin(), targets.cend(), current));
       // now, we can fill element of the distance_matrix_, pointed by
-      // (source_index, target_index), with the value distance.
+      // (source_index, target_index), with the value of `current_distance`.
       distance_matrix_[source_index][target_index] = current_distance;
       ++searched_targets;
     }
 
     // generate coordinates for searching.
-    for (const auto &next_coordinate : neighbors_[coordinate]) {
-      const int &x = next_coordinate.first;
-      const int &y = next_coordinate.second;
-      // searched.
-      if (searched_coordinate[x][y]) { continue; }
-
-      // valid coordinate!
-      in_queue_ptr->push(next_coordinate);
+    for (const auto &neighbor : neighbors_[current]) {
+      const int &neighbor_x = neighbor.first;
+      const int &neighbor_y = neighbor.second;
+      if (searched_coordinate[neighbor_x][neighbor_y]) {
+        // searched.
+        continue;
+      }
+      // push neighbor to queue.
+      in_queue_ptr->push(neighbor);
       // mark visited.
-      searched_coordinate[x][y] = true;
+      searched_coordinate[neighbor_x][neighbor_y] = true;
     }
     // finish processing current coordinate, pop it.
     out_queue_ptr->pop();
@@ -538,8 +542,8 @@ int TSPCalculatorWithBitset::CalculateMinLength(
   const size_t source_index = dimension - 2;
   const size_t checkpoint_size = dimension - 2;
 
-  // for the case that there's no checkpoints.
   if (checkpoint_size == 0) {
+    // for the case that there's no checkpoints.
     return distance_matrix[source_index][goal_index];
   }
 
@@ -593,25 +597,44 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
   const size_t checkpoint_size = dimension - 2;
   const unsigned end_of_bit_pattern = 1 << (checkpoint_size + 1);
 
-  // for the case that there's no checkpoints.
   if (checkpoint_size == 0) {
+    // for the case that there's no checkpoints.
     return distance_matrix[source_index][goal_index];
   }
 
+  // `length_matrix` is a two dimensional matrix, with the first dimension
+  // index as the selection of checkpoints and start point, and the second
+  // dimension as the index of checkpoint with which the path ends.
+  //
+  // For instance, suppose the `checkpoint_size` is 3, then we have something
+  // like "length_matrix[0xB][2] = 1;". 0xB is equivalent to binary code 1011,
+  // the least significant bit 101[1] represents that current set contains the
+  // start point. [101]1, three high-order bits, represent the selection of
+  // checkpoints, meaning that current set contains checkpoints indexed by 0
+  // and 2. "length_matrix[0xB][2]" means current set has a shortest path from
+  // start point to the checkpoint indexed by 2, and the value of
+  // "length_matrix[0xB][2]" is the length of such shortest path.
+  //
   vector<vector<int>> length_matrix(
       end_of_bit_pattern,
       vector<int>(checkpoint_size, kIntMax));
+
   for (unsigned bit_pattern = 0x3;
        bit_pattern < end_of_bit_pattern; bit_pattern += 0x2) {
 
     for (unsigned outer_shift = 1, outer_index = 0;
          outer_shift <= checkpoint_size; ++outer_shift, ++outer_index) {
       if (!(bit_pattern & (1 << outer_shift))) {
+        // `bit_pattern` do not contains checkpoint indexed by `outer_index`.
         continue;
       }
+      // remove checkpoint `outer_index` from `bit_pattern`, create a
+      // `subset`.
       unsigned subset = bit_pattern - (1 << outer_shift);
       auto &target = length_matrix[bit_pattern][outer_index];
       if (subset == 0x1) {
+        // `subset` contains only the start point, just set the value as the
+        // distance from source to checkpoint `outer_index`.
         target = distance_matrix[source_index][outer_index];
         continue;
       }
@@ -628,6 +651,7 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
     }
   }
 
+  // final step.
   const unsigned all_checkpoints = end_of_bit_pattern - 1;
   int total_minimum = kIntMax;
   for (unsigned checkpoint_index = 0;
@@ -671,13 +695,13 @@ void Orienteering::main() {
   TSPCalculatorWithBitOperation calculator;
   int min_length = calculator.CalculateMinLength(distance_matrix);
 
-  // output.
+  // Output.
   cout << min_length << endl;
 }
 
 
-// int main(int argc, char* argv[]) {
-//   Orienteering o;
-//   o.main();
-//   return 0;
-// }
+int main(int argc, char* argv[]) {
+  Orienteering o;
+  o.main();
+  return 0;
+}
