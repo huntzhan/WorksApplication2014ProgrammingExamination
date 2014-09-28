@@ -48,6 +48,7 @@ using std::fill;
 using std::find;
 using std::istream;
 using std::map;
+using std::min;
 using std::numeric_limits;
 using std::pair;
 using std::queue;
@@ -389,7 +390,7 @@ void TSPCalculator::UpdateMinLengths(
 
   vector<size_t> indices;
   for (size_t index = 0; index != checkpoint_size; ++index) {
-    if (checkpoint_set[index]) {
+    if (checkpoint_set.test(index)) {
       indices.push_back(index);
     }
   }
@@ -400,21 +401,18 @@ void TSPCalculator::UpdateMinLengths(
     previous_subset.reset(index);
 
     // init total_minimum to max value.
-    int minimum = kIntMax;
+    int local_minimum = kIntMax;
     // loop over the rest of indices.
     for (const size_t &other_index : indices) {
       if (other_index == index) { continue; }
       // access previous result.
       const int &previous_length = min_lengths[previous_subset][other_index];
-      // calculate current length.
-      int current_length = previous_length
-                           + distance_matrix[index][other_index];
-      if (current_length < minimum) {
-        minimum = current_length;
-      }
-    }
+      local_minimum = min(
+          local_minimum,
+          previous_length + distance_matrix[index][other_index]);
+    }                        
     // update min_lengths.
-    min_lengths[checkpoint_set][index] = minimum;
+    min_lengths[checkpoint_set][index] = local_minimum;
   }
 }
 
@@ -433,10 +431,9 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 
   // checkpoint_sets for DP.
   vector<vector<StrictBitset>> checkpoint_sets(checkpoint_size + 1);
-  unsigned max_bit_pattern =
-      StrictBitset(string(checkpoint_size, '1')).to_ulong();
+  unsigned end_of_bit_pattern = 1 << checkpoint_size;
   for (unsigned bit_pattern = 1;
-       bit_pattern <= max_bit_pattern; ++bit_pattern) {
+       bit_pattern < end_of_bit_pattern; ++bit_pattern) {
     StrictBitset checkpoint_set(bit_pattern);
     auto &bucket = checkpoint_sets[checkpoint_set.count()];
     bucket.push_back(checkpoint_set);
@@ -464,11 +461,10 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   int total_minimum = kIntMax;
   for (size_t checkpoint_index = 0;
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
-    int current_length = min_lengths[all_checkpoints][checkpoint_index]
-                         + distance_matrix[goal_index][checkpoint_index];
-    if (current_length < total_minimum) {
-      total_minimum = current_length;
-    }
+    total_minimum= min(
+        total_minimum,
+        min_lengths[all_checkpoints][checkpoint_index]
+        + distance_matrix[goal_index][checkpoint_index]);
   }
   return total_minimum;
 }
