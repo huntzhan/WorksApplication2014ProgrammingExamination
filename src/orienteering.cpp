@@ -17,6 +17,22 @@
 
 // ============================================================================
 // # Introduction.
+// 
+// The code is implemented with features as follow:
+//  
+// * Follows *Google C++ Style Guide*.
+// * Make good usage of C++11 features.
+// * Highly focus on the readablity and performance.
+// 
+// The following content are seperated into six sessions:
+// 
+// 1. Related standard libraries
+// 2. Global type alias.
+// 3. Global variables.
+// 4. Declearation of classes.
+// 5. Definition of classes.
+// 6. Skeleton code for the examination.
+//
 // ============================================================================
 
 
@@ -82,55 +98,93 @@ const int kIntMax = numeric_limits<int>::max();
 // ============================================================================
 // Declearation of classes.
 // ============================================================================
+// Load the orienteering map from input stream. Sample usage:
+//     InputHandler input_handler;
+//     input_handler.ReadFromInputStream(&cin);  // Load from cin.
+//
+//     // Loaded orienteering map.
+//     const auto &orienteering_map = input_handler.orienteering_map_;
+//   
+//     // Coordinates that useful for subsequently processing.
+//     const auto &targets = input_handler.checkpoints_;
+//     const auto &start = input_handler.start_;
+//     const auto &goal = input_handler.goal_;
+//
 class InputHandler {
  public:
+  // Accept a pointer to input stream, then load the orienteering map from such
+  // stream.
   void ReadFromInputStream(istream *in_ptr);
 
+  // Results of loading data.
   vector<string> orienteering_map_;
   Coordinate start_;
   Coordinate goal_;
   vector<Coordinate> checkpoints_;
 
  private:
+  // Auxiliary function that records the coordinates of speical character.
   void RecordCoordinate(const size_t &row_index, const size_t &column_index);
 };
 
 
+// Defines the interface of distance matrix generator. Derived class should
+// override `Generate` member function and fill the `distance_matrix_` data
+// member in the overrided `Generate` member function. `Generate` return true
+// if everything is fine. Otherwise the function would return false,
+// indicating "players cannot arrive at the goal from the start by passing all
+// the checkpoints".
+//
+// The class also provoide some useful operation during the generation of
+// distance matrix. `InitMatrix` would generator a `row_size` * `column_size`
+// matrix filled with `default_value`. `BuildNeighbors` could build the
+// mapping from each coordinate to its valid neighbors, in which the valid
+// neighbor means neither the neighbor is close block nor is out of range.
+//
 class DistanceMatrixGeneratorInterface {
  public:
-  // interface.
+  // Interface should be overrided by derived class.
   virtual bool Generate(
       const vector<string> &orienteering_map,
       const vector<Coordinate> &targets) = 0;
-  // output.
-  DistanceMatrix distance_matrix_;
 
-  // Shared logic.
+  // Genenrate a `row_size` * `column_size` with `default_value`.
   template <typename Element>
   vector<vector<Element>> InitMatrix(
       const int &row_size, const int &column_size,
       const Element &default_value);
+  // Build the all valid neighbors in orienteering map, the result would be
+  // saved in `distance_matrix_` data member.
+  void BuildNeighbors(const vector<string> &orienteering_map);
 
-  bool IsValid(
-      const Coordinate &coordinate,
-      const int &row_size, const int &column_size);
+  // Valid neighbors of each coordinate.
+  map<Coordinate, vector<Coordinate>> neighbors_;
+  // Output.
+  DistanceMatrix distance_matrix_;
 
+ private:
+  // Auxiliary function genenrates coordinates of neighbors that are not out
+  // of range.
   vector<Coordinate> NextCoordinates(
       const Coordinate &coordinate,
       const int &row_size, const int &column_size);
-
-  void BuildNeighbors(const vector<string> &orienteering_map);
-  // valid neighbors of each coordinate.
-  map<Coordinate, vector<Coordinate>> neighbors_;
 };
 
 
-class TSPCalculatorInterface {
- public:
-  virtual int CalculateMinLength(const DistanceMatrix &distance_matrix) = 0;
-};
-
-
+// Building the distance by using BFS(breadth-first-search). Briefly,
+// `Generate` calls `FindShortestPaths` to genenrate distance matrix.
+// `FindShortestPaths` would carry out the distances from single source to
+// all the other goals.
+//
+// Sample usage:
+//     DMGeneratorWithBFS generator;
+//     bool flag = generator.Generate(orienteering_map, targets);
+//     if (!flag) {
+//       // Targets are not connected.
+//     }
+//     // Access the output.
+//     const auto &distance_matrix = generator.distance_matrix_;
+//
 class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
  public:
   bool Generate(
@@ -138,6 +192,15 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
       const vector<Coordinate> &targets) override;
 
  private:
+  // Calculate the distances from a single source to multiple goals. The
+  // single source is in `targets` and indexed by `source_index`, while the
+  // goals are the elements of `targets` except the one indexed by
+  // `source_index`.
+  //
+  // Return true if the function can carry out all the distances fron source
+  // to goals, in other word, all the `targets` are connected. Once again,
+  // the results of calculating would be kept in `distance_matrix_`.
+  //
   bool FindShortestPaths(
       const vector<string> &orienteering_map,
       const vector<Coordinate> &targets,
@@ -145,7 +208,40 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
 };
 
 
+// Defines the interface of calculating "the minimum distance from the start
+// to the goal with passing all the checkpoints". Since this is basically a TSP
+// problem, the interface is named `TSPCalculatorInterface`. Derived class
+// should override `CalculateMinLength` member function.
+//
+class TSPCalculatorInterface {
+ public:
+  // Interface should be overrided by derived class.
+  // The input of `CalculateMinLength` is a little bit tricky. Suppose
+  // `distance_matrix` is a N * N 2-D array, the function would consider
+  // (N - 2) as the index of start point, (N - 1) as the index of goal point
+  // (the index starts in 0). If there's no checkpoints, the `distance_matrix`
+  // would be a 2 * 2 2-D array, with index 0 points to start, index 1 points
+  // to goal.
+  //
+  virtual int CalculateMinLength(const DistanceMatrix &distance_matrix) = 0;
+};
+
+
+// Solve the TSP problem based on dynamic programming. The time complexity is
+// O(n^2 * 2^n). `TSPCalculatorWithBitset` is implemented with std::bitset,
+// with the purpose of enhancing readability of the code. But with the
+// consideration of performance, another version of the same strategy is
+// implemented with built-in arithmatic type, which is
+// `TSPCalculatorWithBitOperation`. Since `TSPCalculatorWithBitOperation`
+// outperforms `TSPCalculatorWithBitset`, the TSP problem would be handled by
+// `TSPCalculatorWithBitOperation`.
+//
+// Sample usage:
+//     TSPCalculatorWithBitset calculator;
+//     int min_length = calculator.CalculateMinLength(distance_matrix);
+//
 class TSPCalculatorWithBitset : public TSPCalculatorInterface {
+  // Auxiliary types for coding.
   using StrictBitset = bitset<32>;
   using GroupIndexValueMapping = map<size_t, int>;
   using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
@@ -162,6 +258,14 @@ class TSPCalculatorWithBitset : public TSPCalculatorInterface {
 };
 
 
+// Solve the TSP problem based on dynamic programming. This class implemented
+// the same strategy with `TSPCalculatorWithBitset`, but in a more effcient
+// and less readable way.
+//
+// Sample usage:
+//     TSPCalculatorWithBitOperation calculator;
+//     int min_length = calculator.CalculateMinLength(distance_matrix);
+//
 class TSPCalculatorWithBitOperation : public TSPCalculatorInterface {
  public:
   int CalculateMinLength(const DistanceMatrix &distance_matrix) override;
@@ -213,18 +317,15 @@ void InputHandler::ReadFromInputStream(istream *in_ptr) {
 }
 
 
-inline bool DistanceMatrixGeneratorInterface::IsValid(
-    const Coordinate &coordinate,
-    const int &row_size, const int &column_size) {
-  const int &x = coordinate.first;
-  const int &y = coordinate.second;
-  return (0 <= x && x < row_size) && (0 <= y && y < column_size);
-}
-
-
 vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
     const Coordinate &coordinate,
     const int &row_size, const int &column_size) {
+  // Check if the coordinate is out of range.
+  auto IsValid = [&](const Coordinate &coordinate) -> bool {
+    const int &x = coordinate.first;
+    const int &y = coordinate.second;
+    return (0 <= x && x < row_size) && (0 <= y && y < column_size);
+  };
   // indexs.
   const int &x = coordinate.first;
   const int &y = coordinate.second;
@@ -234,7 +335,7 @@ vector<Coordinate> DistanceMatrixGeneratorInterface::NextCoordinates(
                                 Coordinate(x + 1, y),     // down.
                                 Coordinate(x, y - 1),     // left.
                                 Coordinate(x, y + 1)}) {  // right.
-    if (IsValid(next_coordinate, row_size, column_size)) {
+    if (IsValid(next_coordinate)) {
       next_coordinates.push_back(next_coordinate);
     }
   }
@@ -430,7 +531,8 @@ void TSPCalculatorWithBitset::UpdateMinLengths(
 
 
 // Solve TSP problem based on dynamic programming.
-int TSPCalculatorWithBitset::CalculateMinLength(const DistanceMatrix &distance_matrix) {
+int TSPCalculatorWithBitset::CalculateMinLength(
+    const DistanceMatrix &distance_matrix) {
   const int dimension = distance_matrix.size();
   const size_t goal_index = dimension - 1;
   const size_t source_index = dimension - 2;
@@ -496,8 +598,9 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
     return distance_matrix[source_index][goal_index];
   }
 
-  vector<vector<int>> dp(end_of_bit_pattern,
-                         vector<int>(checkpoint_size, kIntMax));
+  vector<vector<int>> length_matrix(
+      end_of_bit_pattern,
+      vector<int>(checkpoint_size, kIntMax));
   for (unsigned bit_pattern = 0x3;
        bit_pattern < end_of_bit_pattern; bit_pattern += 0x2) {
 
@@ -507,7 +610,7 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
         continue;
       }
       unsigned subset = bit_pattern - (1 << outer_shift);
-      auto &target = dp[bit_pattern][outer_index];
+      auto &target = length_matrix[bit_pattern][outer_index];
       if (subset == 0x1) {
         target = distance_matrix[source_index][outer_index];
         continue;
@@ -518,7 +621,7 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
             && inner_shift != outer_shift) {
           target = min(
               target,
-              dp[subset][inner_index]
+              length_matrix[subset][inner_index]
               + distance_matrix[outer_index][inner_index]);
         }
       }
@@ -531,7 +634,7 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
        checkpoint_index != checkpoint_size; ++checkpoint_index) {
     total_minimum= min(
         total_minimum,
-        dp[all_checkpoints][checkpoint_index]
+        length_matrix[all_checkpoints][checkpoint_index]
         + distance_matrix[goal_index][checkpoint_index]);
   }
   return total_minimum;
