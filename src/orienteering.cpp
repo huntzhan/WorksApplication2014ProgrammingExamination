@@ -67,10 +67,6 @@ using DistanceMatrix = vector<vector<int>>;
 // Coordinate of symbols. Given that "Coordinate example;", "example.first"
 // represents the row index and "example.second" represents the column index.
 using Coordinate = pair<int, int>;
-// Types used in TSPCalculatorWithBitset.
-using StrictBitset = bitset<32>;
-using GroupIndexValueMapping = map<size_t, int>;
-using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
 
 
 // ============================================================================
@@ -150,6 +146,10 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
 
 
 class TSPCalculatorWithBitset : public TSPCalculatorInterface {
+  using StrictBitset = bitset<32>;
+  using GroupIndexValueMapping = map<size_t, int>;
+  using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
+
  public:
   int CalculateMinLength(const DistanceMatrix &distance_matrix) override;
 
@@ -503,22 +503,23 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
 
     for (unsigned outer_shift = 1, outer_index = 0;
          outer_shift <= checkpoint_size; ++outer_shift, ++outer_index) {
-      if (bit_pattern & (1 << outer_shift)) {
-        unsigned subset = bit_pattern - (1 << outer_shift);
-        auto &target = dp[bit_pattern][outer_index];
-        if (subset == 0x1) {
-          target = distance_matrix[source_index][outer_index];
-          continue;
-        }
-        for (unsigned inner_shift = 1, inner_index = 0;
-             inner_shift <= checkpoint_size; ++inner_shift, ++inner_index) {
-          if (bit_pattern & (1 << inner_shift)
-              && inner_shift != outer_shift) {
-            target = min(
-                target,
-                dp[subset][inner_index]
-                + distance_matrix[outer_index][inner_index]);
-          }
+      if (!(bit_pattern & (1 << outer_shift))) {
+        continue;
+      }
+      unsigned subset = bit_pattern - (1 << outer_shift);
+      auto &target = dp[bit_pattern][outer_index];
+      if (subset == 0x1) {
+        target = distance_matrix[source_index][outer_index];
+        continue;
+      }
+      for (unsigned inner_shift = 1, inner_index = 0;
+           inner_shift <= checkpoint_size; ++inner_shift, ++inner_index) {
+        if (bit_pattern & (1 << inner_shift)
+            && inner_shift != outer_shift) {
+          target = min(
+              target,
+              dp[subset][inner_index]
+              + distance_matrix[outer_index][inner_index]);
         }
       }
     }
