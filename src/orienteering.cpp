@@ -67,7 +67,7 @@ using DistanceMatrix = vector<vector<int>>;
 // Coordinate of symbols. Given that "Coordinate example;", "example.first"
 // represents the row index and "example.second" represents the column index.
 using Coordinate = pair<int, int>;
-// Types used in TSPCalculator.
+// Types used in TSPCalculatorWithBitset.
 using StrictBitset = bitset<32>;
 using GroupIndexValueMapping = map<size_t, int>;
 using GroupValue = unordered_map<StrictBitset, GroupIndexValueMapping>;
@@ -129,6 +129,12 @@ class DistanceMatrixGeneratorInterface {
 };
 
 
+class TSPCalculatorInterface {
+ public:
+  virtual int CalculateMinLength(const DistanceMatrix &distance_matrix) = 0;
+};
+
+
 class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
  public:
   bool Generate(
@@ -143,9 +149,9 @@ class DMGeneratorWithBFS : public DistanceMatrixGeneratorInterface {
 };
 
 
-class TSPCalculator {
+class TSPCalculatorWithBitset : public TSPCalculatorInterface {
  public:
-  int CalculateMinLength(const DistanceMatrix &distance_matrix);
+  int CalculateMinLength(const DistanceMatrix &distance_matrix) override;
 
  private:
   void UpdateMinLengths(
@@ -153,6 +159,12 @@ class TSPCalculator {
       const size_t &checkpoint_size,
       const DistanceMatrix &distance_matrix,
       GroupValue *min_lengths_ptr);
+};
+
+
+class TSPCalculatorWithBitOperation : public TSPCalculatorInterface {
+ public:
+  int CalculateMinLength(const DistanceMatrix &distance_matrix) override;
 };
 
 
@@ -380,7 +392,7 @@ bool DMGeneratorWithBFS::Generate(
 }
 
 
-void TSPCalculator::UpdateMinLengths(
+void TSPCalculatorWithBitset::UpdateMinLengths(
     const StrictBitset &checkpoint_set,
     const size_t &checkpoint_size,
     const DistanceMatrix &distance_matrix,
@@ -418,7 +430,7 @@ void TSPCalculator::UpdateMinLengths(
 
 
 // Solve TSP problem based on dynamic programming.
-int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
+int TSPCalculatorWithBitset::CalculateMinLength(const DistanceMatrix &distance_matrix) {
   const int dimension = distance_matrix.size();
   const size_t goal_index = dimension - 1;
   const size_t source_index = dimension - 2;
@@ -470,6 +482,61 @@ int TSPCalculator::CalculateMinLength(const DistanceMatrix &distance_matrix) {
 }
 
 
+int TSPCalculatorWithBitOperation::CalculateMinLength(
+    const DistanceMatrix &distance_matrix) {
+
+  const int dimension = distance_matrix.size();
+  const size_t goal_index = dimension - 1;
+  const size_t source_index = dimension - 2;
+  const size_t checkpoint_size = dimension - 2;
+  const unsigned end_of_bit_pattern = 1 << (checkpoint_size + 1);
+
+  // for the case that there's no checkpoints.
+  if (checkpoint_size == 0) {
+    return distance_matrix[source_index][goal_index];
+  }
+
+  vector<vector<int>> dp(end_of_bit_pattern,
+                         vector<int>(checkpoint_size, kIntMax));
+  for (unsigned bit_pattern = 0x3;
+       bit_pattern < end_of_bit_pattern; bit_pattern += 0x2) {
+
+    for (unsigned outer_shift = 1, outer_index = 0;
+         outer_shift <= checkpoint_size; ++outer_shift, ++outer_index) {
+      if (bit_pattern & (1 << outer_shift)) {
+        unsigned subset = bit_pattern - (1 << outer_shift);
+        auto &target = dp[bit_pattern][outer_index];
+        if (subset == 0x1) {
+          target = distance_matrix[source_index][outer_index];
+          continue;
+        }
+        for (unsigned inner_shift = 1, inner_index = 0;
+             inner_shift <= checkpoint_size; ++inner_shift, ++inner_index) {
+          if (bit_pattern & (1 << inner_shift)
+              && inner_shift != outer_shift) {
+            target = min(
+                target,
+                dp[subset][inner_index]
+                + distance_matrix[outer_index][inner_index]);
+          }
+        }
+      }
+    }
+  }
+
+  const unsigned all_checkpoints = end_of_bit_pattern - 1;
+  int total_minimum = kIntMax;
+  for (unsigned checkpoint_index = 0;
+       checkpoint_index != checkpoint_size; ++checkpoint_index) {
+    total_minimum= min(
+        total_minimum,
+        dp[all_checkpoints][checkpoint_index]
+        + distance_matrix[goal_index][checkpoint_index]);
+  }
+  return total_minimum;
+}
+
+
 // ============================================================================
 // Skeleton code for the examination.
 // ============================================================================
@@ -496,7 +563,8 @@ void Orienteering::main() {
   }
 
   const auto &distance_matrix = generator.distance_matrix_;
-  TSPCalculator calculator;
+  // TSPCalculatorWithBitset calculator;
+  TSPCalculatorWithBitOperation calculator;
   int min_length = calculator.CalculateMinLength(distance_matrix);
 
   // output.

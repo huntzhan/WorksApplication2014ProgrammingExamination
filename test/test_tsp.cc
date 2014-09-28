@@ -20,8 +20,11 @@ TEST(tsp, example_1) {
   DistanceMatrix dm = {
     {0, 4},
     {4, 0}};
-  TSPCalculator calculator;
+  TSPCalculatorWithBitset calculator;
   EXPECT_EQ(calculator.CalculateMinLength(dm), 4);
+
+  TSPCalculatorWithBitOperation another_calculator;
+  EXPECT_EQ(another_calculator.CalculateMinLength(dm), 4);
 }
 
 TEST(tsp, example_2) {
@@ -30,8 +33,11 @@ TEST(tsp, example_2) {
     {1, 0, 3, 6},
     {2, 3, 0, 3},
     {5, 6, 3, 0}};
-  TSPCalculator calculator;
+  TSPCalculatorWithBitset calculator;
   EXPECT_EQ(calculator.CalculateMinLength(dm), 9);
+
+  TSPCalculatorWithBitOperation another_calculator;
+  EXPECT_EQ(another_calculator.CalculateMinLength(dm), 9);
 }
 
 TEST(tsp, example_3) {
@@ -39,8 +45,11 @@ TEST(tsp, example_3) {
     {0, 4, 2},
     {4, 0, 2},
     {2, 2, 0}};
-  TSPCalculator calculator;
+  TSPCalculatorWithBitset calculator;
   EXPECT_EQ(calculator.CalculateMinLength(dm), 6);
+
+  TSPCalculatorWithBitOperation another_calculator;
+  EXPECT_EQ(another_calculator.CalculateMinLength(dm), 6);
 }
 
 TEST(tsp, large) {
@@ -63,7 +72,31 @@ TEST(tsp, large) {
     {55, 63, 62, 87, 55, 60, 44, 35, 1, 16, 34, 62, 86, 13, 4, 0, 20, 66},
     {44, 54, 61, 9, 44, 77, 14, 5, 4, 26, 68, 46, 60, 89, 40, 20, 0, 32},
     {27, 68, 86, 23, 43, 31, 83, 93, 30, 6, 51, 24, 62, 20, 46, 66, 32, 0}};
-  TSPCalculator calculator;
+  TSPCalculatorWithBitset calculator;
+  calculator.CalculateMinLength(dm);
+}
+
+TEST(tsp, large_bit_operation) {
+  DistanceMatrix dm = {
+    {0, 38, 28, 37, 55, 97, 92, 42, 46, 43, 36, 19, 35, 54, 80, 55, 44, 27},
+    {38, 0, 16, 95, 50, 69, 2, 41, 90, 87, 86, 62, 71, 66, 81, 63, 54, 68},
+    {28, 16, 0, 90, 14, 51, 27, 84, 48, 100, 65, 70, 23, 60, 2, 62, 61, 86},
+    {37, 95, 90, 0, 52, 46, 43, 32, 39, 85, 70, 73, 53, 100, 100, 87, 9, 23},
+    {55, 50, 14, 52, 0, 1, 40, 11, 7, 33, 84, 18, 25, 42, 81, 55, 44, 43},
+    {97, 69, 51, 46, 1, 0, 52, 7, 43, 66, 75, 35, 57, 5, 85, 60, 77, 31},
+    {92, 2, 27, 43, 40, 52, 0, 71, 12, 93, 2, 55, 38, 89, 32, 44, 14, 83},
+    {42, 41, 84, 32, 11, 7, 71, 0, 61, 89, 16, 56, 24, 54, 92, 35, 5, 93},
+    {46, 90, 48, 39, 7, 43, 12, 61, 0, 94, 37, 6, 8, 97, 91, 1, 4, 30},
+    {43, 87, 100, 85, 33, 66, 93, 89, 94, 0, 45, 65, 89, 66, 35, 16, 26, 6},
+    {36, 86, 65, 70, 84, 75, 2, 16, 37, 45, 0, 39, 62, 25, 100, 34, 68, 51},
+    {19, 62, 70, 73, 18, 35, 55, 56, 6, 65, 39, 0, 25, 71, 14, 62, 46, 24},
+    {35, 71, 23, 53, 25, 57, 38, 24, 8, 89, 62, 25, 0, 94, 63, 86, 60, 62},
+    {54, 66, 60, 100, 42, 5, 89, 54, 97, 66, 25, 71, 94, 0, 99, 13, 89, 20},
+    {80, 81, 2, 100, 81, 85, 32, 92, 91, 35, 100, 14, 63, 99, 0, 4, 40, 46},
+    {55, 63, 62, 87, 55, 60, 44, 35, 1, 16, 34, 62, 86, 13, 4, 0, 20, 66},
+    {44, 54, 61, 9, 44, 77, 14, 5, 4, 26, 68, 46, 60, 89, 40, 20, 0, 32},
+    {27, 68, 86, 23, 43, 31, 83, 93, 30, 6, 51, 24, 62, 20, 46, 66, 32, 0}};
+  TSPCalculatorWithBitOperation calculator;
   calculator.CalculateMinLength(dm);
 }
 
@@ -88,7 +121,10 @@ TEST(tsp, lau15_dist) {
     { 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0 , 0},  // start with nothing.
     {46, 21, 51, 64, 23, 59, 33, 37, 11, 37, 61, 55, 23, 59,  0 , 0}};  // end with 15.
 
-  TSPCalculator calculator;
+  TSPCalculatorWithBitset calculator;
   // add distance(15, 2).
   EXPECT_EQ(calculator.CalculateMinLength(dm) + 21, 291);
+
+  TSPCalculatorWithBitOperation another_calculator;
+  EXPECT_EQ(another_calculator.CalculateMinLength(dm) + 21, 291);
 }
