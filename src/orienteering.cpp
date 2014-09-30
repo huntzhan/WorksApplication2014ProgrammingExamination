@@ -17,15 +17,15 @@
 
 // ============================================================================
 // # Introduction.
-// 
+//
 // The code is implemented with features as follow:
-//  
+//
 // * Follows *Google C++ Style Guide*.
 // * Make good usage of C++11 features.
 // * Highly focus on the readablity and performance.
-// 
+//
 // The following content are seperated into six sessions:
-// 
+//
 // 1. Related standard libraries
 // 2. Global type alias.
 // 3. Global variables.
@@ -104,7 +104,7 @@ const int kIntMax = numeric_limits<int>::max();
 //
 //     // Loaded orienteering map.
 //     const auto &orienteering_map = input_handler.orienteering_map_;
-//   
+//
 //     // Coordinates that useful for subsequently processing.
 //     const auto &targets = input_handler.checkpoints_;
 //     const auto &start = input_handler.start_;
@@ -527,7 +527,7 @@ void TSPCalculatorWithBitset::UpdateMinLengths(
       local_minimum = min(
           local_minimum,
           previous_length + distance_matrix[index][other_index]);
-    }                        
+    }
     // update min_lengths.
     min_lengths[checkpoint_set][index] = local_minimum;
   }
@@ -595,7 +595,7 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
   const size_t goal_index = dimension - 1;
   const size_t source_index = dimension - 2;
   const size_t checkpoint_size = dimension - 2;
-  const unsigned end_of_bit_pattern = 1 << (checkpoint_size + 1);
+  const unsigned end_of_bit_pattern = 1 << checkpoint_size;
 
   if (checkpoint_size == 0) {
     // for the case that there's no checkpoints.
@@ -607,23 +607,21 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
   // dimension as the index of checkpoint with which the path ends.
   //
   // For instance, suppose the `checkpoint_size` is 3, then we have something
-  // like "length_matrix[0xB][2] = 1;". 0xB is equivalent to binary code 1011,
-  // the least significant bit 101[1] represents that current set contains the
-  // start point. [101]1, three high-order bits, represent the selection of
-  // checkpoints, meaning that current set contains checkpoints indexed by 0
-  // and 2. "length_matrix[0xB][2]" means current set has a shortest path from
-  // start point to the checkpoint indexed by 2, and the value of
-  // "length_matrix[0xB][2]" is the length of such shortest path.
+  // like "length_matrix[0x5][2] = 1;". 0x5 is equivalent to binary code 101,
+  // which represent the selection of checkpoints, meaning that current set
+  // contains checkpoints indexed by 0 and 2. "length_matrix[0x5][2]" means
+  // current set has a shortest path from start point to the checkpoint indexed
+  // by 2, and the value of "length_matrix[0x5][2]" is the length of such
+  // shortest path.
   //
   vector<vector<int>> length_matrix(
       end_of_bit_pattern,
       vector<int>(checkpoint_size, kIntMax));
 
-  for (unsigned bit_pattern = 0x3;
-       bit_pattern < end_of_bit_pattern; bit_pattern += 0x2) {
-
-    for (unsigned outer_shift = 1, outer_index = 0;
-         outer_shift <= checkpoint_size; ++outer_shift, ++outer_index) {
+  for (unsigned bit_pattern = 0x1;
+       bit_pattern < end_of_bit_pattern; bit_pattern += 0x1) {
+    for (unsigned outer_shift = 0;
+         outer_shift < checkpoint_size; ++outer_shift) {
       if (!(bit_pattern & (1 << outer_shift))) {
         // `bit_pattern` do not contains checkpoint indexed by `outer_index`.
         continue;
@@ -631,21 +629,21 @@ int TSPCalculatorWithBitOperation::CalculateMinLength(
       // remove checkpoint `outer_index` from `bit_pattern`, create a
       // `subset`.
       unsigned subset = bit_pattern - (1 << outer_shift);
-      auto &target = length_matrix[bit_pattern][outer_index];
-      if (subset == 0x1) {
+      auto &target = length_matrix[bit_pattern][outer_shift];
+      if (subset == 0x0) {
         // `subset` contains only the start point, just set the value as the
         // distance from source to checkpoint `outer_index`.
-        target = distance_matrix[source_index][outer_index];
+        target = distance_matrix[source_index][outer_shift];
         continue;
       }
-      for (unsigned inner_shift = 1, inner_index = 0;
-           inner_shift <= checkpoint_size; ++inner_shift, ++inner_index) {
+      for (unsigned inner_shift = 0;
+           inner_shift < checkpoint_size; ++inner_shift) {
         if (bit_pattern & (1 << inner_shift)
             && inner_shift != outer_shift) {
           target = min(
               target,
-              length_matrix[subset][inner_index]
-              + distance_matrix[outer_index][inner_index]);
+              length_matrix[subset][inner_shift]
+              + distance_matrix[outer_shift][inner_shift]);
         }
       }
     }
