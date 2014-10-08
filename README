@@ -1,0 +1,12 @@
+This repo contains files related to *Works Application: Recuritment in China 2014 Programming Examination*.
+
+File organization:
+
+.
+├── CMakeLists.txt
+├── lib
+│   └── gtest-1.7.0       // test framework.
+├── question.jpeg         // official question.
+├── src
+│   └── orienteering.cpp  // my solution.
+└── test                  // test cases.
